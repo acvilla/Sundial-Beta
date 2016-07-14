@@ -1,0 +1,64 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'apitest-em350' target.
+# This file is defined under the apitest-em350 target in the Jamfile with
+# the directives
+#    ModuleList hal/test/apitest-modules-em350.ham ;
+#    SubIncludeFile TOP hal test : apitest-modules-em350.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 1
+  #endif
+  #define EMBER_APPLICATION_HAS_CUSTOM_SIM_EEPROM_CALLBACK
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "QA API Test Application v1.0"
+  #include "hal/micro/cortexm3/test/flash-test.c"
+  #include "hal/micro/cortexm3/test/int-api-test.c"
+  #include "hal/micro/cortexm3/test/memory-test.c"
+  #include "hal/micro/cortexm3/test/misc-api-test.c"
+  #include "hal/micro/cortexm3/test/simee-test.c"
+  #include "hal/micro/cortexm3/test/sim-eeprom-api-test.c"
+  #include "hal/micro/cortexm3/test/timer-api-test.c"
+  #include "hal/micro/cortexm3/test/token-cortexm3-test.c"
+  #include "hal/test/reset-test.c"
+  #include "hal/test/token-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/flash-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/int-api-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/memory-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/misc-api-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/simee-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/sim-eeprom-api-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/timer-api-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/token-cortexm3-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/misc-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/token-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-tx-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-timer-test-stub.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

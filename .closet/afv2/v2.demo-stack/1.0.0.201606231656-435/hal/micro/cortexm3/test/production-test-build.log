@@ -1,0 +1,898 @@
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-tests.h#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-names.txt#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-utils.h#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-globals.h#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test.h#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test.c#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-calibration.c#6 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-calibration.h#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-ram.c#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-tests.c#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-offsets.h#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-names.pl#5 - added
+
+//software/v3/base/dev-znet-hekla/hal/micro/cortexm3/test/production-test-utils.c#6 - added
+
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_CAL 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_CAL NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_CAL HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_CAL NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_CAL" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  4 112 bytes of readonly  code memory
+    384 bytes of readonly  data memory
+  1 888 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.06 (CPU)   0.08 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:2 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_RX 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_RX NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_RX HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_RX NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_RX" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  4 052 bytes of readonly  code memory
+    448 bytes of readonly  data memory
+  1 952 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.06 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_SYNTH 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_SYNTH NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_SYNTH HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_SYNTH NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_SYNTH" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  5 284 bytes of readonly  code memory
+    376 bytes of readonly  data memory
+  1 884 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.05 (CPU)   0.08 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_CLOCKS 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_CLOCKS NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_CLOCKS HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_CLOCKS NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_CLOCKS" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  2 528 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.05 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_ADC 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_ADC NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_ADC HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_ADC NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_ADC" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  2 688 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.06 (CPU)   0.11 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_PA 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_PA NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_PA HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_PA NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_PA" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  1 704 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.05 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_GPIO 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_GPIO NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_GPIO HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_GPIO NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_GPIO" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  1 820 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.05 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_OSC24M 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_OSC24M NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_OSC24M HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_OSC24M NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_OSC24M" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  1 196 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.06 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_SLEEP 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_SLEEP NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_SLEEP HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_SLEEP NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_SLEEP" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  1 232 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.06 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_TOUCH 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_TOUCH NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_TOUCH HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_TOUCH NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_TOUCH" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  2 424 bytes of readonly  code memory
+    372 bytes of readonly  data memory
+  1 876 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.05 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_USB 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test-ram with:
+ Jam options: -q
+ Build Option Definitions: BUILD_USB NULL_BTL RAMEXE RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test-ram PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RAMEXE RELEASE BUILD_USB HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_USB NULL_BTL RAMEXE RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RAMEXE RELEASE BUILD_USB" -sTARGET=production-test-ram -sJAMOPTS="-q" -q production-test-ram"
+BUILDING: build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test-ram for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+...found 175 target(s)...
+...updating 2 target(s)...
+Cc build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test.o 
+LinkD79 build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  1 016 bytes of readonly  code memory
+    324 bytes of readonly  data memory
+  1 828 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.05 (CPU)   0.06 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.out
+Saving srec file to build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.s37
+GenerateWorkspaceFor build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.out 
+...updated 2 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test-ram 
+======================================================================
+
+
+BUILD TIME:1 seconds.
+./build.pl production-test PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RELEASE BUILD_ALL 2>1
+GLOBAL_BASE_DIR not specified, trying to find a matching base dir.
+Using base dir: ../../base/dev-znet-hekla
+Available HAL options:
+(These can only be selected on the command line with HAL=foo)
+1) micro                HAL for Ember platforms (hal/micro/...)
+2) host                 HAL for host platforms (hal/host/...)
+NOTE: Defaulting to HAL=micro
+
+
+Building target: production-test with:
+ Jam options: -q
+ Build Option Definitions: BUILD_ALL NULL_BTL RELEASE
+ No Stack Link Definitions
+ No vars
+ HAL: micro
+ Compiler: iar
+ Platform: cortexm3   Micro: em359
+ Phy: em3xx
+ Board: dev0680
+
+Command line to skip menus next time:
+./build.pl production-test PLAT=cortexm3 COMP=iar MICRO=em359 PHY=em3xx BOARD=dev0680 NULL_BTL RELEASE BUILD_ALL HAL=micro
+
+Executing: "./tool/jam/windows/bin/jam -sHAL=micro -sPLAT=cortexm3 -sCOMP=iar -sMICRO=em359 -sPHY=em3xx -sGLOBAL_BASE_DIR=../../base/dev-znet-hekla -sBOARD=dev0680 -sBOARD_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/em35x/board/dev0680.h" -sJAMPATH=./tool/jam/windows/bin/jam -sPLATFORM_HEADER="../../base/dev-znet-hekla/hal/micro/cortexm3/compiler/iar.h"  -sOPTIONDEF="BUILD_ALL NULL_BTL RELEASE"  -sALLOPTIONDEFNAME="NULL_BTL RELEASE BUILD_ALL" -sTARGET=production-test -sJAMOPTS="-q" -q production-test"
+BUILDING: build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building production-test for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Phil 
+LINKING AGAINST: build/hal-library-cortexm3-iar-em359-em3xx/hal-library 
+
+LINKING AGAINST: build/znetphy-library-cortexm3-iar-em359-em3xx/znetphy-library 
+
+...found 331 target(s)...
+...updating 5 target(s)...
+BuildLib build/hal-library-cortexm3-iar-em359-em3xx/hal-library.a 
+---------vvvvvvvvvvvvvvvvvv------------
+Recursing jam to build hal-library
+BUILDING: build/hal-library-cortexm3-iar-em359-em3xx 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building hal-library for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Lee 
+...found 193 target(s)...
+Recursion of hal-library complete
+---------^^^^^^^^^^^^^^^^^^------------
+ProjectLib build/hal-library-cortexm3-iar-em359-em3xx/hal-library.a 
+BuildLib build/znetphy-library-cortexm3-iar-em359-em3xx/znetphy-library.a 
+---------vvvvvvvvvvvvvvvvvv------------
+Recursing jam to build znetphy-library
+BUILDING: build/znetphy-library-cortexm3-iar-em359-em3xx 
+Building with the IAR V6 tools 
+Building for Cortex-M3 
+Building znetphy-library for CORTEXM3_EM359 
+GLOBAL_BASE_DIR == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_HAL == ../../base/dev-znet-hekla 
+GLOBAL_BASE_DIR_PHY == ../../base/dev-znet-hekla 
+This target is maintained by Perry 
+...found 195 target(s)...
+Recursion of znetphy-library complete
+---------^^^^^^^^^^^^^^^^^^------------
+ProjectLib build/znetphy-library-cortexm3-iar-em359-em3xx/znetphy-library.a 
+Cc build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/platformtest.o 
+Cc build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.o 
+LinkD79 build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.out 
+
+   IAR ELF Linker V6.40.2.53884/W32 for ARM
+   Copyright 2007-2012 IAR Systems AB.
+
+  36 280 bytes of readonly  code memory
+   8 372 bytes of readonly  data memory
+  16 373 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
+
+Link time:   0.30 (CPU)   0.33 (elapsed)
+
+   IAR ELF Tool V9.12.4.70 [BUILT at IAR]
+   Copyright 2007-2012 IAR Systems AB.
+
+Loading build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.out
+Saving srec file to build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.s37
+MakeEbl build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.out 
+em3xx_convert (Version 3.1b04.1343854839)
+
+Parse .s37 format for flash
+Targeting UNKNOWN
+
+Approximate Usage Information:
+RAM Usage:
+  Call Stack:                             0x2000e6c0-0x2000ee17 (1880 bytes)
+  Globals and Statics:                    0x2000ee18-0x2000ffef (4568 bytes)
+  APPLICATION_CONFIGURATION_HEADER usage: 0x20000000-0x20000670 (1649 bytes)
+  Available for future use:               0x20000670-0x2000e69f (57392 bytes)
+  NO_INIT and Debug Channel:              0x2000fff0-0x2000ffff (16 bytes)
+Flash Usage:
+  CODE and Tables:                        0x08000000-0x08008f47 (36680 bytes)
+  CONST and INITC:                        0x08008f48-0x0800ae73 (7980 bytes)
+  Available for future use:               0x0800ae74-0x0807dfff (471436 bytes)
+  Reserved for SIMEE:                     0x0807e000-0x0807ffff (8192 bytes)
+
+Usage Summary:
+  65536 total bytes RAM, 8144 used, 57392 available
+  524288 total bytes Flash, 52852 used, 471436 available
+
+WARNING: NULL_BTL image detected, not generating ebl file
+DONE
+GenerateWorkspaceFor build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.out 
+...updated 5 target(s)...
+======================================================================
+======== BUILD SUCCESS: production-test 
+======================================================================
+
+
+BUILD TIME:3 seconds.
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.s37
+../../../../../../znet/dev-hekla/build/production-test-cortexm3-iar-em359-em3xx-dev0680-build_all-null_btl-release/production-test.s37
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_cal-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_sleep-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_clocks-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_rx-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_gpio-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_adc-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_pa-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_usb-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_synth-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_osc24m-null_btl-ramexe-release/production-test-ram.map
+../productionTestToHex.py ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.s37
+
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.s37
+Parsing ../../../../../../../znet/dev-hekla/build/production-test-ram-cortexm3-iar-em359-em3xx-dev0680-build_touch-null_btl-ramexe-release/production-test-ram.map

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-zigbee-internet-server" name="Plugin Commands: ZigBee Internet Server">
+    <description>
+      A set of commands for managing the ZigBee Internet server plugin.
+    </description>
+  </group>
+  <command cli="plugin zigbee-internet-server status" functionName="emberAfPluginZigbeeInternetServerStatus" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Print the server's current status and all connected clients.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-server start" functionName="emberAfPluginZigbeeInternetServerStartCommand" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Start the ZigBee Internet Server.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-server stop" functionName="emberAfPluginZigbeeInternetServerStopCommand" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Stop the ZigBee Internet Server.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-server set-client" functionName="emAfPluginZigbeeInternetServerSetClientConnectionByIndex" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Set which client connection is used for CLI operations.
+    </description>
+    <arg name="index" type="INT16U" description="The index number of the client connection."/>
+  </command>
+  <command cli="plugin zigbee-internet-server set-dest-eui64" functionName="emAfPluginZigbeeInternetServerSetDestEui64" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Set the destination EUI64 of ZCL-IP messages sent through a client.
+    </description>
+    <arg name="eui64" type="IEEE_ADDRESS" description="The EUI64 of the ZigBee device on the current client connection where ZCL-IP messages are directed."/>
+  </command>
+  <command cli="plugin zigbee-internet-server send-remote-clusters" functionName="emAfPluginZigbeeInternetServerSendRemoteClusters" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Sends the set of local clusters to the ZigBee Internet client device as remote clusters to configure.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-server add-specific-device" functionName="emAfPluginZigbeeInternetServerAddDeviceCommand" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Open the network to allow a specific new device to join the network with a specific link key.
+    </description>
+    <arg name="eui64" type="OCTET_STRING" description="The new device's EUI64"/>
+    <arg name="linkKey" type="OCTET_STRING" description="The new device's link key."/>
+  </command>
+  <command cli="plugin zigbee-internet-server add-any-device" functionName="emAfPluginZigbeeInternetServerAddDeviceCommand" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Open the network to allow any device to join the network.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-server add-remote-binding" functionName="emAfPluginZigbeeInternetServerAddRemoteBinding" group="plugin-zigbee-internet-server"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Configure and send a binding request through the ZigBee internet client to other devices on the ZigBee network.
+    </description>
+    <arg name="TargetEUI64" type="IEEE_ADDRESS" description="The EUI of the device to which the binding request is to be sent"/>
+    <arg name="sourceEndpoint" type="INT8U" description="The binding's source endpoint."/>
+    <arg name="destEndpoint" type="INT8U" description="The binding's destination endpoint"/>
+    <arg name="clusterId" type="INT16U" description="The clusterId associated with the binding"/>
+    <arg name="destEUI64" type="IEEE_ADDRESS" description="The binding's target EUI 64"/>
+    <arg name="sourceEUI64" type="IEEE_ADDRESS" description="The binding's source EUI64"/>
+  </command>
+</cli>
+

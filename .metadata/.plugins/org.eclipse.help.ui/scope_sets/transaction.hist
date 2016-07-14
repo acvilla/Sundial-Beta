@@ -1,0 +1,4 @@
+#Mon Jul 11 15:09:10 EDT 2016
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=transaction

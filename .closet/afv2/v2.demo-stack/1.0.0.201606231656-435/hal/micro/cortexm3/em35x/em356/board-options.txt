@@ -1,0 +1,11 @@
+# EM356 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"ncp_uart_20gpio" "NCP with EZSP-UART on SC1, 20 gpio"                    "hal/micro/cortexm3/em35x/board/ncp_uart_20gpio.h"
+"ncp_uart"        "NCP with EZSP-UART on SC1, 20 gpio"                    "hal/micro/cortexm3/em35x/board/ncp_uart_20gpio.h"
+"ncp_spi_20gpio"  "NCP with EZSP-SPI on SC1, 20 gpio"                     "hal/micro/cortexm3/em35x/board/ncp_spi_20gpio.h"
+"ncp_spi"         "NCP with EZSP-SPI on SC1, 20 gpio"                     "hal/micro/cortexm3/em35x/board/ncp_spi_20gpio.h"
+"dev0680_20gpio"  "Standard breakout board, 20 gpio"                      "hal/micro/cortexm3/em35x/board/dev0680_20gpio.h"
+"breakout_board"  "Breakout board alias"                                  "hal/micro/cortexm3/em35x/board/dev0680_20gpio.h"

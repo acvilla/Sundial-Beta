@@ -1,0 +1,25 @@
+# hal/micro/cortexm3/efm32/efr32/efr32fg1v/variant-options.txt
+#
+# EFR32FG1V Variant Options for build.pl
+#
+# THIS IS A GENERATED FILE.  DO NOT EDIT.
+
+# format is 2 quoted strings
+# "choice" "description"
+
+"efr32fg1v131f128gm32"        "TRX Sub-GHz| 128k Flash| 16k Ram| 32 Pin"
+"efr32fg1v131f128gm48"        "TRX Sub-GHz| 128k Flash| 16k Ram| 48 Pin"
+"efr32fg1v131f256gm32"        "TRX Sub-GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32fg1v131f256gm48"        "TRX Sub-GHz| 256k Flash| 32k Ram| 48 Pin"
+"efr32fg1v131f32gm32"         "TRX Sub-GHz|  32k Flash|  8k Ram| 32 Pin"
+"efr32fg1v131f32gm48"         "TRX Sub-GHz|  32k Flash|  8k Ram| 48 Pin"
+"efr32fg1v131f64gm32"         "TRX Sub-GHz|  64k Flash| 16k Ram| 32 Pin"
+"efr32fg1v131f64gm48"         "TRX Sub-GHz|  64k Flash| 16k Ram| 48 Pin"
+"efr32fg1v132f128gm32"        "TRX 2.4 GHz| 128k Flash| 16k Ram| 32 Pin"
+"efr32fg1v132f128gm48"        "TRX 2.4 GHz| 128k Flash| 16k Ram| 48 Pin"
+"efr32fg1v132f256gm32"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32fg1v132f256gm48"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 48 Pin"
+"efr32fg1v132f32gm32"         "TRX 2.4 GHz|  32k Flash|  8k Ram| 32 Pin"
+"efr32fg1v132f32gm48"         "TRX 2.4 GHz|  32k Flash|  8k Ram| 48 Pin"
+"efr32fg1v132f64gm32"         "TRX 2.4 GHz|  64k Flash| 16k Ram| 32 Pin"
+"efr32fg1v132f64gm48"         "TRX 2.4 GHz|  64k Flash| 16k Ram| 48 Pin"

@@ -1,0 +1,94 @@
+// This diagram shows the flow of how scans are processed in the mac
+// The picture of the state machine is generated with the freely available program
+//  dot, part of GraphViz
+// get it here: http://www.graphviz.org/
+
+digraph scan {
+  label = "Scan State Machine"; 
+  size="11,8.5";
+	node [shape=box, style=bold];
+	edge [fontsize="10.00", labelfontsize="10.00", labeldistance="3.0"];
+
+  subgraph clusterkey {
+    label="Key";
+    style=solid;
+    A -> B 
+      [label="Direct Call", 
+      style=solid];
+    C -> D
+      [label="Event", 
+      style=dashed];
+    E -> F
+      [label="Isr", 
+      style=dotted];      
+  }
+  
+
+  emberStartScan      [label="emberStartScan()"];
+  emStartScan         [label="emStartScan()"];
+  scanHandler         [label="emScanEventHandler()"];
+  nextChannel         [label="scanNextChannel()"];
+  startChannel        [label="startChannelScan()"];
+  scanHandlerFail     [label="emScanCompleteHandler(failure)"];
+  scanHandlerDone     [label="emScanCompleteHandler(finished)"];
+  sendBeacon          [label="emMacSendBeaconRequest()"];
+  sendOrphan          [label="emMacSendOrphanNotificationCommand()"];
+  xmitIsr             [label="emScanCommandTransmitCompleteIsr()"];
+  kickstartDwell      [label="emMacScanDwell(KICKSTART)"];
+  frameDwell          [label="emMacScanDwell(FRAMETIME)"];
+  timerIsr            [label="emScanTimerIsr()"];
+  stopScan            [label="emStopScan()"];
+  reallyStopScan      [label="emReallyStopScan()"];
+
+  emberStartScan -> emStartScan
+    [label="emMacShutdown(FALSE)",
+     style=dashed];
+  emStartScan -> scanHandler;
+  scanHandler -> nextChannel;
+
+  nextChannel -> startChannel 
+    [label="success"];
+  nextChannel -> scanHandlerFail 
+    [label="active/\norphan\nfailure or out\nof channels"];
+  nextChannel -> stopScan 
+    [label="energy/\npassive\nfailure or out\nof channels"];       
+
+  scanHandlerFail -> stopScan;
+  stopScan -> reallyStopScan
+    [label="emMacShutdown(FALSE)",
+     style=dashed];
+  reallyStopScan -> scanHandlerDone;
+  
+  
+  startChannel    -> sendBeacon 
+    [label = "active"];
+  startChannel    -> sendOrphan
+    [label = "orphan"];
+  startChannel    -> kickstartDwell 
+    [label = "energy/\npassive" ];
+
+  sendBeacon -> xmitIsr 
+    [style = "dotted"];
+  sendOrphan -> xmitIsr 
+    [style = "dotted"];
+  xmitIsr -> kickstartDwell 
+    [label = "success"];
+  xmitIsr -> startChannel 
+    [label = "failure < 3"];
+  xmitIsr -> scanHandler 
+    [label = "failure > 3", 
+     style = "dashed"];
+
+  kickstartDwell -> timerIsr 
+    [style = "dotted"];
+  timerIsr -> scanHandler 
+    [label = "scanFrameCounter == 0", 
+     style = "dashed"];
+  timerIsr -> frameDwell 
+    [label = "scanFrameCounter > 0"];
+  frameDwell -> timerIsr 
+    [style = "dotted"];
+  
+
+
+}

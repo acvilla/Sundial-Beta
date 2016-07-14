@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-zigbee-internet-keepalive" name="Plugin Commands: ZigBee Internet Keepalive">
+    <description>
+      A set of commands for managing the ZigBee Internet Keepalive plugin.
+    </description>
+  </group>
+  <command cli="plugin zigbee-internet-keepalive status" functionName="emberAfPluginZigbeeInternetKeepaliveStatusCommand" group="plugin-zigbee-internet-keepalive" restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Print the server's current status and all connected clients.
+    </description>
+  </command>
+</cli>
+

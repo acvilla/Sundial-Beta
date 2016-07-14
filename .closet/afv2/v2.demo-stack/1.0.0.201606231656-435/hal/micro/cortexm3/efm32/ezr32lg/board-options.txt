@@ -1,0 +1,16 @@
+# EFM BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"efm32"         "Energy Micro EFM32 Board"        "hal/micro/cortexm3/efm32/board/efm32.h"
+"ezr32"         "Energy Micro WSTK Board"         "hal/micro/cortexm3/efm32/board/ezr32.h"
+"brd4502a"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502a.h" 
+"brd4502b"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502b.h" 
+"brd4502c"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502c.h" 
+"brd4502d"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502d.h" 
+"brd4503a"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502a.h" 
+"brd4503b"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502b.h" 
+"brd4504b"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502b.h" 
+"brd4505b"      "Energy Micro Radio Board"        "hal/micro/cortexm3/efm32/board/brd4502b.h"
+
+

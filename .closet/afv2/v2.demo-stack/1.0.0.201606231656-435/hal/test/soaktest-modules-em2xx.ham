@@ -1,0 +1,37 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'soaktest-em2xx' target.
+# This file is defined under the soaktest-em2xx target in the Jamfile with
+# the directives
+#    ModuleList hal/test/soaktest-modules-em2xx.ham ;
+#    SubIncludeFile TOP hal test : soaktest-modules-em2xx.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #ifdef SER232_0
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #else
+    #define SER232 1
+  #endif
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+#define APPLICATION_NAME "Ember Soak Test v1.0"
+  #include "phy/em250class/test/phy-em250class-rx-soaktest.c"
+  #include "phy/em250class/test/phy-em250class-tx-soaktest.c"
+  #endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup SOAKTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-rx-soaktest.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-tx-soaktest.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

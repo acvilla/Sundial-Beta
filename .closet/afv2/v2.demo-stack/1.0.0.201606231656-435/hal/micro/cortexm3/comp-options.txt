@@ -1,0 +1,11 @@
+# Cortex M3 COMP options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"iar"     "IAR EWARM 6.X"                 "hal/micro/cortexm3/compiler/iar.h"
+"iarmin"  "IAR EWARM 6.X, Minimal HAL"    "hal/micro/cortexm3/compiler/iar-min.h"
+"iarboot" "IAR EWARM 6.X, Bootloader"     "hal/micro/cortexm3/compiler/iar-boot.h"
+"gcc"     "GCC      (currently broken)"   "hal/micro/cortexm3/compiler/gcc.h"
+"keil"    "Keil     (currently broken)"   "hal/micro/cortexm3/compiler/keil.h"
+
+default => "iar"

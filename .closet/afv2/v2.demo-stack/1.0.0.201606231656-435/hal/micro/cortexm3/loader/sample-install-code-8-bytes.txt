@@ -1,0 +1,7 @@
+# This file can patch your chip with an install code.
+# The install code used is a sample 8-byte one from the 
+# Smart Energy specification.
+# The calculated CRC will be 0x52C5 (C552) 
+install code: 83FED3407A939738
+
+

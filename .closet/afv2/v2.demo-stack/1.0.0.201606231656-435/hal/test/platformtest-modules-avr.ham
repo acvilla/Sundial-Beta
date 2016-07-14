@@ -1,0 +1,44 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'platformtest-avr' target.
+# This file is defined under the platformtest-avr target in the Jamfile with
+# the directives
+#    ModuleList hal/test/platformtest-modules-avr.ham ;
+#    SubIncludeFile TOP hal test : platformtest-modules-avr.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #define SER232 1
+  #define EMBER_APPLICATION_HAS_BUTTON_HANDLER
+  #undef EMBER_APPLICATION_HAS_CUSTOM_SIM_EEPROM_CALLBACK
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "Ember Test Application v3.0"
+  #include "hal/micro/avr-atmega/128/board/test/led-test.c"
+  #include "hal/micro/avr-atmega/test/memory-test.c"
+  #include "hal/test/misc-test.c"
+  #include "hal/test/reset-test.c"
+  #include "phy/test/phy-common-test.c"
+  #include "phy/test/phy-common-tx-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/avr-atmega/128/board/test/led-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/avr-atmega/test/memory-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/misc-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-tx-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test-stub.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

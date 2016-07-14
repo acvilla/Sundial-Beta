@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$TOOLKIT_DIR$\config\flashloader\SiliconLabs\FlashEM35xx.out</exe>
+  <page>2048</page>
+  <block>96 0x800</block>
+  <flash_base>0x08000000</flash_base>
+  <aggregate>1</aggregate>
+</flash_device>

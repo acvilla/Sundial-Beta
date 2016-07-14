@@ -1,0 +1,27 @@
+# hal/micro/cortexm3/efm32/efr32/efr32fg1p/variant-options.txt
+#
+# EFR32FG1P Variant Options for build.pl
+#
+# THIS IS A GENERATED FILE.  DO NOT EDIT.
+
+# format is 2 quoted strings
+# "choice" "description"
+
+"efr32fg1p131f128gm32"        "TRX Sub-GHz| 128k Flash| 32k Ram| 32 Pin"
+"efr32fg1p131f128gm48"        "TRX Sub-GHz| 128k Flash| 32k Ram| 48 Pin"
+"efr32fg1p131f256gm32"        "TRX Sub-GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32fg1p131f256gm48"        "TRX Sub-GHz| 256k Flash| 32k Ram| 48 Pin"
+"efr32fg1p131f64gm32"         "TRX Sub-GHz|  64k Flash| 16k Ram| 32 Pin"
+"efr32fg1p131f64gm48"         "TRX Sub-GHz|  64k Flash| 16k Ram| 48 Pin"
+"efr32fg1p132f128gm32"        "TRX 2.4 GHz| 128k Flash| 32k Ram| 32 Pin"
+"efr32fg1p132f128gm48"        "TRX 2.4 GHz| 128k Flash| 32k Ram| 48 Pin"
+"efr32fg1p132f256gm32"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32fg1p132f256gm48"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 48 Pin"
+"efr32fg1p132f64gm32"         "TRX 2.4 GHz|  64k Flash| 16k Ram| 32 Pin"
+"efr32fg1p132f64gm48"         "TRX 2.4 GHz|  64k Flash| 16k Ram| 48 Pin"
+"efr32fg1p133f128gm32"        "TRX Dual-bd| 128k Flash| 32k Ram| 32 Pin"
+"efr32fg1p133f128gm48"        "TRX Dual-bd| 128k Flash| 32k Ram| 48 Pin"
+"efr32fg1p133f256gm32"        "TRX Dual-bd| 256k Flash| 32k Ram| 32 Pin"
+"efr32fg1p133f256gm48"        "TRX Dual-bd| 256k Flash| 32k Ram| 48 Pin"
+"efr32fg1p133f64gm32"         "TRX Dual-bd|  64k Flash| 16k Ram| 32 Pin"
+"efr32fg1p133f64gm48"         "TRX Dual-bd|  64k Flash| 16k Ram| 48 Pin"

@@ -1,0 +1,14 @@
+# EM359 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"dev0680"         "Standard Breakout Board"     "hal/micro/cortexm3/em35x/board/dev0680.h"
+"dev0680nodetest" "Breakout Board for Nodetest builds"     "hal/micro/cortexm3/em35x/board/dev0680nodetest.h"
+"dev0442"         "HTOL Board"                  "hal/micro/cortexm3/em35x/board/dev0442hekla.h"
+"emuserialtest"   "Emulator Serial Testing"     "hal/micro/cortexm3/em35x/board/emuserialtest.h"
+"emusleeptest"    "Emulator Sleep Testing"      "hal/micro/cortexm3/em35x/board/emusleeptest.h"
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"touchsense0607"  "Capacitive Touch Sensor Feasibility board"    "hal/micro/cortexm3/em35x/board/touchsense0607.h"
+"heklaemu"        "Hekla emulator"              "hal/micro/cortexm3/em35x/board/heklaemu.h"
+"soaktestem359"        "Soaktest on an em359"              "hal/micro/cortexm3/em35x/board/soaktestem359.h"
+"dev0680etm"         "Standard Breakout Board with optional ETM support"     "hal/micro/cortexm3/em35x/board/dev0680etm.h"

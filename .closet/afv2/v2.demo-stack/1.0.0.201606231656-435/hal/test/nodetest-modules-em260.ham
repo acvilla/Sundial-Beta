@@ -1,0 +1,64 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'nodetest' target when built for em2xx micros.
+# This file is defined under the nodetest target in the Jamfile with
+# the following directives:
+#    ModuleList hal/test/nodetest-modules-em2xx.ham ;
+#    SubIncludeFile TOP hal test : nodetest-modules-em2xx.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 1
+  #endif
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "Ember Node Test Application v1.0"
+  #include "hal/micro/xap2b/em260/board/test/led-test.c"
+  #include "hal/micro/xap2b/test/bootload-test.c"
+  #include "hal/micro/xap2b/test/gpio-test.c"
+  #include "hal/micro/xap2b/test/sleep-test.c"
+  #include "hal/micro/xap2b/test/spip-test.c"
+  #include "hal/micro/xap2b/test/token-xap2b-test.c"
+  #include "hal/test/reset-test.c"
+  #include "hal/test/token-test.c"
+  #include "hal/test/misc-test.c"
+  #include "phy/test/phy-common-test.c"
+  #include "phy/test/phy-common-rx-test.c"
+  #include "phy/test/phy-common-tx-test.c"
+  #include "phy/em250class/test/phy-em250class-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/xap2b/em260/board/test/led-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/xap2b/test/bootload-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/xap2b/test/gpio-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/xap2b/test/sleep-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/xap2b/test/spip-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/xap2b/test/token-xap2b-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/token-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/misc-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-tx-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-timer-test-stub.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

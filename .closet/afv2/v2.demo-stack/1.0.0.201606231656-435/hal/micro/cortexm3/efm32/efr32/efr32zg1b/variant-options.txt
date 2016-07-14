@@ -1,0 +1,11 @@
+# hal/micro/cortexm3/efm32/efr32/efr32zg1b/variant-options.txt
+#
+# EFR32ZG1B Variant Options for build.pl
+#
+# THIS IS A GENERATED FILE.  DO NOT EDIT.
+
+# format is 2 quoted strings
+# "choice" "description"
+
+"efr32zg1b132f256gm32"        "TRX 2.4 GHz| 256k Flash| 16k Ram| 32 Pin"
+"efr32zg1b132f256gm48"        "TRX 2.4 GHz| 256k Flash| 16k Ram| 48 Pin"

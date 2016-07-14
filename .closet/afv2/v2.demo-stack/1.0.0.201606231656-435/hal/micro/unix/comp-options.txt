@@ -1,0 +1,7 @@
+# unix COMP options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"gcc"   "Gnu Compiler Collection"   "hal/micro/unix/compiler/gcc.h"
+
+default => "gcc"

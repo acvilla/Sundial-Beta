@@ -1,0 +1,5 @@
+These libraries used to be generated separately from the main 3xx tools, but
+now they're generated automatically by buildscript.sh.  They come from ZNet, so
+you'll need to have that in your workspace view.  Please see the previous
+version of this file in Perforce for a discussion of the old manual way of
+building things.

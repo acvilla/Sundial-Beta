@@ -1,0 +1,7 @@
+# HAL options for build.pl
+# format is 3 quoted strings
+# "choice"    "description"      "path"
+
+"micro" "HAL for Ember platforms (hal/micro/...)" "hal/micro"
+"host"  "HAL for host platforms (hal/host/...)"   "hal/host"
+

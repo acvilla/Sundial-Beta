@@ -1,0 +1,10 @@
+LWORD   lMtp_DecToGray
+int     iMVdd_ConvToMv
+void    vPa_LevelLookup
+void    vPoly_FloatDerivative
+void    vPoly_ApplyFineTune
+void    vPoly_CalcFineTuneValue
+LWORD   lUchtim_GetCount
+void    vUchtim_SetCount
+BYTE    bUchtim_CheckDutyCycle
+void    vUchtim_AddTxTimeToCounter

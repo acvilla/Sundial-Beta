@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-infrared-led" name="Plugin Commands: Infrared LED">
+    <description>
+      The Infrared LED plugin contributes several commands to the application framework's CLI.  These commands are used for testing low level operation of the LED and sending out IR waveforms as if a button had been pressed or held.
+    </description>
+  </group>
+  <command cli="plugin infrared-led toggle" functionName="emberAfPluginInfraredLedToggleCommand" group="plugin-infrared-led">
+    <description>
+      Toggle IR LED once.
+    </description>
+  </command>
+  <command cli="plugin infrared-led on" functionName="emberAfPluginInfraredLedOnCommand" group="plugin-infrared-led">
+    <description>
+      Turn on IR LED.
+    </description>
+  </command>
+  <command cli="plugin infrared-led off" functionName="emberAfPluginInfraredLedOffCommand" group="plugin-infrared-led">
+    <description>
+      Turn off IR LED.
+    </description>
+  </command>
+  <command cli="plugin infrared-led button-toggle" functionName="emberAfPluginInfraredLedButtonToggleCommand" group="plugin-infrared-led">
+    <description>
+      Toggle IR LED each time BUTTON1 is pressed.
+    </description>
+  </command>
+  <command cli="plugin infrared-led button-on-off" functionName="emberAfPluginInfraredLedButtonOnOffCommand" group="plugin-infrared-led">
+    <description>
+      Turn IR LED on and off based on state of BUTTON1.
+    </description>
+  </command>
+  <command cli="plugin infrared-led simulate-press" functionName="emberAfPluginInfraredLedSimulatePressCommand" group="plugin-infrared-led">
+    <description>
+      Output IR waveform as if a button were pressed.
+    </description>
+    <arg name="index"   type="INT8U"    description="The index of UIRD database to use for the waveform." />
+  </command>
+  <command cli="plugin infrared-led simulate-hold" functionName="emberAfPluginInfraredLedSimulateHoldCommand" group="plugin-infrared-led">
+    <description>
+      Output IR waveform as if a button were held.
+    </description>
+    <arg name="index"   type="INT8U"    description="The index of UIRD database to use for the waveform." />
+  </command>
+  <command cli="plugin infrared-led simulate-remote" functionName="emberAfPluginInfraredLedSimulateRemoteCommand" group="plugin-infrared-led">
+    <description>
+      Output IR waveform when BUTTON1 is pressed or held.
+    </description>
+    <arg name="index"   type="INT8U"    description="The index of UIRD database to use for the waveform." />
+  </command>
+</cli>

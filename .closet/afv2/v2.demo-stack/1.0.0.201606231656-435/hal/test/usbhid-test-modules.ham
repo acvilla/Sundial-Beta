@@ -1,0 +1,57 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'usbhid-test' target.
+# This file is defined under the usbhid-test target in the Jamfile with
+# the directives
+#    ModuleList hal/test/usbhid-test.ham ;
+#    SubIncludeFile TOP hal test : usbhid-test.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_2)
+    #define SER232 2
+  #elif defined(SER232_3)
+    #define SER232 3
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 0
+  #endif
+  #define EMBER_APPLICATION_HAS_BUTTON_HANDLER
+  #define EMBER_APPLICATION_HAS_CUSTOM_SIM_EEPROM_CALLBACK
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "Ember USB HID Test App v1.0"
+  #include "hal/micro/cortexm3/test/usbhid-test.c"
+  #include "hal/micro/cortexm3/test/button-test.c"
+  #include "hal/micro/cortexm3/test/led-test.c"
+  #include "hal/test/reset-test.c"
+  #include "hal/micro/cortexm3/test/crash-info.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/usbhid-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/button-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/led-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/crash-info.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-tx-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-timer-test-stub.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT

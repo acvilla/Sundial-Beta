@@ -1,0 +1,75 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'soaktest-em350' target.
+# This file is defined under the soaktest-em350 target in the Jamfile with
+# the directives
+#    ModuleList hal/test/soaktest-modules-em350.ham ;
+#    SubIncludeFile TOP hal test : soaktest-modules-em350.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #ifdef SER232_0
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 1
+  #endif
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+#define APPLICATION_NAME "Ember Soak Test v1.0"
+  #include "hal/micro/cortexm3/test/crash-info.c"
+  #include "hal/test/reset-test.c"
+  #include "hal/micro/cortexm3/test/adc-soaktest.c"
+  #include "hal/micro/cortexm3/test/atomic-soaktest.c"
+  #include "hal/micro/cortexm3/test/caladc-soaktest.c"
+  #include "hal/micro/cortexm3/test/clock-soaktest.c"
+  #include "hal/micro/cortexm3/test/deepsleep-soaktest.c"
+  #include "hal/micro/cortexm3/test/flash-soaktest.c"
+  #include "hal/micro/cortexm3/test/gpio-soaktest.c"
+  #include "hal/micro/cortexm3/test/gpt-soaktest.c"
+  #include "hal/micro/cortexm3/test/idlesleep-soaktest.c"
+  #include "hal/micro/cortexm3/test/mpu-soaktest.c"
+  #include "phy/em250class/test/phy-em250class-rx-soaktest.c"
+  #include "phy/em250class/test/phy-em250class-tx-soaktest.c"
+  #include "hal/micro/cortexm3/test/prot-soaktest.c"
+  #include "hal/micro/cortexm3/test/security-soaktest.c"
+  #include "hal/micro/cortexm3/test/simee-soaktest.c"
+  #include "hal/micro/cortexm3/test/spi-soaktest.c"
+  #include "hal/micro/cortexm3/test/systick-soaktest.c"
+  #include "hal/micro/cortexm3/test/uart-soaktest.c"
+  #endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup SOAKTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/crash-info.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/adc-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/atomic-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/caladc-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/clock-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/deepsleep-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/flash-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/gpio-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/gpt-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/idlesleep-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/mpu-soaktest.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-rx-soaktest.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-tx-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/prot-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/security-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/simee-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/spi-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/systick-soaktest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/uart-soaktest.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

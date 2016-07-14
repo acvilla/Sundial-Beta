@@ -1,0 +1,7 @@
+13:02:11,112 [Worker-2] INFO com.iar.cdt.generic.toolchain.info.SdkToolchainInfo  - Using toolchain at C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\bin, version 7.70.1.11437
+13:27:52,348 [Worker-23] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+13:27:52,350 [Worker-23] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
+13:28:03,740 [Worker-28] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+13:28:03,741 [Worker-28] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
+13:39:21,263 [Worker-30] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+13:39:21,263 [Worker-30] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)

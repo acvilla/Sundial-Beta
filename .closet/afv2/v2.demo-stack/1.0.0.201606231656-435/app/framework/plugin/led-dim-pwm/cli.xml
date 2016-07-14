@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-led-dim-pwm" name="Plugin Commands: LED Dim PWM">
+    <description>
+      RGB-PWM is a plugin to control color for a 3 LED system with red, blue, and green.
+    </description>
+  </group>
+  <command cli="plugin pwm-control test" functionName="emAfLedDimPwmTestCommand" group="plugin-led-dim-pwm">
+    <description>
+	Value of white PWM.
+    </description>
+    <arg name="value" type="INT16U" description = "Value to write to the white PWM output." />
+   </command>
+</cli>

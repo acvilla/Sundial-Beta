@@ -1,0 +1,6 @@
+# This is a sample token file that can program the certificate of a Cortex-M3.
+# It uses an Ember Test certificate with an EUI (>)0000000000000001.
+CA Public Key: 0200fde8a7f3d1084224962a4e7c54e69ac3f04da6b8
+Device Implicit Cert: 03045fdfc8d85ffb8b3993cb72ddcaa55f00b3e87d6d0000000000000001544553545345434101090006000000000000
+Device Private Key: 00b8a900fcadebabbfa383b540fce9ed438395eaa7
+

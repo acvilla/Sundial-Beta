@@ -1,0 +1,52 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'digimac-test' target.
+# This file is defined under the digimac-test target in the Jamfile with
+# the directives:
+#    ModuleList hal/test/digimac-test-modules-em3xx.ham ;
+#    SubIncludeFile TOP hal test : digimac-test-modules-em3xx.ham ;
+#
+#  #include "phy/test/phy-common-rx-test.c"
+#  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test.c
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 1
+  #endif
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "Ember DigiMac Test Application v1.0"
+  #include "digi-mac/test/digi-mac-common-test.c"
+  #include "digi-mac/test/digi-mac-enddev-test.c"
+  #include "digi-mac/test/digi-mac-network-test.c"
+  #include "digi-mac/test/digi-mac-rx-test.c"
+  #include "digi-mac/test/digi-mac-security-test.c"
+  #include "digi-mac/test/digi-mac-tx-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  stack/digi-mac/test/digi-mac-common-test.c
+  stack/digi-mac/test/digi-mac-enddev-test.c
+  stack/digi-mac/test/digi-mac-network-test.c
+  stack/digi-mac/test/digi-mac-rx-test.c
+  stack/digi-mac/test/digi-mac-security-test.c
+  stack/digi-mac/test/digi-mac-tx-test.c
+  stack/digi-mac/test/digi-mac-test-callbacks.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

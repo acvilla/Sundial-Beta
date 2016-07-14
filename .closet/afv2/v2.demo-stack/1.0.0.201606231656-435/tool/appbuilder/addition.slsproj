@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project id="com.silabs.ember.stack.znet.addition" partCompatibility="com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.efr32" toolchainCompatibility="" sdkCompatibility="" contentRoot=".">
+  <!-- Architecture Specific Library Definitions -->
+  <libraryFile uri="$(sdkInstallationPath)/build/hal-library-cortexm3-iar-$(partName:toLower)-em3xx/hal-library.a" partCompatibility="com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x"/>
+  <libraryFile uri="$(sdkInstallationPath)/build/hal-library-cortexm3-iar-$(partName:toLower)-pro2plus/hal-library.a" partCompatibility="com.silabs.mcu.si32.ember.em35xp2p"/>
+  <libraryFile uri="$(sdkInstallationPath)/build/hal-library-cortexm3-iar-$--chipFamily;L--$-efr32/hal-library.a" partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <!-- Replacement Macro Definitions -->
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3_$(partName:toUpper)_MICRO" value="1"/>
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3_$(partName:toUpper)" value="1"/>
+  <macroDefinition languageCompatibility="c asm" name="PLATFORM_HEADER" value="&quot;$--halDirFromStackFs--$/micro/cortexm3/compiler/iar.h&quot;"/>
+  <macroDefinition languageCompatibility="c asm" name="ZA_GENERATED_HEADER" value="&quot;app/builder/$--deviceName--$/$--deviceName--$.h&quot;"/>
+  <macroDefinition languageCompatibility="c asm" name="GENERATED_TOKEN_HEADER" value="&quot;app/builder/$--deviceName--$/$--tokenHeader--$&quot;"/>
+  <macroDefinition languageCompatibility="c asm" name="ATTRIBUTE_STORAGE_CONFIGURATION" value="&quot;app/builder/$--deviceName--$/$--deviceName--$_endpoint_config.h&quot;"/>
+  <macroDefinition languageCompatibility="c asm" name="BOARD_HEADER" value="&quot;$--boardHeader--$&quot;"/>
+  <macroDefinition languageCompatibility="c asm" name="$--bootloader--$" value="1" partCompatibility="com.silabs.mcu.si32.ember com.silabs.mcu.si32.efr32"/>
+  <!-- EM3xx-specific dynamic macro definitions. -->
+  <macroDefinition languageCompatibility="c asm" name="$--chipFamily;U--$" value="1" partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <macroDefinition languageCompatibility="c asm" name="$(partName:toUpper)" value="1" partCompatibility="com.silabs.mcu.si32.efr32"/>
+
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/Device/SiliconLabs/$(partGroupName:toUpper)/Include/" partCompatibility="com.silabs.mcu.si32.efr32"/>
+
+  <folder name="emlib" partCompatibility="com.silabs.mcu.si32.efr32">
+    <file name="system_$(partGroupName:toLower).c" uri="$(sdkInstallationPath:default())/submodules/Device/SiliconLabs/$(partGroupName:toUpper)/Source/system_$(partGroupName:toLower).c" partCompatibility="com.silabs.mcu.si32.efr32"/>
+  </folder>
+
+
+  <!-- Replacement Tooloptions -->
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.configSymbolDefs.v6.2.0" value="$--bootloader--$=1 $--linkerOptionsSlsproj--$"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.icfFile.v5.4.0" value="$--halDir--$/micro/cortexm3/em35x/$(partName:toLower)/iar-cfg.icf" partCompatibility="com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.ember.em35xp2p"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.icfFile.v5.4.0" value="$--halDir--$/micro/cortexm3/efm32/efr32/iar-cfg.icf"  partCompatibility="com.silabs.mcu.si32.efr32"/>
+
+  <!-- Replacement Misc Options -->
+  <postbuildStep>$--studioCmdLaunchCommand--$ $--StudioProjGenDir--$/$--deviceName--$.bat} ${BuildArtifactFileBaseName} ..</postbuildStep>
+</project>

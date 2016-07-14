@@ -1,0 +1,43 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'epaper-test' target.
+# This file is defined under the epaper-test target in the Jamfile with
+# the directives
+#    ModuleList hal/test/epaper-test.ham ;
+#    SubIncludeFile TOP hal test : epaper-test.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 0
+  #endif
+  #define EMBER_APPLICATION_HAS_BUTTON_HANDLER
+  #define EMBER_APPLICATION_HAS_CUSTOM_SIM_EEPROM_CALLBACK
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "Ember E-Paper Test App v1.0"
+  #include "hal/micro/cortexm3/test/epaper-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/epaper-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/spi-driver.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/font-library.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/display-driver.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT

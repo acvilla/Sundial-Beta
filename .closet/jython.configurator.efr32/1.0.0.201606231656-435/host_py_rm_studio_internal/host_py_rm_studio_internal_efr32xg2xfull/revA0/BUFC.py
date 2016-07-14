@@ -1,0 +1,109 @@
+
+__all__ = [ 'RM_Peripheral_BUFC' ]
+
+from static import Base_RM_Peripheral
+from BUFC_register import *
+
+class RM_Peripheral_BUFC(Base_RM_Peripheral):
+    def __init__(self, rmio, label):
+        self.__dict__['zz_frozen'] = False
+        super(RM_Peripheral_BUFC, self).__init__(rmio, label,
+            0x40081000, 'BUFC',
+            "")
+        self.BUF0_CTRL = RM_Register_BUFC_BUF0_CTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_CTRL'] = self.BUF0_CTRL
+        self.BUF0_ADDR = RM_Register_BUFC_BUF0_ADDR(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_ADDR'] = self.BUF0_ADDR
+        self.BUF0_WRITEOFFSET = RM_Register_BUFC_BUF0_WRITEOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_WRITEOFFSET'] = self.BUF0_WRITEOFFSET
+        self.BUF0_READOFFSET = RM_Register_BUFC_BUF0_READOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_READOFFSET'] = self.BUF0_READOFFSET
+        self.BUF0_WRITESTART = RM_Register_BUFC_BUF0_WRITESTART(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_WRITESTART'] = self.BUF0_WRITESTART
+        self.BUF0_READDATA = RM_Register_BUFC_BUF0_READDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_READDATA'] = self.BUF0_READDATA
+        self.BUF0_WRITEDATA = RM_Register_BUFC_BUF0_WRITEDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_WRITEDATA'] = self.BUF0_WRITEDATA
+        self.BUF0_XWRITE = RM_Register_BUFC_BUF0_XWRITE(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_XWRITE'] = self.BUF0_XWRITE
+        self.BUF0_STATUS = RM_Register_BUFC_BUF0_STATUS(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_STATUS'] = self.BUF0_STATUS
+        self.BUF0_THRESHOLDCTRL = RM_Register_BUFC_BUF0_THRESHOLDCTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_THRESHOLDCTRL'] = self.BUF0_THRESHOLDCTRL
+        self.BUF0_CMD = RM_Register_BUFC_BUF0_CMD(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF0_CMD'] = self.BUF0_CMD
+        self.BUF1_CTRL = RM_Register_BUFC_BUF1_CTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_CTRL'] = self.BUF1_CTRL
+        self.BUF1_ADDR = RM_Register_BUFC_BUF1_ADDR(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_ADDR'] = self.BUF1_ADDR
+        self.BUF1_WRITEOFFSET = RM_Register_BUFC_BUF1_WRITEOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_WRITEOFFSET'] = self.BUF1_WRITEOFFSET
+        self.BUF1_READOFFSET = RM_Register_BUFC_BUF1_READOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_READOFFSET'] = self.BUF1_READOFFSET
+        self.BUF1_WRITESTART = RM_Register_BUFC_BUF1_WRITESTART(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_WRITESTART'] = self.BUF1_WRITESTART
+        self.BUF1_READDATA = RM_Register_BUFC_BUF1_READDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_READDATA'] = self.BUF1_READDATA
+        self.BUF1_WRITEDATA = RM_Register_BUFC_BUF1_WRITEDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_WRITEDATA'] = self.BUF1_WRITEDATA
+        self.BUF1_XWRITE = RM_Register_BUFC_BUF1_XWRITE(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_XWRITE'] = self.BUF1_XWRITE
+        self.BUF1_STATUS = RM_Register_BUFC_BUF1_STATUS(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_STATUS'] = self.BUF1_STATUS
+        self.BUF1_THRESHOLDCTRL = RM_Register_BUFC_BUF1_THRESHOLDCTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_THRESHOLDCTRL'] = self.BUF1_THRESHOLDCTRL
+        self.BUF1_CMD = RM_Register_BUFC_BUF1_CMD(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF1_CMD'] = self.BUF1_CMD
+        self.BUF2_CTRL = RM_Register_BUFC_BUF2_CTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_CTRL'] = self.BUF2_CTRL
+        self.BUF2_ADDR = RM_Register_BUFC_BUF2_ADDR(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_ADDR'] = self.BUF2_ADDR
+        self.BUF2_WRITEOFFSET = RM_Register_BUFC_BUF2_WRITEOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_WRITEOFFSET'] = self.BUF2_WRITEOFFSET
+        self.BUF2_READOFFSET = RM_Register_BUFC_BUF2_READOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_READOFFSET'] = self.BUF2_READOFFSET
+        self.BUF2_WRITESTART = RM_Register_BUFC_BUF2_WRITESTART(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_WRITESTART'] = self.BUF2_WRITESTART
+        self.BUF2_READDATA = RM_Register_BUFC_BUF2_READDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_READDATA'] = self.BUF2_READDATA
+        self.BUF2_WRITEDATA = RM_Register_BUFC_BUF2_WRITEDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_WRITEDATA'] = self.BUF2_WRITEDATA
+        self.BUF2_XWRITE = RM_Register_BUFC_BUF2_XWRITE(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_XWRITE'] = self.BUF2_XWRITE
+        self.BUF2_STATUS = RM_Register_BUFC_BUF2_STATUS(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_STATUS'] = self.BUF2_STATUS
+        self.BUF2_THRESHOLDCTRL = RM_Register_BUFC_BUF2_THRESHOLDCTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_THRESHOLDCTRL'] = self.BUF2_THRESHOLDCTRL
+        self.BUF2_CMD = RM_Register_BUFC_BUF2_CMD(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF2_CMD'] = self.BUF2_CMD
+        self.BUF3_CTRL = RM_Register_BUFC_BUF3_CTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_CTRL'] = self.BUF3_CTRL
+        self.BUF3_ADDR = RM_Register_BUFC_BUF3_ADDR(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_ADDR'] = self.BUF3_ADDR
+        self.BUF3_WRITEOFFSET = RM_Register_BUFC_BUF3_WRITEOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_WRITEOFFSET'] = self.BUF3_WRITEOFFSET
+        self.BUF3_READOFFSET = RM_Register_BUFC_BUF3_READOFFSET(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_READOFFSET'] = self.BUF3_READOFFSET
+        self.BUF3_WRITESTART = RM_Register_BUFC_BUF3_WRITESTART(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_WRITESTART'] = self.BUF3_WRITESTART
+        self.BUF3_READDATA = RM_Register_BUFC_BUF3_READDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_READDATA'] = self.BUF3_READDATA
+        self.BUF3_WRITEDATA = RM_Register_BUFC_BUF3_WRITEDATA(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_WRITEDATA'] = self.BUF3_WRITEDATA
+        self.BUF3_XWRITE = RM_Register_BUFC_BUF3_XWRITE(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_XWRITE'] = self.BUF3_XWRITE
+        self.BUF3_STATUS = RM_Register_BUFC_BUF3_STATUS(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_STATUS'] = self.BUF3_STATUS
+        self.BUF3_THRESHOLDCTRL = RM_Register_BUFC_BUF3_THRESHOLDCTRL(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_THRESHOLDCTRL'] = self.BUF3_THRESHOLDCTRL
+        self.BUF3_CMD = RM_Register_BUFC_BUF3_CMD(self.zz_rmio, self.zz_label)
+        self.zz_rdict['BUF3_CMD'] = self.BUF3_CMD
+        self.IF = RM_Register_BUFC_IF(self.zz_rmio, self.zz_label)
+        self.zz_rdict['IF'] = self.IF
+        self.IFS = RM_Register_BUFC_IFS(self.zz_rmio, self.zz_label)
+        self.zz_rdict['IFS'] = self.IFS
+        self.IFC = RM_Register_BUFC_IFC(self.zz_rmio, self.zz_label)
+        self.zz_rdict['IFC'] = self.IFC
+        self.IEN = RM_Register_BUFC_IEN(self.zz_rmio, self.zz_label)
+        self.zz_rdict['IEN'] = self.IEN
+        self.__dict__['zz_frozen'] = True

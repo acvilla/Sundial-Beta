@@ -1,0 +1,6 @@
+# Cortex-M3 MICRO options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"stm32f103ret" "ST STM32F103RET" "hal/host/cortexm3/stm32f103ret"
+

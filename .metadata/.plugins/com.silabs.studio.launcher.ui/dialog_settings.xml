@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ApplicationNotesLaunchItem">
+		<item value="com.silabs.content.appnotes.an0065_efm32_as_usb_device" key="lastSelectedItem"/>
+	</section>
+	<section name="UniversityLaunchItem">
+	</section>
+	<section name="KitDocsLaunchItem">
+		<item value="com.silabs.content.kitdocs.ezr32wg.wireless_wstk_6220.radio_guide" key="lastSelectedItem"/>
+		<item value="true" key="settingFilterByPart"/>
+	</section>
+</section>

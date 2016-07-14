@@ -1,0 +1,9 @@
+# PLAT options for build.pl
+# format is 3 quoted strings
+# "choice"    "description"      "path"
+
+"cortexm3"    "ARM Cortex M3"                 "hal/micro/cortexm3"
+"unix"        "Unix Simulation"               "hal/micro/unix"
+"c8051"	   	  "8051"            						  "hal/micro/c8051"
+
+default => "cortexm3"

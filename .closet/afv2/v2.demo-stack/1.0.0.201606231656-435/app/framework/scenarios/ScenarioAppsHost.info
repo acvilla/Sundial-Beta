@@ -1,0 +1,68 @@
+# NOT Auto-generated.
+
+# Lovingly hand-crafted for any ISC files that live outside the purview of the
+# sample-apps-regenerate.pl auto-generation.
+
+SeSampleCommsHub {
+  name=SeSampleCommsHub 
+  dir=zse/SeSampleCommsHub
+  isc=zse/SeSampleCommsHub/SeSampleCommsHubHost.isc
+  include=SeSampleCommsHub_callbacks.c
+  This is a Communications Hub application for a GBCS Smart Energy 1.2a network.
+}
+
+SeSampleHHT {
+  name=SeSampleHHT
+  dir=zse/SeSampleHHT
+  isc=zse/SeSampleHHT/SeSampleHHTHost.isc
+  include=SeSampleHHT_callbacks.c
+  This is a Handheld Terminal application for a GBCS Smart Energy 1.2a network.
+}
+
+Rf4ceDemo {
+  name=Rf4ceDemo 
+  dir=rf4ce/Rf4ceDemo
+  isc=rf4ce/Rf4ceDemo/Rf4ceDemoHost.isc
+  include=Rf4ceDemo_callbacks.c
+  This is a demonstration of an RF4CE/HA dual network device.
+}
+
+XncpLed {
+  name=XncpLed
+  dir=xncp/XncpLed
+  isc=xncp/XncpLed/XncpLedHost.isc
+  include=XncpLed_callbacks.c
+  This is a demonstration of a UNIX HOST controlling an LED on an NCP.
+}
+
+XncpHostSpi {
+  name=XncpHostSpi
+  dir=xncp/XncpHost
+  isc=xncp/XncpHost/XncpHost.isc
+  include=XncpHost_callbacks.c
+  This is a demonstration of a host application that utilizes the features of the XNCP.
+}
+
+ZigbeeInternetServer {
+  name=Zigbee Internet Server 
+  dir=gateway/zigbee-internet-server
+  isc=gateway/zigbee-internet-server/ZigbeeInternetServerHost.isc
+  include=ZbInetSrv_callbacks.c
+  This is a demonstation of an internet server running with the Zigbee-IP gateway to receive and process ZCL messages.
+}
+
+HaGatewayReference {
+  name=HA Gateway Reference
+  dir=zha/HaGatewayReference
+  isc=zha/HaGatewayReference/HaGatewayReferenceHost.isc
+  This is a demonstation of an internet server running with the Zigbee-IP gateway to receive and process ZCL messages.
+}
+
+GpProxy {
+  name=GpProxy 
+  dir=gp/GpProxy
+  isc=gp/GpProxy/GpProxyHost.isc
+  include=GpProxy_callbacks.c
+  This is a Proxy Basic application for a Green Power network.
+}
+

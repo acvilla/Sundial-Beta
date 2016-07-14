@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.silabs.ide.project.core.cdtMbsProjectType">
+		<item value="com.silabs.ide.project.core.templates.model.esf.com.silabs.ember.template.external.srw.connect.Silicon Labs Connect Framework.Empty connect application_1.0.0.-423671295" key="selectedTemplateId"/>
+		<item value="true" key="filterTemplatesByToolchain"/>
+		<item value="true" key="filterTemplatesByPartSdk"/>
+		<item value="LINK_LIBRARIES" key="settingImportModeOption"/>
+		<item value="false" key="showInternal"/>
+	</section>
+</section>

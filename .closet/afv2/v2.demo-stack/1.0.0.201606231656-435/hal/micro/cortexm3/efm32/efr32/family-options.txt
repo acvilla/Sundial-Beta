@@ -1,0 +1,20 @@
+# hal/micro/cortexm3/efm32/efr32/family-options.txt
+#
+# EFR32 Family Options for build.pl
+#
+# THIS IS A GENERATED FILE.  DO NOT EDIT.
+
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"EFR32BG1B"    "Blue Gecko Basic"            "hal/micro/cortexm3/efm32/efr32/efr32bg1b"
+"EFR32BG1P"    "Blue Gecko Premium"          "hal/micro/cortexm3/efm32/efr32/efr32bg1p"
+"EFR32BG1V"    "Blue Gecko Value"            "hal/micro/cortexm3/efm32/efr32/efr32bg1v"
+"EFR32FG1P"    "Flex Gecko Premium"          "hal/micro/cortexm3/efm32/efr32/efr32fg1p"
+"EFR32FG1V"    "Flex Gecko Value"            "hal/micro/cortexm3/efm32/efr32/efr32fg1v"
+"EFR32MG1B"    "Mighty Gecko Basic"          "hal/micro/cortexm3/efm32/efr32/efr32mg1b"
+"EFR32MG1P"    "Mighty Gecko Premium"        "hal/micro/cortexm3/efm32/efr32/efr32mg1p"
+"EFR32MG1V"    "Mighty Gecko Value"          "hal/micro/cortexm3/efm32/efr32/efr32mg1v"
+"EFR32ZG1B"    "Zappy Gecko Basic"           "hal/micro/cortexm3/efm32/efr32/efr32zg1b"
+"EFR32ZG1P"    "Zappy Gecko Premium"         "hal/micro/cortexm3/efm32/efr32/efr32zg1p"
+"EFR32ZG1V"    "Zappy Gecko Value"           "hal/micro/cortexm3/efm32/efr32/efr32zg1v"

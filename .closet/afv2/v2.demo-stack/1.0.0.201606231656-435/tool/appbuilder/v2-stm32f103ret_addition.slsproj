@@ -1,0 +1,9 @@
+<project id="com.silabs.ember.stack.znet.addition" partCompatibility="com.silabs.mcu.si32.ember.em35x" contentRoot=".">
+    <!-- Replacement Macro Definitions -->
+    <macroDefinition languageCompatibility="c asm" name="BOARD_HEADER" value="&quot;$--boardHeader--$&quot;"/>
+    <macroDefinition languageCompatibility="c asm" name="ZA_GENERATED_HEADER" value="&quot;app/builder/$--deviceName--$/$--deviceName--$.h&quot;"/>
+    <macroDefinition languageCompatibility="c asm" name="PLATFORM_HEADER" value="&quot;$--halDirFromStackFs--$/host/cortexm3/stm32f103ret/compiler/iar-st.h&quot;"/>
+    <macroDefinition languageCompatibility="c asm" name="ATTRIBUTE_STORAGE_CONFIGURATION" value="&quot;app/builder/$--deviceName--$/$--deviceName--$_endpoint_config.h&quot;"/>
+    <!-- Replacement Tooloptions -->
+    <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.icfFile.v5.4.0" value="$--halDir--$/host/cortexm3/stm32f103ret/iar-cfg-st.icf"/>
+</project>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>EmberZNet 5.0.x EM260 Sample Applications</title>
+
+</head><body>
+
+<h2>EM260 EZSP images containing the ECC library for EmberZNet 5.0.0</h2>
+
+<h3>Overview</h3>
+This release is meant to be used with EmberZNet 5.0.0 and contains the EmberZNet 5.0.0 EZSP images for the EM260 that are built with the ECC Library from Certicom 
+<br>
+<br><i><b>Software Versions</b></i> <br>
+<li>stack software -- please refer to the (stack) release note for the build number
+<li>ECC Library - version 1.0.1.7
+
+<br>
+<br><i><b>EZSP images</b></i><br>
+See the table at the end of this section for a description of the optional libraries supported in the various EZSP images. EBL files can be loaded using the bootloader or em2xx_load and does not erase tokens when loaded. HEX files contains a bootloader (standalone or serial) and when loaded with em2xx_load this erases tokens. HEX files cannot be loaded using the bootloader, they must be loaded using em2xx_load.
+<br>
+<br>
+<li><b>em260-spi-ecc-end-device-use-with-standalone-bootloader.ebl</b> -- for use on a SPI connected host that will run as a ZigBee end device only.
+<li><b>em260-spi-ecc-end-device-with-standalone-bootloader.hex</b> -- for use on a SPI connected host that will run as a ZigBee end device only. This file contains the standalone bootloader.
+<li><b>em260-spi-ecc-use-with-standalone-bootloader.ebl</b> -- for use on a SPI connected host. Can run as any type of ZigBee device. 
+<li><b>em260-spi-ecc-with-standalone-bootloader.hex</b> -- for use on a SPI connected host. Can run as any type of ZigBee device. This file contains the standalone bootloader.
+<li><b>em260-spi-ecc-debug-no-bootloader.ebl</b> -- for use on a SPI connected host. Can run as any type of ZigBee device. The image is built with the ability to run wihout standalone bootloader.  After loaded, it will erase existing bootloader (if one is installed).  Bootloader needs to be reloaded in order to run image that is compiled for running with bootloader such as em260-spi-ecc-end-device-use-with-standalone-bootloader.ebl.
+<li><b>em260-spi-ecc-debug-no-bootloader.hex</b> -- for use on a SPI connected host. Can run as any type of ZigBee device. The image is built with the ability to run wihout standalone bootloader.  After loaded, it will erase existing bootloader (if one is installed).  Bootloader needs to be reloaded in order to run image that is compiled for running with bootloader such as em260-spi-ecc-end-device-use-with-standalone-bootloader.ebl.
+<li><b>em260-uart-ecc-rts-cts-use-with-serial-bootloader.ebl</b> -- for use on a UART connected host using hardware flow control (RTS/CTS). Can run as any type of ZigBee device.
+<li><b>em260-uart-ecc-rts-cts-with-serial-bootloader.hex</b> -- for use on a UART connected host using hardware flow control (RTS/CTS). Can run as any type of ZigBee device. This file contains the serial bootloader.
+<li><b>em260-uart-ecc-xon-xoff-use-with-serial-bootloader.ebl</b> -- for use on a UART connected host using XON/XOFF software flow control. Can run as any type of ZigBee device.
+<li><b>em260-uart-ecc-xon-xoff-with-serial-bootloader.hex</b> -- for use on a UART connected host using XON/XOFF software flow control. Can run as any type of ZigBee device. This file contains the serial bootloader.
+<br>
+
+<br><i><b>The following table details which optional libraries are supported on the various images:</b><i><br>
+<br>
+<table border="1">
+<tr>
+<th>EZSP Images</th>
+<th>Mfg Lib</th>
+<th>End Device Bind Lib</th>
+<th>Binding Table Lib</th>
+<th>Alarm Lib</th>
+<th>EZSP Trace</th>
+</tr>
+<tr align="center">
+<td>em260-spi-ecc-end-device-use-with-standalone-bootloader.ebl</td><td>Real</td><td>Stub</td><td>Real</td><td>Stub</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-spi-ecc-end-device-with-standalone-bootloader.hex</td><td>Real</td><td>Stub</td><td>Real</td><td>Stub</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-spi-ecc-with-standalone-bootloader.ebl</td><td>Real</td><td>Stub</td><td>Real</td><td>Stub</td><td>No</td>
+</tr>
+<tr align="center">
+<td>em260-spi-ecc-with-standalone-bootloader.hex</td><td>Real</td><td>Stub</td><td>Real</td><td>Stub</td><td>No</td>
+</tr>
+<tr align="center">
+<td>em260-spi-ecc-debug-no-bootloader.ebl</td><td>Real</td><td>Stub</td><td>Real</td><td>Stub</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-spi-ecc-debug-no-bootloader.hex</td><td>Real</td><td>Stub</td><td>Real</td><td>Stub</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-uart-ecc-rts-cts-use-with-serial-bootloader.ebl</td><td>Real</td><td>Real</td><td>Real</td><td>Real</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-uart-ecc-rts-cts-with-serial-bootloader.hex</td><td>Real</td><td>Real</td><td>Real</td><td>Real</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-uart-ecc-xon-xoff-use-with-serial-bootloader.ebl</td><td>Real</td><td>Real</td><td>Real</td><td>Real</td><td>Yes</td>
+</tr>
+<tr align="center">
+<td>em260-uart-ecc-xon-xoff-with-serial-bootloader.hex</td><td>Real</td><td>Real</td><td>Real</td><td>Real</td><td>Yes</td>
+</tr>
+</table>
+<br>
+<br>
+Note:
+<li>Real – means implementation of the features are included.
+<li>Stub – means implementation of the features are not included; only the external interface is implemented.
+<br>
+<br><i><b>xpv/xdv files of EZSP images</b></i><br>
+Now xpv/xdv files of each EZSP images are also provided.  User are now able to create ebl files of EZSP images using the provided xpv/xdv files and em2xx_convert tool.  For example, to obtain ebl files of EZSP images that can be run on em250 silicon as NCP, user can issue the following command.  Moreover, the ebl file generated from the example below can be loaded onto em250 via (em250's) bootloader.
+<br>Ex. em2xx_convert em260-uart-ecc-xon-xoff-use-with-serial-bootloader.xpv -DMICRO=em250 -outfile em250-uart-ecc-xon-xoff-use-with-serial-bootloader.ebl
+<br>
+<br>
+<hr>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# 8051 COMP options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"keil"    "Keil"                          "hal/micro/c8051/compiler/keil.h"
+"iar"     "IAR 8051 Compiler"             "hal/micro/c8051/compiler/iar.h"

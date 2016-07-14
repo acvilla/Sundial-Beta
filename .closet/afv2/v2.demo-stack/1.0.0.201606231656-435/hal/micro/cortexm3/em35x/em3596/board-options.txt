@@ -1,0 +1,12 @@
+# EM3596 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"pcb0859"         "EM359x Characterization Module"     "hal/micro/cortexm3/em35x/board/pcb0859.h"
+"ncp_uart"        "NCP with EZSP-UART on SC1"     "hal/micro/cortexm3/em35x/board/ncp_uart_em359x.h"
+"ncp_uart_sc1"    "NCP with EZSP-UART on SC1"     "hal/micro/cortexm3/em35x/board/ncp_uart_em359x.h"
+"ncp_spi"         "NCP with EZSP-SPI on SC2"      "hal/micro/cortexm3/em35x/board/ncp_spi_em359x.h"
+"ncp_spi_sc2"     "NCP with EZSP-SPI on SC2"      "hal/micro/cortexm3/em35x/board/ncp_spi_em359x.h"
+"dev0682"         "EM359x Breakout Board"         "hal/micro/cortexm3/em35x/board/dev0682.h"
+"breakout_board"  "Breakout board alias"          "hal/micro/cortexm3/em35x/board/dev0682.h"

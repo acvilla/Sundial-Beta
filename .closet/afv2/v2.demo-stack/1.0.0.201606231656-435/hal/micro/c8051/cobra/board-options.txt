@@ -1,0 +1,7 @@
+# Cobra BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"cobra_eval"    "Cobra Eval Board"         "hal/micro/c8051/cobra/board/cobra_eval.h"
+"cobra_eval_pa" "Cobra Eval Board with PA" "hal/micro/c8051/cobra/board/cobra_eval_pa.h"
+"cobra_d1"      "Cobra D1 Board"           "hal/micro/c8051/cobra/board/cobra_d1.h"

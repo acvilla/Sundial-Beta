@@ -1,0 +1,4 @@
+# This sample token file can be used to set the custom eui and MFG string
+# for the Cortex-M3.  The EUI is specified in little-endian form.
+Custom EUI64: a0b0c0d0e0f01020
+MFG String : "Ember Rules!"

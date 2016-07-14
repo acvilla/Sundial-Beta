@@ -1,0 +1,5 @@
+# Silicon Labs F93x BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"mscwmb93x"    "MSC WMB F93x"    "hal/micro/c8051/silabs/F93x/board/MSC-WMB93x_defs.h"

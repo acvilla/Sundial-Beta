@@ -1,0 +1,14 @@
+# hal/micro/cortexm3/efm32/efr32/efr32mg1b/variant-options.txt
+#
+# EFR32MG1B Variant Options for build.pl
+#
+# THIS IS A GENERATED FILE.  DO NOT EDIT.
+
+# format is 2 quoted strings
+# "choice" "description"
+
+"efr32mg1b132f256gm32"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32mg1b132f256gm48"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 48 Pin"
+"efr32mg1b231f256gm32"        "TRX Sub-GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32mg1b232f256gm32"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 32 Pin"
+"efr32mg1b232f256gm48"        "TRX 2.4 GHz| 256k Flash| 32k Ram| 48 Pin"

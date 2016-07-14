@@ -1,0 +1,47 @@
+# Adapter pack file for Studio.
+#
+label=Simplicity Commander
+path=.,win32/Simplicity Commander,Commander.app/Contents/MacOS,Commander.app/Contents/Frameworks,macosx/Commander.app/Contents/MacOS,macosx/Commander.app/Contents/Frameworks
+requiredFeatureLevel=apack.core:4
+
+executable(commander:linux.x86_64) {
+  exe=commander
+  lib=libemdll.so
+  lib=libjlinkarm.so
+}
+
+executable(commander:linux.x86) {
+  exe=commander
+  lib=libemdll.so
+  lib=libjlinkarm.so
+}
+
+executable(commander:win32.x86) {
+  exe=commander.exe
+  lib=emdll0.dll
+  lib=JLinkARM.dll
+}
+
+executable(commander:win32.x86_64) {
+  exe=commander.exe
+  lib=emdll0.dll
+  lib=JLinkARM.dll
+}
+
+executable(commander:macosx.x86_64) {
+  exe=commander
+  lib=libemdll.dylib
+  lib=libjlinkarm.dylib
+}
+
+function(help) {
+  cmd=$commander --help
+}
+
+function(setDebugMode) {
+  cmd=$(commander) --apack adapter dbgmode ${mode} ( --serialno ${sn} | -ip ${addr} )
+}
+
+function(writeFirmware) {
+  cmd=$(commander) --apack adapter fwupgrade ( --serialno ${sn} | --ip ${addr} ) ${file}
+}

@@ -1,0 +1,793 @@
+#ISD App Configuration:3.1
+# ISD version: 3.4.2270
+#  Identified of a stack descriptor used for this configuration. This should not
+#  be changed manually, unless you really know what you are doing.
+ConfiguratorID:auto-SIMULATION
+
+#  Output directory which is used as a root for all generated files. The actual
+#  files relative to that directory are defined by individual file name.
+GenerationDirectory:__SAMPLE_APPLICATION__
+
+#  Unique identifier for this device. This string should be in a form of a C
+#  identifier, as it will be used in both generated variable, macros, as well as
+#  file names. You should generally not use characters which are not valid
+#  characters in a C identifier here.
+DeviceName:Se12Esi
+
+#  Type of the endpoint. Each endpoint implement one endpoint type. There can be
+#  one or more endpoint types, regardless of number of actual endpoints.
+EndpointType:Primary,1280
+
+#  The ZCL device that this particular endpoint is implementing.
+DeviceType:Primary,SE1.2-ESP
+
+#  Overrides a particular client configuration. This happens when you have
+#  chosen to include/exclude a client cluster that is optional. Contains
+#  'clusterId', 'exclude/include' and the endpoint type name.
+OverrideClient:700,include,Primary
+
+OverrideClient:702,include,Primary
+
+OverrideClient:705,include,Primary
+
+OverrideClient:706,include,Primary
+
+OverrideClient:708,include,Primary
+
+OverrideClient:709,include,Primary
+
+#  Overrides a particular server configuration. This happens when you have
+#  chosen to include/exclude a server cluster that is optional. Contains
+#  'clusterId', 'exclude/include' and the endpoint type name.
+OverrideServer:3,exclude,Primary
+
+OverrideServer:702,include,Primary
+
+OverrideServer:705,exclude,Primary
+
+OverrideServer:707,include,Primary
+
+OverrideServer:708,include,Primary
+
+OverrideServer:709,include,Primary
+
+#  Type of the endpoint. Each endpoint implement one endpoint type. There can be
+#  one or more endpoint types, regardless of number of actual endpoints.
+EndpointType:Meter Mirror,1280
+
+#  The ZCL device that this particular endpoint is implementing.
+DeviceType:Meter Mirror,SE1.2-ESP
+
+#  Overrides a particular client configuration. This happens when you have
+#  chosen to include/exclude a client cluster that is optional. Contains
+#  'clusterId', 'exclude/include' and the endpoint type name.
+OverrideClient:702,include,Meter Mirror
+
+#  Overrides a particular server configuration. This happens when you have
+#  chosen to include/exclude a server cluster that is optional. Contains
+#  'clusterId', 'exclude/include' and the endpoint type name.
+OverrideServer:702,include,Meter Mirror
+
+#  ZigBee PRO network configuration.  Each endpoint belongs to a single network
+#  configuration.  There can be one or more network configurations.
+ZigbeeProNetwork:*Primary,ZA_COORDINATOR,SE_TEST
+
+#  A list of optional attributes that are included in this configuration. Format
+#  is a list of "clusterId,attributeId,<server|client>,manufacturerCode"
+#  entries, separated by semicolon.
+OptionalAttributes:1800,256,server,0:0,17,server,0:1794,1031,server,0:1794,1029,server,0:1794,1,server,0:1794,2,server,0:1794,3,server,0:1794,4,server,0:1794,5,server,0:1794,6,server,0:1794,7,server,0:1794,8,server,0:1794,9,server,0:1794,10,server,0:1794,11,server,0:1794,12,server,0:1794,13,server,0:1794,14,server,0:1794,15,server,0:1794,16,server,0:1794,17,server,0:1794,18,server,0:1794,19,server,0:1794,20,server,0:1794,21,server,0:1794,22,server,0:1794,23,server,0:1794,24,server,0:1794,25,server,0:1794,26,server,0:1794,27,server,0:1794,28,server,0:1794,29,server,0:1794,30,server,0:1794,32,server,0:1794,33,server,0:1794,34,server,0:1794,256,server,0:1794,257,server,0:1794,258,server,0:1794,259,server,0:1794,260,server,0:1794,261,server,0:1794,262,server,0:1794,263,server,0:1794,264,server,0:1794,265,server,0:1794,266,server,0:1794,267,server,0:1794,268,server,0:1794,269,server,0:1794,270,server,0:1794,271,server,0:1794,272,server,0:1794,273,server,0:1794,274,server,0:1794,276,server,0:1794,277,server,0:1794,278,server,0:1794,275,server,0:1794,279,server,0:1794,280,server,0:1794,281,server,0:1794,282,server,0:1794,283,server,0:1794,284,server,0:1794,285,server,0:1794,286,server,0:1794,287,server,0:1794,288,server,0:1794,289,server,0:1794,290,server,0:1794,291,server,0:1794,292,server,0:1794,293,server,0:1794,294,server,0:1794,295,server,0:1794,296,server,0:1794,297,server,0:1794,298,server,0:1794,299,server,0:1794,300,server,0:1794,301,server,0:1794,302,server,0:1794,303,server,0:1794,304,server,0:1794,305,server,0:1794,306,server,0:1794,307,server,0:1794,308,server,0:1794,309,server,0:1794,310,server,0:1794,311,server,0:1794,312,server,0:1794,313,server,0:1794,314,server,0:1794,315,server,0:1794,316,server,0:1794,317,server,0:1794,318,server,0:1794,319,server,0:1794,320,server,0:1794,322,server,0:1794,321,server,0:1794,323,server,0:1794,324,server,0:1794,325,server,0:1794,326,server,0:1794,327,server,0:1794,328,server,0:1794,329,server,0:1794,330,server,0:1794,331,server,0:1794,332,server,0:1794,333,server,0:1794,334,server,0:1794,335,server,0:1794,336,server,0:1794,337,server,0:1794,338,server,0:1794,339,server,0:1794,340,server,0:1794,341,server,0:1794,342,server,0:1794,343,server,0:1794,344,server,0:1794,345,server,0:1794,346,server,0:1794,347,server,0:1794,348,server,0:1794,349,server,0:1794,350,server,0:1794,351,server,0:1794,513,server,0:1794,514,server,0:1794,515,server,0:1794,516,server,0:1794,769,server,0:1794,770,server,0:1794,772,server,0:1794,773,server,0:1794,775,server,0:1794,776,server,0:1794,777,server,0:1794,778,server,0:1794,779,server,0:1794,780,server,0:1794,781,server,0:1794,782,server,0:1794,783,server,0:1794,785,server,0:1794,1024,server,0:1794,1025,server,0:1794,1026,server,0:1794,1027,server,0:1794,1028,server,0:1794,1030,server,0:1794,1032,server,0:1794,1033,server,0:1794,1034,server,0:1794,1035,server,0:1794,1036,server,0:1794,1037,server,0:1794,1038,server,0:1794,1039,server,0:1794,1040,server,0:1794,1041,server,0:1794,1042,server,0:1794,1043,server,0:1794,1044,server,0:1794,1045,server,0:1794,1046,server,0:1794,1056,server,0:1794,1057,server,0:1794,1058,server,0:1794,1059,server,0:1794,1060,server,0:1794,1061,server,0:1794,1062,server,0:1794,1063,server,0:1794,1064,server,0:1794,1065,server,0:1794,1066,server,0:1794,1067,server,0:1794,1068,server,0:1794,1069,server,0:1794,1072,server,0:1794,1073,server,0:1794,1074,server,0:1794,1075,server,0:1794,1076,server,0:1794,1077,server,0:1794,1078,server,0:1794,1079,server,0:1794,1080,server,0:1794,1081,server,0:1794,1082,server,0:1794,1083,server,0:1794,1089,server,0:1794,1090,server,0:1794,1091,server,0:1794,1092,server,0:1794,1093,server,0:1794,1094,server,0:1794,1095,server,0:1794,1088,server,0:1794,1096,server,0:1794,1097,server,0:1794,1098,server,0:1794,1099,server,0:1794,1100,server,0:1794,1101,server,0:1794,1102,server,0:1794,1103,server,0:1794,1104,server,0:1794,1105,server,0:1794,1106,server,0:1794,1107,server,0:1794,1108,server,0:1794,1109,server,0:1794,1110,server,0:1794,1111,server,0:1794,1112,server,0:1794,1113,server,0:1794,1114,server,0:1794,1115,server,0:1794,1280,server,0:1794,1536,server,0:1794,1537,server,0:1794,1538,server,0:1794,1539,server,0:1794,1540,server,0:1794,1542,server,0:1794,2816,server,0:1794,2817,server,0:1794,1541,server,0:1794,1543,server,0:1794,1544,server,0:1794,1545,server,0:1794,65534,server,0:1794,0,client,0:1794,1,client,0:1794,2,client,0:1794,3,client,0:1794,4,client,0:1794,5,client,0:1794,7,client,0:1794,6,client,0:1800,256,client,0:1800,264,client,0:1800,263,client,0:1800,262,client,0:1800,261,client,0:1800,260,client,0:1800,259,client,0:1800,258,client,0:1800,257,client,0:1800,448,client,0:1800,449,client,0:1800,450,client,0:1800,451,client,0:1800,452,client,0:1800,453,client,0:1800,454,client,0:1800,455,client,0:1800,456,client,0:1800,457,client,0:1800,458,client,0:1800,459,client,0:1800,460,client,0:1800,461,client,0:1800,463,client,0:1800,462,client,0:1800,464,client,0:1800,465,client,0:1800,466,client,0:1800,467,client,0:1800,468,client,0:1800,469,client,0:1800,470,client,0:1800,471,client,0:1800,472,client,0:1800,473,client,0:1800,474,client,0:1800,475,client,0:1800,476,client,0:1800,477,client,0:1800,478,client,0:1800,479,client,0:1800,480,client,0:1800,481,client,0:1800,482,client,0:1800,483,client,0:1800,484,client,0:1800,485,client,0:1800,486,client,0:1800,487,client,0:1800,512,client,0:1800,513,client,0:1800,514,client,0:1800,515,client,0:1800,516,client,0:1800,517,client,0:1800,518,client,0:1800,519,client,0:1800,520,client,0:1800,521,client,0:1800,560,client,0:1800,561,client,0:1800,562,client,0:1800,563,client,0:1800,564,client,0:1800,565,client,0:1800,566,client,0:1800,567,client,0:1800,592,client,0:1800,593,client,0:1800,608,client,0:1800,609,client,0:1800,610,client,0:1800,611,client,0:1800,612,client,0:1800,624,client,0:1800,625,client,0:1800,626,client,0:1800,627,client,0:1800,628,client,0:1800,629,client,0:1800,630,client,0:1800,631,client,0:1800,632,client,0:1800,633,client,0:1800,634,client,0:1800,635,client,0:1800,636,client,0:1800,637,client,0:1800,638,client,0:1800,639,client,0:1800,640,client,0:1800,641,client,0:1800,642,client,0:1800,643,client,0:1800,644,client,0:1800,645,client,0:1800,646,client,0:1800,647,client,0:1800,648,client,0:1800,649,client,0:1800,650,client,0:1800,651,client,0:1800,652,client,0:1800,653,client,0:1800,654,client,0:1800,655,client,0:1800,656,client,0:1800,657,client,0:1800,658,client,0:1800,659,client,0:1800,660,client,0:1800,661,client,0:1800,662,client,0:1800,688,client,0:1800,689,client,0:1800,690,client,0:1800,691,client,0:1800,692,client,0:1800,693,client,0:1800,694,client,0:1800,695,client,0:1800,696,client,0:1800,705,client,0:1800,706,client,0:1800,707,client,0:1800,708,client,0:1800,709,client,0:1800,768,client,0:1800,1024,client,0:1800,1025,client,0:1800,1026,client,0:1800,1027,client,0:1800,1028,client,0:1800,1029,client,0:1800,1056,client,0:1800,1057,client,0:1800,1058,client,0:1800,1059,client,0:1800,1060,client,0:1800,1061,client,0:1800,1062,client,0:1800,1063,client,0:1800,1064,client,0:1800,1065,client,0:1800,1066,client,0:1800,1067,client,0:1800,1068,client,0:1800,1069,client,0:1800,1072,client,0:1800,1073,client,0:1800,1074,client,0:1800,1089,client,0:1800,1090,client,0:1800,1091,client,0:1800,1216,client,0:1800,1217,client,0:1800,1218,client,0:1800,1219,client,0:1800,1220,client,0:1800,1221,client,0:1800,1222,client,0:1800,1223,client,0:1800,1225,client,0:1800,1226,client,0:1800,1227,client,0:1800,1228,client,0:1800,1229,client,0:1800,1230,client,0:1800,1231,client,0:1800,1233,client,0:1800,1234,client,0:1800,1235,client,0:1800,1236,client,0:1800,1237,client,0:1800,1281,client,0:1800,1472,client,0:1800,1473,client,0:1800,1474,client,0:1800,1475,client,0:1800,1478,client,0:1800,1479,client,0:1800,1480,client,0:1800,1481,client,0:1800,1484,client,0:1800,1485,client,0:1800,1486,client,0:1800,1487,client,0:1800,1490,client,0:1800,1491,client,0:1800,1536,client,0:1800,1537,client,0:1800,1538,client,0:1800,1539,client,0:1800,1540,client,0:1800,1552,client,0:1800,1553,client,0:1800,1554,client,0:1800,1555,client,0:1800,1556,client,0:1800,1557,client,0:1800,1728,client,0:1800,1729,client,0:1800,1730,client,0:1800,1731,client,0:1800,1732,client,0:1800,1733,client,0:1800,1734,client,0:1800,1735,client,0:1800,1736,client,0:1800,1737,client,0:1800,1738,client,0:1800,1739,client,0:1800,1740,client,0:1800,1741,client,0:1800,1742,client,0:1800,1743,client,0:1800,1744,client,0:1800,1745,client,0:1800,1747,client,0:1800,1748,client,0:1800,1749,client,0:1800,1750,client,0:1800,1751,client,0:1800,1792,client,0:1800,1793,client,0:1800,1794,client,0:1800,0,client,0:1800,16,client,0:1800,522,client,0:1800,523,client,0:1800,524,client,0:1800,525,client,0:1800,526,client,0:1800,527,client,0:1800,528,client,0:1800,529,client,0:1800,530,client,0:1800,531,client,0:1800,532,client,0:1800,533,client,0:1800,534,client,0:1800,535,client,0:1800,536,client,0:1800,537,client,0:1800,538,client,0:1800,539,client,0:1800,540,client,0:1800,541,client,0:1800,542,client,0:1800,543,client,0:1800,544,client,0:1800,546,client,0:1800,547,client,0:1800,548,client,0:1800,549,client,0:1800,550,client,0:1800,551,client,0:1800,552,client,0:1800,545,client,0:1800,553,client,0:1800,1280,client,0:1800,1746,client,0:1800,257,server,0:1800,258,server,0:1792,512,server,0:1792,513,server,0:1792,514,server,0:1792,515,server,0:1792,516,server,0:1792,0,server,0:1792,1,server,0:1792,1552,server,0:1792,1553,server,0:1792,1554,server,0:1792,1557,server,0:1792,1558,server,0:1792,1559,server,0:1792,1561,server,0:1792,1568,server,0:1792,1569,server,0:1792,1570,server,0:1792,1555,server,0:1792,769,server,0:1792,770,server,0:1792,771,server,0:1792,772,server,0:1792,773,server,0:1792,774,server,0:1792,768,server,0:1792,34320,server,0:1792,34321,server,0:1792,34322,server,0:1792,34323,server,0:1792,33282,server,0:1792,33283,server,0
+
+#  Attributes that support min/max setting.
+BoundAttributes:0,0,server,0:0,7,server,0:10,1,server,0:10,0,server,0:1794,0,server,0:2048,0,client,0:2048,0,server,0:1794,512,server,0:1794,768,server,0:1794,771,server,0
+
+#  Points to the ECC 163k1 library that you wish to link against.
+Ecc163k1Path:PATH(STACK_RELATIVE):build/ecc-library-internal-unix-gcc-simulation-simulation/ecc-library-internal.a
+
+#  Points to the ECC 283k1 library that you wish to link against.
+Ecc283k1Path:PATH(STACK_RELATIVE):build/ecc-library-283k1-internal-unix-gcc-simulation-simulation/ecc-library-283k1-internal.a
+
+#  Lists the channels that this application will be configured to use.
+Channels:11
+
+#  Definitions of individual endpoints. For each endpoint the endpoint number
+#  (1-254) is listed, as well as the endpoint type that this endpoint will
+#  serve.
+ConfiguredEndpoints:*1&-1&-1&0&Primary&Primary,2&-1&-1&0&Meter Mirror&Primary
+
+#  A single specification version for each profile defining the max version of
+#  the spec supported by this configuration.
+SpecVersions:
+
+#  In case of a network coprocessor, this lists a host processor used.
+Host:simulation
+
+#  Ember network processor targeted for this application.
+Platform:simulation
+
+#  Enable callbacks.
+Callbacks:REGISTRATION,TRUST_CENTER_JOIN,EMBER_AF_PLUGIN_BUTTON_JOINING_BUTTON_EVENT,EMBER_AF_PLUGIN_CONCENTRATOR_BROADCAST_SENT,EMBER_AF_PLUGIN_INTERPAN_INTERPAN_PRE_MESSAGE_RECEIVED,EMBER_AF_PLUGIN_NETWORK_FIND_NETWORK_FIND_FINISHED,EMBER_AF_PLUGIN_NETWORK_FIND_GET_RADIO_POWER_FOR_CHANNEL,EMBER_AF_PLUGIN_NETWORK_FIND_JOIN,SIMPLE_METERING_CLUSTER_REQUEST_MIRROR_RESPONSE,SIMPLE_METERING_CLUSTER_MIRROR_REMOVED,EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_PROCESS_NOTIFICATION_FLAGS,SIMPLE_METERING_CLUSTER_GET_NOTIFIED_MESSAGE,EMBER_AF_PLUGIN_PRICE_CLIENT_PRICE_EXPIRED,EMBER_AF_PLUGIN_PRICE_CLIENT_PRICE_STARTED,
+
+#  If bindings are enabled then this is the maximum number of supported
+#  bindings.
+NumberOfBindings:10
+
+#  The size of the stack address table which will be used by the stack to
+#  maintain IEEE to ZigBee short id mappings.
+AddressTableSize:2
+
+#  The size of the portion of the address table used by the trust center as an
+#  address cache. The total size of the address table will be equal to this
+#  value plus the size of the address table set in the AddressTableSize.
+TrustCenterCacheSize:2
+
+#  Maximum number of supported reported attributes.
+ReportTableSize:5
+
+#  The mode of the link key handling on a trust center.
+LinkKeyMode:2
+
+#  If not using multiple endpoint support, this value contains the default
+#  endpoint. With multiple endpoint support, this number is ignored.
+Endpoint:10
+
+#  Version of this device.
+DeviceVersion:0
+
+#  Master endpoint which contains global information.
+DefaultDestinationEndpoint:10
+
+#  Profile Id used for the application.
+ProfileId:-1
+
+#  Device Id used for the application.
+DeviceId:-1
+
+#  The largest size for a fragment buffer.
+FragmentationMaxSize:255
+
+#  Size of the table for source routing.
+SourceRouteTableSize:7
+
+#  Default response policy.
+DefaultResponsePolicy:0
+
+#  The level of debugging supported.
+DebugLevel:0
+
+#  Configuration of command-line interface.
+CLIMode:2
+
+#  If key switch is time based, then this value contains the number of seconds
+#  between switches.
+KeySwitchInterval:604800
+
+#  If key switching is enabled, this value describes the kind of switch type
+#  that the application does.
+KeySwitchType:0
+
+#  The type of key generation, random or ping-pong.
+KeyGenerationType:0
+
+#  If this option is set to true, standard reporting is enabled.
+EnableStandardReporting:false
+
+#  If the device needs to perform inter-PAN sends, then this option should be
+#  enabled.
+EnableInterPanSend:false
+
+#  If the device needs to perform inter-PAN receives, then this option should be
+#  enabled.
+EnableInterPanReceive:false
+
+#  Enable serial commands for ZDO.
+EnableZdoSerialCommands:false
+
+#  Enable this option if you wish to enable device bindings.
+EnableBindings:true
+
+#  Turn this option on, if end-device binding is enabled.
+EnableEndDeviceBind:false
+
+#  Enables the statistics receiving.
+EnableReceiveStatistics:false
+
+#  If true, then command discovery commands are supported.
+SupportCommandDiscovery:true
+
+#  Selects whether application will use the ECC 163k1 library.
+UseEcc163k1:true
+
+#  Selects whether application will use the ECC 283k1 library.
+UseEcc283k1:true
+
+#  Enable preconfigured keys for security.
+PreconfiguredKeyEnabled:false
+
+#  Enable network key.
+NetworkKeyEnabled:false
+
+#  If this option is turned on, then appBuilder will automatically generate the
+#  files, immediately upon saving the ISC file.
+AutoGenerate:false
+
+#  Enable key switching.
+EnableKeySwitch:false
+
+#  Use this setting to turn on fragmentation.
+FragmentationEnable:false
+
+#  Enables concentrator support
+EnableConcentrator:false
+
+#  If true, then this concentrator is low ram, otherwise high ram
+LowRamConcentrator:true
+
+#  If this option is set to true, then MFG_INSTALL_CODE token is used for
+#  setting the security install code.
+UseSeInstallCodes:false
+
+#  If this option is turned on, then the code will enable the checking of the
+#  attributes.
+EnableAttributeRangeChecking:false
+
+#  Enable application handling of supported ZigBee Device Object messages.
+ReceiveSupportedZdoRequests:false
+
+#  Enable application handling of unsupported ZigBee Device Object messages.
+HandleUnsupportedZdoRequests:false
+
+#  Enable application handling of ZigBee Device Object requests related to
+#  endpoints.
+HandleEndpointZdoRequests:false
+
+#  Enable application handling of ZigBee Device Object requests related to
+#  bindings.
+HandleBindingZdoRequests:false
+
+#  Use token for TX power mode.
+TxPowerModeUseToken:true
+
+#  Enable boost power mode.
+BoostMode:false
+
+#  Enable the alternate transmitter output.
+AlternatePowerMode:false
+
+#  Use legacy CLI instead of generated CLI.
+LegacyCli:false
+
+#  Add Custom CLI sub-menu
+AddCustomCli:false
+
+#  Include command and argument descriptions in the embedded code.
+IncludeCommandDescriptions:true
+
+#  If set, then project-specific callbacks file will be generated.
+GenerateCallbacksFile:true
+
+#  Actual preconfigured key, if it is enabled.
+PreconfiguredKey:56777777777777777777777777777777
+
+#  Actual network key.
+NetworkKey:12333333333333333333333333333333
+
+#  Actual second network key.
+NetworkKey2:ABCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+
+# Setup configurations
+{setupId:additionalFiles
+}
+{setupId:boardHeader
+unknown=DEFAULT,,,
+em357=DEFAULT,,,100101001001000110011001000100010001100101000100100100001000100110011001100101000100000110000001
+}
+{setupId:bootloader
+em357=null,
+}
+{setupId:debugConfiguration
+on
+area name off
+appSerial=1
+compile,CALENDAR_CLUSTER
+compile,DEBUG
+compile,DEMAND_RESPONSE_LOAD_CONTROL_CLUSTER
+compile,DEVICE_MANAGEMENT_CLUSTER
+compile,ENERGY_MANAGEMENT_CLUSTER
+compile,EVENTS_CLUSTER
+compile,MESSAGING_CLUSTER
+compile,PREPAYMENT_CLUSTER
+compile,PRICE_CLUSTER
+compile,REGISTRATION
+compile,SIMPLE_METERING_CLUSTER
+compile,TIME_CLUSTER
+compile,ZDO
+enable,CALENDAR_CLUSTER
+enable,DEBUG
+enable,DEMAND_RESPONSE_LOAD_CONTROL_CLUSTER
+enable,DEVICE_MANAGEMENT_CLUSTER
+enable,EVENTS_CLUSTER
+enable,KEY_ESTABLISHMENT_CLUSTER
+enable,MESSAGING_CLUSTER
+enable,PREPAYMENT_CLUSTER
+enable,PRICE_CLUSTER
+enable,SIMPLE_METERING_CLUSTER
+enable,TIME_CLUSTER
+}
+{setupId:halOptions
+}
+{setupId:information
+\{key:description
+
+\}
+}
+{setupId:macros
+}
+{setupId:rf4ce
+nodeCapabilities=0
+vendorId=65521
+vendorString=
+userString=
+deviceTypes=[254]
+profileIds=[0]
+power=3
+}
+{setupId:rf4ceMso
+}
+{setupId:rf4ceZrc
+}
+{setupId:serial
+em357=0,false,*,*,*,*,*,*1,*,115200,*,*,fifo,128
+}
+{setupId:token
+}
+#  The name of the set of Command Line Interface (CLI) commands that are
+#  compiled into the application by default.
+CliCommandSet:Full
+
+#  These are the various Command Line Interface (CLI) commands that can be
+#  included, or excluded (if they are included by default), in the application.
+CliCommands:compile,plugin price-client bill-period printCurrent
+
+CliCommands:compile,plugin price-client block-period printEvent
+
+CliCommands:compile,plugin price-client calf-value printEvent
+
+CliCommands:compile,plugin price-client co2-value printCurrent
+
+CliCommands:compile,plugin price-client consol-bill print
+
+CliCommands:compile,plugin price-client consol-bill printCurrent
+
+CliCommands:compile,plugin price-client consol-bill printEvent
+
+CliCommands:compile,plugin price-client conv-factor printEvent
+
+CliCommands:compile,plugin price-client cpp-event print
+
+CliCommands:compile,plugin price-client cpp-event setAuth
+
+CliCommands:compile,plugin price-client credit-pmt print
+
+CliCommands:compile,plugin price-client credit-pmt printEvent
+
+CliCommands:compile,plugin price-client currency-convers printCurrent
+
+CliCommands:compile,plugin price-client currency-convers printEvent
+
+CliCommands:compile,plugin price-client init
+
+CliCommands:compile,plugin price-client print
+
+CliCommands:compile,plugin price-client printEvent
+
+CliCommands:compile,plugin price-client table-clear
+
+CliCommands:compile,plugin price-client tier-label printTariff
+
+CliCommands:compile,zcl calendar get-calendar
+
+CliCommands:compile,zcl calendar get-cancellation
+
+CliCommands:compile,zcl calendar get-day-profiles
+
+CliCommands:compile,zcl calendar get-seasons
+
+CliCommands:compile,zcl calendar get-special-days
+
+CliCommands:compile,zcl calendar get-week-profiles
+
+#  Plugin configuration
+appPlugin:address-table,true
+
+appPlugin:aes-cmac,false
+
+appPlugin:basic,false
+
+appPlugin:bulb-pwm-configuration,false
+
+appPlugin:bulb-ui,false
+
+appPlugin:button-joining,true
+
+appPlugin:calendar-client,false
+
+appPlugin:calendar-common,true
+
+appPlugin:calendar-server,true
+
+appPlugin:color-control,false
+
+appPlugin:color-server,false
+
+appPlugin:comms-hub-function,false
+
+appPlugin:concentrator,true
+
+appPlugin:counters,false
+
+appPlugin:device-database,false
+
+appPlugin:device-management-client,true
+
+appPlugin:device-management-server,true
+
+appPlugin:device-query-service,false
+
+appPlugin:diagnostic-server,false
+
+appPlugin:door-lock-server,false
+
+appPlugin:drlc,false
+
+appPlugin:drlc-server,true
+
+appPlugin:eeprom,false
+
+appPlugin:ember-minimal-printf,true
+
+appPlugin:end-device-support,false
+
+appPlugin:esi-management,true
+
+appPlugin:events-client,true
+
+appPlugin:events-server,true
+
+appPlugin:exosite-demo,false
+
+appPlugin:ezmode-commissioning,false
+
+appPlugin:find-and-bind,false
+
+appPlugin:form-and-join,true
+
+appPlugin:fragmentation,true
+
+appPlugin:gas-proxy-function,false
+
+appPlugin:gbcs-device-log,false
+
+appPlugin:gbcs-gas-meter,false
+
+appPlugin:gbz-message-controller,false
+
+appPlugin:general-response-commands,false
+
+appPlugin:groups-client,false
+
+appPlugin:groups-server,false
+
+appPlugin:hc-11073-tunnel,false
+
+appPlugin:ias-zone-client,false
+
+appPlugin:ias-zone-server,false
+
+appPlugin:identify,false
+
+appPlugin:identify-feedback,false
+
+appPlugin:infrared-led,false
+
+appPlugin:interpan,true
+
+appPlugin:key-establishment,true
+
+appPlugin:led-dim-pwm,false
+
+appPlugin:led-rgb-pwm,false
+
+appPlugin:led-temp-pwm,false
+
+appPlugin:level-control,false
+
+appPlugin:lwip,false
+
+appPlugin:lwip-callback-tests,false
+
+appPlugin:lwip-interface,false
+
+appPlugin:lwip-stats,false
+
+appPlugin:lwip-udp-wrapper,false
+
+appPlugin:messaging-client,false
+
+appPlugin:messaging-server,true
+
+appPlugin:meter-mirror,true
+
+appPlugin:meter-snapshot-client,true
+
+appPlugin:meter-snapshot-server,true
+
+appPlugin:meter-snapshot-storage,true
+
+appPlugin:mn-price-passthrough,false
+
+appPlugin:network-commissioner,false
+
+appPlugin:network-creator,false
+
+appPlugin:network-find,true
+
+appPlugin:network-steering,false
+
+appPlugin:on-off,false
+
+appPlugin:ota-bootload,false
+
+appPlugin:ota-client,false
+
+appPlugin:ota-client-policy,false
+
+appPlugin:ota-common,false
+
+appPlugin:ota-server,false
+
+appPlugin:ota-server-policy,false
+
+appPlugin:ota-storage-common,false
+
+appPlugin:ota-storage-posix-filesystem,false
+
+appPlugin:ota-storage-simple,false
+
+appPlugin:ota-storage-simple-eeprom,false
+
+appPlugin:ota-storage-simple-ram,false
+
+appPlugin:partner-link-key-exchange,true
+
+appPlugin:permit-join-manager,false
+
+appPlugin:poll-control-client,false
+
+appPlugin:poll-control-server,false
+
+appPlugin:prepayment-client,true
+
+appPlugin:prepayment-server,true
+
+appPlugin:prepayment-snapshot-storage,false
+
+appPlugin:price-client,true
+
+appPlugin:price-common,true
+
+appPlugin:price-server,true
+
+appPlugin:reporting,false
+
+appPlugin:rf4ce-gdp,false
+
+appPlugin:rf4ce-gdp-identification-client,false
+
+appPlugin:rf4ce-gdp-identification-server,false
+
+appPlugin:rf4ce-mso,false
+
+appPlugin:rf4ce-mso-ir-rf-database-originator,false
+
+appPlugin:rf4ce-mso-ir-rf-database-recipient,false
+
+appPlugin:rf4ce-profile,false
+
+appPlugin:rf4ce-zrc11,false
+
+appPlugin:rf4ce-zrc20,false
+
+appPlugin:rf4ce-zrc20-action-mapping-client,false
+
+appPlugin:rf4ce-zrc20-action-mapping-server,false
+
+appPlugin:rf4ce-zrc20-ha-client,false
+
+appPlugin:rf4ce-zrc20-ha-server,false
+
+appPlugin:rtos,false
+
+appPlugin:scenes,false
+
+appPlugin:scenes-client,false
+
+appPlugin:simple-clock,true
+
+appPlugin:simple-main,true
+
+appPlugin:simple-metering-client,true
+
+appPlugin:simple-metering-server,true
+
+appPlugin:sleepy-message-queue,false
+
+appPlugin:smart-energy-registration,true
+
+appPlugin:stack-diagnostics,false
+
+appPlugin:standalone-bootloader-client,false
+
+appPlugin:standalone-bootloader-common,false
+
+appPlugin:standalone-bootloader-server,false
+
+appPlugin:standard-printf-support,false
+
+appPlugin:tcp-packet-reader,false
+
+appPlugin:test-harness,false
+
+appPlugin:throughput,false
+
+appPlugin:time-server,true
+
+appPlugin:trust-center-backup,false
+
+appPlugin:trust-center-keepalive,false
+
+appPlugin:trust-center-nwk-key-update-broadcast,false
+
+appPlugin:trust-center-nwk-key-update-periodic,false
+
+appPlugin:trust-center-nwk-key-update-unicast,false
+
+appPlugin:tunneling-client,true
+
+appPlugin:tunneling-server,false
+
+appPlugin:update-tc-link-key,false
+
+appPlugin:xmodem-sender,false
+
+appPlugin:zcl-ip,false
+
+appPlugin:zigbee-internet-client,false
+
+appPlugin:zigbee-internet-device-common,false
+
+appPlugin:zigbee-internet-keepalive,false
+
+appPlugin:zigbee-internet-server,false
+
+appPlugin:zigbee-network-stub,false
+
+appPlugin:zll-commissioning,false
+
+appPlugin:zll-identify-server,false
+
+appPlugin:zll-level-control-server,false
+
+appPlugin:zll-on-off-server,false
+
+appPlugin:zll-scenes-client,false
+
+appPlugin:zll-scenes-server,false
+
+appPlugin:zll-utility-client,false
+
+appPlugin:zll-utility-server,false
+
+appPlugin:idle-sleep,false
+
+appPlugin:low-voltage-shutdown,false
+
+appPlugin:manufacturing-library-cli,false
+
+appPlugin:alarm-library,false
+
+appPlugin:binding-table-library,true
+
+appPlugin:cbke-163k1-library,true
+
+appPlugin:cbke-283k1-library,true
+
+appPlugin:cbke-library-core,true
+
+appPlugin:cbke-library-dsa-sign,false
+
+appPlugin:cbke-library-dsa-verify,false
+
+appPlugin:debug-basic-library,false
+
+appPlugin:debug-extended-library,false
+
+appPlugin:ecc-library-163k1,true
+
+appPlugin:ecc-library-283k1,true
+
+appPlugin:end-device-bind-library,false
+
+appPlugin:enhanced-beacon-request-library,false
+
+appPlugin:install-code-library,false
+
+appPlugin:manufacturing-library,false
+
+appPlugin:multi-network-library,false
+
+appPlugin:packet-validate-library,true
+
+appPlugin:rf4ce-stack-library,false
+
+appPlugin:security-library-core,true
+
+appPlugin:security-link-keys-library,true
+
+appPlugin:zigbee-pro-leaf-library,false
+
+appPlugin:zigbee-pro-library,true
+
+appPlugin:zll-library,false
+
+appPlugin:hal-library,true
+
+appPlugin:hal-library-rtos,false
+
+appPlugin:sim-eeprom1,true
+
+appPlugin:sim-eeprom2,false
+
+appPlugin:sim-eeprom2-1to2-upgrade,false
+
+appPlugin:sim-eeprom2-1to2-upgrade-stub,false
+
+#  Plugin specific options
+AppPluginOption:EMBER_AF_PLUGIN_MESSAGING_SERVER_MESSAGE_SIZE,254
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_ENABLE,true
+
+AppPluginOption:EMBER_AF_PLUGIN_TIME_SERVER_MASTER,true
+
+AppPluginOption:EMBER_BINDING_TABLE_SIZE,10
+
+AppPluginOption:EMBER_KEY_TABLE_SIZE,6
+
+AppPluginOption:EMBER_AF_PLUGIN_PRICE_SERVER_TARIFF_MATRIX_SUPPORT,true
+
+AppPluginOption:EMBER_AF_PLUGIN_KEY_ESTABLISHMENT_SE_VERSION,1.2 and later
+
+AppPluginOption:EMBER_AF_PLUGIN_CALENDAR_COMMON_TOTAL_CALENDARS,3
+
+AppPluginOption:EMBER_AF_PLUGIN_CALENDAR_COMMON_SCHEDULE_ENTRIES_MAX,48
+
+AppPluginOption:EMBER_AF_PLUGIN_CALENDAR_COMMON_SEASON_PROFILE_MAX,11
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_CLIENT_NUMBER_OF_INTERVALS_SUPPORTED,5
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_PROFILES,24
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_TYPE,Electric meter
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_BATTERY_RATE,5
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_ERRORS,false
+
+AppPluginOption:EMBER_AF_PLUGIN_PRICE_SERVER_TARIFF_TABLE_SIZE,6
+
+AppPluginOption:EMBER_AF_PLUGIN_FRAGMENTATION_BUFFER_SIZE,1000
+
+AppPluginOption:EMBER_AF_PLUGIN_ECC_LIBRARY_163K1_LIBRARY_PATH,PATH(STACK_RELATIVE):build/ecc-library-internal-unix-gcc-simulation-simulation/ecc-library-internal.a
+
+AppPluginOption:EMBER_AF_PLUGIN_ECC_LIBRARY_283K1_LIBRARY_PATH,PATH(STACK_RELATIVE):build/ecc-library-283k1-internal-unix-gcc-simulation-simulation/ecc-library-283k1-internal.a
+

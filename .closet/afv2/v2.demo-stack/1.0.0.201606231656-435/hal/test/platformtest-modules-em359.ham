@@ -1,0 +1,118 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the EM359 variant of 'platformtest' target.
+# This file is defined under the platformtest target in the Jamfile with
+# the directives
+#    ModuleList hal/test/platformtest-modules-em359.ham ;
+#    SubIncludeFile TOP hal test : platformtest-modules-em359.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_2)
+    #define SER232 2
+  #elif defined(SER232_3)
+    #define SER232 3
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 1
+  #endif
+  #define EMBER_APPLICATION_HAS_BUTTON_HANDLER
+  #define EMBER_APPLICATION_HAS_CUSTOM_SIM_EEPROM_CALLBACK
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "Ember Test Application v3.0"
+  #include "hal/micro/cortexm3/test/adchal-test.c"
+  #include "hal/micro/cortexm3/test/adccal-test.c"
+  #include "hal/micro/cortexm3/test/board-test.c"
+  #include "hal/micro/cortexm3/test/button-test.c"
+  #include "hal/micro/cortexm3/test/led-test.c"
+  #include "hal/micro/cortexm3/test/calrc-test.c"
+  #include "hal/micro/cortexm3/test/clock-test.c"
+  #include "hal/micro/cortexm3/test/delay-test.c"
+  #include "hal/micro/cortexm3/test/flash-test.c"
+  #include "hal/micro/cortexm3/test/gpio-test.c"
+  #include "hal/micro/cortexm3/test/gpt-test.c"
+  #include "hal/micro/cortexm3/test/iic-test.c"
+  #include "hal/micro/cortexm3/test/intcount-test.c"
+  #include "hal/micro/cortexm3/test/itm-test.c"
+  #include "hal/micro/cortexm3/test/memory-test.c"
+  #include "hal/micro/cortexm3/test/nvm-test.c"
+  #include "hal/micro/cortexm3/test/pctrace-test.c"
+  #include "hal/micro/cortexm3/test/periph-disable-test.c"
+  #include "hal/micro/cortexm3/test/ramvectors-test.c"
+  #include "hal/micro/cortexm3/test/security-test.c"
+  #include "hal/micro/cortexm3/test/serial-hekla-test.c"
+  #include "hal/micro/cortexm3/test/simee-test.c"
+  #include "hal/micro/cortexm3/test/sleep-test.c"
+  #include "hal/micro/cortexm3/test/sleep-timer-test.c"
+  #include "hal/micro/cortexm3/test/spi-master-test.c"
+  #include "hal/micro/cortexm3/test/token-cortexm3-test.c"
+  #include "hal/micro/cortexm3/test/watchdog-test.c"
+  #include "hal/micro/cortexm3/test/crash-info.c"
+  #include "hal/micro/cortexm3/test/usb-test.c"
+  #include "hal/micro/cortexm3/test/usb-test2.c"
+  #include "hal/micro/cortexm3/test/touchsense-emutest.c"
+  #include "hal/test/misc-test.c"
+  #include "hal/test/reset-test.c"
+  #include "hal/test/token-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/adchal-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/adccal-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/board-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/button-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/led-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/access.s79
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/calrc-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/clock-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/delay-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/flash-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/gpio-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/gpt-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/iic-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/intcount.s79
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/intcount-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/itm-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/memory-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/nvm.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/nvm-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/pctrace-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/periph-disable-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/ramvectors-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/security-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/serial-hekla-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/simee-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/sleep-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/sleep-timer-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/spi-master-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/token-cortexm3-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/watchdog-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/crash-info.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/usb-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/usb-test2.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/touchsense-emutest.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/misc-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/token-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-tx-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-timer-test-stub.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT

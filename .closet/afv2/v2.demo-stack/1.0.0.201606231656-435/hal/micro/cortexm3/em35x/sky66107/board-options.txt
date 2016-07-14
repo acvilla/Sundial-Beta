@@ -1,0 +1,16 @@
+# SKY66107 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"dev0680"         "Standard Breakout Board"     "hal/micro/cortexm3/em35x/board/dev0680.h"
+"dev0680spi"      "Breakout Board for EZSP-SPI" "hal/micro/cortexm3/em35x/board/dev0680spi.h"
+"ncp_spi"         "NCP with EZSP-SPI on SC2"    "hal/micro/cortexm3/em35x/board/dev0680spi.h"
+"dev0680spitest"  "Breakout Board for EZSP-SPI with nSIMRST" "hal/micro/cortexm3/em35x/board/dev0680spitest.h"
+"dev0680nodetest" "Breakout Board for Nodetest builds"     "hal/micro/cortexm3/em35x/board/dev0680nodetest.h"
+"dev0680uart"     "Breakout Board for EZSP-UART"     "hal/micro/cortexm3/em35x/board/dev0680uart.h"
+"ncp_uart"        "NCP with EZSP-UART on SC1"     "hal/micro/cortexm3/em35x/board/dev0680uart.h"
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"dev0680etm"         "Standard Breakout Board with optional ETM support"     "hal/micro/cortexm3/em35x/board/dev0680etm.h"
+"dev0680_sky66107" "SKY66107 SiP Module" "hal/micro/cortexm3/em35x/board/dev0680_sky66107.h"
+"breakout_board"   "Breakout board alias" "hal/micro/cortexm3/em35x/board/dev0680_sky66107.h"
+

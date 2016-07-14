@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-bulb-config" name="Plugin Commands: Bulb PWN Configuration">
+    <description>
+      Bulb Config is a plugin that implements a HAL layer for the light bulb.
+	  It includes a bulb-specific PWM driver, as well as CIB token space for 
+	  configuring the PWM driver as well as the TX Power.
+    </description>
+  </group>
+  <command cli="plugin bulb-config pwm1" functionName="bulbConfigPwmPwm1" group="plugin-bulb-config">
+    <description>
+	Value of PWM 1.
+    </description>
+    <arg name="value" type="INT16U" description = "Value to write to PWM1 output." />
+   </command>
+  <command cli="plugin bulb-config pwm2" functionName="bulbConfigPwmPwm2" group="plugin-bulb-config">
+    <description>
+	Value of PWM 2.
+    </description>
+    <arg name="value" type="INT16U" description = "Value to write to PWM2 output." />
+   </command>
+  <command cli="plugin bulb-config pwm3" functionName="bulbConfigPwmPwm3" group="plugin-bulb-config">
+    <description>
+	Value of PWM 3.
+    </description>
+    <arg name="value" type="INT16U" description = "Value to write to PWM3 output." />
+   </command>
+  <command cli="plugin bulb-config pwm4" functionName="bulbConfigPwmPwm4" group="plugin-bulb-config">
+    <description>
+	Value of PWM 4.
+    </description>
+    <arg name="value" type="INT16U" description = "Value to write to PWM4 output." />
+   </command>
+  <command cli="plugin bulb-config rgb" functionName="bulbConfigPwmRGB" group="plugin-bulb-config">
+    <description>
+	Value of red, green, and blue LED outputs.
+    </description>
+    <arg name="redValue" type="INT16U" description = "Values to write to red PWM output." />
+    <arg name="greenValue" type="INT16U" description = "Values to write to green PWM output." />
+    <arg name="blueValue" type="INT16U" description = "Values to write to blue PWM output." />
+   </command>
+  <command cli="plugin bulb-config white" functionName="bulbConfigPwmWhite" group="plugin-bulb-config">
+    <description>
+	Value of white LED.
+    </description>
+    <arg name="value" type="INT16U" description = "Value to write to white PWM output." />
+   </command>
+  <command cli="plugin bulb-config on" functionName="emAfPluginBulbConfigOnCommand" group="plugin-bulb-config">
+    <description>
+	Turn White LED on full.
+    </description>
+    <arg name="onTime" type="INT8U" description = "On time." />
+   </command>
+  <command cli="plugin bulb-config off" functionName="emAfPluginBulbConfigOnCommand" group="plugin-bulb-config">
+    <description>
+	Turn White LED off full.
+    </description>
+    <arg name="offTime" type="INT8U" description = "Off time." />
+   </command>
+  <command cli="plugin bulb-config blink" functionName="emAfPluginBulbConfigBlinkCommand" group="plugin-bulb-config">
+    <description>
+	Blink the white LED.  
+    </description>
+    <arg name="count" type="INT8U" description = "Count." />
+    <arg name="blinkTime" type="INT16U" description = "Blink timing." />
+   </command>
+  <command cli="plugin bulb-config pattern" functionName="emAfPluginBulbConfigBlinkPatternCommand" group="plugin-bulb-config">
+    <description>
+	Blink a test pattern.
+    </description>
+   </command>
+  <command cli="plugin bulb-config indicate" functionName="emAfPwmIndicateCommand" group="plugin-bulb-config">
+    <description>
+	Value of white PWM.
+    </description>
+    <arg name="value" type="INT8U" description = "Number of indications." />
+    <arg name="value" type="INT16U" description = "Time (in mS) for 1/2 cycle of indication." />
+   </command>
+</cli>

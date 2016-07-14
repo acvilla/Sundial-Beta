@@ -1,0 +1,11 @@
+
+/** @brief BlinkStop
+ *
+ * This callback is called when it is time for the bulb to stop any blinking
+ * that may be underway.
+ *
+ * @param endpoint   Ver.: always
+ */
+void emberAfPluginBulbPwmConfigurationBlinkStopCallback(uint8_t endpoint)
+{
+}

@@ -1,0 +1,5 @@
+# Silicon Labs F96x BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"udpf960emif"    "UDP F960 MCU EMIF"    "hal/micro/c8051/silabs/F96x/board/UDP_F960_MCU_EMIF_defs.h"

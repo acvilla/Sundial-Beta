@@ -1,0 +1,12 @@
+# EM341 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"dev0680"         "Standard Breakout Board"                     "hal/micro/cortexm3/em35x/board/dev0680.h"
+"breakout_board"  "Breakout board alias"                        "hal/micro/cortexm3/em35x/board/dev0680.h"
+"rd17a"           "Full Featured RF4CE Controller Hard Codec"   "hal/micro/cortexm3/em35x/board/rd17a-full-featured-controller-hard-codec.h"
+"rd17b"           "Full Featured RF4CE Controller Soft Codec"   "hal/micro/cortexm3/em35x/board/rd17b-full-featured-controller-soft-codec.h"
+"rd43"            "Low Cost RF4CE Controller"                   "hal/micro/cortexm3/em35x/board/rd43-low-cost-controller.h"
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"dev0680_infrared" "IR LED demo mockup"           "hal/micro/cortexm3/em35x/board/dev0680_infrared.h"
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sink/Empty.isc&apos; to &apos;Sink.isc&apos;" description="Rename resource &apos;Empty.isc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Empty.isc" name="Sink.isc" stamp="1467334848053" updateReferences="true"/>
+</session>

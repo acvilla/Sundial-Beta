@@ -1,0 +1,16 @@
+api(humidity) {
+  name=Humidity
+  callbacks=$HAL/config/humidity-callback.info
+}
+api(illuminance) {
+  name=Illuminance
+  callbacks=$HAL/config/illuminance-callback.info
+}
+api(occupancy) {
+  name=Occupancy
+  callbacks=$HAL/config/occupancy-callback.info
+}
+api(temperature) {
+  name=Temperature
+  callbacks=$HAL/config/temperature-callback.info
+}

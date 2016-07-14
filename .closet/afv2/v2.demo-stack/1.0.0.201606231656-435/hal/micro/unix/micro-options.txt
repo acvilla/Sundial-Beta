@@ -1,0 +1,8 @@
+# unix MICRO options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"simulation"  "Unix Simulation"         "hal/micro/unix/simulation"
+"host"        "Unix EZSP-UART Host"     "hal/micro/unix/host"
+
+default => "simulation"

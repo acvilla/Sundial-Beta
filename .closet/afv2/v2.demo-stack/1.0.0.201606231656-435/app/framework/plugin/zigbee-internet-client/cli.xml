@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-zigbee-internet-client" name="Plugin Commands: zigbee-internet-client">
+    <description>This plugin provides functionality to host local and remote ZCL processing. It defines the set of ZCL clusters that are handled locally. It provides the interface to send and receive ZCL cluster messages to the remote device over IP.</description>
+  </group>
+  <command cli="plugin zigbee-internet-client add-remote-cluster" functionName="emberAfPluginZigbeeInternetClientAddRemoteClusterCommand" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Add a remote cluster entry.
+    </description>
+    <arg name="ClusterId" type="INT16U" description="Cluster Id" />
+    <arg name="profileId" type="INT16U" description="Profile Id" />
+    <arg name="deviceId"  type="INT16U" description="Device Id" />
+    <arg name="endpoint"  type="INT8U"  description="The endpoint associated with the cluster"/>
+    <arg name="type"      type="INT8U"  description="Server (0x0001) or client type (0x0002), or both (0x0003)."/>
+  </command>
+  <command cli="plugin zigbee-internet-client print-remote-clusters" functionName="emberAfPluginZigbeeInternetClientPrintRemoteClusters" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Print the remote cluster table.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-client status" functionName="emberAfPluginZigbeeInternetClientStatusCommand" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Print the remote host and the state of the connection.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-client start" functionName="emberAfPluginZigbeeInternetClientStart" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Initiate a connection to the remote host.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-client stop" functionName="emberAfPluginZigbeeInternetClientStop" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Close the connection to the remote host.
+    </description>
+  </command>
+  <command cli="plugin zigbee-internet-client cli-send" functionName="emberAfPluginZigbeeInternetClientEnableUpstreamCliSendCommand" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      ZCL CLI commands are sent up to the Internet server.
+    </description>
+    <arg name="enable" type="BOOLEAN" description="Enable/disable sending to Internet."/>
+  </command>
+  <command cli="plugin zigbee-internet-client set-remote-host" functionName="emberAfPluginZigbeeInternetClientSetRemoteHostCommand" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+      Set the remote address of the ZigBee Internet Server that the ZigBee Internet Client will connect to.
+    </description>
+    <arg name="host" type="OCTET_STRING" description="The remote address to connect to."/>
+  </command>
+  <command cli="plugin zigbee-internet-client remote-discovery" functionName="emberAfPluginZigbeeInternetCLientSetRemoteDiscoveryCommand" group="plugin-zigbee-internet-client"  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)">
+    <description>
+     Turn on/off remote discovery of the ZigBee Internet server's address.
+   </description>
+   <arg name="enable" type="BOOLEAN" description="Enable/disable remote discovery of the server."  restriction="!defined(DOXYGEN_SHOULD_SKIP_THIS)"/>
+  </command>
+</cli>

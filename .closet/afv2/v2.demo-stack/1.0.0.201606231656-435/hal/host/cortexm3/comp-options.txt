@@ -1,0 +1,6 @@
+# Cortex-M3 COMP options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"iarst" "IAR EWARM 6.X, STM32F103RET Host HAL" "hal/host/cortexm3/stm32f103ret/compiler/iar-st.h"
+

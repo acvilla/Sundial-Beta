@@ -1,0 +1,12 @@
+# 8051 MICRO options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+#TODO: we need to differentiate between different MCUs in the same family. 
+#For instance, F961, F962, etc. For now we assume each family has only one MCU
+# (for instance F96x has only F960) and the header files for that live in the
+# family directory (for instance F96x).
+
+"sif930"     "Silicon Labs F930"  "hal/micro/c8051/silabs/F93x"
+"sif960"     "Silicon Labs F960"  "hal/micro/c8051/silabs/F96x"
+"cobra"     "Cobra Project Processor"          "hal/micro/c8051/cobra"

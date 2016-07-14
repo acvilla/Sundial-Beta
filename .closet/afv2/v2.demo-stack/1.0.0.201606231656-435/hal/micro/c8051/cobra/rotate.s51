@@ -1,0 +1,93 @@
+/*****************************************************************************
+ *
+ *  Fast Rotate Right:  
+ *              __near_func int32u fast_rotr(int32u x, int8u n);
+ *
+ *              This function replaces the ROTR macro used in SHA256
+ *              computations.
+ *              
+ *              Adapted from public domain software written by Graham Cole.
+ *
+ *  Input:      R1           - the number of bits to rotate right
+ *              R5:R4:R3:R2 - 32-bit word to be rotated (MSB in R5, LSB in R2)
+ *              
+ *
+ *  Output:     R5:R4:R3:R2 - rotated 32-bit word (MSB in R5, LSB in R2)
+ *
+ *****************************************************************************/
+
+        PUBLIC fast_rotr
+        FUNCTION fast_rotr, 0
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+
+fast_rotr:
+        CODE
+
+        CLR     A                   ; negate right rotate count since
+        CLR     C                   ; we must actually rotate left
+        SUBB    A,R1
+
+        JNB     ACC.3,?rotr_x8_end  ;rotr eight
+                                    ;            R5R4R3R2
+                                    ; A = nn l = ABCDEFGH
+        XCH     A,R2                ; A = GH l = ABCDEFnn
+        XCH     A,R3                ; A = EF l = ABCDGHnn
+        XCH     A,R4                ; A = CD l = ABEFGHnn
+        XCH     A,R5                ; A = AB l = CDEFGHnn
+        XCH     A,R2                ; A = nn l = CDEFGHAB
+
+?rotr_x8_end:                       ;
+                                    ;rotr sixteen
+        JNB     ACC.4,?rotr_x16_end ;            R5R4R3R2
+                                    ;        l = ABCDEFGH
+        XCH     A,R5                ; A = AB l = nnCDEFGH
+        XCH     A,R3                ; A = EF l = nnCDABGH
+        XCH     A,R5                ; A = nn l = EFCDABGH
+        XCH     A,R4                ; A = CD l = EFnnABGH
+        XCH     A,R2                ; A = GH l = EFnnABCD
+        XCH     A,R4                ; A = nn 1 = EFGHABCD
+                                    ;
+?rotr_x16_end:                      ;
+        ANL     A,#07               ;
+        ADD     A,#2                ;
+        MOVC    A,@A+PC             ;
+        SJMP    ?table_end
+        DB      0,2,4,8,16,32,64,128
+?table_end:
+
+        JZ      ?rotr_x_end         ;
+                                    ;
+        MOV     R1,A                ;
+                                    ;            R5R4R3R2
+                                    ; A = nn l = ABCDEFGH
+        XCH     A,R2                ; A = GH l = ABCDEFnn
+        MOV     B,R1                ; A = GH l = ABCDEFnn
+        MUL     AB                  ; A = gh l = ABCDEFnn
+        XCH     A,R2                ; A = nn l = ABCDEFgh
+        MOV     R0,B                ;
+        XCH     A,R3                ; A = EF l = ABCDnngh
+        MOV     B,R1                ; A = EF l = ABCDnngh
+        MUL     AB                  ; A = ef l = ABCDnngh
+        ADD     A,R0                ; A = ef l = ABCDnngh
+        XCH     A,R3                ; A = nn l = ABCDefgh
+        MOV     R0,B                ;
+        XCH     A,R4                ; A = CD l = ABnnefgh
+        MOV     B,R1                ; A = CD l = ABnnefgh
+        MUL     AB                  ; A = cd l = ABnnefgh
+        ADD     A,R0                ; A = cd l = ABnnefgh
+        XCH     A,R4                ; A = nn l = ABcdefgh
+        MOV     R0,B                ;
+        XCH     A,R5                ; A = AB l = nncdefgh
+        MOV     B,R1                ; A = AB l = nncdefgh
+        MUL     AB                  ; A = ab l = nncdefgh
+        ADD     A,R0                ; A = ab l = nncdefgh
+        XCH     A,R5                ; A = nn l = abcdefgh
+                                    ;
+        XCH     A,R2                ; A = gh l = abcdefnn
+        ADD     A,B                 ; A = gh l = abcdefnn
+        XCH     A,R2                ; A = nn l = abcdefgh
+                                    ;
+?rotr_x_end:                        ;
+        RET
+
+        END

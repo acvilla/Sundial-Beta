@@ -1,0 +1,27 @@
+
+/** @brief Received
+ *
+ * This callback is generated when a keepalive is received from the remotely
+ * connected ZigBee Internet device.
+ *
+ * @param totalKeepalivesReceived   Ver.: always
+ * @param timeout   Ver.: always
+ */
+void emberAfPluginZigbeeInternetKeepaliveReceivedCallback(uint32_t totalKeepalivesReceived,
+                                                          bool timeout)
+{
+}
+
+/** @brief Send
+ *
+ * This callback is generated when the Keepalive plugin wants to send a ZCL-IP
+ * keepalive.
+ *
+ * @param dataToSend   Ver.: always
+ * @param dataLength   Ver.: always
+ */
+void emberAfPluginZigbeeInternetKeepaliveSendCallback(uint8_t*dataToSend,
+                                                      uint16_t dataLength)
+{
+
+}

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project id="com.silabs.ember.stack.znet.base" contentRoot=".">
+  <!-- Static File Definitions -->
+  <!-- General Files for all parts -->
+  <file name="zigbee-device-library.c" uri="$(sdkInstallationPath:default())/app/util/zigbee-framework/zigbee-device-library.c"/>
+  <file name="zigbee-device-common.c" uri="$(sdkInstallationPath:default())/app/util/zigbee-framework/zigbee-device-common.c"/>
+  <file name="zdo-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/zdo-cli.c"/>
+  <file name="zcl-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/zcl-cli.c"/>
+  <file name="util.c" uri="$(sdkInstallationPath:default())/app/framework/util/util.c"/>
+  <file name="time-util.c" uri="$(sdkInstallationPath:default())/app/framework/util/time-util.c"/>
+  <file name="service-discovery-soc.c" uri="$(sdkInstallationPath:default())/app/framework/util/service-discovery-soc.c"/>
+  <file name="service-discovery-common.c" uri="$(sdkInstallationPath:default())/app/framework/util/service-discovery-common.c"/>
+  <file name="serial.c" uri="$(sdkInstallationPath:default())/app/util/serial/serial.c"/>
+  <file name="security-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/security-cli.c"/>
+  <file name="security-address-cache.c" uri="$(sdkInstallationPath:default())/app/util/security/security-address-cache.c"/>
+  <file name="random.c" uri="$(stackHalPath:default())/micro/generic/random.c"/>
+  <file name="process-global-message.c" uri="$(sdkInstallationPath:default())/app/framework/util/process-global-message.c"/>
+  <file name="process-cluster-message.c" uri="$(sdkInstallationPath:default())/app/framework/util/process-cluster-message.c"/>
+  <file name="print.c" uri="$(sdkInstallationPath:default())/app/framework/util/print.c"/>
+  <file name="print-formatter.c" uri="$(sdkInstallationPath:default())/app/framework/util/print-formatter.c"/>
+  <file name="plugin-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/plugin-cli.c"/>
+  <file name="option-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/option-cli.c"/>
+  <file name="network-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/network-cli.c"/>
+  <file name="multi-network.c" uri="$(sdkInstallationPath:default())/app/framework/util/multi-network.c"/>
+  <file name="message.c" uri="$(sdkInstallationPath:default())/app/framework/util/message.c"/>
+  <file name="mem-util.c" uri="$(stackHalPath:default())/micro/generic/mem-util.c"/>
+  <file name="library.c" uri="$(sdkInstallationPath:default())/app/util/common/library.c"/>
+  <file name="endian.c" uri="$(stackHalPath:default())/micro/generic/endian.c"/>
+  <file name="ember-configuration.c" uri="$(stackHalPath:default())/ember-configuration.c"/>
+  <file name="em_usbint.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/em_usbint.c"/>
+  <file name="em_usbhal.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/em_usbhal.c"/>
+  <file name="em_usbdep.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/em_usbdep.c"/>
+  <file name="em_usbdch9.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/em_usbdch9.c"/>
+  <file name="em_usbd.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/em_usbd.c"/>
+  <file name="em_usbtimer.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/em_usbtimer.c"/>
+  <file name="crypto-state.c" uri="$(sdkInstallationPath:default())/app/framework/security/crypto-state.c"/>
+  <file name="crc.c" uri="$(stackHalPath:default())/micro/generic/crc.c"/>
+  <file name="core-cli.c" uri="$(sdkInstallationPath:default())/app/framework/cli/core-cli.c"/>
+  <file name="command-interpreter2.c" uri="$(sdkInstallationPath:default())/app/util/serial/command-interpreter2.c"/>
+  <file name="client-api.c" uri="$(sdkInstallationPath:default())/app/framework/util/client-api.c"/>
+  <file name="callbacks.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/cdc/callbacks.c"/>
+  <file name="descriptors.c" uri="$(stackHalPath:default())/micro/cortexm3/usb/cdc/descriptors.c"/>
+  <file name="attribute-table.c" uri="$(sdkInstallationPath:default())/app/framework/util/attribute-table.c"/>
+  <file name="attribute-storage.c" uri="$(sdkInstallationPath:default())/app/framework/util/attribute-storage.c"/>
+  <file name="attribute-size.c" uri="$(sdkInstallationPath:default())/app/framework/util/attribute-size.c"/>
+  <file name="af-trust-center.c" uri="$(sdkInstallationPath:default())/app/framework/security/af-trust-center.c"/>
+  <file name="af-security-common.c" uri="$(sdkInstallationPath:default())/app/framework/security/af-security-common.c"/>
+  <file name="af-node.c" uri="$(sdkInstallationPath:default())/app/framework/security/af-node.c"/>
+  <file name="af-main-soc.c" uri="$(sdkInstallationPath:default())/app/framework/util/af-main-soc.c"/>
+  <file name="af-main-common.c" uri="$(sdkInstallationPath:default())/app/framework/util/af-main-common.c"/>
+  <file name="af-event.c" uri="$(sdkInstallationPath:default())/app/framework/util/af-event.c"/>
+
+  <!-- EFR32 Files Only -->
+  <folder name="efr32"  partCompatibility="com.silabs.mcu.si32.efr32">
+  	<file name="token.c"                  uri="$(stackHalPath:default())/micro/cortexm3/efm32/token.c"/>
+  	<file name="token-def.c"              uri="$(stackHalPath:default())/micro/cortexm3/efm32/token-def.c"/>
+  	<file name="sleep-efm32.c"            uri="$(stackHalPath:default())/micro/cortexm3/efm32/sleep-efm32.c"/>
+  	<file name="graphics.c"               uri="$(stackHalPath:default())/micro/cortexm3/efm32/graphics.c"/>
+  	<file name="com.c"                    uri="$(sdkInstallationPath:default())/app/util/serial/com.c"/>
+    <file name="mpu.c"                    uri="$(stackHalPath:default())/micro/cortexm3/efm32/mpu.c"/>
+    <file name="micro-common.c"           uri="$(stackHalPath:default())/micro/cortexm3/efm32/micro-common.c"/>
+    <file name="mfg-token.c"              uri="$(stackHalPath:default())/micro/cortexm3/efm32/mfg-token.c"/>
+    <file name="led.c"                    uri="$(stackHalPath:default())/micro/cortexm3/efm32/led.c"/>
+    <file name="bsp_stk_leds.c"           uri="$(sdkInstallationPath:default())/submodules/kits/common/bsp/bsp_stk_leds.c"/>
+    <file name="isr-stubs.s79"            uri="$(stackHalPath:default())/micro/cortexm3/efm32/isr-stubs.s79"/>
+    <file name="faults.s79"               uri="$(stackHalPath:default())/micro/cortexm3/efm32/faults.s79"/>
+    <file name="diagnostic.c"             uri="$(stackHalPath:default())/micro/cortexm3/efm32/diagnostic.c"/>
+    <file name="cstartup-common.c"        uri="$(stackHalPath:default())/micro/cortexm3/efm32/cstartup-common.c"/>
+    <file name="buzzer.c"                 uri="$(stackHalPath:default())/micro/cortexm3/efm32/buzzer.c"/>
+    <file name="button.c"                 uri="$(stackHalPath:default())/micro/cortexm3/efm32/button.c"/>
+    <file name="adc.c"                    uri="$(stackHalPath:default())/micro/cortexm3/efm32/adc.c"/>
+    <file name="micro.c"                  uri="$(stackHalPath:default())/micro/cortexm3/efm32/micro.c"/>
+    <file name="ext-device.c"             uri="$(stackHalPath:default())/micro/cortexm3/efm32/ext-device.c"/>
+    <file name="assert-crash-handlers.c"  uri="$(stackHalPath:default())/micro/cortexm3/efm32/assert-crash-handlers.c"/>
+
+    <file name="dmadrv.c"                 uri="$(sdkInstallationPath:default())/submodules/emdrv/dmadrv/src/dmadrv.c"/>
+    <file name="gpiointerrupt.c"          uri="$(sdkInstallationPath:default())/submodules/emdrv/gpiointerrupt/src/gpiointerrupt.c"/>
+    <file name="rtcdriver.c"              uri="$(sdkInstallationPath:default())/submodules/emdrv/rtcdrv/src/rtcdriver.c"/>
+    <file name="sleep.c"                  uri="$(sdkInstallationPath:default())/submodules/emdrv/sleep/src/sleep.c"/>
+    <file name="tempdrv.c"                uri="$(sdkInstallationPath:default())/submodules/emdrv/tempdrv/src/tempdrv.c"/>
+    <file name="trace.c"                  uri="$(sdkInstallationPath:default())/submodules/emdrv/trace/src/trace.c"/>
+    <file name="uartdrv.c"                uri="$(sdkInstallationPath:default())/submodules/emdrv/uartdrv/src/uartdrv.c"/>
+    <file name="ustimer.c"                uri="$(sdkInstallationPath:default())/submodules/emdrv/ustimer/src/ustimer.c"/>
+    <file name="em_emu.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_emu.c"/>
+    <file name="em_gpio.c"                uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_gpio.c"/>
+    <file name="em_int.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_int.c"/>
+    <file name="em_ldma.c"                uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_ldma.c"/>
+    <file name="em_leuart.c"              uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_leuart.c"/>
+    <file name="em_mpu.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_mpu.c"/>
+    <file name="em_msc.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_msc.c"/>
+    <file name="em_prs.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_prs.c"/>
+    <file name="em_rmu.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_rmu.c"/>
+    <file name="em_rtcc.c"                uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_rtcc.c"/>
+    <file name="em_system.c"                uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_system.c"/>
+    <file name="em_timer.c"               uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_timer.c"/>
+    <file name="em_usart.c"               uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_usart.c"/>
+    <file name="em_wdog.c"                uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_wdog.c"/>
+    <file name="em_cmu.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_cmu.c"/>
+    <file name="em_adc.c"                 uri="$(sdkInstallationPath:default())/submodules/emlib/src/em_adc.c"/>
+    <file name="glib.c"                   uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib.c"/>
+    <file name="glib_bitmap.c"            uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_bitmap.c"/>
+    <file name="glib_circle.c"            uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_circle.c"/>
+    <file name="glib_line.c"              uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_line.c"/>
+    <file name="glib_rectangle.c"         uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_rectangle.c"/>
+    <file name="glib_string.c"            uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_string.c"/>
+    <file name="glib_font_normal_8x8.c"   uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_font_normal_8x8.c"/>
+    <file name="glib_font_narrow_6x8.c"   uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_font_narrow_6x8.c"/>
+    <file name="glib_font_number_16x20.c" uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib/glib_font_number_16x20.c"/>
+  </folder>
+
+  <!-- EM35x Files Only: Everything in here is em35x and em35xp2p only -->
+  <folder name="em35x" partCompatibility="com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.ember.em35xp2p" >
+	  <file name="uart.c" uri="$(stackHalPath:default())/micro/cortexm3/uart.c" />
+	  <file name="token.c" uri="$(stackHalPath:default())/micro/cortexm3/token.c" />
+	  <file name="token-def.c" uri="$(stackHalPath:default())/micro/cortexm3/token-def.c" />
+	  <file name="sleep.c" uri="$(stackHalPath:default())/micro/cortexm3/sleep.c" />
+    <file name="mpu.c" uri="$(stackHalPath:default())/micro/cortexm3/mpu.c" />
+    <file name="micro-common.c" uri="$(stackHalPath:default())/micro/cortexm3/micro-common.c" />
+    <file name="mfg-token.c" uri="$(stackHalPath:default())/micro/cortexm3/mfg-token.c" />
+    <file name="led.c" uri="$(stackHalPath:default())/micro/cortexm3/led.c" />
+    <file name="isr-stubs.s79" uri="$(stackHalPath:default())/micro/cortexm3/isr-stubs.s79" />
+    <file name="faults.s79" uri="$(stackHalPath:default())/micro/cortexm3/faults.s79" />
+    <file name="cstartup-common.c" uri="$(stackHalPath:default())/micro/cortexm3/cstartup-common.c" />
+    <file name="assert-crash-handlers.c" uri="$(stackHalPath:default())/micro/cortexm3/assert-crash-handlers.c" />
+    <file name="buzzer.c" uri="$(stackHalPath:default())/micro/cortexm3/buzzer.c" />
+    <file name="button.c" uri="$(stackHalPath:default())/micro/cortexm3/button.c" />
+    <file name="adc.c"  uri="$(stackHalPath:default())/micro/cortexm3/adc.c" />
+    <file name="diagnostic.c" uri="$(stackHalPath:default())/micro/cortexm3/diagnostic.c"/>
+    <file name="micro.c" uri="$(stackHalPath:default())/micro/cortexm3/micro.c"/>
+
+    <!-- Pulled directly from em35x.ewp - if these are only for Pro2+ parts then replace them with the commented lines: -->
+    <!-- Following file is specific for EM317/EM357p2p platforms -->
+    <file name="spi-master.c" uri="$(stackHalPath:default())/micro/cortexm3/spi-master.c"/>
+    <!-- file name="spi-master.c" uri="$(stackHalPath:default())/micro/cortexm3/spi-master.c" partCompatibility="com.silabs.mcu.si32.ember.em35xp2p" -->
+    <file name="ext-device.c" uri="$(stackHalPath:default())/micro/cortexm3/ext-device.c"/>
+    <!-- file name="ext-device.c" uri="$(stackHalPath:default())/micro/cortexm3/ext-device.c" partCompatibility="com.silabs.mcu.si32.ember.em35xp2p" -->
+    <!-- End following file is specific for EM317/EM357p2p platforms -->
+  </folder>
+
+  <!-- Static Include Paths -->
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/stack/"/>
+  <includePath languageCompatibility="c" uri="$(sdkInstallationPath:default())/app/framework/include/"/>
+  <includePath languageCompatibility="c" uri="$(sdkInstallationPath:default())/app/util/"/>
+  <includePath languageCompatibility="c asm" uri="$(stackHalPath:default())"/>
+  <includePath languageCompatibility="c asm" uri="$(stackLibPath:default())"/>
+  <includePath languageCompatibility="c asm" uri="$(stackHalPath:default())/micro/cortexm3/efm32/"                                   partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(stackHalPath:default())/micro/cortexm3/efm32/efr32/"                             partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/CMSIS/Include/"                        partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emlib/inc/"                            partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/common/inc"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/rtcdrv/inc"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/sleep/inc"                       partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/aesdrv/inc"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/aesdrv/src"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/trace/inc"                       partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/gpiointerrupt/inc"               partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/ecode"                           partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(stackHalPath:default())/micro/cortexm3/efm32/config"                             partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/uartdrv/inc"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/spidrv/inc"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/dmadrv/inc"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/ustimer/inc"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/rtcdrv/inc"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/kits/SLWSTK6100A_EFR32MG/config/"      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/kits/common/bsp/"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/kits/common/drivers/"                  partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/gpiointerrupt/inc/"              partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/uartdrv/inc/"                    partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/ustimer/inc/"                    partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/rtcdrv/inc/"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/common/inc/"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/dmadrv/inc/"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/trace/inc/"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/efrseq/rfprotocol/ieee802154/cortex"   partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/efrseq/common/cortex"                  partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/s029_efr4fpga_drv/inc"                 partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/reptile/glib"                          partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/reptile/glib/glib"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/reptile/glib/dmd"                      partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <includePath languageCompatibility="c asm" uri="$(sdkInstallationPath:default())/submodules/emdrv/tempdrv/inc"                     partCompatibility="com.silabs.mcu.si32.efr32"/>
+
+  <!-- Static Macro Definitions -->
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3"/>
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3"                 value="1"/>
+  <macroDefinition languageCompatibility="c asm" name="CONFIGURATION_HEADER"     value="&quot;app/framework/util/config.h&quot;"/>
+  <macroDefinition languageCompatibility="c asm" name="APPLICATION_TOKEN_HEADER" value="&quot;app/framework/util/tokens.h&quot;"/>
+
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3_EFM32_MICRO" value="1" partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3_EFR32_MICRO" value="1" partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3_EFR32"       value="1" partCompatibility="com.silabs.mcu.si32.efr32"/>
+  <macroDefinition languageCompatibility="c asm" name="PHY_EFR32"            value="1" partCompatibility="com.silabs.mcu.si32.efr32"/>
+
+  <macroDefinition languageCompatibility="c asm" name="CORTEXM3_EMBER_MICRO" value="1" partCompatibility="com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.ember.em35xp2p"/>
+  <macroDefinition languageCompatibility="c asm" name="PHY_EM3XX"            value="1" partCompatibility="com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.ember.em35xp2p"/>
+
+  <!-- Static Tool Option Definitions -->
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.treatAsRemarks.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.logFileInitializationDecisions.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.maxErrors.v5.4.0" value="100"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.debugInfo.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.interwork.v5.4.0" value="false"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.linesPerPage.v5.4.0" value="80"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.programEntry.v5.4.0" value="halEntryPoint"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.logFileVeenerStatistics.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.logFile.v6.2.2" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.logFileSectionSelections.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.optLevel.v5.4.0" value="iar.arm.toolchain.compiler.option.optLevel.highSize.v5.4.0"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.asmListContents.v6.2.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.treatAsErrors.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.mapFile.v6.2.2" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.treatAsRemarks.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.includeMacroExpansions.v6.2.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.generateListFile.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.entryOverride.v6.2.3" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.suppress.v5.4.0" value="Pa050"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.tabSpacing.v5.4.0" value="2"/>
+  <toolOption toolId="iar.arm.toolchain.assembler.v5.4.0" optionId="iar.arm.toolchain.assembler.option.omitHeader.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.additionalUserOptions" value="--no_path_in_file_macros --separate_cluster_for_initialized_variables"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.logFileModuleSelections.v5.4.0" value="true"/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.treatAsErrors.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.treatAsWarnings.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.keep.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.treatAsWarnings.v5.4.0" value=""/>
+  <toolOption toolId="iar.arm.toolchain.linker.v5.4.0" optionId="iar.arm.toolchain.linker.option.suppressThese.v5.4.0" value="Lp012"/>
+  <toolOption toolId="iar.arm.toolchain.compiler.v5.4.1" optionId="iar.arm.toolchain.compiler.option.cppInlineSemantics.v6.1.0" value="true"/>
+</project>

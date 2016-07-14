@@ -1,0 +1,961 @@
+#ISD App Configuration:3.1
+# ISD version: 3.4.2270
+#  Identified of a stack descriptor used for this configuration. This should not
+#  be changed manually, unless you really know what you are doing.
+ConfiguratorID:auto-SIMULATION
+
+#  Output directory which is used as a root for all generated files. The actual
+#  files relative to that directory are defined by individual file name.
+GenerationDirectory:__SAMPLE_APPLICATION__
+
+#  Unique identifier for this device. This string should be in a form of a C
+#  identifier, as it will be used in both generated variable, macros, as well as
+#  file names. You should generally not use characters which are not valid
+#  characters in a C identifier here.
+DeviceName:FullTh
+
+#  Type of the endpoint. Each endpoint implement one endpoint type. There can be
+#  one or more endpoint types, regardless of number of actual endpoints.
+EndpointType:Primary,-1
+
+#  The ZCL device that this particular endpoint is implementing.
+DeviceType:Primary,zcustom
+
+#  Overrides a particular client configuration. This happens when you have
+#  chosen to include/exclude a client cluster that is optional. Contains
+#  'clusterId', 'exclude/include' and the endpoint type name.
+OverrideClient:0,include,Primary
+
+OverrideClient:1,include,Primary
+
+OverrideClient:2,include,Primary
+
+OverrideClient:3,include,Primary
+
+OverrideClient:4,include,Primary
+
+OverrideClient:5,include,Primary
+
+OverrideClient:6,include,Primary
+
+OverrideClient:7,include,Primary
+
+OverrideClient:8,include,Primary
+
+OverrideClient:9,include,Primary
+
+OverrideClient:a,include,Primary
+
+OverrideClient:b,include,Primary
+
+OverrideClient:f,include,Primary
+
+OverrideClient:15,exclude,Primary
+
+OverrideClient:100,include,Primary
+
+OverrideClient:101,include,Primary
+
+OverrideClient:102,include,Primary
+
+OverrideClient:200,include,Primary
+
+OverrideClient:201,include,Primary
+
+OverrideClient:202,include,Primary
+
+OverrideClient:203,include,Primary
+
+OverrideClient:204,include,Primary
+
+OverrideClient:300,include,Primary
+
+OverrideClient:301,include,Primary
+
+OverrideClient:400,include,Primary
+
+OverrideClient:401,include,Primary
+
+OverrideClient:402,include,Primary
+
+OverrideClient:403,include,Primary
+
+OverrideClient:404,include,Primary
+
+OverrideClient:405,include,Primary
+
+OverrideClient:406,include,Primary
+
+OverrideClient:500,include,Primary
+
+OverrideClient:501,include,Primary
+
+OverrideClient:502,include,Primary
+
+OverrideClient:600,include,Primary
+
+OverrideClient:601,include,Primary
+
+OverrideClient:614,include,Primary
+
+OverrideClient:700,include,Primary
+
+OverrideClient:701,include,Primary
+
+OverrideClient:702,include,Primary
+
+OverrideClient:703,include,Primary
+
+OverrideClient:704,include,Primary
+
+OverrideClient:800,include,Primary
+
+#  Overrides a particular server configuration. This happens when you have
+#  chosen to include/exclude a server cluster that is optional. Contains
+#  'clusterId', 'exclude/include' and the endpoint type name.
+OverrideServer:0,include,Primary
+
+OverrideServer:1,include,Primary
+
+OverrideServer:2,include,Primary
+
+OverrideServer:3,include,Primary
+
+OverrideServer:4,include,Primary
+
+OverrideServer:5,include,Primary
+
+OverrideServer:6,include,Primary
+
+OverrideServer:7,include,Primary
+
+OverrideServer:8,include,Primary
+
+OverrideServer:9,include,Primary
+
+OverrideServer:a,include,Primary
+
+OverrideServer:b,include,Primary
+
+OverrideServer:f,include,Primary
+
+OverrideServer:15,exclude,Primary
+
+OverrideServer:100,include,Primary
+
+OverrideServer:101,include,Primary
+
+OverrideServer:102,include,Primary
+
+OverrideServer:200,include,Primary
+
+OverrideServer:201,include,Primary
+
+OverrideServer:202,include,Primary
+
+OverrideServer:203,include,Primary
+
+OverrideServer:204,include,Primary
+
+OverrideServer:300,include,Primary
+
+OverrideServer:301,include,Primary
+
+OverrideServer:400,include,Primary
+
+OverrideServer:401,include,Primary
+
+OverrideServer:402,include,Primary
+
+OverrideServer:403,include,Primary
+
+OverrideServer:404,include,Primary
+
+OverrideServer:405,include,Primary
+
+OverrideServer:406,include,Primary
+
+OverrideServer:500,include,Primary
+
+OverrideServer:501,include,Primary
+
+OverrideServer:502,include,Primary
+
+OverrideServer:600,include,Primary
+
+OverrideServer:601,include,Primary
+
+OverrideServer:614,include,Primary
+
+OverrideServer:700,include,Primary
+
+OverrideServer:701,include,Primary
+
+OverrideServer:702,include,Primary
+
+OverrideServer:703,include,Primary
+
+OverrideServer:704,include,Primary
+
+OverrideServer:800,include,Primary
+
+OverrideServer:fc00,include,Primary
+
+#  ZigBee PRO network configuration.  Each endpoint belongs to a single network
+#  configuration.  There can be one or more network configurations.
+ZigbeeProNetwork:*Primary,ZA_COORDINATOR,SE_TEST
+
+#  A list of optional attributes that are included in this configuration. Format
+#  is a list of "clusterId,attributeId,<server|client>,manufacturerCode"
+#  entries, separated by semicolon.
+OptionalAttributes:0,1,server,0:0,2,server,0:0,3,server,0:0,4,server,0:0,5,server,0:0,6,server,0:0,16,server,0:0,17,server,0:0,18,server,0:0,19,server,0:1,1,server,0:1,16,server,0:1,17,server,0:1,18,server,0:1,19,server,0:1,32,server,0:1,48,server,0:1,49,server,0:1,50,server,0:1,51,server,0:1,52,server,0:1,53,server,0:1,54,server,0:2,1,server,0:2,2,server,0:2,3,server,0:2,16,server,0:2,17,server,0:2,18,server,0:2,19,server,0:2,20,server,0:5,5,server,0:8,1,server,0:8,16,server,0:8,17,server,0:10,2,server,0:10,3,server,0:10,4,server,0:10,5,server,0:10,6,server,0:10,7,server,0:21,0,server,0:21,2,server,0:21,4,server,0:21,5,server,0:21,16,server,0:21,17,server,0:21,18,server,0:21,19,server,0:21,20,server,0:21,21,server,0:21,22,server,0:21,23,server,0:21,34,server,0:21,35,server,0:21,48,server,0:21,49,server,0:21,64,server,0:21,65,server,0:21,66,server,0:256,0,server,0:256,1,server,0:257,3,server,0:257,4,server,0:257,5,server,0:257,6,server,0:513,19,server,0:513,20,server,0:513,21,server,0:513,22,server,0:513,23,server,0:513,24,server,0:513,25,server,0:513,26,server,0:513,29,server,0:513,1,server,0:513,2,server,0:513,3,server,0:513,4,server,0:513,5,server,0:513,6,server,0:513,7,server,0:513,8,server,0:513,16,server,0:515,1,server,0:515,17,server,0:515,18,server,0:515,21,server,0:768,0,server,0:768,1,server,0:768,2,server,0:768,5,server,0:768,6,server,0:768,7,server,0:768,8,server,0:768,16,server,0:768,17,server,0:768,18,server,0:768,19,server,0:768,21,server,0:768,22,server,0:768,23,server,0:768,25,server,0:768,26,server,0:768,27,server,0:768,32,server,0:768,33,server,0:768,34,server,0:768,36,server,0:768,37,server,0:768,38,server,0:768,40,server,0:768,41,server,0:768,42,server,0:768,48,server,0:768,49,server,0:768,50,server,0:768,51,server,0:768,52,server,0:768,54,server,0:768,55,server,0:768,56,server,0:768,58,server,0:768,59,server,0:768,60,server,0:1024,3,server,0:1024,4,server,0:1025,1,server,0:1026,3,server,0:1027,3,server,0:1028,3,server,0:1029,3,server,0:1030,16,server,0:1030,17,server,0:1030,32,server,0:1030,33,server,0:11,2,server,0:11,3,server,0:11,4,server,0:11,18,server,0:11,21,server,0:11,22,server,0:1,0,server,0:9,0,server,0:258,1,server,0:258,2,server,0:258,3,server,0:258,4,server,0:258,5,server,0:258,6,server,0:258,8,server,0:258,9,server,0:258,20,server,0:258,21,server,0:258,22,server,0:258,24,server,0:258,25,server,0:512,3,server,0:512,4,server,0:512,5,server,0:512,6,server,0:512,7,server,0:512,8,server,0:512,9,server,0:512,10,server,0:512,11,server,0:512,12,server,0:512,16,server,0:512,20,server,0:512,21,server,0:512,22,server,0:512,23,server,0:512,33,server,0:512,34,server,0:515,0,server,0:769,0,server,0:769,1,server,0:769,16,server,0:769,17,server,0:769,18,server,0:769,19,server,0:769,20,server,0:769,21,server,0:769,32,server,0:769,48,server,0:769,49,server,0:769,50,server,0:769,51,server,0:769,52,server,0:769,53,server,0:1794,1,server,0:1794,2,server,0:1794,3,server,0:1794,4,server,0:1794,5,server,0:1794,6,server,0:1794,7,server,0:1794,8,server,0:1794,9,server,0:1794,256,server,0:1794,257,server,0:1794,258,server,0:1794,259,server,0:1794,260,server,0:1794,261,server,0:1794,262,server,0:1794,263,server,0:1794,264,server,0:1794,265,server,0:1794,266,server,0:1794,267,server,0:1794,769,server,0:1794,770,server,0:1794,772,server,0:1794,773,server,0:1794,1024,server,0:1794,1025,server,0:1794,1026,server,0:1794,1027,server,0:1794,1028,server,0:1794,1029,server,0:1794,1030,server,0:1794,1031,server,0:1794,1032,server,0:1794,1280,server,0:1794,1536,server,0:1794,1537,server,0:1794,1538,server,0:1794,1539,server,0:1794,10,server,0:1794,11,server,0:1794,12,server,0:1794,13,server,0:1794,14,server,0:1794,15,server,0:1794,16,server,0:1794,17,server,0:1794,18,server,0:1794,19,server,0:1794,20,server,0:1794,21,server,0:1794,22,server,0:1794,23,server,0:1794,24,server,0:1794,25,server,0:1794,26,server,0:1794,27,server,0:1794,268,server,0:1794,269,server,0:1794,270,server,0:1794,271,server,0:1794,272,server,0:1794,273,server,0:1794,274,server,0:1794,275,server,0:1794,276,server,0:1794,277,server,0:1794,278,server,0:1794,279,server,0:1794,280,server,0:1794,281,server,0:1794,282,server,0:1794,283,server,0:1794,284,server,0:1794,285,server,0:1794,513,server,0:1794,514,server,0:1794,515,server,0:1794,775,server,0:1794,776,server,0:1794,777,server,0:1794,778,server,0:1794,779,server,0:1794,780,server,0:1794,781,server,0:1794,1033,server,0:1794,1034,server,0:1794,1035,server,0:1794,1036,server,0:1794,1037,server,0:1794,1038,server,0:1794,1039,server,0:1794,1040,server,0:1794,1041,server,0:1794,1042,server,0:1794,1043,server,0:1794,1044,server,0:1794,1045,server,0:1794,1046,server,0:1794,1792,server,0:1794,1793,server,0:1794,1794,server,0:1794,1795,server,0:1794,1796,server,0:1794,1797,server,0:1794,1798,server,0:1794,1799,server,0:1794,1800,server,0:1794,1801,server,0:1794,1802,server,0:1794,1803,server,0:1794,1804,server,0:1794,1805,server,0:1794,1806,server,0:1794,1807,server,0:1794,1808,server,0:1794,1809,server,0:1794,1810,server,0:1794,1811,server,0:1794,1812,server,0:1794,1813,server,0:1794,1814,server,0:1794,1815,server,0:1794,1816,server,0:1794,1817,server,0:1794,1818,server,0:1794,1819,server,0:1794,1820,server,0:1794,1821,server,0:1794,1822,server,0:1794,1823,server,0:1794,1824,server,0:1794,1825,server,0:1794,1826,server,0:1794,1827,server,0:1794,1828,server,0:1794,1829,server,0:1794,1830,server,0:1794,1831,server,0:1794,1832,server,0:1794,1833,server,0:1794,1834,server,0:1794,1835,server,0:1794,1836,server,0:1794,1837,server,0:1794,1838,server,0:1794,1839,server,0:1794,1840,server,0:1794,1841,server,0:1794,1842,server,0:1794,1843,server,0:1794,1844,server,0:1794,1845,server,0:1794,1846,server,0:1794,1847,server,0:1794,1848,server,0:1794,1849,server,0:1794,1850,server,0:1794,1851,server,0:1794,1852,server,0:1794,1853,server,0:1794,1854,server,0:1794,1855,server,0:1794,1856,server,0:1794,1857,server,0:1794,1858,server,0:1794,1859,server,0:1794,1860,server,0:1794,1861,server,0:1794,1862,server,0:1794,1863,server,0:1794,1864,server,0:1794,1865,server,0:1794,1866,server,0:1794,1867,server,0:1794,1868,server,0:1794,1869,server,0:1794,1870,server,0:1794,1871,server,0:1794,1872,server,0:1794,1873,server,0:1794,1874,server,0:1794,1875,server,0:1794,1876,server,0:1794,1877,server,0:1794,1878,server,0:1794,1879,server,0:1794,1880,server,0:1794,1881,server,0:1794,1882,server,0:1794,1883,server,0:1794,1884,server,0:1794,1885,server,0:1794,1886,server,0:1794,1887,server,0:1794,1888,server,0:1794,1889,server,0:1794,1890,server,0:1794,1891,server,0:1794,1892,server,0:1794,1893,server,0:1794,1894,server,0:1794,1895,server,0:1794,1896,server,0:1794,1897,server,0:1794,1898,server,0:1794,1899,server,0:1794,1900,server,0:1794,1901,server,0:1794,1902,server,0:1794,1903,server,0:1794,1904,server,0:1794,1905,server,0:1794,1906,server,0:1794,1907,server,0:1794,1908,server,0:1794,1909,server,0:1794,1910,server,0:1794,1911,server,0:1794,1912,server,0:1794,1913,server,0:1794,1914,server,0:1794,1915,server,0:1794,1916,server,0:1794,1917,server,0:1794,1918,server,0:1794,1919,server,0:1794,1920,server,0:1794,1921,server,0:1794,1922,server,0:1794,1923,server,0:1794,1924,server,0:1794,1925,server,0:1794,1926,server,0:1794,1927,server,0:1794,1928,server,0:1794,1929,server,0:1794,1930,server,0:1794,1931,server,0:1794,1932,server,0:1794,1933,server,0:1794,1934,server,0:1794,1935,server,0:1794,1936,server,0:1794,1937,server,0:1794,1938,server,0:1794,1939,server,0:1794,1940,server,0:1794,1941,server,0:1794,1942,server,0:1794,1943,server,0:1794,1944,server,0:1794,1945,server,0:1794,1946,server,0:1794,1947,server,0:1794,1948,server,0:1794,1949,server,0:1794,1950,server,0:1794,1951,server,0:1794,1952,server,0:1794,1953,server,0:1794,1954,server,0:1794,1955,server,0:1794,1956,server,0:1794,1957,server,0:1794,1958,server,0:1794,1959,server,0:1794,1960,server,0:1794,1961,server,0:1794,1962,server,0:1794,1963,server,0:1794,1964,server,0:1794,1965,server,0:1794,1966,server,0:1794,1967,server,0:1794,1968,server,0:1794,1969,server,0:1794,1970,server,0:1794,1971,server,0:1794,1972,server,0:1794,1973,server,0:1794,1974,server,0:1794,1975,server,0:1794,1976,server,0:1794,1977,server,0:1794,1978,server,0:1794,1979,server,0:1794,1980,server,0:1794,1981,server,0:1794,1982,server,0:1794,1983,server,0:1794,1984,server,0:1794,1985,server,0:1794,1986,server,0:1794,1987,server,0:1794,1988,server,0:1794,1989,server,0:1794,1990,server,0:1794,1991,server,0:1794,1992,server,0:1794,1993,server,0:1794,1994,server,0:1794,1995,server,0:1794,1996,server,0:1794,1997,server,0:1794,1998,server,0:1794,1999,server,0:1794,2000,server,0:1794,2001,server,0:1794,2002,server,0:1794,2003,server,0:1794,2004,server,0:1794,2005,server,0:1794,2006,server,0:1794,2007,server,0:1794,2008,server,0:1794,2009,server,0:1794,2010,server,0:1794,2011,server,0:1794,2012,server,0:1794,2013,server,0:1794,2014,server,0:1794,2015,server,0:1794,2016,server,0:1794,2017,server,0:1794,2018,server,0:1794,2019,server,0:1794,2020,server,0:1794,2021,server,0:1794,2022,server,0:1794,2023,server,0:1794,2024,server,0:1794,2025,server,0:1794,2026,server,0:1794,2027,server,0:1794,2028,server,0:1794,2029,server,0:1794,2030,server,0:1794,2031,server,0:1794,2032,server,0:1794,2033,server,0:1794,2034,server,0:1794,2035,server,0:1794,2036,server,0:1794,2037,server,0:1794,2038,server,0:1794,2039,server,0:1794,2040,server,0:1794,2041,server,0:1794,2042,server,0:1794,2043,server,0:1794,2044,server,0:1794,2045,server,0:1794,2046,server,0:1794,2047,server,0:1794,2048,server,0:1794,2049,server,0:1794,2050,server,0:1794,2051,server,0:1794,2052,server,0:1794,2053,server,0:1792,0,server,0:1792,1,server,0:1792,2,server,0:1792,3,server,0:1792,4,server,0:1792,5,server,0:1792,6,server,0:1792,7,server,0:1792,8,server,0:1792,9,server,0:1792,10,server,0:1792,11,server,0:1792,12,server,0:1792,13,server,0:1792,14,server,0:1792,256,server,0:1792,257,server,0:1792,258,server,0:1792,259,server,0:1792,260,server,0:1792,261,server,0:1792,262,server,0:1792,263,server,0:1792,264,server,0:1792,265,server,0:1792,266,server,0:1792,267,server,0:1792,268,server,0:1792,269,server,0:1792,270,server,0:1792,512,server,0:1792,513,server,0:1792,514,server,0:1792,515,server,0:1792,768,server,0:1792,769,server,0:1792,1024,server,0:1792,1025,server,0:1792,1026,server,0:1792,1027,server,0:1792,1028,server,0:1792,1029,server,0:1792,1030,server,0:1792,1031,server,0:1792,1032,server,0:1792,1033,server,0:1792,1034,server,0:1792,1035,server,0:1792,1036,server,0:1792,1037,server,0:1792,1038,server,0:1792,1039,server,0:1792,1040,server,0:1792,1041,server,0:1792,1042,server,0:1792,1043,server,0:1792,1044,server,0:1792,1045,server,0:1792,1046,server,0:1792,1047,server,0:1792,1048,server,0:1792,1049,server,0:1792,1050,server,0:1792,1051,server,0:1792,1052,server,0:1792,1053,server,0:1792,1054,server,0:1792,1055,server,0:1792,1056,server,0:1792,1057,server,0:1792,1058,server,0:1792,1059,server,0:1792,1060,server,0:1792,1061,server,0:1792,1062,server,0:1792,1063,server,0:1792,1064,server,0:1792,1065,server,0:1792,1066,server,0:1792,1067,server,0:1792,1068,server,0:1792,1069,server,0:1792,1070,server,0:1792,1071,server,0:1792,1072,server,0:1792,1073,server,0:1792,1074,server,0:1792,1075,server,0:1792,1076,server,0:1792,1077,server,0:1792,1078,server,0:1792,1079,server,0:1792,1080,server,0:1792,1081,server,0:1792,1082,server,0:1792,1083,server,0:1792,1084,server,0:1792,1085,server,0:1792,1086,server,0:1792,1087,server,0:1792,1088,server,0:1792,1089,server,0:1792,1090,server,0:1792,1091,server,0:1792,1092,server,0:1792,1093,server,0:1792,1094,server,0:1792,1095,server,0:1792,1096,server,0:1792,1097,server,0:1792,1098,server,0:1792,1099,server,0:1792,1100,server,0:1792,1101,server,0:1792,1102,server,0:1792,1103,server,0:1792,1104,server,0:1792,1105,server,0:1792,1106,server,0:1792,1107,server,0:1792,1108,server,0:1792,1109,server,0:1792,1110,server,0:1792,1111,server,0:1792,1112,server,0:1792,1113,server,0:1792,1114,server,0:1792,1115,server,0:1792,1116,server,0:1792,1117,server,0:1792,1118,server,0:1792,1119,server,0:1792,1120,server,0:1792,1121,server,0:1792,1122,server,0:1792,1123,server,0:1792,1124,server,0:1792,1125,server,0:1792,1126,server,0:1792,1127,server,0:1792,1128,server,0:1792,1129,server,0:1792,1130,server,0:1792,1131,server,0:1792,1132,server,0:1792,1133,server,0:1792,1134,server,0:1792,1135,server,0:1792,1136,server,0:1792,1137,server,0:1792,1138,server,0:1792,1139,server,0:1792,1140,server,0:1792,1141,server,0:1792,1142,server,0:1792,1143,server,0:1792,1144,server,0:1792,1145,server,0:1792,1146,server,0:1792,1147,server,0:1792,1148,server,0:1792,1149,server,0:1792,1150,server,0:1792,1151,server,0:1792,1152,server,0:1792,1153,server,0:1792,1154,server,0:1792,1155,server,0:1792,1156,server,0:1792,1157,server,0:1792,1158,server,0:1792,1159,server,0:1792,1160,server,0:1792,1161,server,0:1792,1162,server,0:1792,1163,server,0:1792,1164,server,0:1792,1165,server,0:1792,1166,server,0:1792,1167,server,0:1792,1168,server,0:1792,1169,server,0:1792,1170,server,0:1792,1171,server,0:1792,1172,server,0:1792,1173,server,0:1792,1174,server,0:1792,1175,server,0:1792,1176,server,0:1792,1177,server,0:1792,1178,server,0:1792,1179,server,0:1792,1180,server,0:1792,1181,server,0:1792,1182,server,0:1792,1183,server,0:1792,1184,server,0:1792,1185,server,0:1792,1186,server,0:1792,1187,server,0:1792,1188,server,0:1792,1189,server,0:1792,1190,server,0:1792,1191,server,0:1792,1192,server,0:1792,1193,server,0:1792,1194,server,0:1792,1195,server,0:1792,1196,server,0:1792,1197,server,0:1792,1198,server,0:1792,1199,server,0:1792,1200,server,0:1792,1201,server,0:1792,1202,server,0:1792,1203,server,0:1792,1204,server,0:1792,1205,server,0:1792,1206,server,0:1792,1207,server,0:1792,1208,server,0:1792,1209,server,0:1792,1210,server,0:1792,1211,server,0:1792,1212,server,0:1792,1213,server,0:1792,1214,server,0:1792,1215,server,0:1792,1216,server,0:1792,1217,server,0:1792,1218,server,0:1792,1219,server,0:1792,1220,server,0:1792,1221,server,0:1792,1222,server,0:1792,1223,server,0:1792,1224,server,0:1792,1225,server,0:1792,1226,server,0:1792,1227,server,0:1792,1228,server,0:1792,1229,server,0:1792,1230,server,0:1792,1231,server,0:1792,1232,server,0:1792,1233,server,0:1792,1234,server,0:1792,1235,server,0:1792,1236,server,0:1792,1237,server,0:1792,1238,server,0:1792,1239,server,0:1792,1240,server,0:1792,1241,server,0:1792,1242,server,0:1792,1243,server,0:1792,1244,server,0:1792,1245,server,0:1792,1246,server,0:1792,1247,server,0:1792,1248,server,0:1792,1249,server,0:1792,1250,server,0:1792,1251,server,0:1792,1252,server,0:1792,1253,server,0:1792,1254,server,0:1792,1255,server,0:1792,1256,server,0:1792,1257,server,0:1792,1258,server,0:1792,1259,server,0:1792,1260,server,0:1792,1261,server,0:1792,1262,server,0:1792,1263,server,0:1792,1264,server,0:1792,1265,server,0:1792,1266,server,0:1792,1267,server,0:1792,1268,server,0:1792,1269,server,0:1792,1270,server,0:1792,1271,server,0:1792,1272,server,0:1792,1273,server,0:1792,1274,server,0:1792,1275,server,0:1792,1276,server,0:1792,1277,server,0:1792,1278,server,0:1792,1279,server,0:1792,0,server,0:1792,1,server,0:1792,2,server,0:1792,0,client,0:1792,1,client,0:1792,2,client,0:0,20,server,0:15,4,server,0:15,28,server,0:15,46,server,0:15,84,server,0:15,103,server,0:15,256,server,0:6,0,server,4098:64512,0,server,0
+
+#  A list of attributes that are to be saved as tokens in persistent memory.
+#  Format is a list of "clusterId,attributeId,<server|client>,manufacturerCode"
+#  entries, separated by semicolon.
+FlashAttributes:0,0,server,0:0,1,server,0:0,2,server,0:0,3,server,0:0,4,server,0:0,5,server,0:0,6,server,0
+
+#  Attributes that are stored outside the application framework.
+ExternalAttributes:0,0,server,0:0,1,server,0:0,2,server,0
+
+#  Attributes that support min/max setting.
+BoundAttributes:64512,0,server,0:2048,0,client,0:2048,0,server,0:1796,0,server,0:1792,2,client,0:1792,1,client,0:1792,0,client,0:1792,1279,server,0:1792,1278,server,0:1792,1277,server,0:1792,1276,server,0:1792,1275,server,0:1792,1274,server,0:1792,1273,server,0:1792,1272,server,0:1792,1271,server,0:1792,1270,server,0:1792,1269,server,0:1792,1268,server,0:1792,1267,server,0:1792,1266,server,0:1792,1265,server,0:1792,1264,server,0:1792,1263,server,0:1792,1262,server,0:1792,1261,server,0:1792,1260,server,0:1792,1259,server,0:1792,1258,server,0:1792,1257,server,0:1792,1256,server,0:1792,1255,server,0:1792,1254,server,0:1792,1253,server,0:1792,1252,server,0:1792,1249,server,0:1792,1248,server,0:1792,1247,server,0:1792,1245,server,0:1792,1250,server,0:1792,1251,server,0:1792,1246,server,0:1792,1244,server,0:1792,1243,server,0:1792,1242,server,0:1792,1241,server,0:1792,1240,server,0:1792,1239,server,0:1792,1238,server,0:1792,1236,server,0:1792,1234,server,0:1792,1233,server,0:1792,1230,server,0:1792,1227,server,0:1792,1225,server,0:1792,1232,server,0:1792,1235,server,0:1792,1237,server,0:1792,1231,server,0:1792,1229,server,0:1792,1228,server,0:1792,1228,server,0:1792,1227,server,0:1792,1226,server,0:1792,1225,server,0:1792,1224,server,0:1792,1223,server,0:1792,1222,server,0:1792,1221,server,0:1792,1220,server,0:1792,1219,server,0:1792,1218,server,0:1792,1217,server,0:1792,1216,server,0:1792,1215,server,0:1792,1214,server,0:1792,1213,server,0:1792,1212,server,0:1792,1211,server,0:1792,1210,server,0:1792,1209,server,0:1792,1208,server,0:1792,1207,server,0:1792,1206,server,0:1792,1205,server,0:1792,1204,server,0:1792,1203,server,0:1792,1202,server,0:1792,1201,server,0:1792,1200,server,0:1792,1199,server,0:1792,1198,server,0:1792,1197,server,0:1792,1196,server,0:1792,1195,server,0:1792,1194,server,0:1792,1193,server,0:1792,1192,server,0:1792,1191,server,0:1792,1190,server,0:1792,1189,server,0:1792,1188,server,0:1792,1187,server,0:1792,1186,server,0:1792,1185,server,0:1792,1184,server,0:1792,1183,server,0:1792,1182,server,0:1792,1181,server,0:1792,1180,server,0:1792,1179,server,0:1792,1178,server,0:1792,1177,server,0:1792,1176,server,0:1792,1175,server,0:1792,1174,server,0:1792,1173,server,0:1792,1172,server,0:1792,1171,server,0:1792,1170,server,0:1792,1169,server,0:1792,1168,server,0:1792,1167,server,0:1792,1166,server,0:1792,1165,server,0:1792,1164,server,0:1792,1163,server,0:1792,1162,server,0:1792,1161,server,0:1792,1160,server,0:1792,1159,server,0:1792,1158,server,0:1792,1157,server,0:1792,1156,server,0:1792,1155,server,0:1792,1154,server,0:1792,1153,server,0:1792,1152,server,0:1792,1151,server,0:1792,1150,server,0:1792,1149,server,0:1792,1148,server,0:1792,1147,server,0:1792,1146,server,0:1792,1145,server,0:1792,1144,server,0:1792,1143,server,0:1792,1142,server,0:1792,1141,server,0:1792,1140,server,0:1792,1139,server,0:1792,1138,server,0:1792,1137,server,0:1792,1136,server,0:1792,1135,server,0:1792,1134,server,0:1792,1133,server,0:1792,1132,server,0:1792,1131,server,0:1792,1130,server,0:1792,1129,server,0:1792,1128,server,0:1792,1127,server,0:1792,1126,server,0:1792,1125,server,0:1792,1124,server,0:1792,1123,server,0:1792,1122,server,0:1792,1121,server,0:1792,1120,server,0:1792,1119,server,0:1792,1118,server,0:1792,1117,server,0:1792,1116,server,0:1792,1115,server,0:1792,1114,server,0:1792,1113,server,0:1792,1112,server,0:1792,1111,server,0:1792,1110,server,0:1792,1109,server,0:1792,1108,server,0:1792,1107,server,0:1792,1106,server,0:1792,1105,server,0:1792,1104,server,0:1792,1103,server,0:1792,1102,server,0:1792,1101,server,0:1792,1100,server,0:1792,1099,server,0:1792,1098,server,0:1792,1097,server,0:1792,1096,server,0:1792,1095,server,0:1792,1094,server,0:1792,1093,server,0:1792,1092,server,0:1792,1091,server,0:1792,1090,server,0:1792,1089,server,0:1792,1088,server,0:1792,1087,server,0:1792,1086,server,0:1792,1085,server,0:1792,1084,server,0:1792,1083,server,0:1792,1082,server,0:1792,1081,server,0:1792,1080,server,0:1792,1079,server,0:1792,1078,server,0:1792,1077,server,0:1792,1076,server,0:1792,1075,server,0:1792,1074,server,0:1792,1073,server,0:1792,1072,server,0:1792,1071,server,0:1792,1070,server,0:1792,1069,server,0:1792,1068,server,0:1792,1067,server,0:1792,1066,server,0:1792,1065,server,0:1792,1064,server,0:1792,1063,server,0:1792,1062,server,0:1792,1061,server,0:1792,1060,server,0:1792,1059,server,0:1792,1058,server,0:1792,1057,server,0:1792,1056,server,0:1792,1055,server,0:1792,1054,server,0:1792,1053,server,0:1792,1052,server,0:1792,1051,server,0:1792,1050,server,0:1792,1049,server,0:1792,1048,server,0:1792,1047,server,0:1792,1046,server,0:1792,1045,server,0:1792,1044,server,0:1792,1043,server,0:1792,1042,server,0:1792,1041,server,0:1792,1040,server,0:1792,1039,server,0:1792,1038,server,0:1792,1037,server,0:1792,1036,server,0:1792,1035,server,0:1792,1034,server,0:1792,1033,server,0:1792,1032,server,0:1792,1031,server,0:1792,1030,server,0:1792,1029,server,0:1792,1028,server,0:1792,1027,server,0:1792,1026,server,0:1792,1025,server,0:0,20,server,0:0,19,server,0:0,18,server,0:0,17,server,0:0,7,server,0:0,3,server,0:0,2,server,0:0,1,server,0:0,0,server,0:1,54,server,0:1,53,server,0:1,52,server,0:1,51,server,0:1,50,server,0:1,49,server,0:1,32,server,0:1,19,server,0:1,18,server,0:1,17,server,0:1,16,server,0:1,1,server,0:1,0,server,0:2,20,server,0:2,19,server,0:2,18,server,0:2,17,server,0:2,16,server,0:2,3,server,0:2,2,server,0:2,1,server,0:2,0,server,0:3,0,server,0:4,0,server,0:5,4,server,0:5,2,server,0:5,1,server,0:5,0,server,0:5,3,server,0:6,0,server,4098:6,0,server,0:7,0,server,0:7,16,server,0:8,17,server,0:8,16,server,0:8,1,server,0:8,0,server,0:10,7,server,0:10,6,server,0:10,5,server,0:10,4,server,0:10,3,server,0:10,2,server,0:10,1,server,0:10,0,server,0:11,23,server,0:11,22,server,0:11,21,server,0:11,20,server,0:11,19,server,0:11,18,server,0:11,17,server,0:11,16,server,0:11,4,server,0:11,3,server,0:11,2,server,0:11,1,server,0:11,0,server,0:15,111,server,0:15,256,server,0:15,81,server,0:256,17,server,0:256,16,server,0:256,2,server,0:256,1,server,0:256,0,server,0:258,0,server,0:258,1,server,0:258,2,server,0:258,3,server,0:258,4,server,0:258,5,server,0:258,6,server,0:258,7,server,0:258,8,server,0:258,9,server,0:258,16,server,0:258,17,server,0:258,18,server,0:258,19,server,0:258,20,server,0:258,21,server,0:258,22,server,0:258,23,server,0:512,33,server,0:512,32,server,0:512,23,server,0:512,22,server,0:512,21,server,0:512,20,server,0:512,19,server,0:512,18,server,0:512,17,server,0:512,12,server,0:512,11,server,0:512,10,server,0:512,9,server,0:512,8,server,0:512,7,server,0:512,6,server,0:512,5,server,0:512,4,server,0:512,3,server,0:512,2,server,0:512,1,server,0:512,0,server,0:513,8,server,0:513,7,server,0:513,6,server,0:513,5,server,0:513,4,server,0:513,3,server,0:513,2,server,0:513,1,server,0:513,0,server,0:513,16,server,0:513,21,server,0:513,22,server,0:513,23,server,0:513,24,server,0:513,25,server,0:513,26,server,0:513,27,server,0:513,28,server,0:513,29,server,0:514,0,server,0:514,1,server,0:515,0,server,0:515,16,server,0:515,17,server,0:515,18,server,0:515,19,server,0:515,20,server,0:515,21,server,0:516,1,server,0:516,0,server,0:768,60,server,0:768,59,server,0:768,58,server,0:768,56,server,0:768,55,server,0:768,54,server,0:768,52,server,0:768,51,server,0:768,50,server,0:768,49,server,0:768,48,server,0:768,42,server,0:768,41,server,0:768,40,server,0:768,38,server,0:768,37,server,0:768,36,server,0:768,34,server,0:768,33,server,0:768,32,server,0:768,27,server,0:768,26,server,0:768,25,server,0:768,23,server,0:768,22,server,0:768,21,server,0:768,19,server,0:768,18,server,0:768,17,server,0:768,16,server,0:768,8,server,0:768,7,server,0:768,5,server,0:768,4,server,0:768,3,server,0:768,2,server,0:768,1,server,0:768,0,server,0:769,53,server,0:769,52,server,0:769,51,server,0:769,32,server,0:769,20,server,0:769,19,server,0:769,18,server,0:769,17,server,0:769,16,server,0:769,2,server,0:769,1,server,0:769,0,server,0:769,50,server,0:1024,4,server,0:1024,3,server,0:1024,2,server,0:1024,1,server,0:1025,16,server,0:1025,1,server,0:1025,0,server,0:1026,3,server,0:1026,2,server,0:1026,1,server,0:1027,3,server,0:1027,2,server,0:1027,1,server,0:1028,1,server,0:1028,2,server,0:1028,3,server,0:1029,3,server,0:1029,1,server,0:1029,2,server,0:1030,33,server,0:1030,32,server,0:1030,17,server,0:1030,16,server,0:1030,1,server,0:1030,0,server,0:1282,0,server,0:1536,2,server,0:1536,1,server,0:1793,3,client,0:1793,2,client,0:1793,1,client,0:1793,0,client,0:1794,0,server,0:1794,1,server,0:1794,2,server,0:1794,3,server,0:1794,4,server,0:1794,5,server,0:1794,6,server,0:1794,10,server,0:1794,12,server,0:1794,13,server,0:1794,14,server,0:1794,15,server,0:1794,16,server,0:1794,17,server,0:1794,18,server,0:1794,19,server,0:1794,20,server,0:1794,21,server,0:1794,22,server,0:1794,23,server,0:1794,24,server,0:1794,25,server,0:1794,26,server,0:1794,27,server,0:1794,11,server,0:1794,256,server,0:1794,257,server,0:1794,258,server,0:1794,259,server,0:1794,260,server,0:1794,261,server,0:1794,262,server,0:1794,263,server,0:1794,264,server,0:1794,266,server,0:1794,267,server,0:1794,268,server,0:1794,269,server,0:1794,270,server,0:1794,271,server,0:1794,272,server,0:1794,273,server,0:1794,265,server,0:1794,274,server,0:1794,275,server,0:1794,276,server,0:1794,277,server,0:1794,278,server,0:1794,279,server,0:1794,280,server,0:1794,281,server,0:1794,282,server,0:1794,283,server,0:1794,284,server,0:1794,285,server,0:1794,514,server,0:1794,515,server,0:1794,768,server,0:1794,512,server,0:1794,513,server,0:1794,769,server,0:1794,770,server,0:1794,771,server,0:1794,772,server,0:1794,774,server,0:1794,773,server,0:1794,777,server,0:1794,778,server,0:1794,779,server,0:1794,780,server,0:1794,781,server,0:1794,1024,server,0:1794,1025,server,0:1794,1026,server,0:1794,1027,server,0:1794,1028,server,0:1794,1031,server,0:1794,1032,server,0:1794,1033,server,0:1794,1034,server,0:1794,1035,server,0:1794,1036,server,0:1794,1037,server,0:1794,1038,server,0:1794,1039,server,0:1794,1040,server,0:1794,1041,server,0:1794,1042,server,0:1794,1044,server,0:1794,1043,server,0:1794,1045,server,0:1794,1046,server,0:1794,1280,server,0:1794,1536,server,0:1794,1537,server,0:1794,1538,server,0:1794,1539,server,0:1794,1792,server,0:1794,1793,server,0:1794,1794,server,0:1794,1795,server,0:1794,1796,server,0:1794,1797,server,0:1794,1798,server,0:1794,1799,server,0:1794,1800,server,0:1794,1801,server,0:1794,1802,server,0:1794,1803,server,0:1794,1804,server,0:1794,1805,server,0:1794,1806,server,0:1794,1807,server,0:1794,1811,server,0:1794,1812,server,0:1794,1813,server,0:1794,1814,server,0:1794,1815,server,0:1794,1816,server,0:1794,1817,server,0:1794,1818,server,0:1794,1820,server,0:1794,1821,server,0:1794,1808,server,0:1794,1810,server,0:1794,1819,server,0:1794,1809,server,0:1794,1823,server,0:1794,1824,server,0:1794,1825,server,0:1794,1828,server,0:1794,1822,server,0:1794,1826,server,0:1794,1827,server,0:1794,1829,server,0:1794,1830,server,0:1794,1831,server,0:1794,1832,server,0:1794,1833,server,0:1794,1834,server,0:1794,1835,server,0:1794,1836,server,0:1794,1837,server,0:1794,1838,server,0:1794,1839,server,0:1794,1840,server,0:1794,1841,server,0:1794,1842,server,0:1794,1843,server,0:1794,1844,server,0:1794,1845,server,0:1794,1846,server,0:1794,1847,server,0:1794,1848,server,0:1794,1849,server,0:1794,1850,server,0:1794,1851,server,0:1794,1852,server,0:1794,1853,server,0:1794,1854,server,0:1794,1855,server,0:1794,1856,server,0:1794,1857,server,0:1794,1858,server,0:1794,1859,server,0:1794,1860,server,0:1794,1861,server,0:1794,1862,server,0:1794,1863,server,0:1794,1864,server,0:1794,1865,server,0:1794,1866,server,0:1794,1867,server,0:1794,1868,server,0:1794,1869,server,0:1794,1870,server,0:1794,1871,server,0:1794,1872,server,0:1794,1873,server,0:1794,1874,server,0:1794,1875,server,0:1794,1876,server,0:1794,1877,server,0:1794,1878,server,0:1794,1879,server,0:1794,1880,server,0:1794,1881,server,0:1794,1882,server,0:1794,1883,server,0:1794,1884,server,0:1794,1885,server,0:1794,1887,server,0:1794,1886,server,0:1794,1888,server,0:1794,1889,server,0:1794,1890,server,0:1794,1891,server,0:1794,1892,server,0:1794,1893,server,0:1794,1894,server,0:1794,1895,server,0:1794,1896,server,0:1794,1897,server,0:1794,1899,server,0:1794,2053,server,0:1794,2052,server,0:1794,2050,server,0:1794,2049,server,0:1794,2048,server,0:1794,2047,server,0:1794,2046,server,0:1794,2045,server,0:1794,2044,server,0:1794,2043,server,0:1794,2042,server,0:1794,2041,server,0:1794,2040,server,0:1794,2039,server,0:1794,2038,server,0:1794,2037,server,0:1794,2036,server,0:1794,2035,server,0:1794,2034,server,0:1794,2033,server,0:1794,2032,server,0:1794,2031,server,0:1794,2030,server,0:1794,2028,server,0:1794,2027,server,0:1794,2026,server,0:1794,2029,server,0:1794,2025,server,0:1794,2024,server,0:1794,2023,server,0:1794,2022,server,0:1794,2021,server,0:1794,2020,server,0:1794,2019,server,0:1794,2018,server,0:1794,2017,server,0:1794,2016,server,0:1794,2015,server,0:1794,2014,server,0:1794,2013,server,0:1794,2012,server,0:1794,2010,server,0:1794,2009,server,0:1794,2011,server,0:1794,2008,server,0:1794,2007,server,0:1794,2006,server,0:1794,2005,server,0:1794,2004,server,0:1794,2003,server,0:1794,2002,server,0:1794,2001,server,0:1794,2000,server,0:1794,1999,server,0:1794,1998,server,0:1794,1996,server,0:1794,1995,server,0:1794,1994,server,0:1794,1993,server,0:1794,1992,server,0:1794,1991,server,0:1794,1990,server,0:1794,1989,server,0:1794,1988,server,0:1794,1987,server,0:1794,1986,server,0:1794,1985,server,0:1794,1984,server,0:1794,1982,server,0:1794,1981,server,0:1794,1997,server,0:1794,1980,server,0:1794,1979,server,0:1794,1978,server,0:1794,1977,server,0:1794,1976,server,0:1794,1975,server,0:1794,1974,server,0:1794,1972,server,0:1794,1971,server,0:1794,1983,server,0:1794,1973,server,0:1794,1969,server,0:1794,1968,server,0:1794,1967,server,0:1794,1966,server,0:1794,1965,server,0:1794,1964,server,0:1794,1970,server,0:1794,1963,server,0:1794,1962,server,0:1794,1960,server,0:1794,1959,server,0:1794,1958,server,0:1794,1961,server,0:1794,1957,server,0:1794,1956,server,0:1794,1955,server,0:1794,1954,server,0:1794,1953,server,0:1794,1952,server,0:1794,1951,server,0:1794,1950,server,0:1794,1949,server,0:1794,1948,server,0:1794,1947,server,0:1794,1946,server,0:1794,1945,server,0:1794,1944,server,0:1794,1943,server,0:1794,1942,server,0:1794,1941,server,0:1794,1940,server,0:1794,1939,server,0:1794,1938,server,0:1794,1937,server,0:1794,1936,server,0:1794,1935,server,0:1794,1934,server,0:1794,1933,server,0:1794,1932,server,0:1794,1931,server,0:1794,1930,server,0:1794,1929,server,0:1794,1898,server,0:1794,1900,server,0:1794,1901,server,0:1794,1902,server,0:1794,1903,server,0:1794,1904,server,0:1794,1905,server,0:1794,1906,server,0:1794,1907,server,0:1794,1908,server,0:1794,1909,server,0:1794,1910,server,0:1794,1911,server,0:1794,1912,server,0:1794,1913,server,0:1794,1914,server,0:1794,1915,server,0:1794,1916,server,0:1794,1919,server,0:1794,1920,server,0:1794,1921,server,0:1794,1922,server,0:1794,1923,server,0:1794,1924,server,0:1794,1925,server,0:1794,1926,server,0:1794,1917,server,0:1794,1918,server,0:1794,1927,server,0:1794,1928,server,0:1794,2051,server,0:1792,256,server,0:1792,257,server,0:1792,258,server,0:1792,259,server,0:1792,260,server,0:1792,261,server,0:1792,262,server,0:1792,263,server,0:1792,265,server,0:1792,266,server,0:1792,267,server,0:1792,268,server,0:1792,269,server,0:1792,270,server,0:1792,264,server,0:1792,513,server,0:1792,514,server,0:1792,515,server,0:1792,768,server,0:1792,769,server,0:1792,1024,server,0
+
+#  Points to the ECC 163k1 library that you wish to link against.
+Ecc163k1Path:PATH(STACK_RELATIVE):build/ecc-library-internal-unix-gcc-simulation-simulation/ecc-library-internal.a
+
+#  Lists the channels that this application will be configured to use.
+Channels:19,20,25,24,11,14,15
+
+#  Definitions of individual endpoints. For each endpoint the endpoint number
+#  (1-254) is listed, as well as the endpoint type that this endpoint will
+#  serve.
+ConfiguredEndpoints:*1&265&1280&0&Primary&Primary,2&265&1280&0&Primary&Primary,3&265&1280&0&Primary&Primary
+
+#  A single specification version for each profile defining the max version of
+#  the spec supported by this configuration.
+SpecVersions:
+
+#  In case of a network coprocessor, this lists a host processor used.
+Host:simulation-ezsp
+
+#  Ember network processor targeted for this application.
+Platform:simulation
+
+#  Enable callbacks.
+Callbacks:NET_WRITE,PRE_ATTR_CH,POST_ATTR_CH,PRE_MSG,PRE_CMD,CLUSTER_INIT,MAIN_TICK,EXT_ATT_WRITE,EXT_ATT_READ,TRUST_CENTER_JOIN,SIMPLE_METERING_CLUSTER_REQUEST_MIRROR_RESPONSE,SIMPLE_METERING_CLUSTER_MIRROR_REMOVED,IDENTIFY_CLUSTER_IDENTIFY_QUERY_RESPONSE,COMMISSIONING_CLUSTER_SAVE_STARTUP_PARAMETERS,COMMISSIONING_CLUSTER_RESTORE_STARTUP_PARAMETERS,COMMISSIONING_CLUSTER_RESTART_DEVICE_RESPONSE,COMMISSIONING_CLUSTER_RESTORE_STARTUP_PARAMETERS_RESPONSE,COMMISSIONING_CLUSTER_RESET_STARTUP_PARAMETERS_RESPONSE,IAS_ZONE_CLUSTER_ZONE_STATUS_CHANGE_NOTIFICATION,DOOR_LOCK_CLUSTER_LOCK_DOOR_RESPONSE,DOOR_LOCK_CLUSTER_UNLOCK_DOOR_RESPONSE,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_UP_OPEN,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_DOWN_CLOSE,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_STOP,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_GO_TO_LIFT_VALUE,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_GO_TO_LIFT_PERCENTAGE,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_GO_TO_TILT_VALUE,WINDOW_COVERING_CLUSTER_WINDOW_COVERING_GO_TO_TILT_PERCENTAGE,GENERIC_TUNNEL_CLUSTER_MATCH_PROTOCOL_ADDRESS_RESPONSE,COLOR_CONTROL_CLUSTER_COLOR_CONTROL_CLUSTER_CLIENT_ATTRIBUTE_CHANGED,COLOR_CONTROL_CLUSTER_COLOR_CONTROL_CLUSTER_SERVER_ATTRIBUTE_CHANGED,MAIN_INIT,REGISTRATION,COLOR_CONTROL_CLUSTER_COLOR_CONTROL_CLUSTER_CLIENT_DEFAULT_RESPONSE,COLOR_CONTROL_CLUSTER_COLOR_CONTROL_CLUSTER_SERVER_DEFAULT_RESPONSE,SAMPLE_MFG_SPECIFIC_CLUSTER_COMMAND_ONE,SAMPLE_MFG_SPECIFIC_CLUSTER_SAMPLE_MFG_SPECIFIC_CLUSTER_SERVER_MANUFACTURER_SPECIFIC_ATTRIBUTE_CHANGED,ON_OFF_CLUSTER_SAMPLE_MFG_SPECIFIC_OFF_WITH_TRANSITION,ON_OFF_CLUSTER_SAMPLE_MFG_SPECIFIC_ON_WITH_TRANSITION,ON_OFF_CLUSTER_SAMPLE_MFG_SPECIFIC_TOGGLE_WITH_TRANSITION,ON_OFF_CLUSTER_ON_OFF_CLUSTER_SERVER_MANUFACTURER_SPECIFIC_ATTRIBUTE_CHANGED,EMBER_AF_PLUGIN_BASIC_BASIC_SERVER_RESET_TO_FACTORY_DEFAULTS,EMBER_AF_PLUGIN_BUTTON_JOINING_BUTTON_EVENT,EMBER_AF_PLUGIN_COLOR_CONTROL_COLOR_CONTROL_IS_COLOR_SUPPORTED,EMBER_AF_PLUGIN_CONCENTRATOR_BROADCAST_SENT,EMBER_AF_PLUGIN_COUNTERS_COUNTER_ROLLOVER,EMBER_AF_PLUGIN_DOOR_LOCK_SERVER_DOOR_LOCK_SERVER_ACTIVATE_LOCK,EMBER_AF_PLUGIN_DRLC_DRLC_CLIENT_EVENT_ACTION,EMBER_AF_PLUGIN_GROUPS_SERVER_GROUPS_SERVER_GET_GROUP_NAME,EMBER_AF_PLUGIN_GROUPS_SERVER_GROUPS_SERVER_SET_GROUP_NAME,EMBER_AF_PLUGIN_GROUPS_SERVER_GROUPS_SERVER_GROUP_NAMES_SUPPORTED,EMBER_AF_PLUGIN_INTERPAN_INTERPAN_PRE_MESSAGE_RECEIVED,EMBER_AF_PLUGIN_MESSAGING_CLIENT_MESSAGING_CLIENT_DISPLAY_MESSAGE,EMBER_AF_PLUGIN_MESSAGING_CLIENT_MESSAGING_CLIENT_CANCEL_MESSAGE,EMBER_AF_PLUGIN_NETWORK_FIND_NETWORK_FIND_FINISHED,EMBER_AF_PLUGIN_NETWORK_FIND_GET_RADIO_POWER_FOR_CHANNEL,EMBER_AF_PLUGIN_NETWORK_FIND_JOIN,EMBER_AF_PLUGIN_PRICE_CLIENT_PRICE_STARTED,EMBER_AF_PLUGIN_PRICE_CLIENT_PRICE_EXPIRED,EMBER_AF_PLUGIN_REPORTING_REPORTING_CONFIGURED,EMBER_AF_PLUGIN_SIMPLE_METERING_CLIENT_METERING_CLIENT_REQUEST_MIRROR,EMBER_AF_PLUGIN_SIMPLE_METERING_CLIENT_METERING_CLIENT_REMOVE_MIRROR,EMBER_AF_PLUGIN_TUNNELING_CLIENT_TUNNELING_CLIENT_TUNNEL_OPENED,EMBER_AF_PLUGIN_TUNNELING_CLIENT_TUNNELING_CLIENT_DATA_RECEIVED,EMBER_AF_PLUGIN_TUNNELING_CLIENT_TUNNELING_CLIENT_DATA_ERROR,EMBER_AF_PLUGIN_TUNNELING_CLIENT_TUNNELING_CLIENT_TUNNEL_CLOSED,EMBER_AF_PLUGIN_TUNNELING_SERVER_TUNNELING_SERVER_IS_PROTOCOL_SUPPORTED,EMBER_AF_PLUGIN_TUNNELING_SERVER_TUNNELING_SERVER_TUNNEL_OPENED,EMBER_AF_PLUGIN_TUNNELING_SERVER_TUNNELING_SERVER_DATA_RECEIVED,EMBER_AF_PLUGIN_TUNNELING_SERVER_TUNNELING_SERVER_DATA_ERROR,EMBER_AF_PLUGIN_TUNNELING_SERVER_TUNNELING_SERVER_TUNNEL_CLOSED,IAS_ACE_CLUSTER_BYPASS,
+
+#  If bindings are enabled then this is the maximum number of supported
+#  bindings.
+NumberOfBindings:20
+
+#  The size of the stack address table which will be used by the stack to
+#  maintain IEEE to ZigBee short id mappings.
+AddressTableSize:2
+
+#  The size of the portion of the address table used by the trust center as an
+#  address cache. The total size of the address table will be equal to this
+#  value plus the size of the address table set in the AddressTableSize.
+TrustCenterCacheSize:5
+
+#  Manufacturing code user in reporting.
+ManufacturingCode:65261
+
+#  Maximum number of supported reported attributes.
+ReportTableSize:10
+
+#  The mode of the link key handling on a trust center.
+LinkKeyMode:2
+
+#  If not using multiple endpoint support, this value contains the default
+#  endpoint. With multiple endpoint support, this number is ignored.
+Endpoint:10
+
+#  Version of this device.
+DeviceVersion:0
+
+#  Master endpoint which contains global information.
+DefaultDestinationEndpoint:10
+
+#  Profile Id used for the application.
+ProfileId:-1
+
+#  Device Id used for the application.
+DeviceId:-1
+
+#  The largest size for a fragment buffer.
+FragmentationMaxSize:1500
+
+#  Size of the table for source routing.
+SourceRouteTableSize:7
+
+#  Default response policy.
+DefaultResponsePolicy:0
+
+#  If key switching is enabled, this value describes the kind of switch type
+#  that the application does.
+KeySwitchType:0
+
+#  Configuration of command-line interface.
+CLIMode:2
+
+#  If key switch is time based, then this value contains the number of seconds
+#  between switches.
+KeySwitchInterval:604800
+
+#  The level of debugging supported.
+DebugLevel:1
+
+#  The type of key generation, random or ping-pong.
+KeyGenerationType:0
+
+#  If this option is set to true, standard reporting is enabled.
+EnableStandardReporting:true
+
+#  If the device needs to perform inter-PAN sends, then this option should be
+#  enabled.
+EnableInterPanSend:false
+
+#  If the device needs to perform inter-PAN receives, then this option should be
+#  enabled.
+EnableInterPanReceive:false
+
+#  Enable serial commands for ZDO.
+EnableZdoSerialCommands:false
+
+#  Enable this option if you wish to enable device bindings.
+EnableBindings:true
+
+#  Turn this option on, if end-device binding is enabled.
+EnableEndDeviceBind:false
+
+#  Enables the statistics receiving.
+EnableReceiveStatistics:false
+
+#  If true, then command discovery commands are supported.
+SupportCommandDiscovery:true
+
+#  Selects whether application will use the ECC 163k1 library.
+UseEcc163k1:true
+
+#  Selects whether application will use the ECC 283k1 library.
+UseEcc283k1:false
+
+#  Enable preconfigured keys for security.
+PreconfiguredKeyEnabled:false
+
+#  Enable network key.
+NetworkKeyEnabled:false
+
+#  If this option is turned on, then appBuilder will automatically generate the
+#  files, immediately upon saving the ISC file.
+AutoGenerate:false
+
+#  Enable key switching.
+EnableKeySwitch:false
+
+#  Use this setting to turn on fragmentation.
+FragmentationEnable:false
+
+#  Enables concentrator support
+EnableConcentrator:true
+
+#  If true, then this concentrator is low ram, otherwise high ram
+LowRamConcentrator:true
+
+#  If this option is set to true, then MFG_INSTALL_CODE token is used for
+#  setting the security install code.
+UseSeInstallCodes:false
+
+#  If this option is turned on, then the code will enable the checking of the
+#  attributes.
+EnableAttributeRangeChecking:false
+
+#  Enable application handling of supported ZigBee Device Object messages.
+ReceiveSupportedZdoRequests:false
+
+#  Enable application handling of unsupported ZigBee Device Object messages.
+HandleUnsupportedZdoRequests:false
+
+#  Enable application handling of ZigBee Device Object requests related to
+#  endpoints.
+HandleEndpointZdoRequests:false
+
+#  Enable application handling of ZigBee Device Object requests related to
+#  bindings.
+HandleBindingZdoRequests:false
+
+#  Use token for TX power mode.
+TxPowerModeUseToken:true
+
+#  Enable boost power mode.
+BoostMode:false
+
+#  Enable the alternate transmitter output.
+AlternatePowerMode:false
+
+#  Use legacy CLI instead of generated CLI.
+LegacyCli:false
+
+#  Add Custom CLI sub-menu
+AddCustomCli:false
+
+#  Include command and argument descriptions in the embedded code.
+IncludeCommandDescriptions:true
+
+#  If set, then project-specific callbacks file will be generated.
+GenerateCallbacksFile:true
+
+#  Actual preconfigured key, if it is enabled.
+PreconfiguredKey:56777777777777777777777777777777
+
+#  Actual network key.
+NetworkKey:12333333333333333333333333333333
+
+#  Actual second network key.
+NetworkKey2:ABCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+
+# Setup configurations
+{setupId:additionalFiles
+}
+{setupId:boardHeader
+unknown=DEFAULT,,,
+em250=DEFAULT,,,0001010010011000
+}
+{setupId:bootloader
+em250=null,
+}
+{setupId:debugConfiguration
+on
+area name off
+appSerial=1
+compile,ALARM_CLUSTER
+compile,APP_BOOTLOAD_CLUSTER
+compile,BACNET_PROTOCOL_TUNNEL_CLUSTER
+compile,BALLAST_CONFIGURATION_CLUSTER
+compile,BASIC_CLUSTER
+compile,BINARY_INPUT_BASIC_CLUSTER
+compile,COLOR_CONTROL_CLUSTER
+compile,COMMISSIONING_CLUSTER
+compile,CUSTOM1
+compile,CUSTOM2
+compile,CUSTOM3
+compile,DEBUG
+compile,DEHUMID_CONTROL_CLUSTER
+compile,DEMAND_RESPONSE_LOAD_CONTROL_CLUSTER
+compile,DEVICE_TEMP_CLUSTER
+compile,DOOR_LOCK_CLUSTER
+compile,END_DEV_BIND
+compile,FAN_CONTROL_CLUSTER
+compile,FLOW_MEASUREMENT_CLUSTER
+compile,GENERIC_TUNNEL_CLUSTER
+compile,GROUPS_CLUSTER
+compile,IAS_ACE_CLUSTER
+compile,IAS_WD_CLUSTER
+compile,IAS_ZONE_CLUSTER
+compile,IDENTIFY_CLUSTER
+compile,ILLUM_LEVEL_SENSING_CLUSTER
+compile,ILLUM_MEASUREMENT_CLUSTER
+compile,KEY_ESTABLISHMENT_CLUSTER
+compile,LEVEL_CONTROL_CLUSTER
+compile,MESSAGING_CLUSTER
+compile,OCCUPANCY_SENSING_CLUSTER
+compile,ON_OFF_CLUSTER
+compile,ON_OFF_SWITCH_CONFIG_CLUSTER
+compile,POWER_CONFIG_CLUSTER
+compile,PREPAYMENT_CLUSTER
+compile,PRESSURE_MEASUREMENT_CLUSTER
+compile,PRICE_CLUSTER
+compile,PUMP_CONFIG_CONTROL_CLUSTER
+compile,REGISTRATION
+compile,RELATIVE_HUMIDITY_MEASUREMENT_CLUSTER
+compile,REPORTING
+compile,RSSI_LOCATION_CLUSTER
+compile,SCENES_CLUSTER
+compile,SECURITY
+compile,SERVICE_DISCOVERY
+compile,SHADE_CONFIG_CLUSTER
+compile,SIMPLE_METERING_CLUSTER
+compile,TEMP_MEASUREMENT_CLUSTER
+compile,THERMOSTAT_CLUSTER
+compile,THERMOSTAT_UI_CONFIG_CLUSTER
+compile,TIME_CLUSTER
+compile,TUNNELING_CLUSTER
+compile,WINDOW_COVERING_CLUSTER
+compile,ZDO
+enable,ALARM_CLUSTER
+enable,APP_BOOTLOAD_CLUSTER
+enable,BACNET_PROTOCOL_TUNNEL_CLUSTER
+enable,BALLAST_CONFIGURATION_CLUSTER
+enable,BASIC_CLUSTER
+enable,BINARY_INPUT_BASIC_CLUSTER
+enable,COLOR_CONTROL_CLUSTER
+enable,COMMISSIONING_CLUSTER
+enable,DEBUG
+enable,DEHUMID_CONTROL_CLUSTER
+enable,DEMAND_RESPONSE_LOAD_CONTROL_CLUSTER
+enable,DEVICE_TEMP_CLUSTER
+enable,DOOR_LOCK_CLUSTER
+enable,FAN_CONTROL_CLUSTER
+enable,FLOW_MEASUREMENT_CLUSTER
+enable,GENERIC_TUNNEL_CLUSTER
+enable,GROUPS_CLUSTER
+enable,IAS_ACE_CLUSTER
+enable,IAS_WD_CLUSTER
+enable,IAS_ZONE_CLUSTER
+enable,IDENTIFY_CLUSTER
+enable,ILLUM_LEVEL_SENSING_CLUSTER
+enable,ILLUM_MEASUREMENT_CLUSTER
+enable,KEY_ESTABLISHMENT_CLUSTER
+enable,LEVEL_CONTROL_CLUSTER
+enable,MESSAGING_CLUSTER
+enable,OCCUPANCY_SENSING_CLUSTER
+enable,ON_OFF_CLUSTER
+enable,ON_OFF_SWITCH_CONFIG_CLUSTER
+enable,POWER_CONFIG_CLUSTER
+enable,PREPAYMENT_CLUSTER
+enable,PRESSURE_MEASUREMENT_CLUSTER
+enable,PRICE_CLUSTER
+enable,PUMP_CONFIG_CONTROL_CLUSTER
+enable,RELATIVE_HUMIDITY_MEASUREMENT_CLUSTER
+enable,RSSI_LOCATION_CLUSTER
+enable,SCENES_CLUSTER
+enable,SHADE_CONFIG_CLUSTER
+enable,SIMPLE_METERING_CLUSTER
+enable,TEMP_MEASUREMENT_CLUSTER
+enable,THERMOSTAT_CLUSTER
+enable,THERMOSTAT_UI_CONFIG_CLUSTER
+enable,TIME_CLUSTER
+enable,TUNNELING_CLUSTER
+enable,WINDOW_COVERING_CLUSTER
+}
+{setupId:halOptions
+}
+{setupId:information
+}
+{setupId:macros
+AFV2_MACRO_TEST=42
+DEBUG_PRINT_FOR_ROUTING_TABLE=1
+}
+{setupId:rf4ce
+nodeCapabilities=0
+vendorId=65521
+vendorString=
+userString=
+deviceTypes=[254]
+profileIds=[0]
+power=3
+}
+{setupId:rf4ceMso
+}
+{setupId:rf4ceZrc
+}
+{setupId:serial
+em250=0,*,*,*,*,fifo,128,*1,*,115200,*,*,fifo,128
+}
+{setupId:token
+PATH(ISC_RELATIVE):custom_token.h
+}
+#  The name of the set of Command Line Interface (CLI) commands that are
+#  compiled into the application by default.
+CliCommandSet:Full
+
+#  These are the various Command Line Interface (CLI) commands that can be
+#  included, or excluded (if they are included by default), in the application.
+#  Plugin configuration
+appPlugin:address-table,true
+
+appPlugin:aes-cmac,false
+
+appPlugin:basic,true
+
+appPlugin:bulb-pwm-configuration,false
+
+appPlugin:bulb-ui,false
+
+appPlugin:button-joining,true
+
+appPlugin:calendar-client,false
+
+appPlugin:calendar-common,false
+
+appPlugin:calendar-server,false
+
+appPlugin:color-control,true
+
+appPlugin:color-server,false
+
+appPlugin:comms-hub-function,false
+
+appPlugin:concentrator,true
+
+appPlugin:counters,true
+
+appPlugin:device-database,false
+
+appPlugin:device-management-client,false
+
+appPlugin:device-management-server,false
+
+appPlugin:device-query-service,false
+
+appPlugin:diagnostic-server,false
+
+appPlugin:door-lock-server,true
+
+appPlugin:drlc,true
+
+appPlugin:drlc-server,true
+
+appPlugin:eeprom,false
+
+appPlugin:ember-minimal-printf,true
+
+appPlugin:end-device-support,false
+
+appPlugin:esi-management,true
+
+appPlugin:events-client,false
+
+appPlugin:events-server,false
+
+appPlugin:exosite-demo,false
+
+appPlugin:ezmode-commissioning,false
+
+appPlugin:find-and-bind,false
+
+appPlugin:form-and-join,true
+
+appPlugin:fragmentation,true
+
+appPlugin:gas-proxy-function,false
+
+appPlugin:gbcs-device-log,false
+
+appPlugin:gbcs-gas-meter,false
+
+appPlugin:gbz-message-controller,false
+
+appPlugin:general-response-commands,true
+
+appPlugin:groups-client,true
+
+appPlugin:groups-server,true
+
+appPlugin:hc-11073-tunnel,true
+
+appPlugin:ias-zone-client,false
+
+appPlugin:ias-zone-server,false
+
+appPlugin:identify,true
+
+appPlugin:identify-feedback,true
+
+appPlugin:infrared-led,false
+
+appPlugin:interpan,true
+
+appPlugin:key-establishment,true
+
+appPlugin:led-dim-pwm,false
+
+appPlugin:led-rgb-pwm,false
+
+appPlugin:led-temp-pwm,false
+
+appPlugin:level-control,true
+
+appPlugin:lwip,false
+
+appPlugin:lwip-callback-tests,false
+
+appPlugin:lwip-interface,false
+
+appPlugin:lwip-stats,false
+
+appPlugin:lwip-udp-wrapper,false
+
+appPlugin:messaging-client,true
+
+appPlugin:messaging-server,true
+
+appPlugin:meter-mirror,false
+
+appPlugin:meter-snapshot-client,false
+
+appPlugin:meter-snapshot-server,false
+
+appPlugin:meter-snapshot-storage,false
+
+appPlugin:mn-price-passthrough,false
+
+appPlugin:network-commissioner,false
+
+appPlugin:network-creator,false
+
+appPlugin:network-find,true
+
+appPlugin:network-steering,false
+
+appPlugin:on-off,true
+
+appPlugin:ota-bootload,false
+
+appPlugin:ota-client,false
+
+appPlugin:ota-client-policy,false
+
+appPlugin:ota-common,false
+
+appPlugin:ota-server,false
+
+appPlugin:ota-server-policy,false
+
+appPlugin:ota-storage-common,false
+
+appPlugin:ota-storage-posix-filesystem,false
+
+appPlugin:ota-storage-simple,false
+
+appPlugin:ota-storage-simple-eeprom,false
+
+appPlugin:ota-storage-simple-ram,false
+
+appPlugin:partner-link-key-exchange,true
+
+appPlugin:permit-join-manager,false
+
+appPlugin:poll-control-client,false
+
+appPlugin:poll-control-server,false
+
+appPlugin:prepayment-client,false
+
+appPlugin:prepayment-server,false
+
+appPlugin:prepayment-snapshot-storage,false
+
+appPlugin:price-client,true
+
+appPlugin:price-common,true
+
+appPlugin:price-server,true
+
+appPlugin:reporting,true
+
+appPlugin:rf4ce-gdp,false
+
+appPlugin:rf4ce-gdp-identification-client,false
+
+appPlugin:rf4ce-gdp-identification-server,false
+
+appPlugin:rf4ce-mso,false
+
+appPlugin:rf4ce-mso-ir-rf-database-originator,false
+
+appPlugin:rf4ce-mso-ir-rf-database-recipient,false
+
+appPlugin:rf4ce-profile,false
+
+appPlugin:rf4ce-zrc11,false
+
+appPlugin:rf4ce-zrc20,false
+
+appPlugin:rf4ce-zrc20-action-mapping-client,false
+
+appPlugin:rf4ce-zrc20-action-mapping-server,false
+
+appPlugin:rf4ce-zrc20-ha-client,false
+
+appPlugin:rf4ce-zrc20-ha-server,false
+
+appPlugin:rtos,false
+
+appPlugin:scenes,true
+
+appPlugin:scenes-client,true
+
+appPlugin:simple-clock,true
+
+appPlugin:simple-main,true
+
+appPlugin:simple-metering-client,true
+
+appPlugin:simple-metering-server,true
+
+appPlugin:sleepy-message-queue,false
+
+appPlugin:smart-energy-registration,true
+
+appPlugin:stack-diagnostics,false
+
+appPlugin:standalone-bootloader-client,false
+
+appPlugin:standalone-bootloader-common,false
+
+appPlugin:standalone-bootloader-server,false
+
+appPlugin:standard-printf-support,false
+
+appPlugin:tcp-packet-reader,false
+
+appPlugin:test-harness,false
+
+appPlugin:throughput,false
+
+appPlugin:time-server,true
+
+appPlugin:trust-center-backup,false
+
+appPlugin:trust-center-keepalive,false
+
+appPlugin:trust-center-nwk-key-update-broadcast,false
+
+appPlugin:trust-center-nwk-key-update-periodic,false
+
+appPlugin:trust-center-nwk-key-update-unicast,false
+
+appPlugin:tunneling-client,true
+
+appPlugin:tunneling-server,true
+
+appPlugin:update-tc-link-key,false
+
+appPlugin:xmodem-sender,false
+
+appPlugin:zcl-ip,false
+
+appPlugin:zigbee-internet-client,false
+
+appPlugin:zigbee-internet-device-common,false
+
+appPlugin:zigbee-internet-keepalive,false
+
+appPlugin:zigbee-internet-server,false
+
+appPlugin:zigbee-network-stub,false
+
+appPlugin:zll-commissioning,false
+
+appPlugin:zll-identify-server,false
+
+appPlugin:zll-level-control-server,false
+
+appPlugin:zll-on-off-server,false
+
+appPlugin:zll-scenes-client,false
+
+appPlugin:zll-scenes-server,false
+
+appPlugin:zll-utility-client,false
+
+appPlugin:zll-utility-server,false
+
+appPlugin:idle-sleep,true
+
+appPlugin:low-voltage-shutdown,false
+
+appPlugin:manufacturing-library-cli,false
+
+appPlugin:alarm-library,false
+
+appPlugin:binding-table-library,true
+
+appPlugin:cbke-163k1-library,true
+
+appPlugin:cbke-283k1-library,false
+
+appPlugin:cbke-library-core,true
+
+appPlugin:cbke-library-dsa-sign,false
+
+appPlugin:cbke-library-dsa-verify,false
+
+appPlugin:debug-basic-library,false
+
+appPlugin:debug-extended-library,false
+
+appPlugin:ecc-library-163k1,true
+
+appPlugin:ecc-library-283k1,false
+
+appPlugin:end-device-bind-library,false
+
+appPlugin:enhanced-beacon-request-library,false
+
+appPlugin:install-code-library,false
+
+appPlugin:manufacturing-library,false
+
+appPlugin:multi-network-library,true
+
+appPlugin:packet-validate-library,true
+
+appPlugin:rf4ce-stack-library,false
+
+appPlugin:security-library-core,true
+
+appPlugin:security-link-keys-library,true
+
+appPlugin:zigbee-pro-leaf-library,false
+
+appPlugin:zigbee-pro-library,true
+
+appPlugin:zll-library,false
+
+appPlugin:hal-library,true
+
+appPlugin:hal-library-rtos,false
+
+appPlugin:sim-eeprom1,true
+
+appPlugin:sim-eeprom2,false
+
+appPlugin:sim-eeprom2-1to2-upgrade,false
+
+appPlugin:sim-eeprom2-1to2-upgrade-stub,false
+
+#  Plugin specific options
+AppPluginOption:EMBER_AF_PLUGIN_GROUPS_SERVER_NAME_SUPPORT,true
+
+AppPluginOption:EMBER_AF_PLUGIN_MESSAGING_SERVER_MESSAGE_SIZE,250
+
+AppPluginOption:EMBER_AF_PLUGIN_SCENES_NAME_SUPPORT,true
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_ENABLE,true
+
+AppPluginOption:EMBER_AF_PLUGIN_SCENES_TABLE_SIZE,3
+
+AppPluginOption:EMBER_AF_PLUGIN_INTERPAN_ALLOW_SMART_ENERGY_RESPONSE_MESSAGES,true
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_ERRORS,true
+
+AppPluginOption:EMBER_AF_PLUGIN_MESSAGING_CLIENT_MESSAGE_SIZE,250
+
+AppPluginOption:EMBER_AF_PLUGIN_REPORTING_TABLE_SIZE,10
+
+AppPluginOption:EMBER_AF_PLUGIN_FRAGMENTATION_MAX_INCOMING_PACKETS,2
+
+AppPluginOption:EMBER_AF_PLUGIN_FRAGMENTATION_MAX_OUTGOING_PACKETS,2
+
+AppPluginOption:EMBER_AF_PLUGIN_FRAGMENTATION_BUFFER_SIZE,1500
+
+AppPluginOption:EMBER_AF_PLUGIN_FRAGMENTATION_FREE_OUTGOING_MESSAGE_PRIOR_TO_FINAL_ACK,true
+
+AppPluginOption:EMBER_AF_PLUGIN_IDENTIFY_FEEDBACK_USE_LEDS,true
+
+AppPluginOption:EMBER_BINDING_TABLE_SIZE,20
+
+AppPluginOption:EMBER_KEY_TABLE_SIZE,6
+
+AppPluginOption:EMBER_AF_PLUGIN_CONCENTRATOR_NCP_SUPPORT,true
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_TYPE,Electric meter
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_BATTERY_RATE,5
+
+AppPluginOption:EMBER_AF_PLUGIN_SIMPLE_METERING_SERVER_TEST_METER_PROFILES,5
+

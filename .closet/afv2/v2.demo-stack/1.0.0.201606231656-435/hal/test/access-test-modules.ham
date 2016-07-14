@@ -1,0 +1,59 @@
+#ifdef COMMENT_BLOCK
+#
+# NOTE: To get both the preprocessor and Jam to ignore plaintext, we have to
+# get clever to make a comment block here.
+#
+# Test module list for the 'access-test' target.
+# This file is defined under the access-test target in the Jamfile with
+# the directives
+#    ModuleList hal/test/access-test-modules.ham ;
+#    SubIncludeFile TOP hal test : access-test-modules.ham ;
+#
+#endif //COMMENT_BLOCK
+
+
+#ifdef PLATFORMTEST_CONFIG_COMPONENT
+  #if defined(SER232_0)
+    #define SER232 0
+  #elif defined(SER232_1)
+    #define SER232 1
+  #elif defined(SER232_AUTO)
+    #define SER232 serialPort
+  #else
+    #define SER232 1
+  #endif
+  #undef EMBER_APPLICATION_HAS_BUTTON_HANDLER
+  #undef EMBER_APPLICATION_HAS_CUSTOM_SIM_EEPROM_CALLBACK
+#endif //PLATFORMTEST_CONFIG_COMPONENT
+
+
+#ifndef PLATFORMTEST_COMMANDS_COMPONENT
+  #define APPLICATION_NAME "EM3XX Access Test"
+  #include "hal/micro/cortexm3/test/access-test.c"
+  #include "hal/micro/cortexm3/test/ramprot-test.c"
+  #include "hal/micro/cortexm3/test/led-test.c"
+  #include "hal/test/reset-test.c"
+  #include "phy/test/phy-common-test.c"
+  #include "phy/test/phy-common-rx-test.c"
+  #include "phy/test/phy-common-tx-test.c"
+  #include "phy/em250class/test/phy-em250class-test.c"
+  #include "phy/em3xx/test/phy-em3xx-test.c"
+#endif //PLATFORMTEST_COMMANDS_COMPONENT
+
+
+#ifdef PLATFORMTEST_JAM_COMPONENT
+DefineGroup PLATFORMTEST_TESTFILES :
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/access-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/access.s79
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/ramprot-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/micro/cortexm3/test/led-test.c
+  $(GLOBAL_BASE_DIR_HAL)/hal/test/reset-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-rx-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/test/phy-common-tx-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-test.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em250class/test/phy-em250class-timer-test-stub.c
+  $(GLOBAL_BASE_DIR_PHY)/phy/em3xx/test/phy-em3xx-test.c
+  ;
+#endif //PLATFORMTEST_JAM_COMPONENT
+

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<cli>
+  <group id="plugin-led-rgb-pwm" name="Plugin Commands: RGB control for PWM">
+    <description>
+      RGB-PWM is a plugin to control color for a 3 LED system with red, blue, and green.
+    </description>
+  </group>
+  <command cli="plugin led-rgb-pwm xyY" functionName="emberAfPluginLedRgbPwmRgbXyyCommand" group="plugin-led-rgb-pwm">
+    <description>
+	Value of white LED.
+    </description>
+    <arg name="currentX" type="INT16U" description = "CIE attribute X." />
+    <arg name="currentY" type="INT16U" description = "CIE attribute Y." />
+   </command>
+</cli>

@@ -1,0 +1,167 @@
+==============================================================
+Version 0.16.0
+==============================================================
+
+Added Features;
+ * "aem measure" command for measuring device energy usage
+ * "adapter ip" command for configuring the IP address and related settings for an adapter
+ * "swo read" command for reading from SWO
+ * "adapter dbgmode" now also supports adapters that don't have the regular MCU/IN/OUT/OFF configuration set
+
+Resolved Issues;
+ None
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+==============================================================
+Version 0.15.0
+==============================================================
+
+Added Features;
+ * "extflash" command for accessing the SPI flash on Firefly and EFR32 radio boards
+ * "adapter reset" command
+ * "adapter dbgmode" command
+ * The browse for file dialog boxes now opens the path in the text field instead of the
+   application's working directory
+
+Resolved Issues;
+ * GUI: Flashing s37/hex files with more than one data block inside a single flash page could
+   fail without being detected by verification. Fixed.
+ * When an adapter is in the bootloader, indicate that the FW version displayed is actually
+   the bootloader version.
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+
+==============================================================
+Version 0.14.1
+==============================================================
+
+Added Features;
+ * None
+
+Resolved Issues;
+ * Firmware upgrade sometimes failed on Windows with "Kit failed to restart" error.
+ * Reduced memory footprint for parallel flashing.
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+
+==============================================================
+Version 0.14.0
+==============================================================
+
+Added Features;
+ * New commands:
+   "device lock"
+   "device protect"
+   "device pageerase"
+   "device recover"
+
+ * Renamed commands:
+   "deviceinfo" -> "device info"
+   "reset"      -> "device reset"
+   "masserase"  -> "device masserase"
+   "fwupgrade"  -> "adapter fwupgrade"
+   "probe"      -> "adapter probe"
+
+Resolved Issues;
+ * None
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+==============================================================
+Version 0.13.0
+==============================================================
+
+Added Features;
+ * Added "tokenheader" command for generating C header files from token groups
+
+Resolved Issues;
+ * Fixed issue with "deviceinfo" and "masserase" commands.
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+==============================================================
+Version 0.12.0
+==============================================================
+
+Added Features;
+ * Added support for S-Record files with record types 1/9 and 2/8.
+ * Added custom token definition file example.
+ * Added verify command
+
+Resolved Issues;
+ * The hidden --flashloader option did not work. Fixed.
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+==============================================================
+Version 0.11.0
+==============================================================
+
+Added Features;
+ * Added CTUNE and XO_TUNE manufacturing tokens
+ * Added support for array tokens (fixes MFG_ASH_CONFIG handling)
+ * Added firmware upgrade command
+ * Added device info command
+ * Added probe command
+ * Added masserase command
+ * Added reset command
+
+Resolved Issues;
+ * The zlib dll was missing on Windows, fixed
+ * Aligned location of tokens in the lockbits page with the HAL
+ * Fixed blurry fonts on HiDPI Mac screens
+ * Improved documentation and error checking of --region
+ * Improved --patch option handling, now takes integers instead of byte arrays
+ * Removed 0x prefix of byte arrays in tokendump output
+ * Prefix fixed and restricted tokens with # to make the tokendump output file valid input without modifications
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * There is no cross-checking of EUI vs certificates
+
+
+==============================================================
+Version 0.10
+==============================================================
+
+Initial release
+
+Added Features;
+ * Conversion to/from .bin, .s37, .hex and .ebl
+ * Manufacturing token support - Reading and writing
+ * Encrypting/decrypting EBL files, printing EBL information
+ * Reading memory from a chip
+ * Flashing EFR32
+ * Patching memory in a device, in a file or during file conversion
+
+Resolved Issues;
+ * None
+
+Known Issues/limitations;
+ * Setting EBL timestamp and image info is not supported
+ * When dumping tokens, restricted tokens which cannot be edited manually is included in the output
+ * There is no support for pretty-printing tokens yet (with type information etc)
+ * The MFG_ASH_CONFIG token is not handled correctly
+ * There is no cross-checking of EUI vs certificates

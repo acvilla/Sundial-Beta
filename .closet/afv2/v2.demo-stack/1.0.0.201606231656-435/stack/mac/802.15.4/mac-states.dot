@@ -1,0 +1,58 @@
+// This diagram shows the flow of the mac state machine.
+// The picture of the state machine is generated with the freely available
+// program dot, part of GraphViz, available at http://www.graphviz.org/ .
+//
+// The current stable version of GraphViz contains 557 .c files with a
+// total of 237338 lines of C code.  Ouch.
+
+digraph macStates {
+  label = "MAC States\n(forced shutdown not shown)";
+  size="11,8.5";
+	node [shape=box, style=bold];
+	edge [fontsize="10.00", labelfontsize="10.00", labeldistance="3.0"];
+
+  mac_init        [label="emMacInit()", shape=ellipse, style=solid];
+  idle            [label="IDLE\n(radio idled)"];
+  scan_dwell      [label="SCAN_DWELL"];
+  scan_pend       [label="SCAN_PEND"];
+  transmit        [label="TRANSMIT"];
+  expect_data     [label="EXPECTING_DATA"];
+  event_pend      [label="EVENT_PENDING"];
+  tx_drain        [label="TX_DRAIN"];
+
+  mac_init -> idle;
+
+  idle -> scan_dwell
+    [label = "passive/energy\ndwell start"];
+  idle -> event_pend
+		[label = "kickstart"];
+  scan_dwell -> scan_pend
+    [label = "symbol timer"];
+  scan_pend -> scan_dwell
+    [label = "dwell start"];
+  scan_pend -> event_pend
+    [label = "kickstart"];
+  scan_pend -> idle
+    [label = "emMacScanEnd()"];
+  transmit -> scan_pend
+    [label = "scanning"];
+
+  event_pend -> tx_drain
+    [label = "no deQueue"];
+  tx_drain -> event_pend
+    [label = "kickstart"];
+  tx_drain -> idle
+    [label = "symbol timer"];
+
+  event_pend -> transmit
+    [label = "deQueue"];
+  transmit -> event_pend
+    [label = "not scanning"]
+  
+  transmit -> expect_data
+    [label = "data request\nframe pending ack"];
+  expect_data -> event_pend
+    [label = "timed out\nor data received"];
+    
+
+}

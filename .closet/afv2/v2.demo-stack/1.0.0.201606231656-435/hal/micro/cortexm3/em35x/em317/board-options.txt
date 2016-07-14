@@ -1,0 +1,6 @@
+# EM317 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"siw20020"        "SiW20020 em35x/PRO2+ on dev0680 BoB" "hal/micro/cortexm3/em35x/board/siw20020.h"

@@ -1,0 +1,14 @@
+# EFR32 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"brd4150a"     "BRD4150A-EFR32MG 2.4 GHz / 868 MHz 19.5dBm (SLWSTK6001A)"     "hal/micro/cortexm3/efm32/board/brd4150a.h"
+"brd4150b"     "BRD4150B-EFR32MG 2.4 GHz / 915 MHz 19.5dBm (SLWSTK6002A)"     "hal/micro/cortexm3/efm32/board/brd4150b.h"
+"brd4151a"     "BRD4151A-EFR32MG 2.4 GHz 19.5dBm (SLWSTK6000A)"     "hal/micro/cortexm3/efm32/board/brd4151a.h"
+"brd4152a"     "BRD4152A-EFR32MG 2.4 GHz / 434 MHz 19.5dBm (SLWSTK6003A)"     "hal/micro/cortexm3/efm32/board/brd4152a.h"
+"brd4153a"     "BRD4153A-EFR32MG 2.4 GHz 13dBm (SLWSTK6000A)"     "hal/micro/cortexm3/efm32/board/brd4153a.h"
+"poly3a"        "Sigma Poly3A Board"     "hal/micro/cortexm3/efm32/board/poly3a.h"
+"polybusp1"     "Sigma PolybusP1 Board"     "hal/micro/cortexm3/efm32/board/polybusp1.h"
+"polybusp2"     "Sigma PolybusP2 Board"     "hal/micro/cortexm3/efm32/board/polybusp2.h"
+"bmb2"          "SiLabs BMB2 DUT Benchtop Motherboard"     "hal/micro/cortexm3/efm32/board/bmb2.h"
+"arris_arct04137a"    "Arris ARCT04137A Board"     "hal/micro/cortexm3/efm32/board/arris_arct04137a.h"

@@ -1,0 +1,30 @@
+#-------------------------------------------------------------------------------
+#                           Silicon Laboratories, Inc.
+#                            http://www.silabs.com
+#                                Copyright 2010
+#-------------------------------------------------------------------------------
+#
+#     AUTHOR:   Martin Pechanec
+#     DATE:     April 29, 2010, Thursday
+#     FILE:     NOT_FOR_CUSTOMER_USE.txt
+#
+#     File:     $URL: svn+ssh://svn.silabs.com/si6110/trunk/firmware/cust/si4010/common/diff/NOT_FOR_CUSTOMER_USE.txt $
+#     Id:       $Id: NOT_FOR_CUSTOMER_USE.txt 4699 2010-05-01 01:11:21Z mapechan $
+#     Author:   $Author: mapechan $
+#     Version:  $Revision: 4699 $
+#     Date:     $Date: 2010-04-30 18:11:21 -0700 (Fri, 30 Apr 2010) $
+#
+#-------------------------------------------------------------------------------
+
+The directory
+
+  cust/si4010/common/diff/
+
+MUST NEVER BE REVEALED TO CUTOMERS!
+
+All the files in the directory are FOR INTERNAL SiLab USE ONLY!
+
+#
+#-------------------------------------------------------------------------------
+#
+

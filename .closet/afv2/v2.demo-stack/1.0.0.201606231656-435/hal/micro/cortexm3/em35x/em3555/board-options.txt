@@ -1,0 +1,11 @@
+# EM3555 BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description"      "path"
+
+"null"            "For standalone targets that don't depend on a board"   "hal/micro/cortexm3/em35x/board/null.h"
+"ncp_uart_21gpio" "NCP with EZSP-UART on SC1, 21 gpio"                    "hal/micro/cortexm3/em35x/board/ncp_uart_21gpio.h"
+"ncp_uart"        "NCP with EZSP-UART on SC1, 21 gpio"                    "hal/micro/cortexm3/em35x/board/ncp_uart_21gpio.h"
+"ncp_spi_21gpio"  "NCP with EZSP-SPI on SC1, 21 gpio"                     "hal/micro/cortexm3/em35x/board/ncp_spi_21gpio.h"
+"ncp_spi"         "NCP with EZSP-SPI on SC1, 21 gpio"                     "hal/micro/cortexm3/em35x/board/ncp_spi_21gpio.h"
+"dev0680_21gpio"  "Standard Breakout Board, 21 gpio"                      "hal/micro/cortexm3/em35x/board/dev0680_21gpio.h"
+"breakout_board"  "Breakout board alias"                                  "hal/micro/cortexm3/em35x/board/dev0680_21gpio.h"

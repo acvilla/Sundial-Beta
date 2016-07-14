@@ -1,0 +1,6 @@
+# STM32F103RET BOARD options for build.pl
+# format is 3 quoted strings
+# "choice" "description" "path"
+
+"null" "STM32F103RET host micro doesn't use a board file" "hal/host/cortexm3/stm32f103ret/null.h"
+
