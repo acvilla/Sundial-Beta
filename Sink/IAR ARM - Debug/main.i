@@ -24711,21 +24711,18 @@ EmberTaskId emAppTask;
 
 
 extern const EmberEventData emAppEvents[];
-extern EmberEventControl adcEventControl;
-extern EmberEventControl advertiseControl;
 void initAndRunMainLoop(void)
 {
   EmberStatus status;
   do { emTaskEnableIdling((1)); } while(0);
 
   emAppTask = emberTaskInit(emAppEvents);
-  do { emEventControlSetActive(&(adcEventControl)); } while(0); //Take ADC measurement as soon as possible
-  do { emEventControlSetActive(&(advertiseControl)); } while(0);
+
   // Initialize the radio and the stack.  If this fails, we have to assert
   // because something is wrong.
   status = emberInit();
   emberSerialPrintfLine(COM_USART2, "Init: 0x%x", status);
-  do { if (! (status == EMBER_SUCCESS)) { halInternalAssertFailed("main.c", 84); } } while(0);
+  do { if (! (status == EMBER_SUCCESS)) { halInternalAssertFailed("main.c", 81); } } while(0);
 
   emberAfInit();
   emberAfMainInitCallback();

@@ -19,11 +19,13 @@ extern EmberEventControl emberAfPluginHeartbeatEventControl;
 void emberAfPluginPollEventHandler(void);
 extern EmberEventControl emberAfPluginPollEventControl;
 
-
+void adcHandler(void);
+extern EmberEventControl adcEventControl;
 
 const EmberEventData emAppEvents[] = {
- // {&emberAfPluginHeartbeatEventControl, emberAfPluginHeartbeatEventHandler},
- // {&emberAfPluginPollEventControl, emberAfPluginPollEventHandler},
+  //{&emberAfPluginHeartbeatEventControl, emberAfPluginHeartbeatEventHandler},
+  {&emberAfPluginPollEventControl, emberAfPluginPollEventHandler},
+  {&adcEventControl, adcHandler},
   {NULL, NULL}
 };
 #endif // __CONNECT_EVENTS__

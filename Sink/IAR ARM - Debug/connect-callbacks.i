@@ -25481,31 +25481,57 @@ void emberMarkApplicationBuffersHandler(void);
 
 
 
-// these are all the pins used for current/voltage measurements and load switching
 
-static uint8_t message[(13 + 10)];
-static EmberMessageLength messageLength;
-static EmberMessageOptions txOptions = EMBER_OPTIONS_NONE;
-GPIO_Port_TypeDef Sundial_Port = gpioPortD; //This port contains all the pins needed for the measurement and load switching
-//in the application
+/*
+ * These are all the pins used for current/voltage measurements and load switching
+ */
 
-enum {
-  SENSOR_SINK_COMMAND_ID_ADVERTISE_REQUEST = 0,
-  SENSOR_SINK_COMMAND_ID_ADVERTISE         = 1,
-  SENSOR_SINK_COMMAND_ID_DATA              = 2,
-};
-typedef uint8_t SensorSinkCommandId;
+/*
+ *************MESSAGING/DATA AGGREGATION GLOBAL VARIABLES******
+ */
 
-//////////// USER DEFINED GLOBAL VARIABLES /////////////////////
-ADC_Init_TypeDef init = { adcOvsRateSel2, adcLPFilterBypass, adcWarmupNormal, 0x0000001FUL, 0x00000000UL, 0 };
-ADC_InitSingle_TypeDef singleInit = { adcPRSSELCh0, adcAcqTime1, adcRef1V25, adcRes12Bit, adcSingleInpCh0, 0, 0, 0, 0 };
-ADC_SingleInput_TypeDef currentChannel = adcSingleInpCh0;
-ADC_SingleInput_TypeDef voltageChannel = adcSingleInpCh1;
-uint16_t power_meas[5];
-EmberEventControl adcEventControl;
-EmberEventControl advertiseControl;
-uint8_t application_channel =  1;
-//////////// USER DEFINED PROTOTYPES ///////////////////////////
+		enum {
+			SENSOR_SINK_COMMAND_ID_ADVERTISE_REQUEST = 0,
+			SENSOR_SINK_COMMAND_ID_ADVERTISE         = 1,
+			SENSOR_SINK_COMMAND_ID_DATA              = 2,
+		};
+		typedef uint8_t SensorSinkCommandId;
+
+		typedef struct{
+			uint16_t Light_1_Power[96];
+			uint16_t Light_2_Power[96];
+			uint16_t USB_1_Power[96];
+			uint16_t USB_2_Power[96];
+			uint16_t Solar_Power[96];
+			EmberEUI64 longId[8];                                     //Unique 64-bit address of node
+			uint32_t Sample_Time[96];                            //Gives the time that the sample was taken. the index corresponds to the sample number
+			uint8_t  SampleIndex;                               //Index of samples, there are 96 samples per day
+		}Node_Power;
+
+		uint16_t nodes_array_length = 0;
+		static Node_Power nodes_array[5];
+
+/*
+ *************ADC-RELATED GLOBAL VARIABLES**********************
+ */
+
+		GPIO_Port_TypeDef Sundial_Port = gpioPortD; //Measurements and load switching pins
+		ADC_Init_TypeDef init = { adcOvsRateSel2, adcLPFilterBypass, adcWarmupNormal, 0x0000001FUL, 0x00000000UL, 0 };
+		ADC_InitSingle_TypeDef singleInit = { adcPRSSELCh0, adcAcqTime1, adcRef1V25, adcRes12Bit, adcSingleInpCh0, 0, 0, 0, 0 };
+		ADC_SingleInput_TypeDef currentChannel = adcSingleInpCh0;
+		ADC_SingleInput_TypeDef voltageChannel = adcSingleInpCh1;
+		uint16_t power_meas[5];
+		EmberEventControl adcEventControl;
+
+
+		uint8_t application_channel =  1;
+		static EmberKeyData securityKey = {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA};
+
+/*
+ ***************USER DEFINED PROTOTYPES************************
+ */
+
+void adcHandler(void);
 void initSundialADC(void);
 void initSundialGPIO(void);
 static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel);
@@ -25513,18 +25539,42 @@ static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Va
 static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1);
 void takeMeasurementSet(uint16_t *power_meas);
 static uint16_t calculatePower(uint32_t current, uint32_t voltage);
-void adcHandler(void);
-static EmberStatus send(EmberNodeId nodeId,
-                        SensorSinkCommandId commandId,
-                        uint8_t *buffer,
-                        uint8_t bufferLength);
 static void storeLowHighInt16u(uint8_t *contents, uint16_t value);
-/********************************************USER DEFINED FUNCTIONS*******************************************************/
+uint16_t nodePush(Node_Power* array, uint16_t nodes_array_length);
+void updateNodesArray(EmberEUI64 *tempEUI64, uint16_t *tempData);
+void printCollectedData(void);
+/*
+ **************USER DEFINED FUNCTIONS**************************
+ */
+void printCollectedData(void){
+	int i = 0;
+  	emberAfPrintln(0x0001, "------------------------------NODE %d---------------------------------------", i);
+  	emberAfPrintln(0x0001, "longId: %d", nodes_array[i]. longId);
+  	emberAfPrintln(0x0001, "");
+  	uint32_t SECONDS = ((nodes_array[i].Sample_Time[nodes_array[i].SampleIndex])/1000) % 86400;
+  	uint32_t DAYS = (((nodes_array[i].Sample_Time[nodes_array[i].SampleIndex])/1000)/86400);
+  	emberAfPrintln(0x0001, "TIME:\n %d - DD\n %d - SEC", DAYS, SECONDS);
+
+
+
+  	        //here it should check if power is low and should write nodes_array to the SD card
+  	        //the function that writes to the sd card using fatfs should add strings and formatting that specify what each value means
+
+  	  //Print Statements
+  	  emberAfPrintln(0x0001, "Node %d Light_1_Power[%d]: %d mW", i, nodes_array[i]. SampleIndex, nodes_array[i]. Light_1_Power[nodes_array[i]. SampleIndex]);
+      emberAfPrintln(0x0001, "Node %d Light_2_Power[%d]: %d mW", i, nodes_array[i]. SampleIndex, nodes_array[i]. Light_2_Power[nodes_array[i]. SampleIndex]);
+
+      emberAfPrintln(0x0001, "Node %d USB_1_Power[%d]: %d mW", i, nodes_array[i]. SampleIndex, nodes_array[i]. USB_1_Power[nodes_array[i]. SampleIndex]);
+ 	  emberAfPrintln(0x0001, "Node %d USB_2_Power[%d]: %d mW", i, nodes_array[i]. SampleIndex, nodes_array[i]. USB_2_Power[nodes_array[i]. SampleIndex]);
+
+ 	  emberAfPrintln(0x0001, "Node %d Solar_Power[%d]: %d mW", i, nodes_array[i]. SampleIndex, nodes_array[i]. Solar_Power[nodes_array[i]. SampleIndex]);
+}
 void adcHandler(void)
 {
 	takeMeasurementSet(power_meas);
 	do { emEventControlSetDelayMS(&(adcEventControl), (15 * (60UL * 1024UL))); } while(0); //15 minute delay
 }
+
 void initSundialADC(void)
 {
 	  /* Enable ADC clock */
@@ -25731,7 +25781,7 @@ void halSimEepromCallback(EmberStatus status) {
  * sleep.  Ver.: always
  */
 _Bool emberAfPluginIdleSleepOkToSleepCallback(uint32_t durationMs) {
- // your code here
+ return 0;// your code here
 }
 
 /** @brief Wake Up
@@ -25753,7 +25803,7 @@ void emberAfPluginIdleSleepWakeUpCallback(uint32_t durationMs) {
  *
  */
 _Bool emberAfPluginIdleSleepOkToIdleCallback(void) {
- // your code here
+ return 0;// your code here
 }
 
 /** @brief Active
@@ -25909,17 +25959,19 @@ void emberAfMainInitCallback(void) {
 	  EmberStatus form_status;
 
 	  halCommonMemSet(&parameters,0,sizeof(EmberNetworkParameters));
-	  parameters.radioTxPower = 10;//                                (1) --------------------------SET PARAMETERS----------------------------------//
+	  parameters.radioTxPower = 10;//             (1) Set Parameters only before form or join
 	  parameters.radioChannel = 1;
 	  parameters.panId = 0x01FF;
 
 
 	  EmberStatus status = emberNetworkInit();//                    (2) Try to rejoin pre-existing network if possible
-	         if (status == EMBER_NOT_JOINED){
+
+	  	  if (status == EMBER_NOT_JOINED){
 			   form_status = emberFormNetwork(&parameters);//       (3) If emberNetworkInit fails then form a network on channel 1 using above parameters
 			   emberAfPrintln(0x0001, "Form 0x%x", form_status);
 		 	 }
 	         emberPermitJoining(0xFF);
+	         //emberEventControlSetActive(adcEventControl); //Take ADC measurement as soon as possible
 }
 
 /** @brief Main Tick
@@ -25934,50 +25986,10 @@ void emberAfMainTickCallback(void) {
 
 }
 
-void advertiseHandler(void)
-{
-  // If the sink is not on the network, the periodic event is cancelled and
-  // advertisements are not set.
-  if (!emberStackIsUp()) {
-    do { (advertiseControl). status = EMBER_EVENT_INACTIVE; } while(0);
-  } else {
-    EmberStatus status = send(0xFFFF,
-                              SENSOR_SINK_COMMAND_ID_ADVERTISE,
-                              0,
-                              0);
-    emberAfPrintln(0x0001, "Broadcast Sent");
-    do { emEventControlSetDelayMS(&(advertiseControl), ((1 * 1024UL))); } while(0);
-  }
-}
-
 static void storeLowHighInt16u(uint8_t *contents, uint16_t value)
 {
   contents[0] = ((uint8_t)((value) & 0xFF));
   contents[1] = ((uint8_t)(((uint8_t)(((value) >> 8) & 0xFF))));
-}
-static EmberStatus send(EmberNodeId nodeId,
-                        SensorSinkCommandId commandId,
-                        uint8_t *buffer,
-                        uint8_t bufferLength)
-{
-  messageLength = 0;
-  storeLowHighInt16u(message + messageLength, 0xC00F);
-  messageLength += 2;
-  message[messageLength++] = commandId;
-  halCommonMemMove(message + messageLength,(emLocalEui64),8);
-  messageLength += 8;
-  storeLowHighInt16u(message + messageLength, (emLocalNodeId));
-  messageLength += 2;
-  if (bufferLength != 0) {
-    halCommonMemMove(message + messageLength,buffer,bufferLength);
-    messageLength += bufferLength;
-  }
-  return emberMessageSend(nodeId,
-                          0, // endpoint
-                          0, // messageTag
-                          messageLength,
-                          message,
-                          txOptions);
 }
 
 /** @brief Stack Status
@@ -25999,12 +26011,89 @@ void emberAfStackStatusCallback(EmberStatus status) {
  * @param message   Ver.: always
  */
 void emberAfIncomingMessageCallback(EmberIncomingMessage *message) {
- // your code here
-	switch (message->payload[2]) {
+  /*
+   * Data from sensor nodes should be handled here
+   * Message Contents:
+   *  __________________________________________________
+   * |cmd|longId                         |nodeId |data   ->
+   * |_0_|_1_|_2_|_3_|_4_|_5_|_6_|_7_|_8_|_9_|_10|_11|_12->
+   *
+   */
+	emberAfPrintln(0x0001, "Message Received");
+	switch (message->payload[0]) {
 		case SENSOR_SINK_COMMAND_ID_DATA:
 			emberAfPrintln(0x0001, "Data Received");
+			EmberEUI64    tempEUI64[8];
+			uint8_t    measurements[10];
+
+			halCommonMemMove(tempEUI64,message ->payload + 1,8);
+			halCommonMemMove(measurements,message ->payload + 11,10);
+
+
+			  uint16_t tempData[5];
+			          	int LowByte = 0;  //LowByte and HighByte are reset every call to dataReportHandler
+			          	int HighByte = 1; //LowByte first, HighByte second
+			          	for(int j=0; j<5; j++){
+			          		tempData[j] = (measurements[LowByte]|(measurements[HighByte] << 8));
+			          		LowByte += 2;  // 0 2 4 6 8 - Increment the low byte and high byte to parse in the next power measurement
+			          		HighByte += 2; //  1 3 5 7 9
+			          	}
+		    updateNodesArray(tempEUI64, tempData);
+		    printCollectedData();
 			break;
-	}//Data from sensor nodes should be handled here
+	}
+}
+
+void updateNodesArray(EmberEUI64 *tempEUI64, uint16_t *tempData){
+	    	uint8_t nodeInTable = 0; //1 if node is found in the table
+
+	        for(int n = 0; n < 5; n++){
+	        	if (halCommonMemCompare(nodes_array[n]. longId, tempEUI64, 8) == 0) //if the 64-bit IEEE address of tempNode matches the node at index n then add in the sampled data
+	        	{
+	        		nodeInTable = 1;   //the longId's match so the node is already in our table
+
+	        		nodes_array[n].SampleIndex = (nodes_array[n].SampleIndex + 1) % 96; //increment the sample index
+	        		nodes_array[n].Light_1_Power[nodes_array[n].SampleIndex] = tempData[0];
+	        		nodes_array[n].Light_2_Power[nodes_array[n].SampleIndex] = tempData[1];
+	        		nodes_array[n].USB_1_Power[nodes_array[n].SampleIndex] = tempData[2];
+	        		nodes_array[n].USB_2_Power[nodes_array[n].SampleIndex] = tempData[3];
+	        		nodes_array[n].Solar_Power[nodes_array[n].SampleIndex] = tempData[4];
+	        		nodes_array[n].Sample_Time[nodes_array[n].SampleIndex] = halCommonGetInt32uMillisecondTick();//get current time
+
+	        	}
+	        }
+	        if (nodeInTable == 0)  //if sample isn't in table append a node struct to the end of the nodes_array
+	        {
+
+	        	uint16_t new_length = nodePush(nodes_array, nodes_array_length);
+	        	if (new_length!= 0){
+	        	nodes_array_length = new_length;  //only update nodes_array_length if we haven't reached maximum network size
+                emberAfPrintln(0x0001, "NODE UPDATED. Array length: %d", nodes_array_length);
+	        	nodes_array[nodes_array_length - 1].SampleIndex = 0;
+	        	nodes_array[nodes_array_length - 1].Light_1_Power[0] = tempData[0];
+	    		nodes_array[nodes_array_length - 1].Light_2_Power[0] = tempData[1];
+	    		nodes_array[nodes_array_length - 1].USB_1_Power[0] = tempData[2];
+	    		nodes_array[nodes_array_length - 1].USB_2_Power[0] = tempData[3];
+	    		nodes_array[nodes_array_length - 1].Solar_Power[0] = tempData[4];
+	    		nodes_array[nodes_array_length - 1].Sample_Time[0] = halCommonGetInt32uMillisecondTick();//get current time
+	    		halCommonMemMove(nodes_array[nodes_array_length - 1]. longId,tempEUI64,8);
+	        	}
+	        }
+}
+
+uint16_t nodePush(Node_Power* array, uint16_t nodes_array_length)
+{
+	//if node not already present in array, push it to the end
+    uint16_t new_length = nodes_array_length + 1;
+    if (new_length <= 5)
+    	{
+      	//Node_Power* new_addr = (array + 1);//not needed but can use instead of returning size
+    	return new_length;
+    	}
+    else
+    	{
+    	return 0;
+    	}
 }
 
 /** @brief Message Sent

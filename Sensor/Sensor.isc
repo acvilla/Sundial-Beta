@@ -78,6 +78,9 @@ usbdata,usbCdcDataCommand,b,unlocked
 usbinfo,usbCdcInfoCommand,,unlocked
 usbpeek,usbCdcPeekCommand,uu,unlocked
 leave,emberResetNetworkState,,unlocked
+usbdata,usbCdcDataCommand,b,unlocked
+usbinfo,usbCdcInfoCommand,,unlocked
+usbpeek,usbCdcPeekCommand,uu,unlocked
 }
 {setupId:connectStackConfig
 Radio board: BRD4502
@@ -88,6 +91,7 @@ area name off
 appSerial=1
 }
 {setupId:eventConfiguration
+adcEventControl,adcHandler
 }
 {setupId:information
 }

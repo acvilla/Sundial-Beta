@@ -10774,6 +10774,8 @@ _Bool emberProcessCommandString(uint8_t *input, uint8_t size);
 */
 
 
+void emberResetNetworkState(void);
 EmberCommandEntry emberCommandTable[] = {
+  { ("leave"), (emberResetNetworkState), (""), 0 },
   { 0, 0, 0, 0 },
 };

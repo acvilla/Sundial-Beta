@@ -15,19 +15,26 @@
 #include "serial/serial.h"
 #include "connect-debug-print.h"
 #include "ustimer.h"
-
+#include "em_device.h"
+#include "em_chip.h"
+#include "bsp.h"
+#include "em_adc.h"
+#include "em_cmu.h"
+#include "em_dbg.h"
+#include "em_gpio.h"
+#include "em_timer.h"
+#include "connect-bookkeeping.h"
+#include "connect-configuration.h"
 
 
 
 #define SENSOR_SINK_TX_POWER                 10
 #define SENSOR_SINK_CHANNEL                  1
-#define SENSOR_SINK_PROTOCOL_ID              0xC00F
 
-#define SENSOR_SINK_PROTOCOL_ID_OFFSET       0
-#define SENSOR_SINK_COMMAND_ID_OFFSET        2
-#define SENSOR_SINK_EUI64_OFFSET             3
-#define SENSOR_SINK_NODE_ID_OFFSET           11
-#define SENSOR_SINK_DATA_OFFSET              13
+#define SENSOR_SINK_COMMAND_ID_OFFSET        0
+#define SENSOR_SINK_EUI64_OFFSET             1
+#define SENSOR_SINK_NODE_ID_OFFSET           9
+#define SENSOR_SINK_DATA_OFFSET              11
 #define SENSOR_SINK_MAXIMUM_DATA_LENGTH      10
 #define SENSOR_SINK_MINIMUM_LENGTH           SENSOR_SINK_DATA_OFFSET
 #define SENSOR_SINK_MAXIMUM_LENGTH           (SENSOR_SINK_MINIMUM_LENGTH \
@@ -37,9 +44,20 @@
                                      0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA,       \
                                      0xAA, 0xAA, 0xAA, 0xAA}
 
+/*
+ * Below are all the pins used for current/voltage measurements and load switching
+ */
+#define CURRENT_DATA_PIN	0	 //Current measurement input pin
+#define VOLTAGE_DATA_PIN	1	 //Voltage measurement input pin
+#define A0_PIN 		   2    //Current control pin 0
+#define A1_PIN 		   3    //Current control pin 1
+#define A2_PIN 		   4	//Current control pin 2
+#define VCTRL1_PIN 		    5
+#define VCTRL2_PIN 		    6
+#define RELAY_PIN 		    7
+
 static EmberKeyData securityKey = SENSOR_SINK_SECURITY_KEY;
 uint8_t application_channel =   1;
-uint8_t ScanSuccess =   1;
 static uint8_t message[SENSOR_SINK_MAXIMUM_LENGTH];
 static EmberMessageLength messageLength;
 static EmberMessageOptions txOptions = EMBER_OPTIONS_NONE;
@@ -50,6 +68,238 @@ enum {
   SENSOR_SINK_COMMAND_ID_DATA              = 2,
 };
 typedef uint8_t SensorSinkCommandId;
+/*
+ * Sundial_Port contains all the pins needed for the measurement and load switching in the application
+ */
+GPIO_Port_TypeDef Sundial_Port = gpioPortD;
+
+ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
+ADC_InitSingle_TypeDef singleInit = ADC_INITSINGLE_DEFAULT;
+ADC_SingleInput_TypeDef currentChannel = adcSingleInpCh0;
+ADC_SingleInput_TypeDef voltageChannel = adcSingleInpCh1;
+EmberEventControl adcEventControl;
+
+void initSundialADC(void);
+void initSundialGPIO(void);
+static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel);
+static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Value, unsigned int A2_Value);
+static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1);
+void takeMeasurementSet(uint16_t *power_meas);
+static uint16_t calculatePower(uint32_t current, uint32_t voltage);
+void adcHandler(void);
+static EmberStatus send(EmberNodeId nodeId,
+                        SensorSinkCommandId commandId,
+                        uint8_t *buffer,
+                        uint8_t bufferLength);
+static void storeLowHighInt16u(uint8_t *contents, uint16_t value);
+
+void adcHandler(void)
+{
+    uint8_t payload[SENSOR_SINK_MAXIMUM_DATA_LENGTH];
+    uint16_t measurements[5];         // array to store the most recent set of measurements
+    uint16_t *measptr = measurements;
+    takeMeasurementSet(measptr);	  // take all power measurements and fill measurements array
+    /*
+     * Transfer measurements to payload
+     */
+    int byteidx = 0;
+    for (int i = 0; i < 5; i++)
+    {
+    	uint16_t temp = measurements[i];
+    	payload[byteidx] = LOW_BYTE(temp);			//order is low byte first, high byte second
+    	payload[byteidx + 1] = HIGH_BYTE(temp);
+    	byteidx += 2;
+    }
+    EmberStatus status = send(EMBER_COORDINATOR_ADDRESS,
+                        SENSOR_SINK_COMMAND_ID_DATA,
+                        payload,
+                        SENSOR_SINK_MAXIMUM_DATA_LENGTH);
+    emberAfCorePrintln("Send Status: 0x%x", status);
+	emberEventControlSetDelayMS(adcEventControl, 15 * MILLISECOND_TICKS_PER_MINUTE); //15 minute delay
+}
+
+void initSundialADC(void)
+{
+	  /* Enable ADC clock */
+	  CMU_ClockEnable(cmuClock_ADC0, true);
+
+	  /* Customize ADC base configuration (from ADC_INIT_DEFAULT) */
+	  init.timebase = ADC_TimebaseCalc(0);  		// uses current HFPER clock setting
+	  init.prescale = ADC_PrescaleCalc(7000000, 0); // uses current HFPER clock setting to scale the desired ADC frequency
+	  init.lpfMode =  adcLPFilterRC;				// use the on-chip RC filter
+	  init.ovsRateSel = adcOvsRateSel16;			// avg 16 samples per conversion
+
+	 /* Customize ADC Single Measurement configuration (from ADC_INITSINGLE_DEFAULT) */
+	 singleInit.reference  	= adcRef2V5;			// use 2.5V for the reference voltage
+	 singleInit.input      	= adcSingleInpCh0;		// default to CH0
+	 singleInit.resolution 	= adcRes12Bit;			// 12-bit resolution
+	 singleInit.acqTime 	= adcAcqTime32;			// 32 clock cycles
+	 singleInit.rep			= false;				// not in repetitive mode
+
+	 ADC_Init(ADC0, &init);
+	 ADC_InitSingle(ADC0, &singleInit);
+}
+
+void initSundialGPIO(void)
+{
+	/* initializes all GPIO pins for our project */
+
+	//CONTROL PINS
+	GPIO_PinModeSet(Sundial_Port, A0_PIN, gpioModePushPull, 0);         // PD2  Note: 0 means output = LOW
+	GPIO_PinModeSet(Sundial_Port, A1_PIN, gpioModePushPull, 0);	        // PD3
+	GPIO_PinModeSet(Sundial_Port, A2_PIN, gpioModePushPull, 0);		    // PD4
+	GPIO_PinModeSet(Sundial_Port, VCTRL1_PIN, gpioModePushPull, 0);		// PD5
+	GPIO_PinModeSet(Sundial_Port, VCTRL2_PIN, gpioModePushPull, 0);	    // PD6
+	GPIO_PinModeSet(Sundial_Port, RELAY_PIN, gpioModePushPull, 1);	    // PD7 - Relay Pin on by default
+
+	// Disables LED0 to prevent interference with PF6
+	BSP_LedClear(0);
+
+	// Disables the debug interface (SWDIO, SWO) to prevent interference with PF1 and PF2
+	// must wait 3 seconds before disabling the debug interface (see EZR32WG ref manual p.734).
+
+
+	//INPUTS
+	GPIO_PinModeSet(Sundial_Port, CURRENT_DATA_PIN, gpioModeInput, 0);		// PD0 - Current Measurements
+	GPIO_PinModeSet(Sundial_Port, VOLTAGE_DATA_PIN, gpioModeInput, 0);		// PD1 - Voltage Measurements
+}
+
+static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel)
+{
+
+	/* Takes a measurement from ADC0 CH# depending on the specified channel */
+	uint32_t data;
+
+	// reset the ADC channel selection
+	ADC0->SINGLECTRL = ADC_SINGLECTRL_INPUTSEL_DEFAULT;
+
+	switch (channel)
+	{
+		case adcSingleInpCh0:
+			ADC0->SINGLECTRL |= ADC_SINGLECTRL_INPUTSEL_CH0;
+			break;
+
+		case adcSingleInpCh1:
+			ADC0->SINGLECTRL |= ADC_SINGLECTRL_INPUTSEL_CH1;
+			break;
+	}
+
+	 while(((ADC0 -> STATUS & ADC_STATUS_WARM) != 1) && (ADC0 -> STATUS & ADC_STATUS_SINGLEREFWARM != 1)){
+			//Wait until adc and reference are warmed up
+		}
+		ADC_Start(ADC0, adcStartSingle);     //Start a single conversion
+		while (ADC0 -> STATUS & ADC_STATUS_SINGLEACT){
+			//Wait until ADC0 finishes conversion
+		}
+		if (ADC0 -> STATUS & ADC_STATUS_SINGLEDV){ //Check to see if conversion result is valid
+			  //Data is valid
+		}
+		data = ADC_DataSingleGet(ADC0);  //Get result from ADC data register
+		return data;
+}
+
+static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Value, unsigned int A2_Value)
+{
+	GPIO_PinOutClear(Sundial_Port, A0_PIN);       // reset control pin
+	GPIO_PinOutClear(Sundial_Port, A1_PIN);       // reset control pin
+	GPIO_PinOutClear(Sundial_Port, A2_PIN);       // reset control pin
+	/* sets the specified control pin high to take a current measurement */
+	uint32_t measurement;
+	if (A0_Value)  GPIO_PinOutSet(Sundial_Port, A0_PIN);
+	if (A1_Value)  GPIO_PinOutSet(Sundial_Port, A1_PIN);
+	if (A2_Value)  GPIO_PinOutSet(Sundial_Port, A2_PIN);
+
+	USTIMER_Delay(50000);                       // wait 50ms for gpio pin to turn on switch
+	measurement = adc0TakeMeasurement(currentChannel); // take actual measurement
+	GPIO_PinOutClear(Sundial_Port, A0_PIN);       // reset control pin after measurement
+	GPIO_PinOutClear(Sundial_Port, A1_PIN);       // reset control pin after measurement
+	GPIO_PinOutClear(Sundial_Port, A2_PIN);       // reset control pin after measurement
+	return measurement;
+}
+
+static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1)
+{
+
+	/* sets the specified control pins to take a voltage measurement.
+	 *
+	 * vctrl2 vctrl1
+	 * 	0 		0 		= No connection
+	 * 	0 		1 		= 12V
+	 * 	1 		0 		= 5V
+	 * 	1 		1 		= Solar Panel Voltage
+	 *
+	 */
+	uint32_t measurement;
+
+	if (vctrl1) GPIO_PinOutSet(Sundial_Port, VCTRL1_PIN);
+	if (vctrl2) GPIO_PinOutSet(Sundial_Port, VCTRL2_PIN);
+	USTIMER_Delay(50000);                                  // wait 50ms for gpio pin to turn on switch
+	measurement = adc0TakeMeasurement(voltageChannel);
+	GPIO_PinOutClear(Sundial_Port, VCTRL1_PIN);
+	GPIO_PinOutClear(Sundial_Port, VCTRL2_PIN);            // return voltage control to no connection after measurement
+	return measurement;
+}
+
+void takeMeasurementSet(uint16_t *power_meas)
+{
+	/* takes the full suite of power measurements once every 15 minutes.
+	 * In total this is 5 measurements.
+	 */
+
+	uint32_t current, voltage;
+
+	// lights 1 power measurement
+	emberAfCorePrintln("-------- Light1 --------");
+	current = takeCurrentMeasurement(0, 0, 0);  //RS1
+	voltage = takeVoltageMeasurement(0, 1);  // 0 1 = 12V
+	power_meas[0] = calculatePower(current, voltage);
+	emberAfCorePrintln("C:\t%d", current);
+	emberAfCorePrintln("V:\t%d", voltage);
+	emberAfCorePrintln("P:\t%d", power_meas[0]);
+
+	// lights 2 measurement
+	emberAfCorePrintln("-------- Light2 --------");
+	current = takeCurrentMeasurement(0, 0, 1);  //RS2
+	power_meas[1] = calculatePower(current, voltage);
+	emberAfCorePrintln("C:\t%d", current);
+	emberAfCorePrintln("V:\t%d", voltage);
+	emberAfCorePrintln("P:\t%d", power_meas[1]);
+
+	// usb 1 measurement
+	emberAfCorePrintln("--------- USB1 ---------");
+	current = takeCurrentMeasurement(0, 1, 0);  //RS3
+	voltage = takeVoltageMeasurement(1, 0);  // 1 0 = 5V
+	power_meas[2] = calculatePower(current, voltage);
+	emberAfCorePrintln("C:\t%d", current);
+	emberAfCorePrintln("V:\t%d", voltage);
+	emberAfCorePrintln("P:\t%d", power_meas[2]);
+
+	// usb 2 measurement
+	emberAfCorePrintln("--------- USB2 ---------");
+	current = takeCurrentMeasurement(0, 1, 1);  //RS4
+	power_meas[3] = calculatePower(current, voltage);
+	emberAfCorePrintln("C:\t%d", current);
+	emberAfCorePrintln("V:\t%d", voltage);
+	emberAfCorePrintln("P:\t%d", power_meas[3]);
+
+	// solar panel measurement
+	emberAfCorePrintln("-------- Solar ---------");
+	current = takeCurrentMeasurement(1, 0, 0);  //RS5
+	voltage = takeVoltageMeasurement(1, 1);  // 1 1 = Solar
+	power_meas[4] = calculatePower(current, voltage);
+	emberAfCorePrintln("C:\t%d", current);
+	emberAfCorePrintln("V:\t%d", voltage);
+	emberAfCorePrintln("P:\t%d", power_meas[4]);
+}
+
+static uint16_t calculatePower(uint32_t current, uint32_t voltage)
+{
+	/* Calculates the power consumed by the circuit in mW, given a current and voltage measurement.
+	 *
+	 * The voltage and current values are raw uint32_t directly from the ADC data register.
+	 */
+    return (uint16_t) ((0.2 * ((voltage*current*2500) / 4096))/1000);
+}
 
 // The Simulated EEPROM callback function, implemented by the
 // application.
@@ -118,20 +368,20 @@ void emberAfPluginIdleSleepActiveCallback(void) {
  */
 void emberAfMainInitCallback(void) {
 	    CMU_ClockEnable(cmuClock_HFPER, true);
-		USTIMER_Init();                                         //calibrate delay timer
-		//initSundialADC();
-		//initSundialGPIO();
+		USTIMER_Init();                                         //   Calibrate delay timer
+		initSundialADC();
+		initSundialGPIO();
+
 
 		MEMSET(&parameters, 0, sizeof(EmberNetworkParameters));
 		parameters.radioTxPower = SENSOR_SINK_TX_POWER;
 		parameters.radioChannel = SENSOR_SINK_CHANNEL; 			//   PANID will be set when beacon is received
 
-		EmberStatus status = emberNetworkInit();				//try to rejoin old network
+		EmberStatus status = emberNetworkInit();				//   Try to rejoin old network
 
 		if (status == EMBER_SUCCESS) {
-		// Successfully rejoined previous network
+		// Successfully rejoined previous network, nothing needs to be done
 		} else {
-			emberSetSecurityKey(securityKey);
 			status = emberStartActiveScan(application_channel);
 			emberAfCorePrintln("Scan Result: %x", status);
 		}
@@ -159,7 +409,9 @@ void emberAfMainTickCallback(void) {
  * @param status   Ver.: always
  */
 void emberAfStackStatusCallback(EmberStatus status) {
- // your code here
+		if (emberStackIsUp()){
+		emberEventControlSetActive(adcEventControl); //Take ADC measurement once stack is up
+		}
 }
 
 /** @brief Incoming Message
@@ -170,9 +422,6 @@ void emberAfStackStatusCallback(EmberStatus status) {
  */
 void emberAfIncomingMessageCallback(EmberIncomingMessage *message) {
 	switch (message->payload[SENSOR_SINK_COMMAND_ID_OFFSET]) {
-		case SENSOR_SINK_COMMAND_ID_ADVERTISE:
-			emberAfCorePrintln("Advertise Message Received");
-	        break;
 		case SENSOR_SINK_COMMAND_ID_DATA:
 			emberAfCorePrintln("Data Received");
 	}
@@ -188,16 +437,19 @@ static EmberStatus send(EmberNodeId nodeId,
                         uint8_t *buffer,
                         uint8_t bufferLength)
 {
-  messageLength = 0;
-  storeLowHighInt16u(message + messageLength, SENSOR_SINK_PROTOCOL_ID);
-  messageLength += 2;
-  message[messageLength++] = commandId;
+	/*  __________________________________________________
+	 * |cmd|longId                         |nodeId |data   ->
+	 * |_0_|_1_|_2_|_3_|_4_|_5_|_6_|_7_|_8_|_9_|_10|_11|_12->
+	 *
+	 */
+  message[0] = commandId;										  //messageLength = 0 at beginning of commandId
+  messageLength++;												  //messageLength = 1 at beginning of longId
   MEMCOPY(message + messageLength, emberGetEui64(), EUI64_SIZE);
   messageLength += EUI64_SIZE;
-  storeLowHighInt16u(message + messageLength, emberGetNodeId());
+  storeLowHighInt16u(message + messageLength, emberGetNodeId());  //messageLength = 9 at beginning of nodeId
   messageLength += 2;
   if (bufferLength != 0) {
-    MEMCOPY(message + messageLength, buffer, bufferLength);
+    MEMCOPY(message + messageLength, buffer, bufferLength);       //messaheLength = 11 at beginning of data
     messageLength += bufferLength;
   }
   return emberMessageSend(nodeId,

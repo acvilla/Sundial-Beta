@@ -17336,14 +17336,12 @@ extern EmberEventControl emberAfPluginPollEventControl;
 void adcHandler(void);
 extern EmberEventControl adcEventControl;
 
-void advertiseHandler(void);
-extern EmberEventControl advertiseControl;
+
 
 const EmberEventData emAppEvents[] = {
-		{&adcEventControl, adcHandler},
-		{&advertiseControl, advertiseHandler},
-  {&emAfPluginMailboxClientEventControl, emAfPluginMailboxClientEventHandler},
-  {&emAfPluginMailboxServerEventControl, emAfPluginMailboxServerEventHandler},
+  //{&emAfPluginMailboxClientEventControl, emAfPluginMailboxClientEventHandler},
+  //{&emAfPluginMailboxServerEventControl, emAfPluginMailboxServerEventHandler},
   {&emberAfPluginPollEventControl, emberAfPluginPollEventHandler},
+  {&adcEventControl, adcHandler},
   {0, 0}
 };

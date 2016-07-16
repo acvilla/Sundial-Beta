@@ -161,3 +161,12 @@ connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submod
 connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\base\hal\micro\cortexm3\efm32\ezr32wg330f256\com_device.h
 connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emdrv\ustimer\inc\ustimer.h
 connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emdrv\config\ustimer_config.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emlib\inc\em_chip.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emlib\inc\em_system.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\kits\common\bsp\bsp.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\kits\SLWSTK6200A_EZR32LG\config\bspconfig.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\kits\common\bsp\bsp_bcp.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emlib\inc\em_adc.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emlib\inc\em_dbg.h
+connect-callbacks.o: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\emlib\inc\em_timer.h
+connect-callbacks.o: C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-bookkeeping.h

@@ -73,6 +73,7 @@ emberAfIncomingBeaconCallback:true
 }
 {setupId:commandLineConfiguration
 on
+leave,emberResetNetworkState,,unlocked
 }
 {setupId:connectStackConfig
 Radio board: BRD4502
@@ -83,6 +84,7 @@ area name off
 appSerial=1
 }
 {setupId:eventConfiguration
+adcEventControl,adcHandler
 }
 {setupId:information
 }

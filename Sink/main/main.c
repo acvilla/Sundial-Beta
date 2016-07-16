@@ -67,16 +67,13 @@ extern void emberPluginRtosInitAndRunConnectTask(void);
 #endif
 
 extern const EmberEventData emAppEvents[];
-extern EmberEventControl adcEventControl;
-extern EmberEventControl advertiseControl;
 void initAndRunMainLoop(void)
 {
   EmberStatus status;
   emberTaskEnableIdling(true);
 
   emAppTask = emberTaskInit(emAppEvents);
-  emberEventControlSetActive(adcEventControl); //Take ADC measurement as soon as possible
-  emberEventControlSetActive(advertiseControl);
+
   // Initialize the radio and the stack.  If this fails, we have to assert
   // because something is wrong.
   status = emberInit();

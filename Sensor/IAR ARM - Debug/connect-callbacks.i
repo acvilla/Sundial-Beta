@@ -23254,17 +23254,1939 @@ Ecode_t USTIMER_DelayIntSafe( uint32_t usec );
 /** @} (end group Ustimer) */
 /** @} (end group Drivers) */
 
+      //EZR32WG
+/***************************************************************************//**
+ * @file em_chip.h
+ * @brief Chip Initialization API
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2015 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Labs has no
+ * obligation to support this Software. Silicon Labs is providing the
+ * Software "AS IS", with no express or implied warranties of any kind,
+ * including, but not limited to, any implied warranties of merchantability
+ * or fitness for any particular purpose or warranties against infringement
+ * of any proprietary rights of a third party.
+ *
+ * Silicon Labs will not be liable for any consequential, incidental, or
+ * special damages, or any other relief, or for any claim by any third party,
+ * arising from your use of this Software.
+ *
+ ******************************************************************************/
+
+
+
+      //EZR32WG
+/***************************************************************************//**
+ * @file em_system.h
+ * @brief System API
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2015 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Labs has no
+ * obligation to support this Software. Silicon Labs is providing the
+ * Software "AS IS", with no express or implied warranties of any kind,
+ * including, but not limited to, any implied warranties of merchantability
+ * or fitness for any particular purpose or warranties against infringement
+ * of any proprietary rights of a third party.
+ *
+ * Silicon Labs will not be liable for any consequential, incidental, or
+ * special damages, or any other relief, or for any claim by any third party,
+ * arising from your use of this Software.
+ *
+ ******************************************************************************/
+
+
+      //EZR32WG
+
+
+/***************************************************************************//**
+ * @addtogroup EM_Library
+ * @{
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @addtogroup SYSTEM
+ * @{
+ ******************************************************************************/
+
+/*******************************************************************************
+ ********************************   ENUMS   ************************************
+ ******************************************************************************/
+
+/** Family identifiers. */
+typedef enum
+{
+/* New style family #defines */
+  systemPartFamilyEfm32Gecko   = 71,   /**< EFM32 Gecko Device Family */
+  systemPartFamilyEfm32Giant   = 72,  /**< EFM32 Giant Gecko Device Family */
+  systemPartFamilyEfm32Tiny    = 73,  /**< EFM32 Tiny Gecko Device Family */
+  systemPartFamilyEfm32Leopard = 74,  /**< EFM32 Leopard Gecko Device Family */
+  systemPartFamilyEfm32Wonder  = 75,  /**< EFM32 Wonder Gecko Device Family */
+  systemPartFamilyEfm32Zero    = 76,  /**< EFM32 Zero Gecko Device Family */
+  systemPartFamilyEfm32Happy   = 77,  /**< EFM32 Happy Gecko Device Family */
+  systemPartFamilyEzr32Wonder  = 120,  /**< EZR32 Wonder Device Family */
+  systemPartFamilyEzr32Leopard = 121,  /**< EZR32 Leopard Device Family */
+  systemPartFamilyEzr32Happy   = 122,  /**< EZR32 Happy Device Family */
+/* Legacy family #defines */
+  systemPartFamilyGecko   = 71,   /**< Gecko Device Family */
+  systemPartFamilyGiant   = 72,  /**< Giant Gecko Device Family */
+  systemPartFamilyTiny    = 73,  /**< Tiny Gecko Device Family */
+  systemPartFamilyLeopard = 74,  /**< Leopard Gecko Device Family */
+  systemPartFamilyWonder  = 75,  /**< Wonder Gecko Device Family */
+  systemPartFamilyZero    = 76,  /**< Zero Gecko Device Family */
+  systemPartFamilyHappy   = 77,  /**< Happy Gecko Device Family */
+  systemPartFamilyUnknown = 0xFF                             /**< Unknown Device Family.
+                                                                  The family id is missing
+                                                                  on unprogrammed parts. */
+} SYSTEM_PartFamily_TypeDef;
+
+
+/*******************************************************************************
+ *******************************   STRUCTS   ***********************************
+ ******************************************************************************/
+
+/** Chip revision details */
+typedef struct
+{
+  uint8_t minor; /**< Minor revision number */
+  uint8_t major; /**< Major revision number */
+  uint8_t family;/**< Device family number  */
+} SYSTEM_ChipRevision_TypeDef;
+
+/** Floating point coprocessor access modes. */
+typedef enum
+{
+  fpuAccessDenied         = (0x0 << 20),  /**< Access denied, any attempted access generates a NOCP UsageFault. */
+  fpuAccessPrivilegedOnly = (0x5 << 20),  /**< Privileged access only, an unprivileged access generates a NOCP UsageFault. */
+  fpuAccessReserved       = (0xA << 20),  /**< Reserved. */
+  fpuAccessFull           = (0xF << 20)   /**< Full access. */
+} SYSTEM_FpuAccess_TypeDef;
+
+/*******************************************************************************
+ *****************************   PROTOTYPES   **********************************
+ ******************************************************************************/
+
+void     SYSTEM_ChipRevisionGet(SYSTEM_ChipRevision_TypeDef *rev);
+uint32_t SYSTEM_GetCalibrationValue(volatile uint32_t *regAddress);
+
+/***************************************************************************//**
+ * @brief
+ *   Set floating point coprocessor (FPU) access mode.
+ *
+ * @param[in] accessMode
+ *   Floating point coprocessor access mode. See @ref SYSTEM_FpuAccess_TypeDef
+ *   for details.
+ ******************************************************************************/
+static inline void SYSTEM_FpuAccessModeSet(SYSTEM_FpuAccess_TypeDef accessMode)
+{
+  ((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->CPACR = (((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->CPACR & ~(0xF << 20)) | accessMode;
+}
+
+/***************************************************************************//**
+ * @brief
+ *   Get the unique number for this part.
+ *
+ * @return
+ *   Unique number for this part.
+ ******************************************************************************/
+static inline uint64_t SYSTEM_GetUnique(void)
+{
+  return (uint64_t)((uint64_t)((DEVINFO_TypeDef *) (0x0FE081A8UL))->UNIQUEH << 32) | (uint64_t)((DEVINFO_TypeDef *) (0x0FE081A8UL))->UNIQUEL;
+}
+
+/***************************************************************************//**
+ * @brief
+ *   Get the production revision for this part.
+ *
+ * @return
+ *   Production revision for this part.
+ ******************************************************************************/
+static inline uint8_t SYSTEM_GetProdRev(void)
+{
+  return (((DEVINFO_TypeDef *) (0x0FE081A8UL))->PART & 0xFF000000UL)
+         >> 24;
+}
+
+/***************************************************************************//**
+ * @brief
+ *   Get the SRAM size (in KB).
+ *
+ * @note
+ *   This function retrievs the correct value by reading the chip device
+ *   info structure. If your binary is made for one specific device only,
+ *   the \#define SRAM_SIZE can be used instead.
+ *
+ * @return
+ *   The size of the internal SRAM (in KB).
+ ******************************************************************************/
+static inline uint16_t SYSTEM_GetSRAMSize(void)
+{
+  return (((DEVINFO_TypeDef *) (0x0FE081A8UL))->MSIZE & 0xFFFF0000UL)
+         >> 16;
+}
+
+/***************************************************************************//**
+ * @brief
+ *   Get the flash size (in KB).
+ *
+ * @note
+ *   This function retrievs the correct value by reading the chip device
+ *   info structure. If your binary is made for one specific device only,
+ *   the \#define FLASH_SIZE can be used instead.
+ *
+ * @return
+ *   The size of the internal flash (in KB).
+ ******************************************************************************/
+static inline uint16_t SYSTEM_GetFlashSize(void)
+{
+  return (((DEVINFO_TypeDef *) (0x0FE081A8UL))->MSIZE & 0x0000FFFFUL)
+         >> 0;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get the flash page size in bytes.
+ *
+ * @note
+ *   This function retrievs the correct value by reading the chip device
+ *   info structure. If your binary is made for one specific device only,
+ *   the \#define FLASH_PAGE_SIZE can be used instead.
+ *
+ * @return
+ *   The page size of the internal flash in bytes.
+ ******************************************************************************/
+static inline uint32_t SYSTEM_GetFlashPageSize(void)
+{
+  uint32_t tmp;
+
+
+  tmp = (((DEVINFO_TypeDef *) (0x0FE081A8UL))->MEMINFO & 0xFF000000UL)
+        >> 24;
+
+  return 1 << ((tmp + 10) & 0xFF);
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get part number of the MCU.
+ *
+ * @return
+ *   The part number of the MCU.
+ ******************************************************************************/
+static inline uint16_t SYSTEM_GetPartNumber(void)
+{
+  return (((DEVINFO_TypeDef *) (0x0FE081A8UL))->PART & 0x0000FFFFUL)
+         >> 0;
+}
+
+/***************************************************************************//**
+ * @brief
+ *   Get family identifier of the MCU.
+ *
+ * @note
+ *   This function retrievs the family id by reading the chip's device info
+ *   structure in flash memory. The user can retrieve the family id directly
+ *   by reading the DEVINFO->PART item and decode with the mask and shift
+ *   \#defines defined in \<part_family\>_devinfo.h (please refer to code
+ *   below for details).
+ *
+ * @return
+ *   The family identifier of the MCU.
+ ******************************************************************************/
+static inline SYSTEM_PartFamily_TypeDef SYSTEM_GetFamily(void)
+{
+  return (SYSTEM_PartFamily_TypeDef)
+         ((((DEVINFO_TypeDef *) (0x0FE081A8UL))->PART & 0x00FF0000UL)
+          >> 16);
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get the calibration temperature (in degrees Celsius).
+ *
+ * @return
+ *   The calibration temperature in Celsius.
+ ******************************************************************************/
+static inline uint8_t SYSTEM_GetCalibrationTemperature(void)
+{
+  return (((DEVINFO_TypeDef *) (0x0FE081A8UL))->CAL & 0x00FF0000UL)
+         >> 16;
+}
+
+/** @} (end addtogroup SYSTEM) */
+/** @} (end addtogroup EM_Library) */
+
+
+
+
+/***************************************************************************//**
+ * @addtogroup EM_Library
+ * @{
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @addtogroup CHIP
+ * @brief Chip Initialization API
+ * @{
+ ******************************************************************************/
+
+/**************************************************************************//**
+ * @brief
+ *   Chip initialization routine for revision errata workarounds
+ *
+ * This init function will configure the device to a state where it is
+ * as similar as later revisions as possible, to improve software compatibility
+ * with newer parts. See the device specific errata for details.
+ *****************************************************************************/
+static inline void CHIP_Init(void)
+{
+
+
+
+}
+
+/** @} (end addtogroup CHIP) */
+/** @} (end addtogroup EM_Library) */
+
+
+/***************************************************************************//**
+ * @file
+ * @brief Board support package API definitions.
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2014 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * This file is licensed under the Silabs License Agreement. See the file
+ * "Silabs_License_Agreement.txt" for details. Before using this software for
+ * any purpose, you must agree to the terms of that agreement.
+ *
+ ******************************************************************************/
+
+
+
+
+/***************************************************************************//**
+ * @file
+ * @brief Provide BSP (board support package) configuration parameters.
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2014 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * This file is licensed under the Silabs License Agreement. See the file
+ * "Silabs_License_Agreement.txt" for details. Before using this software for
+ * any purpose, you must agree to the terms of that agreement.
+ *
+ ******************************************************************************/
 
 
 
 
 
 
+
+
+
+/**************************************************************************//**
+ * @file
+ * @brief Board Controller Communications Protocol (BCP) definitions
+ * @version 4.0.0
+ ******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2014 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * This file is licensed under the Silabs License Agreement. See the file
+ * "Silabs_License_Agreement.txt" for details. Before using this software for
+ * any purpose, you must agree to the terms of that agreement.
+ *
+ ******************************************************************************/
+
+
+
+/* stdint.h standard header */
+/* Copyright 2003-2010 IAR Systems AB.  */
+
+
+/*
+ * Copyright (c) 1992-2009 by P.J. Plauger.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+V5.04:0576 */
+
+/***************************************************************************//**
+ * @file
+ * @brief Provide BSP (board support package) configuration parameters.
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2014 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * This file is licensed under the Silabs License Agreement. See the file
+ * "Silabs_License_Agreement.txt" for details. Before using this software for
+ * any purpose, you must agree to the terms of that agreement.
+ *
+ ******************************************************************************/
+
+
+
+/***************************************************************************//**
+ * @addtogroup BSP_STK API for STK's and WSTK's
+ * @{
+ ******************************************************************************/
+
+/* BCP Packet Types */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** @brief BCP Packet Structure - Board controller communication protocol version 2. */
+typedef struct
+{
+  uint8_t magic;                      /**< Magic - start of packet - must be BSP_BCP_MAGIC */
+  uint8_t type;                       /**< Type - packet type */
+  uint8_t payloadLength;              /**< Length of data segment >=0 and <=BSP_BCP_PACKET_SIZE */
+  uint8_t reserved;                   /**< Reserved for future expansion */
+  uint8_t data[132];  /**< BCP Packet Data payload */
+} BCP_Packet;
+
+/** @brief BCP Packet Header definition */
+typedef struct
+{
+  uint8_t magic;                    /**< Magic - start of packet - must be BSP_BCP_MAGIC */
+  uint8_t type;                     /**< Type - packet type */
+  uint8_t payloadLength;            /**< Length of data segment >=0 and <=BSP_BCP_PACKET_SIZE */
+  uint8_t reserved;                 /**< Reserved for future expansion */
+} BCP_PacketHeader;
+
+
+
+
+
+
+/** @} (end group BSP_STK) */
+
+
+
+
+
+/** @addtogroup BSPCOMMON API common for all kits */ /** @{ */
+
+
+/* Initialization flag bitmasks for BSP_Init(). */
+
+/** @} */
+
+
+/************************** The BSP API *******************************/
+
+int             BSP_Disable                 ( void );
+int             BSP_Init                    ( uint32_t flags );
+int             BSP_LedClear                ( int ledNo );
+int             BSP_LedGet                  ( int ledNo );
+int             BSP_LedSet                  ( int ledNo );
+uint32_t        BSP_LedsGet                 ( void );
+int             BSP_LedsInit                ( void );
+int             BSP_LedsSet                 ( uint32_t leds );
+int             BSP_LedToggle               ( int ledNo );
+
+
+
+int             BSP_BccDeInit               ( void );
+int             BSP_BccInit                 ( void );
+_Bool            BSP_BccPacketReceive        ( BCP_Packet *pkt );
+int             BSP_BccPacketSend           ( BCP_Packet *pkt );
+void            BSP_BccPinsEnable           ( _Bool enable );
+float           BSP_CurrentGet              ( void );
+int             BSP_EbiDeInit               ( void );
+int             BSP_EbiInit                 ( void );
+float           BSP_VoltageGet              ( void );
+
+
+/***************************************************************************//**
+ * @file em_adc.h
+ * @brief Analog to Digital Converter (ADC) peripheral API
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2015 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Labs has no
+ * obligation to support this Software. Silicon Labs is providing the
+ * Software "AS IS", with no express or implied warranties of any kind,
+ * including, but not limited to, any implied warranties of merchantability
+ * or fitness for any particular purpose or warranties against infringement
+ * of any proprietary rights of a third party.
+ *
+ * Silicon Labs will not be liable for any consequential, incidental, or
+ * special damages, or any other relief, or for any claim by any third party,
+ * arising from your use of this Software.
+ *
+ ******************************************************************************/
+
+
+      //EZR32WG
+
+
+
+/***************************************************************************//**
+ * @addtogroup EM_Library
+ * @{
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @addtogroup ADC
+ * @{
+ ******************************************************************************/
+
+/*******************************************************************************
+ ********************************   ENUMS   ************************************
+ ******************************************************************************/
+
+/** Acquisition time (in ADC clock cycles). */
+typedef enum
+{
+  adcAcqTime1   = 0x00000000UL,    /**< 1 clock cycle. */
+  adcAcqTime2   = 0x00000001UL,   /**< 2 clock cycles. */
+  adcAcqTime4   = 0x00000002UL,   /**< 4 clock cycles. */
+  adcAcqTime8   = 0x00000003UL,   /**< 8 clock cycles. */
+  adcAcqTime16  = 0x00000004UL,  /**< 16 clock cycles. */
+  adcAcqTime32  = 0x00000005UL,  /**< 32 clock cycles. */
+  adcAcqTime64  = 0x00000006UL,  /**< 64 clock cycles. */
+  adcAcqTime128 = 0x00000007UL, /**< 128 clock cycles. */
+  adcAcqTime256 = 0x00000008UL  /**< 256 clock cycles. */
+} ADC_AcqTime_TypeDef;
+
+/** Lowpass filter mode. */
+typedef enum
+{
+  /** No filter or decoupling capacitor. */
+  adcLPFilterBypass = 0x00000000UL,
+
+  /** On-chip RC filter. */
+  adcLPFilterRC     = 0x00000002UL,
+
+  /** On-chip decoupling capacitor. */
+  adcLPFilterDeCap  = 0x00000001UL
+} ADC_LPFilter_TypeDef;
+
+/** Oversample rate select. */
+typedef enum
+{
+  /** 2 samples per conversion result. */
+  adcOvsRateSel2    = 0x00000000UL,
+
+  /** 4 samples per conversion result. */
+  adcOvsRateSel4    = 0x00000001UL,
+
+  /** 8 samples per conversion result. */
+  adcOvsRateSel8    = 0x00000002UL,
+
+  /** 16 samples per conversion result. */
+  adcOvsRateSel16   = 0x00000003UL,
+
+  /** 32 samples per conversion result. */
+  adcOvsRateSel32   = 0x00000004UL,
+
+  /** 64 samples per conversion result. */
+  adcOvsRateSel64   = 0x00000005UL,
+
+  /** 128 samples per conversion result. */
+  adcOvsRateSel128  = 0x00000006UL,
+
+  /** 256 samples per conversion result. */
+  adcOvsRateSel256  = 0x00000007UL,
+
+  /** 512 samples per conversion result. */
+  adcOvsRateSel512  = 0x00000008UL,
+
+  /** 1024 samples per conversion result. */
+  adcOvsRateSel1024 = 0x00000009UL,
+
+  /** 2048 samples per conversion result. */
+  adcOvsRateSel2048 = 0x0000000AUL,
+
+  /** 4096 samples per conversion result. */
+  adcOvsRateSel4096 = 0x0000000BUL
+} ADC_OvsRateSel_TypeDef;
+
+
+/** Peripheral Reflex System signal used to trigger single sample. */
+typedef enum
+{
+  adcPRSSELCh0 = 0x00000000UL, /**< PRS channel 0. */
+  adcPRSSELCh1 = 0x00000001UL, /**< PRS channel 1. */
+  adcPRSSELCh2 = 0x00000002UL, /**< PRS channel 2. */
+  adcPRSSELCh3 = 0x00000003UL, /**< PRS channel 3. */
+  adcPRSSELCh4 = 0x00000004UL, /**< PRS channel 4. */
+  adcPRSSELCh5 = 0x00000005UL, /**< PRS channel 5. */
+  adcPRSSELCh6 = 0x00000006UL, /**< PRS channel 6. */
+  adcPRSSELCh7 = 0x00000007UL, /**< PRS channel 7. */
+  adcPRSSELCh8 = 0x00000008UL, /**< PRS channel 8. */
+  adcPRSSELCh9 = 0x00000009UL, /**< PRS channel 9. */
+  adcPRSSELCh10 = 0x0000000AUL, /**< PRS channel 10. */
+  adcPRSSELCh11 = 0x0000000BUL, /**< PRS channel 11. */
+} ADC_PRSSEL_TypeDef;
+
+
+/** Reference to ADC sample. */
+typedef enum
+{
+  /** Internal 1.25V reference. */
+  adcRef1V25      = 0x00000000UL,
+
+  /** Internal 2.5V reference. */
+  adcRef2V5       = 0x00000001UL,
+
+  /** Buffered VDD. */
+  adcRefVDD       = 0x00000002UL,
+
+  /** Internal differential 5V reference. */
+  adcRef5VDIFF    = 0x00000003UL,
+
+  /** Single ended ext. ref. from pin 6. */
+  adcRefExtSingle = 0x00000004UL,
+
+  /** Differential ext. ref. from pin 6 and 7. */
+  adcRef2xExtDiff = 0x00000005UL,
+
+  /** Unbuffered 2xVDD. */
+  adcRef2xVDD     = 0x00000006UL
+} ADC_Ref_TypeDef;
+
+
+/** Sample resolution. */
+typedef enum
+{
+  adcRes12Bit = 0x00000000UL, /**< 12 bit sampling. */
+  adcRes8Bit  = 0x00000001UL,  /**< 8 bit sampling. */
+  adcRes6Bit  = 0x00000002UL,  /**< 6 bit sampling. */
+  adcResOVS   = 0x00000003UL    /**< Oversampling. */
+} ADC_Res_TypeDef;
+
+
+/** Single sample input selection. */
+typedef enum
+{
+  /* Differential mode disabled */
+  adcSingleInpCh0      = 0x00000000UL,      /**< Channel 0. */
+  adcSingleInpCh1      = 0x00000001UL,      /**< Channel 1. */
+  adcSingleInpCh2      = 0x00000002UL,      /**< Channel 2. */
+  adcSingleInpCh3      = 0x00000003UL,      /**< Channel 3. */
+  adcSingleInpCh4      = 0x00000004UL,      /**< Channel 4. */
+  adcSingleInpCh5      = 0x00000005UL,      /**< Channel 5. */
+  adcSingleInpCh6      = 0x00000006UL,      /**< Channel 6. */
+  adcSingleInpCh7      = 0x00000007UL,      /**< Channel 7. */
+  adcSingleInpTemp     = 0x00000008UL,     /**< Temperature reference. */
+  adcSingleInpVDDDiv3  = 0x00000009UL,  /**< VDD divided by 3. */
+  adcSingleInpVDD      = 0x0000000AUL,      /**< VDD. */
+  adcSingleInpVSS      = 0x0000000BUL,      /**< VSS. */
+  adcSingleInpVrefDiv2 = 0x0000000CUL, /**< Vref divided by 2. */
+  adcSingleInpDACOut0  = 0x0000000DUL, /**< DAC output 0. */
+  adcSingleInpDACOut1  = 0x0000000EUL, /**< DAC output 1. */
+  /* TBD: Use define when available */
+  adcSingleInpATEST    = 15,                                /**< ATEST. */
+
+  /* Differential mode enabled */
+  adcSingleInpCh0Ch1   = 0x00000000UL,   /**< Positive Ch0, negative Ch1. */
+  adcSingleInpCh2Ch3   = 0x00000001UL,   /**< Positive Ch2, negative Ch3. */
+  adcSingleInpCh4Ch5   = 0x00000002UL,   /**< Positive Ch4, negative Ch5. */
+  adcSingleInpCh6Ch7   = 0x00000003UL,   /**< Positive Ch6, negative Ch7. */
+  /* TBD: Use define when available */
+  adcSingleInpDiff0    = 4                                  /**< Differential 0. */
+} ADC_SingleInput_TypeDef;
+
+
+/** ADC Start command. */
+typedef enum
+{
+  /** Start single conversion. */
+  adcStartSingle        = (0x1UL << 0),
+
+  /** Start scan sequence. */
+  adcStartScan          = (0x1UL << 2),
+
+  /**
+   * Start scan sequence and single conversion, typically used when tailgating
+   * single conversion after scan sequence.
+   */
+  adcStartScanAndSingle = (0x1UL << 2) | (0x1UL << 0)
+} ADC_Start_TypeDef;
+
+
+/** Warm-up mode. */
+typedef enum
+{
+  /** ADC shutdown after each conversion. */
+  adcWarmupNormal          = 0x00000000UL,
+
+  /** Do not warm-up bandgap references. */
+  adcWarmupFastBG          = 0x00000001UL,
+
+  /** Reference selected for scan mode kept warm.*/
+  adcWarmupKeepScanRefWarm = 0x00000002UL,
+
+  /** ADC and reference selected for scan mode kept warmup, allowing
+      continuous conversion. */
+  adcWarmupKeepADCWarm     = 0x00000003UL,
+
+
+} ADC_Warmup_TypeDef;
+
+
+/*******************************************************************************
+ *******************************   STRUCTS   ***********************************
+ ******************************************************************************/
+
+/** ADC init structure, common for single conversion and scan sequence. */
+typedef struct
+{
+  /**
+   * Oversampling rate select. In order to have any effect, oversampling must
+   * be enabled for single/scan mode.
+   */
+  ADC_OvsRateSel_TypeDef ovsRateSel;
+
+  /** Lowpass or decoupling capacitor filter to use. */
+  ADC_LPFilter_TypeDef   lpfMode;
+
+  /** Warm-up mode to use for ADC. */
+  ADC_Warmup_TypeDef     warmUpMode;
+
+  /**
+   * Timebase used for ADC warm up. Select N to give (N+1)HFPERCLK cycles.
+   * (Additional delay is added for bandgap references, please refer to the
+   * reference manual.) Normally, N should be selected so that the timebase
+   * is at least 1 us. See ADC_TimebaseCalc() for a way to obtain
+   * a suggested timebase of at least 1 us.
+   */
+  uint8_t                timebase;
+
+  /** Clock division factor N, ADC clock =  HFPERCLK / (N + 1). */
+  uint8_t                prescale;
+
+  /** Enable/disable conversion tailgating. */
+  _Bool                   tailgate;
+} ADC_Init_TypeDef;
+
+/** Default config for ADC init structure. */
+
+/** Scan sequence init structure. */
+typedef struct
+{
+  /**
+   * Peripheral reflex system trigger selection. Only applicable if @p prsEnable
+   * is enabled.
+   */
+  ADC_PRSSEL_TypeDef  prsSel;
+
+  /** Acquisition time (in ADC clock cycles). */
+  ADC_AcqTime_TypeDef acqTime;
+
+  /**
+   * Sample reference selection. Notice that for external references, the
+   * ADC calibration register must be set explicitly.
+   */
+  ADC_Ref_TypeDef     reference;
+
+  /** Sample resolution. */
+  ADC_Res_TypeDef     resolution;
+
+  /**
+   * Input scan selection. If single ended (@p diff is false), use logical
+   * combination of ADC_SCANCTRL_INPUTMASK_CHx defines. If differential input
+   * (@p diff is true), use logical combination of ADC_SCANCTRL_INPUTMASK_CHxCHy
+   * defines. (Notice underscore prefix for defines used.)
+   */
+  uint32_t            input;
+
+  /** Select if single ended or differential input. */
+  _Bool                diff;
+
+  /** Peripheral reflex system trigger enable. */
+  _Bool                prsEnable;
+
+  /** Select if left adjustment should be done. */
+  _Bool                leftAdjust;
+
+  /** Select if continuous conversion until explicit stop. */
+  _Bool                rep;
+} ADC_InitScan_TypeDef;
+
+/** Default config for ADC scan init structure. */
+
+
+/** Single conversion init structure. */
+typedef struct
+{
+  /**
+   * Peripheral reflex system trigger selection. Only applicable if @p prsEnable
+   * is enabled.
+   */
+  ADC_PRSSEL_TypeDef      prsSel;
+
+  /** Acquisition time (in ADC clock cycles). */
+  ADC_AcqTime_TypeDef     acqTime;
+
+  /**
+   * Sample reference selection. Notice that for external references, the
+   * ADC calibration register must be set explicitly.
+   */
+  ADC_Ref_TypeDef         reference;
+
+  /** Sample resolution. */
+  ADC_Res_TypeDef         resolution;
+
+  /**
+   * Sample input selection, use single ended or differential input according
+   * to setting of @p diff.
+   */
+  ADC_SingleInput_TypeDef input;
+
+  /** Select if single ended or differential input. */
+  _Bool                    diff;
+
+  /** Peripheral reflex system trigger enable. */
+  _Bool                    prsEnable;
+
+  /** Select if left adjustment should be done. */
+  _Bool                    leftAdjust;
+
+  /** Select if continuous conversion until explicit stop. */
+  _Bool                    rep;
+} ADC_InitSingle_TypeDef;
+
+/** Default config for ADC single conversion init structure. */
+
+/*******************************************************************************
+ *****************************   PROTOTYPES   **********************************
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @brief
+ *   Get single conversion result.
+ *
+ * @note
+ *   Do only use if single conversion data valid.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @return
+ *
+ ******************************************************************************/
+static inline uint32_t ADC_DataSingleGet(ADC_TypeDef *adc)
+{
+  return adc->SINGLEDATA;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get scan result.
+ *
+ * @note
+ *   Do only use if scan data valid.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ ******************************************************************************/
+static inline uint32_t ADC_DataScanGet(ADC_TypeDef *adc)
+{
+  return adc->SCANDATA;
+}
+
+
+void ADC_Init(ADC_TypeDef *adc, const ADC_Init_TypeDef *init);
+void ADC_InitScan(ADC_TypeDef *adc, const ADC_InitScan_TypeDef *init);
+void ADC_InitSingle(ADC_TypeDef *adc, const ADC_InitSingle_TypeDef *init);
+
+/***************************************************************************//**
+ * @brief
+ *   Clear one or more pending ADC interrupts.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @param[in] flags
+ *   Pending ADC interrupt source to clear. Use a bitwise logic OR combination
+ *   of valid interrupt flags for the ADC module (ADC_IF_nnn).
+ ******************************************************************************/
+static inline void ADC_IntClear(ADC_TypeDef *adc, uint32_t flags)
+{
+  adc->IFC = flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Disable one or more ADC interrupts.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @param[in] flags
+ *   ADC interrupt sources to disable. Use a bitwise logic OR combination of
+ *   valid interrupt flags for the ADC module (ADC_IF_nnn).
+ ******************************************************************************/
+static inline void ADC_IntDisable(ADC_TypeDef *adc, uint32_t flags)
+{
+  adc->IEN &= ~flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Enable one or more ADC interrupts.
+ *
+ * @note
+ *   Depending on the use, a pending interrupt may already be set prior to
+ *   enabling the interrupt. Consider using ADC_IntClear() prior to enabling
+ *   if such a pending interrupt should be ignored.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @param[in] flags
+ *   ADC interrupt sources to enable. Use a bitwise logic OR combination of
+ *   valid interrupt flags for the ADC module (ADC_IF_nnn).
+ ******************************************************************************/
+static inline void ADC_IntEnable(ADC_TypeDef *adc, uint32_t flags)
+{
+  adc->IEN |= flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get pending ADC interrupt flags.
+ *
+ * @note
+ *   The event bits are not cleared by the use of this function.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @return
+ *   ADC interrupt sources pending. A bitwise logic OR combination of valid
+ *   interrupt flags for the ADC module (ADC_IF_nnn).
+ ******************************************************************************/
+static inline uint32_t ADC_IntGet(ADC_TypeDef *adc)
+{
+  return adc->IF;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Set one or more pending ADC interrupts from SW.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @param[in] flags
+ *   ADC interrupt sources to set to pending. Use a bitwise logic OR combination
+ *   of valid interrupt flags for the ADC module (ADC_IF_nnn).
+ ******************************************************************************/
+static inline void ADC_IntSet(ADC_TypeDef *adc, uint32_t flags)
+{
+  adc->IFS = flags;
+}
+
+uint8_t ADC_PrescaleCalc(uint32_t adcFreq, uint32_t hfperFreq);
+
+
+/***************************************************************************//**
+ * @brief
+ *   Start scan sequence and/or single conversion.
+ *
+ * @param[in] adc
+ *   Pointer to ADC peripheral register block.
+ *
+ * @param[in] cmd
+ *   Command indicating which type of sampling to start.
+ ******************************************************************************/
+static inline void ADC_Start(ADC_TypeDef *adc, ADC_Start_TypeDef cmd)
+{
+  adc->CMD = (uint32_t)cmd;
+}
+
+void ADC_Reset(ADC_TypeDef *adc);
+uint8_t ADC_TimebaseCalc(uint32_t hfperFreq);
+
+/** @} (end addtogroup ADC) */
+/** @} (end addtogroup EM_Library) */
+
+
+/***************************************************************************//**
+ * @file em_dbg.h
+ * @brief Debug (DBG) API
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2015 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Labs has no
+ * obligation to support this Software. Silicon Labs is providing the
+ * Software "AS IS", with no express or implied warranties of any kind,
+ * including, but not limited to, any implied warranties of merchantability
+ * or fitness for any particular purpose or warranties against infringement
+ * of any proprietary rights of a third party.
+ *
+ * Silicon Labs will not be liable for any consequential, incidental, or
+ * special damages, or any other relief, or for any claim by any third party,
+ * arising from your use of this Software.
+ *
+ ******************************************************************************/
+
+
+
+      //EZR32WG
+
+
+
+/***************************************************************************//**
+ * @addtogroup EM_Library
+ * @{
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @addtogroup DBG
+ * @{
+ ******************************************************************************/
+
+/*******************************************************************************
+ *****************************   PROTOTYPES   **********************************
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @brief
+ *   Check if a debugger is connected (and debug session activated)
+ *
+ * @details
+ *   Used to make run-time decisions depending on whether a debug session
+ *   has been active since last reset, ie using a debug probe or similar. In
+ *   some cases special handling is required in that scenario.
+ *
+ * @return
+ *   true if a debug session is active since last reset, otherwise false.
+ ******************************************************************************/
+static inline _Bool DBG_Connected(void)
+{
+  return (((CoreDebug_Type *) (0xE000EDF0UL))->DHCSR & (1UL << 0)) ? 1 : 0;
+}
+
+
+void DBG_SWOEnable(unsigned int location);
+
+/** @} (end addtogroup DBG) */
+/** @} (end addtogroup EM_Library) */
+
+
+
+/***************************************************************************//**
+ * @file em_timer.h
+ * @brief Timer/counter (TIMER) peripheral API
+ * @version 4.0.0
+ *******************************************************************************
+ * @section License
+ * <b>(C) Copyright 2015 Silicon Labs, http://www.silabs.com</b>
+ *******************************************************************************
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Labs has no
+ * obligation to support this Software. Silicon Labs is providing the
+ * Software "AS IS", with no express or implied warranties of any kind,
+ * including, but not limited to, any implied warranties of merchantability
+ * or fitness for any particular purpose or warranties against infringement
+ * of any proprietary rights of a third party.
+ *
+ * Silicon Labs will not be liable for any consequential, incidental, or
+ * special damages, or any other relief, or for any claim by any third party,
+ * arising from your use of this Software.
+ *
+ ******************************************************************************/
+
+
+      //EZR32WG
+
+
+
+/***************************************************************************//**
+ * @addtogroup EM_Library
+ * @{
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @addtogroup TIMER
+ * @{
+ ******************************************************************************/
+
+/*******************************************************************************
+ *******************************   DEFINES   ***********************************
+ ******************************************************************************/
+
+/** @cond DO_NOT_INCLUDE_WITH_DOXYGEN */
+
+
+/** Validation of TIMER register block pointer reference for assert statements. */
+
+/** Validation of TIMER compare/capture channel number */
+
+/** @endcond */
+
+/*******************************************************************************
+ ********************************   ENUMS   ************************************
+ ******************************************************************************/
+
+/** Timer compare/capture mode. */
+typedef enum
+{
+  timerCCModeOff     = 0x00000000UL,           /**< Channel turned off. */
+  timerCCModeCapture = 0x00000001UL,  /**< Input capture. */
+  timerCCModeCompare = 0x00000002UL, /**< Output compare. */
+  timerCCModePWM     = 0x00000003UL            /**< Pulse-Width modulation. */
+} TIMER_CCMode_TypeDef;
+
+
+/** Clock select. */
+typedef enum
+{
+  /** Prescaled HFPER clock. */
+  timerClkSelHFPerClk = 0x00000000UL,
+
+  /** Prescaled HFPER clock. */
+  timerClkSelCC1      = 0x00000001UL,
+
+  /**
+   * Cascaded, clocked by underflow (down-counting) or overflow (up-counting)
+   * by lower numbered timer.
+   */
+  timerClkSelCascade  = 0x00000002UL
+} TIMER_ClkSel_TypeDef;
+
+
+/** Input capture edge select. */
+typedef enum
+{
+  /** Rising edges detected. */
+  timerEdgeRising  = 0x00000000UL,
+
+  /** Falling edges detected. */
+  timerEdgeFalling = 0x00000001UL,
+
+  /** Both edges detected. */
+  timerEdgeBoth    = 0x00000002UL,
+
+  /** No edge detection, leave signal as is. */
+  timerEdgeNone    = 0x00000003UL
+} TIMER_Edge_TypeDef;
+
+
+/** Input capture event control. */
+typedef enum
+{
+  /** PRS output pulse, interrupt flag and DMA request set on every capture. */
+  timerEventEveryEdge    = 0x00000000UL,
+  /** PRS output pulse, interrupt flag and DMA request set on every second capture. */
+  timerEventEvery2ndEdge = 0x00000001UL,
+  /**
+   * PRS output pulse, interrupt flag and DMA request set on rising edge (if
+   * input capture edge = BOTH).
+   */
+  timerEventRising       = 0x00000002UL,
+  /**
+   * PRS output pulse, interrupt flag and DMA request set on falling edge (if
+   * input capture edge = BOTH).
+   */
+  timerEventFalling      = 0x00000003UL
+} TIMER_Event_TypeDef;
+
+
+/** Input edge action. */
+typedef enum
+{
+  /** No action taken. */
+  timerInputActionNone        = 0x00000000UL,
+
+  /** Start counter without reload. */
+  timerInputActionStart       = 0x00000001UL,
+
+  /** Stop counter without reload. */
+  timerInputActionStop        = 0x00000002UL,
+
+  /** Reload and start counter. */
+  timerInputActionReloadStart = 0x00000003UL
+} TIMER_InputAction_TypeDef;
+
+
+/** Timer mode. */
+typedef enum
+{
+  timerModeUp     = 0x00000000UL,     /**< Up-counting. */
+  timerModeDown   = 0x00000001UL,   /**< Down-counting. */
+  timerModeUpDown = 0x00000002UL, /**< Up/down-counting. */
+  timerModeQDec   = 0x00000003UL    /**< Quadrature decoder. */
+} TIMER_Mode_TypeDef;
+
+
+/** Compare/capture output action. */
+typedef enum
+{
+  /** No action. */
+  timerOutputActionNone   = 0x00000000UL,
+
+  /** Toggle on event. */
+  timerOutputActionToggle = 0x00000001UL,
+
+  /** Clear on event. */
+  timerOutputActionClear  = 0x00000002UL,
+
+  /** Set on event. */
+  timerOutputActionSet    = 0x00000003UL
+} TIMER_OutputAction_TypeDef;
+
+
+/** Prescaler. */
+typedef enum
+{
+  timerPrescale1    = 0x00000000UL,     /**< Divide by 1. */
+  timerPrescale2    = 0x00000001UL,     /**< Divide by 2. */
+  timerPrescale4    = 0x00000002UL,     /**< Divide by 4. */
+  timerPrescale8    = 0x00000003UL,     /**< Divide by 8. */
+  timerPrescale16   = 0x00000004UL,    /**< Divide by 16. */
+  timerPrescale32   = 0x00000005UL,    /**< Divide by 32. */
+  timerPrescale64   = 0x00000006UL,    /**< Divide by 64. */
+  timerPrescale128  = 0x00000007UL,   /**< Divide by 128. */
+  timerPrescale256  = 0x00000008UL,   /**< Divide by 256. */
+  timerPrescale512  = 0x00000009UL,   /**< Divide by 512. */
+  timerPrescale1024 = 0x0000000AUL   /**< Divide by 1024. */
+} TIMER_Prescale_TypeDef;
+
+
+/** Peripheral Reflex System signal. */
+typedef enum
+{
+  timerPRSSELCh0 = 0x00000000UL,        /**< PRS channel 0. */
+  timerPRSSELCh1 = 0x00000001UL,        /**< PRS channel 1. */
+  timerPRSSELCh2 = 0x00000002UL,        /**< PRS channel 2. */
+  timerPRSSELCh3 = 0x00000003UL,        /**< PRS channel 3. */
+  timerPRSSELCh4 = 0x00000004UL,        /**< PRS channel 4. */
+  timerPRSSELCh5 = 0x00000005UL,        /**< PRS channel 5. */
+  timerPRSSELCh6 = 0x00000006UL,        /**< PRS channel 6. */
+  timerPRSSELCh7 = 0x00000007UL,        /**< PRS channel 7. */
+  timerPRSSELCh8  = 0x00000008UL,       /**< PRS channel 8. */
+  timerPRSSELCh9  = 0x00000009UL,       /**< PRS channel 9. */
+  timerPRSSELCh10 = 0x0000000AUL,      /**< PRS channel 10. */
+  timerPRSSELCh11 = 0x0000000BUL,      /**< PRS channel 11. */
+} TIMER_PRSSEL_TypeDef;
+
+/** DT (Dead Time) Fault Actions. */
+typedef enum
+{
+  timerDtiFaultActionNone     = 0x00000000UL,     /**< No action on fault. */
+  timerDtiFaultActionInactive = 0x00000001UL, /**< Set outputs inactive. */
+  timerDtiFaultActionClear    = 0x00000002UL,    /**< Clear outputs. */
+  timerDtiFaultActionTristate = 0x00000003UL  /**< Tristate outputs. */
+} TIMER_DtiFaultAction_TypeDef;
+
+/*******************************************************************************
+ *******************************   STRUCTS   ***********************************
+ ******************************************************************************/
+
+/** TIMER initialization structure. */
+typedef struct
+{
+  /** Start counting when init completed. */
+  _Bool                      enable;
+
+  /** Counter shall keep running during debug halt. */
+  _Bool                      debugRun;
+
+  /** Prescaling factor, if HFPER clock used. */
+  TIMER_Prescale_TypeDef    prescale;
+
+  /** Clock selection. */
+  TIMER_ClkSel_TypeDef      clkSel;
+
+  /** 2x Count mode, counter increments/decrements by 2, meant for PWN mode. */
+  _Bool                      count2x;
+
+  /** ATI (Always Track Inputs) makes CCPOL always track
+   * the polarity of the inputs. */
+  _Bool                      ati;
+
+  /** Action on falling input edge. */
+  TIMER_InputAction_TypeDef fallAction;
+
+  /** Action on rising input edge. */
+  TIMER_InputAction_TypeDef riseAction;
+
+  /** Counting mode. */
+  TIMER_Mode_TypeDef        mode;
+
+  /** DMA request clear on active. */
+  _Bool                      dmaClrAct;
+
+  /** Select X2 or X4 quadrature decode mode (if used). */
+  _Bool                      quadModeX4;
+
+  /** Determines if only counting up or down once. */
+  _Bool                      oneShot;
+
+  /** Timer start/stop/reload by other timers. */
+  _Bool                      sync;
+} TIMER_Init_TypeDef;
+
+/** Default config for TIMER init structure. */
+
+/** TIMER compare/capture initialization structure. */
+typedef struct
+{
+  /** Input capture event control. */
+  TIMER_Event_TypeDef        eventCtrl;
+
+  /** Input capture edge select. */
+  TIMER_Edge_TypeDef         edge;
+
+  /**
+   * Peripheral reflex system trigger selection. Only applicable if @p prsInput
+   * is enabled.
+   */
+  TIMER_PRSSEL_TypeDef       prsSel;
+
+  /** Counter underflow output action. */
+  TIMER_OutputAction_TypeDef cufoa;
+
+  /** Counter overflow output action. */
+  TIMER_OutputAction_TypeDef cofoa;
+
+  /** Counter match output action. */
+  TIMER_OutputAction_TypeDef cmoa;
+
+  /** Compare/capture channel mode. */
+  TIMER_CCMode_TypeDef       mode;
+
+  /** Enable digital filter. */
+  _Bool                       filter;
+
+  /** Select TIMERnCCx (false) or PRS input (true). */
+  _Bool                       prsInput;
+
+  /**
+   * Compare output initial state. Only used in Output Compare and PWM mode.
+   * When true, the compare/PWM output is set high when the counter is
+   * disabled. When counting resumes, this value will represent the initial
+   * value for the compare/PWM output. If the bit is cleared, the output
+   * will be cleared when the counter is disabled.
+   */
+  _Bool                       coist;
+
+  /** Invert output from compare/capture channel. */
+  _Bool                       outInvert;
+} TIMER_InitCC_TypeDef;
+
+/** Default config for TIMER compare/capture init structure. */
+
+/** TIMER Dead Time Insertion (DTI) initialization structure. */
+typedef struct
+{
+  /** Enable DTI or leave it disabled until @ref TIMER_EnableDTI() is called */
+  _Bool                          enable;
+
+  /** DTI Output Polarity */
+  _Bool                          activeLowOut;
+
+  /** DTI Complementary Output Invert */
+  _Bool                          invertComplementaryOut;
+
+  /** Enable Automatic Start-up functionality (when debugger exits) */
+  _Bool                          autoRestart;
+
+  /** Enable/disable PRS as DTI input. */
+  _Bool                          enablePrsSource;
+
+  /** Select which PRS channel as DTI input. Only valid if @p enablePrsSource
+     is enabled. */
+  TIMER_PRSSEL_TypeDef          prsSel;
+
+  /** DTI prescaling factor, if HFPER clock used. */
+  TIMER_Prescale_TypeDef        prescale;
+
+  /** DTI Rise Time */
+  unsigned int                  riseTime;
+
+  /** DTI Fall Time */
+  unsigned int                  fallTime;
+
+  /** DTI outputs enable bit mask, consisting of one bit per DTI
+      output signal, i.e. CC0, CC1, CC2, CDTI0, CDTI1 and CDTI2.
+      This value should consist of one or more TIMER_DTOGEN_DTOGnnnEN flags
+      (defined in \<part_name\>_timer.h) OR'ed together. */
+  uint32_t                      outputsEnableMask;
+
+  /** Enable core lockup as a fault source. */
+  _Bool                          enableFaultSourceCoreLockup;
+
+  /** Enable debugger as a fault source. */
+  _Bool                          enableFaultSourceDebugger;
+
+  /** Enable PRS fault source 0 (@p faultSourcePrsSel0) */
+  _Bool                          enableFaultSourcePrsSel0;
+
+  /** Select which PRS signal to be PRS fault source 0. */
+  TIMER_PRSSEL_TypeDef          faultSourcePrsSel0;
+
+  /** Enable PRS fault source 1 (@p faultSourcePrsSel1) */
+  _Bool                          enableFaultSourcePrsSel1;
+
+  /** Select which PRS signal to be PRS fault source 1. */
+  TIMER_PRSSEL_TypeDef          faultSourcePrsSel1;
+
+  /** Fault Action */
+  TIMER_DtiFaultAction_TypeDef  faultAction;
+
+} TIMER_InitDTI_TypeDef;
+
+
+  /** Default config for TIMER DTI init structure. */
+
+
+/*******************************************************************************
+ *****************************   PROTOTYPES   **********************************
+ ******************************************************************************/
+
+/***************************************************************************//**
+ * @brief
+ *   Get capture value for compare/capture channel when operating in capture
+ *   mode.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] ch
+ *   Compare/capture channel to access.
+ *
+ * @return
+ *   Current capture value.
+ ******************************************************************************/
+static inline uint32_t TIMER_CaptureGet(TIMER_TypeDef *timer, unsigned int ch)
+{
+  return timer->CC[ch].CCV;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Set compare value buffer for compare/capture channel when operating in
+ *   compare or PWM mode.
+ *
+ * @details
+ *   The compare value buffer holds the value which will be written to
+ *   TIMERn_CCx_CCV on an update event if the buffer has been updated since
+ *   the last event.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] ch
+ *   Compare/capture channel to access.
+ *
+ * @param[in] val
+ *   Value to set in compare value buffer register.
+ ******************************************************************************/
+static inline void TIMER_CompareBufSet(TIMER_TypeDef *timer,
+                                         unsigned int ch,
+                                         uint32_t val)
+{
+  timer->CC[ch].CCVB = val;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Set compare value for compare/capture channel when operating in compare
+ *   or PWM mode.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] ch
+ *   Compare/capture channel to access.
+ *
+ * @param[in] val
+ *   Value to set in compare value register.
+ ******************************************************************************/
+static inline void TIMER_CompareSet(TIMER_TypeDef *timer,
+                                      unsigned int ch,
+                                      uint32_t val)
+{
+  timer->CC[ch].CCV = val;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get TIMER counter value.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @return
+ *   Current TIMER counter value.
+ ******************************************************************************/
+static inline uint32_t TIMER_CounterGet(TIMER_TypeDef *timer)
+{
+  return timer->CNT;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Set TIMER counter value.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] val
+ *   Value to set counter to.
+ ******************************************************************************/
+static inline void TIMER_CounterSet(TIMER_TypeDef *timer, uint32_t val)
+{
+  timer->CNT = val;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Start/stop TIMER.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] enable
+ *   true to enable counting, false to disable.
+ ******************************************************************************/
+static inline void TIMER_Enable(TIMER_TypeDef *timer, _Bool enable)
+{
+  ((void)((((timer) == ((TIMER_TypeDef *) (0x40010000UL))) || ((timer) == ((TIMER_TypeDef *) (0x40010400UL))) || ((timer) == ((TIMER_TypeDef *) (0x40010800UL))) || ((timer) == ((TIMER_TypeDef *) (0x40010C00UL))))));
+
+  if (enable)
+  {
+    timer->CMD = (0x1UL << 0);
+  }
+  else
+  {
+    timer->CMD = (0x1UL << 1);
+  }
+}
+
+
+void TIMER_Init(TIMER_TypeDef *timer, const TIMER_Init_TypeDef *init);
+void TIMER_InitCC(TIMER_TypeDef *timer,
+                  unsigned int ch,
+                  const TIMER_InitCC_TypeDef *init);
+
+void TIMER_InitDTI(TIMER_TypeDef *timer, const TIMER_InitDTI_TypeDef *init);
+
+/***************************************************************************//**
+ * @brief
+ *   Enable or disable DTI unit.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] enable
+ *   true to enable DTI unit, false to disable.
+ ******************************************************************************/
+static inline void TIMER_EnableDTI(TIMER_TypeDef *timer, _Bool enable)
+{
+  ((void)(((TIMER_TypeDef *) (0x40010000UL)) == timer));
+
+  if (enable)
+  {
+    timer->DTCTRL |= (0x1UL << 0);
+  }
+  else
+  {
+    timer->DTCTRL &= ~(0x1UL << 0);
+  }
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get DTI fault source flags status.
+ *
+ * @note
+ *   The event bits are not cleared by the use of this function.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @return
+ *   Status of the DTI fault source flags. Returns one or more valid
+ *   DTI fault source flags (TIMER_DTFAULT_nnn) OR'ed together.
+ ******************************************************************************/
+static inline uint32_t TIMER_GetDTIFault(TIMER_TypeDef *timer)
+{
+  ((void)(((TIMER_TypeDef *) (0x40010000UL)) == timer));
+  return timer->DTFAULT;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Clear DTI fault source flags.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] flags
+ *   DTI fault source(s) to clear. Use one or more valid DTI fault
+ *   source flags (TIMER_DTFAULT_nnn) OR'ed together.
+ ******************************************************************************/
+static inline void TIMER_ClearDTIFault(TIMER_TypeDef *timer, uint32_t flags)
+
+{
+  ((void)(((TIMER_TypeDef *) (0x40010000UL)) == timer));
+  timer->DTFAULTC = flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Clear one or more pending TIMER interrupts.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] flags
+ *   Pending TIMER interrupt source(s) to clear. Use one or more valid
+ *   interrupt flags for the TIMER module (TIMER_IF_nnn) OR'ed together.
+ ******************************************************************************/
+static inline void TIMER_IntClear(TIMER_TypeDef *timer, uint32_t flags)
+{
+  timer->IFC = flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Disable one or more TIMER interrupts.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] flags
+ *   TIMER interrupt source(s) to disable. Use one or more valid
+ *   interrupt flags for the TIMER module (TIMER_IF_nnn) OR'ed together.
+ ******************************************************************************/
+static inline void TIMER_IntDisable(TIMER_TypeDef *timer, uint32_t flags)
+{
+  timer->IEN &= ~flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Enable one or more TIMER interrupts.
+ *
+ * @note
+ *   Depending on the use, a pending interrupt may already be set prior to
+ *   enabling the interrupt. Consider using TIMER_IntClear() prior to enabling
+ *   if such a pending interrupt should be ignored.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] flags
+ *   TIMER interrupt source(s) to enable. Use one or more valid
+ *   interrupt flags for the TIMER module (TIMER_IF_nnn) OR'ed together.
+ ******************************************************************************/
+static inline void TIMER_IntEnable(TIMER_TypeDef *timer, uint32_t flags)
+{
+  timer->IEN |= flags;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get pending TIMER interrupt flags.
+ *
+ * @note
+ *   The event bits are not cleared by the use of this function.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @return
+ *   TIMER interrupt source(s) pending. Returns one or more valid
+ *   interrupt flags for the TIMER module (TIMER_IF_nnn) OR'ed together.
+ ******************************************************************************/
+static inline uint32_t TIMER_IntGet(TIMER_TypeDef *timer)
+{
+  return timer->IF;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get enabled and pending TIMER interrupt flags.
+ *   Useful for handling more interrupt sources in the same interrupt handler.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @note
+ *   Interrupt flags are not cleared by the use of this function.
+ *
+ * @return
+ *   Pending and enabled TIMER interrupt sources.
+ *   The return value is the bitwise AND combination of
+ *   - the OR combination of enabled interrupt sources in TIMERx_IEN_nnn
+ *     register (TIMERx_IEN_nnn) and
+ *   - the OR combination of valid interrupt flags of the TIMER module
+ *     (TIMERx_IF_nnn).
+ ******************************************************************************/
+static inline uint32_t TIMER_IntGetEnabled(TIMER_TypeDef *timer)
+{
+  uint32_t tmp;
+
+  /* Store TIMER->IEN in temporary variable in order to define explicit order
+   * of volatile accesses. */
+  tmp = timer->IEN;
+
+  /* Bitwise AND of pending and enabled interrupts */
+  return timer->IF & tmp;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Set one or more pending TIMER interrupts from SW.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] flags
+ *   TIMER interrupt source(s) to set to pending. Use one or more valid
+ *   interrupt flags for the TIMER module (TIMER_IF_nnn) OR'ed together.
+ ******************************************************************************/
+static inline void TIMER_IntSet(TIMER_TypeDef *timer, uint32_t flags)
+{
+  timer->IFS = flags;
+}
+
+/***************************************************************************//**
+ * @brief
+ *   Lock some of the TIMER registers in order to protect them from being
+ *   modified.
+ *
+ * @details
+ *   Please refer to the reference manual for TIMER registers that will be
+ *   locked.
+ *
+ * @note
+ *   If locking the TIMER registers, they must be unlocked prior to using any
+ *   TIMER API functions modifying TIMER registers protected by the lock.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ ******************************************************************************/
+static inline void TIMER_Lock(TIMER_TypeDef *timer)
+{
+  ((void)(((TIMER_TypeDef *) (0x40010000UL)) == timer));
+
+  timer->DTLOCK = (0x00000000UL << 0);
+}
+
+void TIMER_Reset(TIMER_TypeDef *timer);
+
+/***************************************************************************//**
+ * @brief
+ *   Set top value buffer for timer.
+ *
+ * @details
+ *   When the top value buffer register is updated, the value is loaded into
+ *   the top value register at the next wrap around. This feature is useful
+ *   in order to update the top value safely when the timer is running.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] val
+ *   Value to set in top value buffer register.
+ ******************************************************************************/
+static inline void TIMER_TopBufSet(TIMER_TypeDef *timer, uint32_t val)
+{
+  timer->TOPB = val;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Get top value setting for timer.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @return
+ *   Current top value.
+ ******************************************************************************/
+static inline uint32_t TIMER_TopGet(TIMER_TypeDef *timer)
+{
+  return timer->TOP;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Set top value for timer.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ *
+ * @param[in] val
+ *   Value to set in top value register.
+ ******************************************************************************/
+static inline void TIMER_TopSet(TIMER_TypeDef *timer, uint32_t val)
+{
+  timer->TOP = val;
+}
+
+
+/***************************************************************************//**
+ * @brief
+ *   Unlock the TIMER so that writing to locked registers again is possible.
+ *
+ * @param[in] timer
+ *   Pointer to TIMER peripheral register block.
+ ******************************************************************************/
+static inline void TIMER_Unlock(TIMER_TypeDef *timer)
+{
+  ((void)(((TIMER_TypeDef *) (0x40010000UL)) == timer));
+
+  timer->DTLOCK = (0x0000CE80UL << 0);
+}
+
+
+/** @} (end addtogroup TIMER) */
+/** @} (end addtogroup EM_Library) */
+
+
+// This file is generated by Ember Desktop.  Please do not edit manually.
+//
+//
+
+void emberAfInit(void);
+
+void emberAfTick(void);
+
+void emberAfStackStatus(EmberStatus status);
+
+void emberAfStackIsr(void);
+
+void emberAfIncomingMessage(EmberIncomingMessage* message);
+
+void emberAfMessageSent(EmberStatus status, EmberOutgoingMessage* message);
+
+void emberAfChildJoin(EmberNodeType nodeType, EmberNodeId nodeId);
+
+void emberAfIncomingBeacon(EmberPanId panId, EmberNodeId nodeId, uint8_t payloadLength, uint8_t* payload);
+
+void emberAfActiveScanComplete(void);
+
+void emberAfEnergyScanComplete(int8_t mean, int8_t min, int8_t max, uint16_t variance);
+
+void emberMarkApplicationBuffersHandler(void);
+
+
+
+
+
+
+/*
+ * Below are all the pins used for current/voltage measurements and load switching
+ */
 
 static EmberKeyData securityKey = {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA};
 uint8_t application_channel =   1;
-uint8_t ScanSuccess =   1;
-static uint8_t message[(13 + 10)];
+static uint8_t message[(11 + 10)];
 static EmberMessageLength messageLength;
 static EmberMessageOptions txOptions = EMBER_OPTIONS_NONE;
 EmberNetworkParameters parameters;
@@ -23274,6 +25196,238 @@ enum {
   SENSOR_SINK_COMMAND_ID_DATA              = 2,
 };
 typedef uint8_t SensorSinkCommandId;
+/*
+ * Sundial_Port contains all the pins needed for the measurement and load switching in the application
+ */
+GPIO_Port_TypeDef Sundial_Port = gpioPortD;
+
+ADC_Init_TypeDef init = { adcOvsRateSel2, adcLPFilterBypass, adcWarmupNormal, 0x0000001FUL, 0x00000000UL, 0 };
+ADC_InitSingle_TypeDef singleInit = { adcPRSSELCh0, adcAcqTime1, adcRef1V25, adcRes12Bit, adcSingleInpCh0, 0, 0, 0, 0 };
+ADC_SingleInput_TypeDef currentChannel = adcSingleInpCh0;
+ADC_SingleInput_TypeDef voltageChannel = adcSingleInpCh1;
+EmberEventControl adcEventControl;
+
+void initSundialADC(void);
+void initSundialGPIO(void);
+static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel);
+static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Value, unsigned int A2_Value);
+static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1);
+void takeMeasurementSet(uint16_t *power_meas);
+static uint16_t calculatePower(uint32_t current, uint32_t voltage);
+void adcHandler(void);
+static EmberStatus send(EmberNodeId nodeId,
+                        SensorSinkCommandId commandId,
+                        uint8_t *buffer,
+                        uint8_t bufferLength);
+static void storeLowHighInt16u(uint8_t *contents, uint16_t value);
+
+void adcHandler(void)
+{
+    uint8_t payload[10];
+    uint16_t measurements[5];         // array to store the most recent set of measurements
+    uint16_t *measptr = measurements;
+    takeMeasurementSet(measptr);	  // take all power measurements and fill measurements array
+    /*
+     * Transfer measurements to payload
+     */
+    int byteidx = 0;
+    for (int i = 0; i < 5; i++)
+    {
+    	uint16_t temp = measurements[i];
+    	payload[byteidx] = ((uint8_t)((temp) & 0xFF));			//order is low byte first, high byte second
+    	payload[byteidx + 1] = ((uint8_t)(((uint8_t)(((temp) >> 8) & 0xFF))));
+    	byteidx += 2;
+    }
+    EmberStatus status = send(0x0000,
+                        SENSOR_SINK_COMMAND_ID_DATA,
+                        payload,
+                        10);
+    emberAfPrintln(0x0001, "Send Status: 0x%x", status);
+	do { emEventControlSetDelayMS(&(adcEventControl), (15 * (60UL * 1024UL))); } while(0); //15 minute delay
+}
+
+void initSundialADC(void)
+{
+	  /* Enable ADC clock */
+	  CMU_ClockEnable(cmuClock_ADC0, 1);
+
+	  /* Customize ADC base configuration (from ADC_INIT_DEFAULT) */
+	  init.timebase = ADC_TimebaseCalc(0);  		// uses current HFPER clock setting
+	  init.prescale = ADC_PrescaleCalc(7000000, 0); // uses current HFPER clock setting to scale the desired ADC frequency
+	  init.lpfMode =  adcLPFilterRC;				// use the on-chip RC filter
+	  init.ovsRateSel = adcOvsRateSel16;			// avg 16 samples per conversion
+
+	 /* Customize ADC Single Measurement configuration (from ADC_INITSINGLE_DEFAULT) */
+	 singleInit.reference  	= adcRef2V5;			// use 2.5V for the reference voltage
+	 singleInit.input      	= adcSingleInpCh0;		// default to CH0
+	 singleInit.resolution 	= adcRes12Bit;			// 12-bit resolution
+	 singleInit.acqTime 	= adcAcqTime32;			// 32 clock cycles
+	 singleInit.rep			= 0;				// not in repetitive mode
+
+	 ADC_Init(((ADC_TypeDef *) (0x40002000UL)), &init);
+	 ADC_InitSingle(((ADC_TypeDef *) (0x40002000UL)), &singleInit);
+}
+
+void initSundialGPIO(void)
+{
+	/* initializes all GPIO pins for our project */
+
+	//CONTROL PINS
+	GPIO_PinModeSet(Sundial_Port, 2, gpioModePushPull, 0);         // PD2  Note: 0 means output = LOW
+	GPIO_PinModeSet(Sundial_Port, 3, gpioModePushPull, 0);	        // PD3
+	GPIO_PinModeSet(Sundial_Port, 4, gpioModePushPull, 0);		    // PD4
+	GPIO_PinModeSet(Sundial_Port, 5, gpioModePushPull, 0);		// PD5
+	GPIO_PinModeSet(Sundial_Port, 6, gpioModePushPull, 0);	    // PD6
+	GPIO_PinModeSet(Sundial_Port, 7, gpioModePushPull, 1);	    // PD7 - Relay Pin on by default
+
+	// Disables LED0 to prevent interference with PF6
+	BSP_LedClear(0);
+
+	// Disables the debug interface (SWDIO, SWO) to prevent interference with PF1 and PF2
+	// must wait 3 seconds before disabling the debug interface (see EZR32WG ref manual p.734).
+
+
+	//INPUTS
+	GPIO_PinModeSet(Sundial_Port, 0, gpioModeInput, 0);		// PD0 - Current Measurements
+	GPIO_PinModeSet(Sundial_Port, 1, gpioModeInput, 0);		// PD1 - Voltage Measurements
+}
+
+static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel)
+{
+
+	/* Takes a measurement from ADC0 CH# depending on the specified channel */
+	uint32_t data;
+
+	// reset the ADC channel selection
+	((ADC_TypeDef *) (0x40002000UL))->SINGLECTRL = (0x00000000UL << 8);
+
+	switch (channel)
+	{
+		case adcSingleInpCh0:
+			((ADC_TypeDef *) (0x40002000UL))->SINGLECTRL |= (0x00000000UL << 8);
+			break;
+
+		case adcSingleInpCh1:
+			((ADC_TypeDef *) (0x40002000UL))->SINGLECTRL |= (0x00000001UL << 8);
+			break;
+	}
+
+	 while(((((ADC_TypeDef *) (0x40002000UL)) -> STATUS & (0x1UL << 12)) != 1) && (((ADC_TypeDef *) (0x40002000UL)) -> STATUS & (0x1UL << 8) != 1)){
+			//Wait until adc and reference are warmed up
+		}
+		ADC_Start(((ADC_TypeDef *) (0x40002000UL)), adcStartSingle);     //Start a single conversion
+		while (((ADC_TypeDef *) (0x40002000UL)) -> STATUS & (0x1UL << 0)){
+			//Wait until ADC0 finishes conversion
+		}
+		if (((ADC_TypeDef *) (0x40002000UL)) -> STATUS & (0x1UL << 16)){ //Check to see if conversion result is valid
+			  //Data is valid
+		}
+		data = ADC_DataSingleGet(((ADC_TypeDef *) (0x40002000UL)));  //Get result from ADC data register
+		return data;
+}
+
+static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Value, unsigned int A2_Value)
+{
+	GPIO_PinOutClear(Sundial_Port, 2);       // reset control pin
+	GPIO_PinOutClear(Sundial_Port, 3);       // reset control pin
+	GPIO_PinOutClear(Sundial_Port, 4);       // reset control pin
+	/* sets the specified control pin high to take a current measurement */
+	uint32_t measurement;
+	if (A0_Value)  GPIO_PinOutSet(Sundial_Port, 2);
+	if (A1_Value)  GPIO_PinOutSet(Sundial_Port, 3);
+	if (A2_Value)  GPIO_PinOutSet(Sundial_Port, 4);
+
+	USTIMER_Delay(50000);                       // wait 50ms for gpio pin to turn on switch
+	measurement = adc0TakeMeasurement(currentChannel); // take actual measurement
+	GPIO_PinOutClear(Sundial_Port, 2);       // reset control pin after measurement
+	GPIO_PinOutClear(Sundial_Port, 3);       // reset control pin after measurement
+	GPIO_PinOutClear(Sundial_Port, 4);       // reset control pin after measurement
+	return measurement;
+}
+
+static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1)
+{
+
+	/* sets the specified control pins to take a voltage measurement.
+	 *
+	 * vctrl2 vctrl1
+	 * 	0 		0 		= No connection
+	 * 	0 		1 		= 12V
+	 * 	1 		0 		= 5V
+	 * 	1 		1 		= Solar Panel Voltage
+	 *
+	 */
+	uint32_t measurement;
+
+	if (vctrl1) GPIO_PinOutSet(Sundial_Port, 5);
+	if (vctrl2) GPIO_PinOutSet(Sundial_Port, 6);
+	USTIMER_Delay(50000);                                  // wait 50ms for gpio pin to turn on switch
+	measurement = adc0TakeMeasurement(voltageChannel);
+	GPIO_PinOutClear(Sundial_Port, 5);
+	GPIO_PinOutClear(Sundial_Port, 6);            // return voltage control to no connection after measurement
+	return measurement;
+}
+
+void takeMeasurementSet(uint16_t *power_meas)
+{
+	/* takes the full suite of power measurements once every 15 minutes.
+	 * In total this is 5 measurements.
+	 */
+
+	uint32_t current, voltage;
+
+	// lights 1 power measurement
+	emberAfPrintln(0x0001, "-------- Light1 --------");
+	current = takeCurrentMeasurement(0, 0, 0);  //RS1
+	voltage = takeVoltageMeasurement(0, 1);  // 0 1 = 12V
+	power_meas[0] = calculatePower(current, voltage);
+	emberAfPrintln(0x0001, "C:\t%d", current);
+	emberAfPrintln(0x0001, "V:\t%d", voltage);
+	emberAfPrintln(0x0001, "P:\t%d", power_meas[0]);
+
+	// lights 2 measurement
+	emberAfPrintln(0x0001, "-------- Light2 --------");
+	current = takeCurrentMeasurement(0, 0, 1);  //RS2
+	power_meas[1] = calculatePower(current, voltage);
+	emberAfPrintln(0x0001, "C:\t%d", current);
+	emberAfPrintln(0x0001, "V:\t%d", voltage);
+	emberAfPrintln(0x0001, "P:\t%d", power_meas[1]);
+
+	// usb 1 measurement
+	emberAfPrintln(0x0001, "--------- USB1 ---------");
+	current = takeCurrentMeasurement(0, 1, 0);  //RS3
+	voltage = takeVoltageMeasurement(1, 0);  // 1 0 = 5V
+	power_meas[2] = calculatePower(current, voltage);
+	emberAfPrintln(0x0001, "C:\t%d", current);
+	emberAfPrintln(0x0001, "V:\t%d", voltage);
+	emberAfPrintln(0x0001, "P:\t%d", power_meas[2]);
+
+	// usb 2 measurement
+	emberAfPrintln(0x0001, "--------- USB2 ---------");
+	current = takeCurrentMeasurement(0, 1, 1);  //RS4
+	power_meas[3] = calculatePower(current, voltage);
+	emberAfPrintln(0x0001, "C:\t%d", current);
+	emberAfPrintln(0x0001, "V:\t%d", voltage);
+	emberAfPrintln(0x0001, "P:\t%d", power_meas[3]);
+
+	// solar panel measurement
+	emberAfPrintln(0x0001, "-------- Solar ---------");
+	current = takeCurrentMeasurement(1, 0, 0);  //RS5
+	voltage = takeVoltageMeasurement(1, 1);  // 1 1 = Solar
+	power_meas[4] = calculatePower(current, voltage);
+	emberAfPrintln(0x0001, "C:\t%d", current);
+	emberAfPrintln(0x0001, "V:\t%d", voltage);
+	emberAfPrintln(0x0001, "P:\t%d", power_meas[4]);
+}
+
+static uint16_t calculatePower(uint32_t current, uint32_t voltage)
+{
+	/* Calculates the power consumed by the circuit in mW, given a current and voltage measurement.
+	 *
+	 * The voltage and current values are raw uint32_t directly from the ADC data register.
+	 */
+    return (uint16_t) ((0.2 * ((voltage*current*2500) / 4096))/1000);
+}
 
 // The Simulated EEPROM callback function, implemented by the
 // application.
@@ -23342,18 +25496,19 @@ void emberAfPluginIdleSleepActiveCallback(void) {
  */
 void emberAfMainInitCallback(void) {
 	    CMU_ClockEnable(cmuClock_HFPER, 1);
-		USTIMER_Init();                                         //calibrate delay timer
-		//initSundialADC();
-		//initSundialGPIO();
+		USTIMER_Init();                                         //   Calibrate delay timer
+		initSundialADC();
+		initSundialGPIO();
+
 
 		halCommonMemSet(&parameters,0,sizeof(EmberNetworkParameters));
 		parameters.radioTxPower = 10;
 		parameters.radioChannel = 1; 			//   PANID will be set when beacon is received
 
-		EmberStatus status = emberNetworkInit();				//try to rejoin old network
+		EmberStatus status = emberNetworkInit();				//   Try to rejoin old network
 
 		if (status == EMBER_SUCCESS) {
-		// Successfully rejoined previous network
+		// Successfully rejoined previous network, nothing needs to be done
 		} else {
 			status = emberStartActiveScan(application_channel);
 			emberAfPrintln(0x0001, "Scan Result: %x", status);
@@ -23382,7 +25537,9 @@ void emberAfMainTickCallback(void) {
  * @param status   Ver.: always
  */
 void emberAfStackStatusCallback(EmberStatus status) {
- // your code here
+		if (emberStackIsUp()){
+		do { emEventControlSetActive(&(adcEventControl)); } while(0); //Take ADC measurement once stack is up
+		}
 }
 
 /** @brief Incoming Message
@@ -23392,10 +25549,7 @@ void emberAfStackStatusCallback(EmberStatus status) {
  * @param message   Ver.: always
  */
 void emberAfIncomingMessageCallback(EmberIncomingMessage *message) {
-	switch (message->payload[2]) {
-		case SENSOR_SINK_COMMAND_ID_ADVERTISE:
-			emberAfPrintln(0x0001, "Advertise Message Received");
-	        break;
+	switch (message->payload[0]) {
 		case SENSOR_SINK_COMMAND_ID_DATA:
 			emberAfPrintln(0x0001, "Data Received");
 	}
@@ -23411,16 +25565,19 @@ static EmberStatus send(EmberNodeId nodeId,
                         uint8_t *buffer,
                         uint8_t bufferLength)
 {
-  messageLength = 0;
-  storeLowHighInt16u(message + messageLength, 0xC00F);
-  messageLength += 2;
-  message[messageLength++] = commandId;
+	/*  __________________________________________________
+	 * |cmd|longId                         |nodeId |data   ->
+	 * |_0_|_1_|_2_|_3_|_4_|_5_|_6_|_7_|_8_|_9_|_10|_11|_12->
+	 *
+	 */
+  message[0] = commandId;										  //messageLength = 0 at beginning of commandId
+  messageLength++;												  //messageLength = 1 at beginning of longId
   halCommonMemMove(message + messageLength,(emLocalEui64),8);
   messageLength += 8;
-  storeLowHighInt16u(message + messageLength, (emLocalNodeId));
+  storeLowHighInt16u(message + messageLength, (emLocalNodeId));  //messageLength = 9 at beginning of nodeId
   messageLength += 2;
   if (bufferLength != 0) {
-    halCommonMemMove(message + messageLength,buffer,bufferLength);
+    halCommonMemMove(message + messageLength,buffer,bufferLength);       //messaheLength = 11 at beginning of data
     messageLength += bufferLength;
   }
   return emberMessageSend(nodeId,

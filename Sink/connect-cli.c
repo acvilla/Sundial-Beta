@@ -9,6 +9,8 @@
 #include "stack/include/ember.h"
 #include EMBER_AF_API_COMMAND_INTERPRETER2
 
+void emberResetNetworkState(void);
 EmberCommandEntry emberCommandTable[] = {
+  emberCommandEntryAction("leave", emberResetNetworkState, "", ""),
   emberCommandEntryTerminator(),
 };
