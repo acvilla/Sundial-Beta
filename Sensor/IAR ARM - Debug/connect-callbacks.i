@@ -25186,9 +25186,6 @@ void emberMarkApplicationBuffersHandler(void);
 
 static EmberKeyData securityKey = {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA};
 uint8_t application_channel =   1;
-static uint8_t message[(11 + 10)];
-static EmberMessageLength messageLength;
-static EmberMessageOptions txOptions = EMBER_OPTIONS_NONE;
 EmberNetworkParameters parameters;
 enum {
   SENSOR_SINK_COMMAND_ID_ADVERTISE_REQUEST = 0,
@@ -25227,6 +25224,7 @@ void adcHandler(void)
     uint16_t measurements[5];         // array to store the most recent set of measurements
     uint16_t *measptr = measurements;
     takeMeasurementSet(measptr);	  // take all power measurements and fill measurements array
+
     /*
      * Transfer measurements to payload
      */
@@ -25570,6 +25568,9 @@ static EmberStatus send(EmberNodeId nodeId,
 	 * |_0_|_1_|_2_|_3_|_4_|_5_|_6_|_7_|_8_|_9_|_10|_11|_12->
 	 *
 	 */
+	uint8_t message[(11 + 10)];
+    EmberMessageLength messageLength;
+	EmberMessageOptions txOptions = EMBER_OPTIONS_NONE;
   message[0] = commandId;										  //messageLength = 0 at beginning of commandId
   messageLength++;												  //messageLength = 1 at beginning of longId
   halCommonMemMove(message + messageLength,(emLocalEui64),8);

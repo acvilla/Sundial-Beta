@@ -4575,3 +4575,1416 @@ com.iar.ide.common.ProcessReaper$ProcessException: Symbols file is empty!
 
 !ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-16 13:00:46.124
 !MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-16 14:41:59.720
+!MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-16 14:42:21.518
+!MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-16 14:43:59.708
+!MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.iar.cdt.generic.toolchain 4 0 2016-07-17 12:54:46.837
+!MESSAGE Cannot gather predefined symbols
+!STACK 0
+com.iar.ide.common.ProcessReaper$ProcessException: Symbols file is empty!
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.scanPredefinedSymbols(ToolchainInfo2.java:355)
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.getPredefinedSymbols(ToolchainInfo2.java:278)
+	at com.iar.cdt.generic.toolchain.scanner.SdkBasedExternalScannerInfoProvider.getPredefinedSymbols(SdkBasedExternalScannerInfoProvider.java:242)
+	at com.iar.cdt.generic.toolchain.scanner.AbstractExternalScannerInfoProvider.invokeProvider(AbstractExternalScannerInfoProvider.java:89)
+	at com.iar.cdt.arm.toolchain.scanner.ArmExternalScannerInfoProvider.invokeProvider(ArmExternalScannerInfoProvider.java:171)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil$1.run(CfgSCJobsUtil.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil.getProviderScannerInfo(CfgSCJobsUtil.java:105)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:201)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:154)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:120)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.iar.cdt.generic.toolchain 4 0 2016-07-17 13:12:07.035
+!MESSAGE Cannot gather predefined symbols
+!STACK 0
+com.iar.ide.common.ProcessReaper$ProcessException: Symbols file is empty!
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.scanPredefinedSymbols(ToolchainInfo2.java:355)
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.getPredefinedSymbols(ToolchainInfo2.java:278)
+	at com.iar.cdt.generic.toolchain.scanner.SdkBasedExternalScannerInfoProvider.getPredefinedSymbols(SdkBasedExternalScannerInfoProvider.java:242)
+	at com.iar.cdt.generic.toolchain.scanner.AbstractExternalScannerInfoProvider.invokeProvider(AbstractExternalScannerInfoProvider.java:89)
+	at com.iar.cdt.arm.toolchain.scanner.ArmExternalScannerInfoProvider.invokeProvider(ArmExternalScannerInfoProvider.java:171)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil$1.run(CfgSCJobsUtil.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil.getProviderScannerInfo(CfgSCJobsUtil.java:105)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:201)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:154)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:120)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.iar.cdt.generic.toolchain 4 0 2016-07-17 13:12:27.140
+!MESSAGE Cannot gather predefined symbols
+!STACK 0
+com.iar.ide.common.ProcessReaper$ProcessException: Symbols file is empty!
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.scanPredefinedSymbols(ToolchainInfo2.java:355)
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.getPredefinedSymbols(ToolchainInfo2.java:278)
+	at com.iar.cdt.generic.toolchain.scanner.SdkBasedExternalScannerInfoProvider.getPredefinedSymbols(SdkBasedExternalScannerInfoProvider.java:242)
+	at com.iar.cdt.generic.toolchain.scanner.AbstractExternalScannerInfoProvider.invokeProvider(AbstractExternalScannerInfoProvider.java:89)
+	at com.iar.cdt.arm.toolchain.scanner.ArmExternalScannerInfoProvider.invokeProvider(ArmExternalScannerInfoProvider.java:171)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil$1.run(CfgSCJobsUtil.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil.getProviderScannerInfo(CfgSCJobsUtil.java:105)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:201)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:154)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:120)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.884
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.888
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.892
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.896
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.900
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.904
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.907
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.911
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.915
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.918
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.921
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.925
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.929
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.932
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.936
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.940
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.943
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.948
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.951
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.955
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.959
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:14:34.963
+!MESSAGE Failed to connect to Connection from Adapters View
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:359)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440046148.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.foundation.core_rcp 4 0 2016-07-17 13:14:34.968
+!MESSAGE EZR32WG 868 MHz Wireless Starter Kit (440046148) adapter error: Failed to connect to device (Device in use)
+!STACK 0
+java.lang.Exception: Failed to connect to device (Device in use)
+	at com.silabs.ide.internal.api.tcf.agent.TCFServiceUtils.wrapException(TCFServiceUtils.java:280)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.reportException(TCFAdapter.java:664)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapter.connect(TCFAdapter.java:375)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterConnectionOpenClose.activate(TCFAdapterConnectionOpenClose.java:64)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-17 13:14:50.776
+!MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.062
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.068
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.073
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.077
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.082
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.087
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.091
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.096
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.101
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.105
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.110
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.115
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.119
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.123
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.129
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.134
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.138
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.142
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.146
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.150
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.154
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.157
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.161
+!MESSAGE Failed to connect to Reset device
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:202)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:256)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.foundation.core_rcp 4 0 2016-07-17 13:17:00.166
+!MESSAGE EZR32WG 868 MHz Wireless Starter Kit (440030513) adapter error: Failed to connect to device
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to connect to device
+	at com.silabs.ide.internal.api.core.StatusReporter.newCoreException(StatusReporter.java:186)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.doConnect(DeviceConnectionClient.java:280)
+	at com.silabs.ide.internal.api.tcf.agent.connection.DeviceConnectionClient.connect(DeviceConnectionClient.java:198)
+	at com.silabs.ide.internal.tcf.agent.DeviceAgentSession.connect(DeviceAgentSession.java:389)
+	at com.silabs.studio.internal.tcf_adapter.TCFAdapterReset.activate(TCFAdapterReset.java:102)
+	at com.ember.workbench.capability.Capability.run(Capability.java:354)
+	at com.ember.workbench.capability.Capability.access$0(Capability.java:341)
+	at com.ember.workbench.capability.Capability$4.run(Capability.java:536)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 com.silabs.ide.tcf.agent 4 0 2016-07-17 13:17:00.167
+!MESSAGE Failed to connect to device
+!STACK 0
+org.eclipse.tcf.core.ErrorReport: TCF error report:
+Command: DebugAdapter connect "usb.440030513.adapter.kit.mcu", {"exceptionsToCatch":0,"coreSpeed":14000000,"enableITM":true,"connectMethod":"normal","baudRate":875...
+Error text: Device in use
+Error code: 131073
+	at org.eclipse.tcf.core.Command.toError(Command.java:256)
+	at org.eclipse.tcf.core.Command.toError(Command.java:241)
+	at com.silabs.ide.internal.api.tcf.services.DebugAdapterProxy$1.done(DebugAdapterProxy.java:43)
+	at org.eclipse.tcf.core.Command.result(Command.java:111)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:906)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:852)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:254)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-17 13:17:06.886
+!MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.silabs.ide.tcf.agent 1 0 2016-07-17 13:17:27.334
+!MESSAGE Launching SiAgent (C:\SiliconLabs\SimplicityStudio\v3\common\tcf\siagent.exe)
+
+!ENTRY com.iar.cdt.generic.toolchain 4 0 2016-07-17 13:21:13.737
+!MESSAGE Cannot gather predefined symbols
+!STACK 0
+com.iar.ide.common.ProcessReaper$ProcessException: Symbols file is empty!
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.scanPredefinedSymbols(ToolchainInfo2.java:355)
+	at com.iar.cdt.generic.toolchain.internal.info.ToolchainInfo2.getPredefinedSymbols(ToolchainInfo2.java:278)
+	at com.iar.cdt.generic.toolchain.scanner.SdkBasedExternalScannerInfoProvider.getPredefinedSymbols(SdkBasedExternalScannerInfoProvider.java:242)
+	at com.iar.cdt.generic.toolchain.scanner.AbstractExternalScannerInfoProvider.invokeProvider(AbstractExternalScannerInfoProvider.java:89)
+	at com.iar.cdt.arm.toolchain.scanner.ArmExternalScannerInfoProvider.invokeProvider(ArmExternalScannerInfoProvider.java:171)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil$1.run(CfgSCJobsUtil.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.cdt.build.internal.core.scannerconfig.jobs.CfgSCJobsUtil.getProviderScannerInfo(CfgSCJobsUtil.java:105)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:201)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:154)
+	at org.eclipse.cdt.build.core.scannerconfig.ScannerConfigBuilder.build(ScannerConfigBuilder.java:120)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:513)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:432)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

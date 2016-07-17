@@ -544,7 +544,7 @@ void emberAfMainInitCallback(void) {
 			   emberAfCorePrintln("Form 0x%x", form_status);
 		 	 }
 	         emberPermitJoining(PERMIT_JOINING_FOREVER);
-	         //emberEventControlSetActive(adcEventControl); //Take ADC measurement as soon as possible
+	         emberEventControlSetActive(adcEventControl); //Take ADC measurement as soon as possible
 }
 
 /** @brief Main Tick
@@ -647,7 +647,7 @@ void updateNodesArray(EmberEUI64 *tempEUI64, uint16_t *tempData){
 	        	uint16_t new_length = nodePush(nodes_array, nodes_array_length);
 	        	if (new_length!= NULL){
 	        	nodes_array_length = new_length;  //only update nodes_array_length if we haven't reached maximum network size
-                emberAfCorePrintln("NODE UPDATED. Array length: %d", nodes_array_length);
+
 	        	nodes_array[nodes_array_length - 1].SampleIndex = 0;
 	        	nodes_array[nodes_array_length - 1].Light_1_Power[0] = tempData[0];
 	    		nodes_array[nodes_array_length - 1].Light_2_Power[0] = tempData[1];

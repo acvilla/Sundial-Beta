@@ -145,3 +145,11 @@
 12:59:22,839 [Worker-260] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
 12:59:34,924 [Worker-250] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
 12:59:34,924 [Worker-250] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
+12:54:46,836 [Worker-269] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+12:54:46,836 [Worker-269] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
+13:12:07,034 [Worker-268] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+13:12:07,035 [Worker-268] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
+13:12:27,139 [Worker-268] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+13:12:27,139 [Worker-268] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
+13:21:13,736 [Worker-262] ERROR com.iar.ide.common.CommandUtils  - Command '[,    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM,    Copyright 1999-2016 IAR Systems AB.,    , Command line error: Option --preprocess can only occur once]' exited with non-zero exit code 2
+13:21:13,737 [Worker-262] ERROR com.iar.cdt.generic.toolchain  - Cannot gather predefined symbols (Symbols file is empty!)
