@@ -1,0 +1,181 @@
+11:23:52 **** Incremental Build of configuration IAR ARM - Debug for project HostUSB ****
+make -j4 all 
+Building file: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/stack/config/ember-configuration.c
+Building file: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/submodules/base/hal/micro/generic/sim-eeprom.c
+Building file: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/serial/ember-printf.c
+Building file: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/serial/serial.c
+Invoking: IAR C/C++ Compiler for ARM
+iccarm "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/stack/config/ember-configuration.c" -o "stack/stack-common/ember-configuration.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers -IC:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -IC:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "ember-configuration.d"
+Invoking: IAR C/C++ Compiler for ARM
+Invoking: IAR C/C++ Compiler for ARM
+iccarm "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/serial/ember-printf.c" -o "serial/ember-printf.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers -IC:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -IC:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "ember-printf.d"
+Invoking: IAR C/C++ Compiler for ARM
+iccarm "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/submodules/base/hal/micro/generic/sim-eeprom.c" -o "sim-eeprom1/sim-eeprom.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers -IC:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -IC:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "sim-eeprom.d"
+iccarm "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/serial/serial.c" -o "serial/serial.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers -IC:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -IC:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "serial.d"
+
+   IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
+   Copyright 1999-2016 IAR Systems AB.
+   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+
+   IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
+   Copyright 1999-2016 IAR Systems AB.
+   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+
+   IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
+   Copyright 1999-2016 IAR Systems AB.
+   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+
+   IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
+   Copyright 1999-2016 IAR Systems AB.
+   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+ 
+     1 byte  of CONST memory
+ 4 559 bytes of DATA  memory
+
+Errors: none
+Warnings: none
+Finished building: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/stack/config/ember-configuration.c
+ 
+Building file: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/poll/poll.c
+
+  #include "em_usb.h"
+                     ^
+"C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\connect\plugins\serial\com.h",22  Fatal error[Pe1696]: cannot open source file "em_usb.h"
+
+            searched: "C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\connect\plugins\serial\"
+Errors: 1
+            searched: "C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\submodules\base\hal\micro\generic\"
+Warnings: none
+            searched: "C:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers/"
+            searched: "C:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include/"
+            searched: "C:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc/"
+Invoking: IAR C/C++ Compiler for ARM
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc/"
+iccarm "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/poll/poll.c" -o "poll/poll.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers -IC:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -IC:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "poll.d"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config/"
+            searched: "c:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\"
+            searched: "c:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\"
+Fatal error detected, aborting.
+
+  #include "em_usb.h"
+                     ^
+"C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\connect\plugins\serial\com.h",22  Fatal error[Pe1696]: cannot open source file "em_usb.h"
+
+            searched: "C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\connect\plugins\serial\"
+Errors: 1
+            searched: "C:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers/"
+Warnings: none
+            searched: "C:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include/"
+            searched: "C:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config/"
+            searched: "c:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\"
+            searched: "c:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\"
+Fatal error detected, aborting.
+
+  #include "em_usb.h"
+                     ^
+"C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\connect\plugins\serial\com.h",22  Fatal error[Pe1696]: cannot open source file "em_usb.h"
+
+            searched: "C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect\connect\plugins\serial\"
+Errors: 1
+            searched: "C:/SiliconLabs/SimplicityStudio/v3/developer/sdks/efm32/v2/kits/common/drivers/"
+Warnings: none
+            searched: "C:/Users/Alex/Dropbox/Project%20Portfolio/Sundial-Beta/Project%20Files/HostUSB"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include/"
+            searched: "C:/Users/Alex/SimplicityStudio/v3_workspace/HostUSB/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs/"
+            searched: "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config/"
+            searched: "c:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\"
+            searched: "c:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\"
+Fatal error detected, aborting.
+make: *** [sim-eeprom1/sim-eeprom.o] Error 2
+make: *** Waiting for unfinished jobs....
+make: *** [serial/ember-printf.o] Error 2
+make: *** [serial/serial.o] Error 2
+
+   IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
+   Copyright 1999-2016 IAR Systems AB.
+   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+ 
+ 200 bytes of CODE memory
+  20 bytes of DATA memory
+
+Errors: none
+Warnings: none
+Finished building: C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect/connect/plugins/poll/poll.c
+ 
+
+11:23:59 Build Finished (took 7s.331ms)
+

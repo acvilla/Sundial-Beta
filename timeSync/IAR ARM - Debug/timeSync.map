@@ -1,0 +1,2038 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.1.11437/W32 for ARM                31/Jul/2016  19:42:03
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  timeSync.out
+#    Map file     =  
+#        C:/Users/Alex/SimplicityStudio/v3_workspace/timeSync/IAR ARM -
+#        Debug/timeSync.map
+#    Command line =  
+#        ./stack/stack-common/ember-configuration.o ./sim-eeprom1/sim-eeprom.o
+#        ./serial/ember-printf.o ./serial/serial.o ./poll/poll.o
+#        ./phy-ezradio/phy-config-connect.o ./main/main.o
+#        ./idle-sleep/idle-sleep.o ./hal/hal-ezr32/EZR32_WG330/system_ezr32wg.o
+#        ./hal/hal-ezr32/bsp_stk_leds.o ./hal/hal-ezr32/button.o
+#        ./hal/hal-ezr32/buzzer.o ./hal/hal-ezr32/com.o ./hal/hal-ezr32/crc.o
+#        ./hal/hal-ezr32/cstartup-common.o ./hal/hal-ezr32/dmactrl.o
+#        ./hal/hal-ezr32/dmadrv.o ./hal/hal-ezr32/em_acmp.o
+#        ./hal/hal-ezr32/em_adc.o ./hal/hal-ezr32/em_aes.o
+#        ./hal/hal-ezr32/em_assert.o ./hal/hal-ezr32/em_burtc.o
+#        ./hal/hal-ezr32/em_cmu.o ./hal/hal-ezr32/em_dac.o
+#        ./hal/hal-ezr32/em_dbg.o ./hal/hal-ezr32/em_dma.o
+#        ./hal/hal-ezr32/em_ebi.o ./hal/hal-ezr32/em_emu.o
+#        ./hal/hal-ezr32/em_gpio.o ./hal/hal-ezr32/em_i2c.o
+#        ./hal/hal-ezr32/em_idac.o ./hal/hal-ezr32/em_int.o
+#        ./hal/hal-ezr32/em_lesense.o ./hal/hal-ezr32/em_letimer.o
+#        ./hal/hal-ezr32/em_leuart.o ./hal/hal-ezr32/em_mpu.o
+#        ./hal/hal-ezr32/em_msc.o ./hal/hal-ezr32/em_opamp.o
+#        ./hal/hal-ezr32/em_pcnt.o ./hal/hal-ezr32/em_prs.o
+#        ./hal/hal-ezr32/em_rmu.o ./hal/hal-ezr32/em_rtc.o
+#        ./hal/hal-ezr32/em_system.o ./hal/hal-ezr32/em_timer.o
+#        ./hal/hal-ezr32/em_usart.o ./hal/hal-ezr32/em_vcmp.o
+#        ./hal/hal-ezr32/em_wdog.o ./hal/hal-ezr32/endian.o
+#        ./hal/hal-ezr32/ext-device.o ./hal/hal-ezr32/faults.o
+#        ./hal/hal-ezr32/gpiointerrupt.o ./hal/hal-ezr32/i2cspm.o
+#        ./hal/hal-ezr32/isr-stubs.o ./hal/hal-ezr32/led.o
+#        ./hal/hal-ezr32/mem-util.o ./hal/hal-ezr32/mfg-token.o
+#        ./hal/hal-ezr32/micro-common.o ./hal/hal-ezr32/micro.o
+#        ./hal/hal-ezr32/mpu.o ./hal/hal-ezr32/random.o
+#        ./hal/hal-ezr32/rtcdriver.o ./hal/hal-ezr32/si7013.o
+#        ./hal/hal-ezr32/sleep-efm32.o ./hal/hal-ezr32/sleep.o
+#        ./hal/hal-ezr32/spidrv.o ./hal/hal-ezr32/symbol-timer.o
+#        ./hal/hal-ezr32/token-def.o ./hal/hal-ezr32/token.o
+#        ./hal/hal-ezr32/uartdrv.o ./hal/hal-ezr32/udelay.o
+#        ./hal/hal-ezr32/ustimer.o ./diagnostic/EZR32/assert-crash-handlers.o
+#        ./diagnostic/EZR32/diagnostic.o ./debug-print/debug-print.o
+#        ./command-interpreter/command-interpreter.o ./clock.o ./clockApp_stk.o
+#        ./connect-bookkeeping.o ./connect-callback-stubs.o
+#        ./connect-callbacks.o ./connect-cli.o ./connect-events.o -o
+#        timeSync.out --config
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/ezr32lg330f256/iar-cfg.icf
+#        --config_def BTL_SIZE=0K --config_def NULL_BTL=1 --no_wrap_diagnostics
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/hal-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/parent-support-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/form-and-join-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/packet-queue-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/sim-eeprom1-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/stack-common-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/stack-counters-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/aes-security-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/phy-pro2-brd4502c-library.a
+#        C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/xxtea-security-library.a
+#        --entry halEntryPoint --map
+#        "C:/Users/Alex/SimplicityStudio/v3_workspace/timeSync/IAR ARM -
+#        Debug/timeSync.map" --log_file
+#        "C:/Users/Alex/SimplicityStudio/v3_workspace/timeSync/IAR ARM -
+#        Debug/timeSync.log" --log initialization,modules,sections,veneers
+#        --remarks --diag_suppress=Lp012 --redirect _Printf=_PrintfFull
+#        --redirect _Scanf=_ScanfFull
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__Heap_Handler  = Basic
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"HEADERS":
+       place at start of [0x00000000-0x000000ff] { block HEADER_block };
+"APP ro":
+       place at start of [0x00000100-0x0003ffff] { block APPRO_block };
+"NVM&SIMEE":
+       place at end of [0x00000100-0x0003ffff] {
+          zi section NVM, zi section SIMEE, zi section INTERNAL_STORAGE };
+"APP rw":
+       place at end of [0x20000000-0x20007fef] { block APPRW_block };
+"Heap":
+       place at start of [0x20000000-0x20007fef] { overlay EMHEAP_overlay };
+"Guard":
+       place in [from 0x20000000 to 0x20007fef] { rw section GUARD_REGION };
+do not initialize { rw };
+initialize manually with packing = copy, complex ranges {
+   section .data, section .textrw, rw section __DLIB_PERTHREAD };
+
+  Section                 Kind        Address    Size  Object
+  -------                 ----        -------    ----  ------
+"HEADERS":                                      0x100
+  HEADER_block                     0x00000000   0x100  <Block>
+    BAT                   const    0x00000000    0x54  cstartup-common.o [5]
+    AAT                   const    0x00000054    0xac  cstartup-common.o [5]
+                                 - 0x00000100   0x100
+
+"APP ro":                                      0xe0d8
+  APPRO_block                      0x00000100  0xe0d8  <Block>
+    .intvec               const    0x00000100    0xdc  cstartup-common.o [5]
+    .textrw_init                   0x000001dc   0x1d4  <Block>
+      Initializer bytes   const    0x000001dc   0x1d4  <for .textrw-1>
+    .text                          0x000003b0  0xd23a  <Block>
+      .text               ro code  0x000003b0    0x90  sim-eeprom.o [12]
+      .text               ro code  0x00000440    0xb8  mem-util.o [5]
+      .text               ro code  0x000004f8   0xb10  sim-eeprom-internal.o [23]
+      .text               ro code  0x00001008   0x1e4  assert-crash-handlers.o [4]
+      .text               ro code  0x000011ec    0x66  ABImemset.o [22]
+      .text               ro code  0x00001254   0x1d0  connect-callbacks.o [1]
+      Veneer              ro code  0x00001424     0x8  - Linker created -
+      Veneer              ro code  0x0000142c     0x8  - Linker created -
+      Veneer              ro code  0x00001434     0x8  - Linker created -
+      .text               ro code  0x0000143c    0xca  flash.o [18]
+      .text               ro code  0x00001508    0x7c  micro-common.o [5]
+      .text               ro code  0x00001584     0xc  spmr.o [18]
+      .text               ro code  0x00001590    0xd8  serial.o [11]
+      .text               ro code  0x00001668   0x130  micro-internal.o [18]
+      .text               ro code  0x00001798     0x6  ABImemclr4.o [22]
+      .text               ro code  0x000017a0   0x244  em_emu.o [5]
+      .text               ro code  0x000019e4   0x114  em_rmu.o [5]
+      .text               ro code  0x00001af8    0x76  ABImemcpy_unaligned.o [22]
+      .text               ro code  0x00001b70    0xc0  em_burtc.o [5]
+      .text               ro code  0x00001c30   0x7b4  em_cmu.o [5]
+      .text               ro code  0x000023e4    0x68  clock.o [1]
+      .text               ro code  0x0000244c   0x17c  clockApp_stk.o [1]
+      .text               ro code  0x000025c8    0x78  em_msc.o [5]
+      .text               ro code  0x00002640    0xb0  em_wdog.o [5]
+      .text               ro code  0x000026f0   0x48c  com.o [5]
+      .text               ro code  0x00002b7c   0x1c8  ember-printf.o [11]
+      .text               ro code  0x00002d44    0x90  mpu.o [5]
+      .text               ro code  0x00002dd4     0x6  spmr.o [18]
+      .text               ro code  0x00002ddc    0x32  ABImemset48.o [22]
+      .text               ro code  0x00002e10   0x108  system_ezr32wg.o [6]
+      .text               ro code  0x00002f18    0xd0  mktime.o [16]
+      .text               ro code  0x00002fe8    0xb6  localtim.o [16]
+      .text               ro code  0x000030a0    0x64  debug-print.o [3]
+      .text               ro code  0x00003104   0x844  uartdrv.o [5]
+      .text               ro code  0x00003948    0x50  em_mpu.o [5]
+      .text               ro code  0x00003998     0xe  spmr.o [18]
+      .text               ro code  0x000039a8   0x188  xttotm.o [16]
+      .text               ro code  0x00003b30     0x2  xtls.o [16]
+      .text               ro code  0x00003b34    0x29  setlocale.o [16]
+      .text               ro code  0x00003b60     0xa  getzone.o [16]
+      .text               ro code  0x00003b6a    0x42  xgettime.o [16]
+      .text               ro code  0x00003bac    0x86  xstol.o [16]
+      .text               ro code  0x00003c34   0x37c  dmadrv.o [5]
+      .text               ro code  0x00003fb0   0x110  em_gpio.o [5]
+      .text               ro code  0x000040c0   0x184  em_usart.o [5]
+      .text               ro code  0x00004244    0xc8  gpiointerrupt.o [5]
+      .text               ro code  0x0000430c   0x134  xisdst.o [16]
+      .text               ro code  0x00004440    0x16  strchr.o [22]
+      .text               ro code  0x00004458    0x36  strlen.o [22]
+      .text               ro code  0x00004490   0x198  xstoul.o [16]
+      .text               ro code  0x00004628     0xc  errno.o [16]
+      .text               ro code  0x00004634   0x2cc  em_dma.o [5]
+      .text               ro code  0x00004900    0xee  I64DivMod.o [22]
+      .text               ro code  0x000049ee   0x15e  xgetdst.o [16]
+      .text               ro code  0x00004b4c    0x80  xxmemxfree.o [16]
+      .text               ro code  0x00004bcc    0x58  memchr.o [22]
+      .text               ro code  0x00004c24     0x2  I64DivZer.o [22]
+      .text               ro code  0x00004c28    0xb0  xxmemxmalloc.o [16]
+      .text               ro code  0x00004cd8    0x2c  xgetmemchunk.o [16]
+      .text               ro code  0x00004d04    0x70  poll.o [10]
+      .text               ro code  0x00004d74   0x218  event-control.o [24]
+      .text               ro code  0x00004f8c    0xc0  system-timer.o [18]
+      .text               ro code  0x0000504c   0x218  stack.o [24]
+      .text               ro code  0x00005264   0x47c  upper-mac.o [24]
+      .text               ro code  0x000056e0     0xe  spmr.o [18]
+      .text               ro code  0x000056f0     0x8  spmr.o [18]
+      .text               ro code  0x000056f8   0x568  rtcdriver.o [5]
+      .text               ro code  0x00005c60   0x194  ustimer.o [5]
+      .text               ro code  0x00005df4    0xa4  sleep-efm32.o [5]
+      .text               ro code  0x00005e98    0xc8  token.o [5]
+      .text               ro code  0x00005f60   0x778  buffer-management.o [24]
+      .text               ro code  0x000066d8   0x1b4  mac-queue.o [19]
+      .text               ro code  0x0000688c   0x444  indirect-queue.o [20]
+      .text               ro code  0x00006cd0   0x2fc  coordinator-support.o [20]
+      .text               ro code  0x00006fcc  0x17e4  phy.o [21]
+      .text               ro code  0x000087b0    0x3c  counters.o [25]
+      .text               ro code  0x000087ec    0x28  buffers-bookkeeping.o [24]
+      .text               ro code  0x00008814   0x564  lower-mac-pro2.o [21]
+      .text               ro code  0x00008d78   0x71c  association.o [17]
+      .text               ro code  0x00009494   0x23c  parent-support.o [20]
+      .text               ro code  0x000096d0   0x1cc  main.o [8]
+      .text               ro code  0x0000989c    0x34  random.o [5]
+      .text               ro code  0x000098d0   0x2c0  security-common.o [24]
+      .text               ro code  0x00009b90   0x400  child-table.o [20]
+      .text               ro code  0x00009f90   0x384  network.o [24]
+      .text               ro code  0x0000a314   0x100  command.o [24]
+      .text               ro code  0x0000a414   0x182  packet-header.o [24]
+      .text               ro code  0x0000a598    0x24  ember-library.o [24]
+      .text               ro code  0x0000a5bc   0x148  scan.o [17]
+      .text               ro code  0x0000a704    0x56  em_rtc.o [5]
+      .text               ro code  0x0000a75c    0x34  sleep.o [5]
+      .text               ro code  0x0000a790    0xf0  em_timer.o [5]
+      .text               ro code  0x0000a880     0x4  spmr.o [18]
+      .text               ro code  0x0000a884     0x4  spmr.o [18]
+      .text               ro code  0x0000a888   0x18c  mfg-token.o [5]
+      .text               ro code  0x0000aa14    0x42  strcmp_unaligned.o [22]
+      .text               ro code  0x0000aa58    0xe4  buffer-queue.o [24]
+      .text               ro code  0x0000ab3c   0x1a0  network-command.o [24]
+      .text               ro code  0x0000acdc   0x35a  sipro2.o [21]
+      .text               ro code  0x0000b036     0x4  micro-common-internal.o [18]
+      .text               ro code  0x0000b03c   0x128  micro.o [5]
+      .text               ro code  0x0000b164    0x18  eui64.o [24]
+      .text               ro code  0x0000b17c   0x100  symbol-timer.o [5]
+      .text               ro code  0x0000b27c    0x28  connect-bookkeeping.o [1]
+      .text               ro code  0x0000b2a4    0xbc  cstartup-common.o [5]
+      .text               ro code  0x0000b360   0x8cc  diagnostic.o [4]
+      .text               ro code  0x0000bc2c   0x20c  security-xxtea.o [26]
+      .text               ro code  0x0000be38   0x26c  security-aes.o [15]
+      .text               ro code  0x0000c0a4   0x1f8  ext-device.o [5]
+      .text               ro code  0x0000c29c   0x58c  spidrv.o [5]
+      .text               ro code  0x0000c828   0x150  button.o [5]
+      .text               ro code  0x0000c978     0x4  led.o [5]
+      .text               ro code  0x0000c97c     0x6  connect-callback-stubs.o [1]
+      .text               ro code  0x0000c984   0x694  command-interpreter.o [2]
+      .text               ro code  0x0000d018    0xb4  idle-sleep.o [7]
+      .text               ro code  0x0000d0cc   0x228  xxtea.o [26]
+      .text               ro code  0x0000d2f4    0x38  aes.o [18]
+      .text               ro code  0x0000d32c    0x1e  em_prs.o [5]
+      .text               ro code  0x0000d34c    0x38  bsp_stk_leds.o [5]
+      .text               ro code  0x0000d384    0x58  em_aes.o [5]
+      .text               ro code  0x0000d3dc     0x2  faults.o [5]
+      .text               ro code  0x0000d3e0     0x2  faults.o [5]
+      .text               ro code  0x0000d3e4     0x2  faults.o [5]
+      .text               ro code  0x0000d3e8     0x2  faults.o [5]
+      .text               ro code  0x0000d3ec     0x2  faults.o [5]
+      .text               ro code  0x0000d3f0     0x2  faults.o [5]
+      .text               ro code  0x0000d3f4     0x2  faults.o [5]
+      .text               ro code  0x0000d3f8    0x70  faults.o [5]
+      .text               ro code  0x0000d468     0x4  isr-stubs.o [5]
+      .text               ro code  0x0000d46c   0x178  cstartup-iar.o [18]
+      .text               ro code  0x0000d5e4     0x6  ABImemclr.o [22]
+    .rodata               const    0x0000d5ec    0x1c  sim-eeprom.o [12]
+    .rodata               const    0x0000d608   0x204  phy-config-connect.o [9]
+    .rodata               const    0x0000d80c   0x134  micro.o [5]
+    .rodata               const    0x0000d940    0x78  token-def.o [5]
+    .rodata               const    0x0000d9b8   0x4e8  diagnostic.o [4]
+    .rodata               const    0x0000dea0    0x84  command-interpreter.o [2]
+    .rodata               const    0x0000df24    0x10  connect-cli.o [1]
+    .rodata               const    0x0000df34    0x10  connect-events.o [1]
+    .rodata               const    0x0000df44     0x1  phy.o [21]
+    .rodata               const    0x0000df46     0x6  mfg-token.o [5]
+    .rodata               const    0x0000df4c     0x4  micro-common-internal.o [18]
+    .rodata               const    0x0000df50     0x1  ember-configuration.o [13]
+    .rodata               const    0x0000df51     0x1  mac-queue.o [19]
+    .rodata               const    0x0000df52     0x1  parent-support.o [20]
+    .rodata               const    0x0000df53     0x1  security-aes.o [15]
+    .rodata               const    0x0000df54     0x1  security-xxtea.o [26]
+    .data_init                     0x0000df58   0x238  <Block>
+      Initializer bytes   const    0x0000df58   0x238  <for .data-1>
+    __DLIB_PERTHREAD_init
+                                   0x0000e190    0x48  <Block>
+      Initializer bytes   const    0x0000e190    0x48  <for DLIB_PERTHREAD_INITIALIZED_DATA-1>
+                                 - 0x0000e1d8  0xe0d8
+
+"NVM&SIMEE":                                   0x2000
+  SIMEE                            0x0003e000  0x2000  <Block>
+    SIMEE                 uninit   0x0003e000  0x2000  sim-eeprom.o [12]
+                                 - 0x00040000  0x2000
+
+"Heap":                                         0xfa0
+  EMHEAP_overlay                   0x20000000   0xfa0  <Overlay>
+    part 1:
+      EMHEAP                       0x20000000   0xfa0  <Block>
+        EMHEAP            uninit   0x20000000   0xfa0  ember-configuration.o [13]
+    part 2:
+      RESETINFO                    0x20000000    0x9c  <Block>
+        RESETINFO         rw data  0x20000000     0x0  faults.o [5]
+        RESETINFO         rw data  0x20000000     0x0  isr-stubs.o [5]
+        RESETINFO         rw data  0x20000000     0x0  spmr.o [18]
+        RESETINFO         uninit   0x20000000    0x9c  cstartup-common.o [5]
+                                 - 0x20000fa0   0xfa0
+
+"Guard":                                         0x20
+  GUARD_REGION            uninit   0x20000fa0    0x20  cstartup-common.o [5]
+                                 - 0x20000fc0    0x20
+
+"APP rw":                                      0x1ac4
+  APPRW_block                      0x20006448  0x1ac4  <Block>
+    ALIGN_CSTACK                   0x20006448   0x960  <Block>
+      CSTACK                       0x20006448   0x960  <Block>
+        CSTACK            rw data  0x20006448     0x0  faults.o [5]
+        CSTACK            rw data  0x20006448     0x0  isr-stubs.o [5]
+        CSTACK            rw data  0x20006448     0x0  spmr.o [18]
+        CSTACK            uninit   0x20006448   0x960  cstartup-common.o [5]
+    .textrw                        0x20006da8   0x1d4  <Block>
+      .textrw-1                    0x20006da8   0x1d4  <Init block>
+        Veneer            inited   0x20006da8     0x8  - Linker created -
+        .textrw           inited   0x20006db0   0x1cc  em_msc.o [5]
+    .data                          0x20006f7c   0x238  <Block>
+      .data-1                      0x20006f7c   0x237  <Init block>
+        .data             inited   0x20006f7c     0x4  ember-configuration.o [13]
+        .data             inited   0x20006f80     0x4  ember-configuration.o [13]
+        .data             inited   0x20006f84     0x4  ember-configuration.o [13]
+        .data             inited   0x20006f88     0x4  ember-configuration.o [13]
+        .data             inited   0x20006f8c     0x4  ember-configuration.o [13]
+        .data             inited   0x20006f90     0x8  system_ezr32wg.o [6]
+        .data             inited   0x20006f98    0x80  com.o [5]
+        .data             inited   0x20007018    0x80  com.o [5]
+        .data             inited   0x20007098    0x5c  com.o [5]
+        .data             inited   0x200070f4     0x4  micro.o [5]
+        .data             inited   0x200070f8    0x50  mpu.o [5]
+        .data             inited   0x20007148    0x20  command-interpreter.o [2]
+        .data             inited   0x20007168     0x9  upper-mac.o [24]
+        .data             inited   0x20007174    0x18  phy.o [21]
+        .data             inited   0x2000718c     0x4  micro-internal.o [18]
+        .data             inited   0x20007190     0x4  buffer-management.o [24]
+        .data             inited   0x20007194     0x4  packet-header.o [24]
+        .data             inited   0x20007198     0x2  ember-configuration.o [13]
+        .data             inited   0x2000719a     0x4  poll.o [10]
+        .data             inited   0x2000719e     0x4  random.o [5]
+        .data             inited   0x200071a2     0x4  stack.o [24]
+        .data             inited   0x200071a6     0x2  parent-support.o [20]
+        .data             inited   0x200071a8     0x1  ember-configuration.o [13]
+        .data             inited   0x200071a9     0x1  ember-configuration.o [13]
+        .data             inited   0x200071aa     0x1  ember-configuration.o [13]
+        .data             inited   0x200071ab     0x1  ember-configuration.o [13]
+        .data             inited   0x200071ac     0x1  ember-configuration.o [13]
+        .data             inited   0x200071ad     0x1  ext-device.o [5]
+        .data             inited   0x200071ae     0x1  micro.o [5]
+        .data             inited   0x200071af     0x1  debug-print.o [3]
+        .data             inited   0x200071b0     0x1  upper-mac.o [24]
+        .data             inited   0x200071b1     0x1  indirect-queue.o [20]
+        .data             inited   0x200071b2     0x1  lower-mac-pro2.o [21]
+    DLIB_PERTHREAD_INITIALIZED_DATA
+                                   0x200071b4    0x48  <Block>
+      DLIB_PERTHREAD_INITIALIZED_DATA-1
+                                   0x200071b4    0x48  <Init block>
+        __DLIB_PERTHREAD  inited   0x200071b4     0x8  localtim.o [16]
+        __DLIB_PERTHREAD  inited   0x200071bc    0x2c  xttotm.o [16]
+        __DLIB_PERTHREAD  inited   0x200071e8     0x8  setlocale.o [16]
+        __DLIB_PERTHREAD  inited   0x200071f0     0x4  xisdst.o [16]
+        __DLIB_PERTHREAD  inited   0x200071f4     0x4  errno.o [16]
+        __DLIB_PERTHREAD  inited   0x200071f8     0x4  xisdstData.o [16]
+    DLIB_PERTHREAD_ZERO_DATA
+                                   0x200071fc     0x0  <Block>
+    .bss                           0x20007200   0xd0c  <Block>
+      .bss                uninit   0x20007200   0x200  dmactrl.o [5]
+      .bss                uninit   0x20007400    0xa0  rtcdriver.o [5]
+      .bss                uninit   0x200074a0    0x24  ember-configuration.o [13]
+      .bss                uninit   0x200074c4   0x140  ember-configuration.o [13]
+      .bss                uninit   0x20007604    0x50  ember-configuration.o [13]
+      .bss                uninit   0x20007654    0x50  ember-configuration.o [13]
+      .bss                uninit   0x200076a4    0x10  ember-configuration.o [13]
+      .bss                uninit   0x200076b4    0x30  sim-eeprom.o [12]
+      .bss                uninit   0x200076e4    0x10  poll.o [10]
+      .bss                uninit   0x200076f4     0x4  system_ezr32wg.o [6]
+      .bss                uninit   0x200076f8    0x48  com.o [5]
+      .bss                uninit   0x20007740    0x88  com.o [5]
+      .bss                uninit   0x200077c8    0xd8  com.o [5]
+      .bss                uninit   0x200078a0    0x40  com.o [5]
+      .bss                uninit   0x200078e0     0x4  com.o [5]
+      .bss                uninit   0x200078e4     0xa  cstartup-common.o [5]
+      .bss                uninit   0x200078ee     0x2  debug-print.o [3]
+      .bss                uninit   0x200078f0    0x34  dmadrv.o [5]
+      .bss                uninit   0x20007924    0x50  dmadrv.o [5]
+      .bss                uninit   0x20007974     0x4  em_emu.o [5]
+      .bss                uninit   0x20007978     0x4  em_int.o [5]
+      .bss                uninit   0x2000797c     0x4  ext-device.o [5]
+      .bss                uninit   0x20007980    0x40  gpiointerrupt.o [5]
+      .bss                uninit   0x200079c0    0x14  rtcdriver.o [5]
+      .bss                uninit   0x200079d4     0x4  sleep-efm32.o [5]
+      .bss                uninit   0x200079d8     0xc  sleep.o [5]
+      .bss                uninit   0x200079e4    0x14  uartdrv.o [5]
+      .bss                uninit   0x200079f8     0xc  ustimer.o [5]
+      .bss                uninit   0x20007a04    0x7c  command-interpreter.o [2]
+      .bss                uninit   0x20007a80    0x10  clock.o [1]
+      .bss                uninit   0x20007a90     0x8  clockApp_stk.o [1]
+      .bss                uninit   0x20007a98    0x30  clockApp_stk.o [1]
+      .bss                uninit   0x20007ac8    0x30  connect-callbacks.o [1]
+      .bss                uninit   0x20007af8     0x4  sim-eeprom-internal.o [23]
+      .bss                uninit   0x20007afc     0x8  system-timer.o [18]
+      .bss                uninit   0x20007b04     0xc  upper-mac.o [24]
+      .bss                uninit   0x20007b10    0x3c  phy.o [21]
+      .bss                uninit   0x20007b4c    0xa0  phy.o [21]
+      .bss                uninit   0x20007bec     0xc  phy.o [21]
+      .bss                uninit   0x20007bf8    0x24  association.o [17]
+      .bss                uninit   0x20007c1c    0x20  association.o [17]
+      .bss                uninit   0x20007c3c    0x80  coordinator-support.o [20]
+      .bss                uninit   0x20007cbc    0x48  counters.o [25]
+      .bss                uninit   0x20007d04     0x8  indirect-queue.o [20]
+      .bss                uninit   0x20007d0c    0x24  buffer-management.o [24]
+      .bss                uninit   0x20007d30    0x18  lower-mac-pro2.o [21]
+      .bss                uninit   0x20007d48    0x80  lower-mac-pro2.o [21]
+      .bss                uninit   0x20007dc8     0x8  parent-support.o [20]
+      .bss                uninit   0x20007dd0    0x10  scan.o [17]
+      .bss                uninit   0x20007de0     0x8  security-common.o [24]
+      .bss                uninit   0x20007de8     0x8  eui64.o [24]
+      .bss                uninit   0x20007df0    0xe4  sipro2.o [21]
+      .bss                uninit   0x20007ed4    0x10  aes.o [18]
+      .bss                uninit   0x20007ee4     0x8  xxmemxmalloc.o [16]
+      .bss                uninit   0x20007eec     0x4  xgetmemchunk.o [16]
+      .bss                uninit   0x20007ef0     0x4  sim-eeprom-internal.o [23]
+      .bss                uninit   0x20007ef4     0x4  stack.o [24]
+      .bss                uninit   0x20007ef8     0x1  main.o [8]
+      .bss                uninit   0x20007ef9     0x2  button.o [5]
+      .bss                uninit   0x20007efb     0x1  spidrv.o [5]
+      .bss                uninit   0x20007efc     0x2  token.o [5]
+      .bss                uninit   0x20007efe     0x2  command-interpreter.o [2]
+      .bss                uninit   0x20007f00     0x2  event-control.o [24]
+      .bss                uninit   0x20007f02     0x1  stack.o [24]
+      .bss                uninit   0x20007f03     0x1  stack.o [24]
+      .bss                uninit   0x20007f04     0x2  upper-mac.o [24]
+      .bss                uninit   0x20007f06     0x2  phy.o [21]
+      .bss                uninit   0x20007f08     0x1  phy.o [21]
+      .bss                uninit   0x20007f09     0x1  indirect-queue.o [20]
+      .bss                uninit   0x20007f0a     0x2  mac-queue.o [19]
+                                 - 0x20007f0c  0x1ac4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                    ro code  rw code  ro data  rw data
+    ------                    -------  -------  -------  -------
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug: [1]
+    clock.o                       104                         16
+    clockApp_stk.o                380                         56
+    connect-bookkeeping.o          40
+    connect-callback-stubs.o        6
+    connect-callbacks.o           464                         48
+    connect-cli.o                                    16
+    connect-events.o                                 16
+    ------------------------------------------------------------
+    Total:                        994                32      120
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\command-interpreter: [2]
+    command-interpreter.o       1 684               164      158
+    ------------------------------------------------------------
+    Total:                      1 684               164      158
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\debug-print: [3]
+    debug-print.o                 100                 1        3
+    ------------------------------------------------------------
+    Total:                        100                 1        3
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\diagnostic\EZR32: [4]
+    assert-crash-handlers.o       484
+    diagnostic.o                2 252             1 256
+    ------------------------------------------------------------
+    Total:                      2 736             1 256
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\hal\hal-ezr32: [5]
+    bsp_stk_leds.o                 56
+    button.o                      336                          2
+    com.o                       1 164               348      840
+    cstartup-common.o             188               476    2 442
+    dmactrl.o                                                512
+    dmadrv.o                      892                        132
+    em_aes.o                       88
+    em_burtc.o                    192
+    em_cmu.o                    1 972
+    em_dma.o                      716
+    em_emu.o                      580                          4
+    em_gpio.o                     272
+    em_int.o                                                   4
+    em_mpu.o                       80
+    em_msc.o                      120      460      460
+    em_prs.o                       30
+    em_rmu.o                      276
+    em_rtc.o                       86
+    em_timer.o                    240
+    em_usart.o                    388
+    em_wdog.o                     176
+    ext-device.o                  504                 1        5
+    faults.o                      126
+    gpiointerrupt.o               200                         64
+    isr-stubs.o                     4
+    led.o                           4
+    mem-util.o                    184
+    mfg-token.o                   396                 6
+    micro-common.o                124
+    micro.o                       296               313        5
+    mpu.o                         144                80       80
+    random.o                       52                 4        4
+    rtcdriver.o                 1 384                        180
+    sleep-efm32.o                 164                          4
+    sleep.o                        52                         12
+    spidrv.o                    1 420                          1
+    symbol-timer.o                256
+    token-def.o                                     120
+    token.o                       200                          2
+    uartdrv.o                   2 116                         20
+    ustimer.o                     404                         12
+    ------------------------------------------------------------
+    Total:                     15 882      460    1 808    4 325
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\hal\hal-ezr32\EZR32_WG330: [6]
+    system_ezr32wg.o              264                 8       12
+    ------------------------------------------------------------
+    Total:                        264                 8       12
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\idle-sleep: [7]
+    idle-sleep.o                  180
+    ------------------------------------------------------------
+    Total:                        180
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\main: [8]
+    main.o                        460                          1
+    ------------------------------------------------------------
+    Total:                        460                          1
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\phy-ezradio: [9]
+    phy-config-connect.o                            516
+    ------------------------------------------------------------
+    Total:                                          516
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\poll: [10]
+    poll.o                        112                 4       20
+    ------------------------------------------------------------
+    Total:                        112                 4       20
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\serial: [11]
+    ember-printf.o                456
+    serial.o                      216
+    ------------------------------------------------------------
+    Total:                        672
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\sim-eeprom1: [12]
+    sim-eeprom.o                  144                28    8 240
+    ------------------------------------------------------------
+    Total:                        144                28    8 240
+
+C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\stack\stack-common: [13]
+    ember-configuration.o                            28      559
+    ------------------------------------------------------------
+    Total:                                           28      559
+
+command line: [14]
+    ------------------------------------------------------------
+    Total:
+
+aes-security-library.a: [15]
+    security-aes.o                620                 1
+    ------------------------------------------------------------
+    Total:                        620                 1
+
+dl7M_tln.a: [16]
+    errno.o                        12                 4        4
+    getzone.o                      10
+    localtim.o                    182                 8        8
+    mktime.o                      208
+    setlocale.o                    41                 8        8
+    xgetdst.o                     350
+    xgetmemchunk.o                 44                          4
+    xgettime.o                     66
+    xisdst.o                      308                 4        4
+    xisdstData.o                                      4        4
+    xstol.o                       134
+    xstoul.o                      408
+    xtls.o                          2
+    xttotm.o                      392                44       44
+    xxmemxfree.o                  128
+    xxmemxmalloc.o                176                          8
+    ------------------------------------------------------------
+    Total:                      2 461                72       84
+
+form-and-join-library.a: [17]
+    association.o               1 820                         68
+    scan.o                        328                         16
+    ------------------------------------------------------------
+    Total:                      2 148                         84
+
+hal-library.a: [18]
+    aes.o                          56                         16
+    cstartup-iar.o                376
+    flash.o                       202
+    micro-common-internal.o         4                 4
+    micro-internal.o              304                 4        4
+    spmr.o                         62
+    system-timer.o                192                          8
+    ------------------------------------------------------------
+    Total:                      1 196                 8       28
+
+packet-queue-library.a: [19]
+    mac-queue.o                   436                 1        2
+    ------------------------------------------------------------
+    Total:                        436                 1        2
+
+parent-support-library.a: [20]
+    child-table.o               1 024
+    coordinator-support.o         764                        128
+    indirect-queue.o            1 092                 1       10
+    parent-support.o              572                 3       10
+    ------------------------------------------------------------
+    Total:                      3 452                 4      148
+
+phy-pro2-brd4502c-library.a: [21]
+    lower-mac-pro2.o            1 380                 1      153
+    phy.o                       6 116                28      259
+    sipro2.o                      858                        228
+    ------------------------------------------------------------
+    Total:                      8 354                29      640
+
+rt7M_tl.a: [22]
+    ABImemclr.o                     6
+    ABImemclr4.o                    6
+    ABImemcpy_unaligned.o         118
+    ABImemset.o                   102
+    ABImemset48.o                  50
+    I64DivMod.o                   238
+    I64DivZer.o                     2
+    memchr.o                       88
+    strchr.o                       22
+    strcmp_unaligned.o             66
+    strlen.o                       54
+    ------------------------------------------------------------
+    Total:                        752
+
+sim-eeprom1-library.a: [23]
+    sim-eeprom-internal.o       2 832                          8
+    ------------------------------------------------------------
+    Total:                      2 832                          8
+
+stack-common-library.a: [24]
+    buffer-management.o         1 912                 4       40
+    buffer-queue.o                228
+    buffers-bookkeeping.o          40
+    command.o                     256
+    ember-library.o                36
+    eui64.o                        24                          8
+    event-control.o               536                          2
+    network-command.o             416
+    network.o                     900
+    packet-header.o               386                 4        4
+    security-common.o             704                          8
+    stack.o                       536                 4       10
+    upper-mac.o                 1 148                10       24
+    ------------------------------------------------------------
+    Total:                      7 122                22       96
+
+stack-counters-library.a: [25]
+    counters.o                     60                         72
+    ------------------------------------------------------------
+    Total:                         60                         72
+
+xxtea-security-library.a: [26]
+    security-xxtea.o              524                 1
+    xxtea.o                       552
+    ------------------------------------------------------------
+    Total:                      1 076                 1
+
+    Gaps                           57                 3        3
+    Linker created                 24        8        9    4 000
+----------------------------------------------------------------
+    Grand Total:               53 818      468    3 995   18 603
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.bss$$Base              0x20007200           --   Gb  - Linker created -
+.bss$$Length            0x00000d0c           --   Gb  - Linker created -
+.bss$$Limit             0x20007f0c           --   Gb  - Linker created -
+.data$$Base             0x20006f7c           --   Gb  - Linker created -
+.data$$Limit            0x200071b4           --   Gb  - Linker created -
+.data_init$$Base        0x0000df58           --   Gb  - Linker created -
+.data_init$$Length      0x00000238           --   Gb  - Linker created -
+.data_init$$Limit       0x0000e190           --   Gb  - Linker created -
+.noinit$$Base           0x00000000           --   Gb  - Linker created -
+.text$$Base             0x000003b0           --   Gb  - Linker created -
+.text$$Limit            0x0000d5ea           --   Gb  - Linker created -
+.textrw$$Base           0x20006da8           --   Gb  - Linker created -
+.textrw$$Limit          0x20006f7c           --   Gb  - Linker created -
+.textrw_init$$Base      0x000001dc           --   Gb  - Linker created -
+.textrw_init$$Length    0x000001d4           --   Gb  - Linker created -
+.textrw_init$$Limit     0x000003b0           --   Gb  - Linker created -
+ACMP0_IRQHandler        0x0000d469          Code  Wk  isr-stubs.o [5]
+ADC0_IRQHandler         0x0000d469          Code  Wk  isr-stubs.o [5]
+AES_ECB128              0x0000d385    0x52  Code  Gb  em_aes.o [5]
+AES_IRQHandler          0x0000d469          Code  Wk  isr-stubs.o [5]
+ALIGN_CSTACK$$Base      0x20006448           --   Gb  - Linker created -
+ALIGN_CSTACK$$Limit     0x20006da8           --   Gb  - Linker created -
+APPRO_block$$Base       0x00000100           --   Gb  - Linker created -
+APPRO_block$$Limit      0x0000e1d8           --   Gb  - Linker created -
+APPRW_block$$Base       0x20006448           --   Gb  - Linker created -
+APPRW_block$$Limit      0x20007f0c           --   Gb  - Linker created -
+APP_RAM$$Base           0x00000000           --   Gb  - Linker created -
+APP_RAM$$Length         0x00000000           --   Gb  - Linker created -
+BSP_LedsInit            0x0000d34d    0x2e  Code  Gb  bsp_stk_leds.o [5]
+BURTC_CompareGet        0x00001c1d     0x6  Code  Gb  em_burtc.o [5]
+BURTC_CompareSet        0x00001c0d    0x10  Code  Gb  em_burtc.o [5]
+BURTC_IRQHandler        0x00002497    0x32  Code  Gb  clockApp_stk.o [1]
+BURTC_Init              0x00001b97    0x76  Code  Gb  em_burtc.o [5]
+BUS_RegBitRead          0x00001c3f     0xe  Code  Lc  em_cmu.o [5]
+BUS_RegBitWrite         0x00001b71     0xe  Code  Lc  em_burtc.o [5]
+BUS_RegBitWrite         0x00001c31     0xe  Code  Lc  em_cmu.o [5]
+BUS_RegBitWrite         0x00004635     0xe  Code  Lc  em_dma.o [5]
+BUS_RegBitWrite         0x000017a1     0xe  Code  Lc  em_emu.o [5]
+BUS_RegBitWrite         0x00003fb1     0xe  Code  Lc  em_gpio.o [5]
+BUS_RegBitWrite         0x000019e5     0xe  Code  Lc  em_rmu.o [5]
+BUS_RegBitWrite         0x00002641     0xe  Code  Lc  em_wdog.o [5]
+BUS_RegBitWrite         0x0000a75d     0xe  Code  Lc  sleep.o [5]
+BUS_RegBitWrite         0x00001255     0xe  Code  Lc  connect-callbacks.o [1]
+BlockingComplete        0x0000c4e1     0xa  Code  Lc  spidrv.o [5]
+CMU_ClockDivSet         0x00001db1   0x132  Code  Gb  em_cmu.o [5]
+CMU_ClockEnable         0x00001f07    0x94  Code  Gb  em_cmu.o [5]
+CMU_ClockFreqGet        0x00001f9b   0x10c  Code  Gb  em_cmu.o [5]
+CMU_ClockSelectGet      0x000020b5    0xb6  Code  Gb  em_cmu.o [5]
+CMU_ClockSelectSet      0x0000216b   0x176  Code  Gb  em_cmu.o [5]
+CMU_IRQHandler          0x0000d469          Code  Wk  isr-stubs.o [5]
+CMU_OscillatorEnable    0x00002311    0x5c  Code  Gb  em_cmu.o [5]
+COM_ForceWriteData      0x00002b15    0x14  Code  Gb  com.o [5]
+COM_Init                0x000028b1    0x82  Code  Gb  com.o [5]
+COM_InternalPowerDown   0x0000272d    0x34  Code  Gb  com.o [5]
+COM_InternalPowerUp     0x00002761    0x32  Code  Gb  com.o [5]
+COM_Printf              0x00002a2d    0x18  Code  Gb  com.o [5]
+COM_PrintfVarArg        0x00002a0b    0x22  Code  Gb  com.o [5]
+COM_ReadAvailable       0x00002933    0x16  Code  Gb  com.o [5]
+COM_ReadByte            0x00002949    0x5c  Code  Gb  com.o [5]
+COM_WaitSend            0x00002b29    0x18  Code  Gb  com.o [5]
+COM_WriteByte           0x000029f5    0x10  Code  Gb  com.o [5]
+COM_WriteData           0x00002a45    0xa2  Code  Gb  com.o [5]
+COM_pendingWrite        0x000029a5    0x50  Code  Gb  com.o [5]
+CSTACK$$Base            0x20006448           --   Gb  - Linker created -
+CSTACK$$Limit           0x20006da8           --   Gb  - Linker created -
+CheckParams             0x00003459    0x20  Code  Lc  uartdrv.o [5]
+ConfigGPIO              0x0000c4eb   0x15c  Code  Lc  spidrv.o [5]
+ConfigGPIO              0x00003479   0x124  Code  Lc  uartdrv.o [5]
+DAC0_IRQHandler         0x0000d469          Code  Wk  isr-stubs.o [5]
+DEBUG_CHANNEL$$Base     0x00000000           --   Gb  - Linker created -
+DEBUG_CHANNEL$$Limit    0x00000000           --   Gb  - Linker created -
+DLIB_PERTHREAD_INITIALIZED_DATA$$Base
+                        0x200071b4           --   Gb  - Linker created -
+DLIB_PERTHREAD_INITIALIZED_DATA$$Limit
+                        0x200071fc           --   Gb  - Linker created -
+DLIB_PERTHREAD_ZERO_DATA$$Base
+                        0x200071fc           --   Gb  - Linker created -
+DLIB_PERTHREAD_ZERO_DATA$$Length
+                        0x00000000           --   Gb  - Linker created -
+DLIB_PERTHREAD_ZERO_DATA$$Limit
+                        0x200071fc           --   Gb  - Linker created -
+DMADRV_AllocateChannel  0x00003c5d    0x4c  Code  Gb  dmadrv.o [5]
+DMADRV_Init             0x00003cb3    0x54  Code  Gb  dmadrv.o [5]
+DMADRV_MemoryPeripheral
+                        0x00003d07     0xc  Code  Gb  dmadrv.o [5]
+DMADRV_PeripheralMemory
+                        0x00003d13     0xa  Code  Gb  dmadrv.o [5]
+DMADRV_TransferRemainingCount
+                        0x00003d49    0x46  Code  Gb  dmadrv.o [5]
+DMA_ActivateBasic       0x0000471f    0x20  Code  Gb  em_dma.o [5]
+DMA_ActivatePingPong    0x00004745    0x34  Code  Gb  em_dma.o [5]
+DMA_CfgChannel          0x00004783    0x40  Code  Gb  em_dma.o [5]
+DMA_CfgDescr            0x000047c3    0x34  Code  Gb  em_dma.o [5]
+DMA_IRQHandler          0x000046b9    0x66  Code  Gb  em_dma.o [5]
+DMA_Init                0x000047f7    0x34  Code  Gb  em_dma.o [5]
+DMA_Prepare             0x00004643    0x76  Code  Lc  em_dma.o [5]
+DMA_RefreshPingPong     0x0000482b    0x66  Code  Gb  em_dma.o [5]
+DMA_Reset               0x0000489b    0x30  Code  Gb  em_dma.o [5]
+DelayTicksPolled        0x00005d89    0x22  Code  Lc  ustimer.o [5]
+DequeueBuffer           0x00003271    0x36  Code  Lc  uartdrv.o [5]
+DisableReceiver         0x000032ed    0x10  Code  Lc  uartdrv.o [5]
+DmaBasicCallback        0x00003dad    0x1a  Code  Lc  dmadrv.o [5]
+DmaPingPongCallback     0x00003dc7    0x3e  Code  Lc  dmadrv.o [5]
+EMHEAP$$Base            0x20000000           --   Gb  - Linker created -
+EMHEAP$$Limit           0x20000fa0           --   Gb  - Linker created -
+EMHEAP_overlay$$Base    0x20000000           --   Gb  - Linker created -
+EMHEAP_overlay$$Limit   0x20000fa0           --   Gb  - Linker created -
+EMU_BUPDInit            0x00001941    0x6e  Code  Gb  em_emu.o [5]
+EMU_EM4Init             0x0000191f    0x22  Code  Gb  em_emu.o [5]
+EMU_EnterEM2            0x00001857    0x4e  Code  Gb  em_emu.o [5]
+EMU_EnterEM3            0x000018a5    0x64  Code  Gb  em_emu.o [5]
+EMU_IRQHandler          0x0000d469          Code  Wk  isr-stubs.o [5]
+EMU_UpdateOscConfig     0x00001915     0xa  Code  Gb  em_emu.o [5]
+ERASE_CRITICAL_THRESHOLD
+                        0x0000d5f8     0x2  Data  Gb  sim-eeprom.o [12]
+EnableReceiver          0x000032d7    0x16  Code  Lc  uartdrv.o [5]
+EnqueueBuffer           0x00003215    0x5c  Code  Lc  uartdrv.o [5]
+FcApplyState            0x000031c5    0x50  Code  Lc  uartdrv.o [5]
+GPIOINT_CallbackRegister
+                        0x0000427f    0x2c  Code  Gb  gpiointerrupt.o [5]
+GPIOINT_IRQDispatcher   0x000042ab    0x28  Code  Lc  gpiointerrupt.o [5]
+GPIOINT_Init            0x00004263    0x1c  Code  Gb  gpiointerrupt.o [5]
+GPIO_EVEN_IRQHandler    0x000042d3     0xe  Code  Gb  gpiointerrupt.o [5]
+GPIO_InputSenseSet      0x0000c0a5     0xe  Code  Lc  ext-device.o [5]
+GPIO_IntConfig          0x00003fe3    0x4c  Code  Gb  em_gpio.o [5]
+GPIO_ODD_IRQHandler     0x000042f5    0x12  Code  Gb  gpiointerrupt.o [5]
+GPIO_PinInGet           0x0000c829    0x18  Code  Lc  button.o [5]
+GPIO_PinModeSet         0x0000403b    0x70  Code  Gb  em_gpio.o [5]
+GPIO_PinOutClear        0x00003fbf    0x12  Code  Lc  em_gpio.o [5]
+GPIO_PinOutClear        0x0000c0b3    0x12  Code  Lc  ext-device.o [5]
+GPIO_PinOutClear        0x00003105    0x14  Code  Lc  uartdrv.o [5]
+GPIO_PinOutSet          0x00003fd1    0x12  Code  Lc  em_gpio.o [5]
+GPIO_PinOutSet          0x0000c0c5    0x12  Code  Lc  ext-device.o [5]
+GPIO_PinOutSet          0x00003119    0x14  Code  Lc  uartdrv.o [5]
+GetTailBuffer           0x000032a7    0x1e  Code  Lc  uartdrv.o [5]
+HEADER_block$$Base      0x00000000           --   Gb  - Linker created -
+HEADER_block$$Limit     0x00000100           --   Gb  - Linker created -
+HEAP$$Base              0x00000000           --   Gb  - Linker created -
+HEAP$$Limit             0x00000000           --   Gb  - Linker created -
+HwFcGetClearToSendPin   0x00003155    0x20  Code  Lc  uartdrv.o [5]
+HwFcManageClearToSend   0x00003175    0x50  Code  Lc  uartdrv.o [5]
+I2C0_IRQHandler         0x0000d469          Code  Wk  isr-stubs.o [5]
+I2C1_IRQHandler         0x0000d469          Code  Wk  isr-stubs.o [5]
+ID_COUNT                0x0000d5fa     0x2  Data  Gb  sim-eeprom.o [12]
+INTERNAL_STORAGE$$Base  0x00000000           --   Gb  - Linker created -
+INT_Disable             0x00002705    0x16  Code  Lc  com.o [5]
+INT_Disable             0x00003c35    0x16  Code  Lc  dmadrv.o [5]
+INT_Disable             0x0000570d    0x16  Code  Lc  rtcdriver.o [5]
+INT_Disable             0x0000c29d    0x16  Code  Lc  spidrv.o [5]
+INT_Disable             0x0000312d    0x16  Code  Lc  uartdrv.o [5]
+INT_Enable              0x0000271b    0x12  Code  Lc  com.o [5]
+INT_Enable              0x00003c4b    0x12  Code  Lc  dmadrv.o [5]
+INT_Enable              0x00005723    0x12  Code  Lc  rtcdriver.o [5]
+INT_Enable              0x0000c2b3    0x12  Code  Lc  spidrv.o [5]
+INT_Enable              0x00003143    0x12  Code  Lc  uartdrv.o [5]
+INT_LockCnt             0x20007978     0x4  Data  Gb  em_int.o [5]
+LCD_IRQHandler          0x0000d469          Code  Wk  isr-stubs.o [5]
+LEFT_BASE               0x0000d5f0     0x2  Data  Gb  sim-eeprom.o [12]
+LEFT_TOP                0x0000d5f2     0x2  Data  Gb  sim-eeprom.o [12]
+LESENSE_IRQHandler      0x0000d469          Code  Wk  isr-stubs.o [5]
+LETIMER0_IRQHandler     0x0000d469          Code  Wk  isr-stubs.o [5]
+LEUART0_IRQHandler      0x0000d469          Code  Wk  isr-stubs.o [5]
+LEUART1_IRQHandler      0x0000d469          Code  Wk  isr-stubs.o [5]
+MPU_ConfigureRegion     0x00003949    0x50  Code  Gb  em_mpu.o [5]
+MPU_Disable             0x00002d45    0x14  Code  Lc  mpu.o [5]
+MSC_Deinit              0x0000261f    0x10  Code  Gb  em_msc.o [5]
+MSC_ErasePage           0x20006edf    0x66  Code  Gb  em_msc.o [5]
+MSC_IRQHandler          0x0000d469          Code  Wk  isr-stubs.o [5]
+MSC_Init                0x000025c9    0x42  Code  Gb  em_msc.o [5]
+MSC_LoadWriteData       0x20006db1    0xa0  Code  Lc  em_msc.o [5]
+MSC_MassErase           0x20006f49    0x24  Code  Gb  em_msc.o [5]
+MSC_WriteWord           0x20006f45     0x4  Code  Gb  em_msc.o [5]
+MSC_WriteWordI          0x20006e51    0x8e  Code  Lc  em_msc.o [5]
+NVIC_ClearPendingIRQ    0x000026f1    0x14  Code  Lc  com.o [5]
+NVIC_ClearPendingIRQ    0x00004251     0xa  Code  Lc  gpiointerrupt.o [5]
+NVIC_ClearPendingIRQ    0x000056f9    0x14  Code  Lc  rtcdriver.o [5]
+NVIC_ClearPendingIRQ    0x00005c61    0x12  Code  Lc  ustimer.o [5]
+NVIC_EnableIRQ          0x00004245     0xc  Code  Lc  gpiointerrupt.o [5]
+PCNT0_IRQHandler        0x0000d469          Code  Wk  isr-stubs.o [5]
+PCNT1_IRQHandler        0x0000d469          Code  Wk  isr-stubs.o [5]
+PCNT2_IRQHandler        0x0000d469          Code  Wk  isr-stubs.o [5]
+PRS_SourceAsyncSignalSet
+                        0x0000d32d    0x18  Code  Gb  em_prs.o [5]
+PTR_CACHE_SIZE          0x0000d5fc     0x2  Data  Gb  sim-eeprom.o [12]
+REAL_PAGES_PER_VIRTUAL  0x0000d5ec     0x1  Data  Gb  sim-eeprom.o [12]
+REAL_PAGE_SIZE          0x0000d5ee     0x2  Data  Gb  sim-eeprom.o [12]
+RESETINFO$$Base         0x20000000           --   Gb  - Linker created -
+RESETINFO$$Limit        0x2000009c           --   Gb  - Linker created -
+RIGHT_BASE              0x0000d5f4     0x2  Data  Gb  sim-eeprom.o [12]
+RIGHT_TOP               0x0000d5f6     0x2  Data  Gb  sim-eeprom.o [12]
+RMU_ResetCauseClear     0x00001a01    0x36  Code  Gb  em_rmu.o [5]
+RMU_ResetCauseGet       0x00001a37    0x2e  Code  Gb  em_rmu.o [5]
+RMU_ResetControl        0x000019f3     0xe  Code  Gb  em_rmu.o [5]
+RTCDRV_AllocateTimer    0x00005735    0x46  Code  Gb  rtcdriver.o [5]
+RTCDRV_GetWallClockTicks64
+                        0x00005a2b    0x1c  Code  Gb  rtcdriver.o [5]
+RTCDRV_Init             0x0000577b    0x8c  Code  Gb  rtcdriver.o [5]
+RTCDRV_StartTimer       0x00005807   0x16a  Code  Gb  rtcdriver.o [5]
+RTCDRV_StopTimer        0x0000597b    0x24  Code  Gb  rtcdriver.o [5]
+RTCDRV_TicksToMsec      0x00005a47    0x12  Code  Gb  rtcdriver.o [5]
+RTCDRV_TimeRemaining    0x000059b7    0x74  Code  Gb  rtcdriver.o [5]
+RTC_CompareGet          0x0000a705    0x16  Code  Gb  em_rtc.o [5]
+RTC_CompareSet          0x0000a71b    0x12  Code  Gb  em_rtc.o [5]
+RTC_CounterReset        0x0000a74d     0xe  Code  Gb  em_rtc.o [5]
+RTC_IRQHandler          0x00005a6b    0x68  Code  Gb  rtcdriver.o [5]
+RTC_Init                0x0000a72d    0x18  Code  Gb  em_rtc.o [5]
+ReceiveDmaComplete      0x0000335d    0x90  Code  Lc  uartdrv.o [5]
+RxDMAComplete           0x0000c669    0x3c  Code  Lc  spidrv.o [5]
+SIMEE$$Base             0x0003e000           --   Gb  - Linker created -
+SIMEE$$Limit            0x00040000           --   Gb  - Linker created -
+SLEEP_SleepBlockBegin   0x0000a76b    0x18  Code  Gb  sleep.o [5]
+SPIDRV_Init             0x0000c2c5   0x186  Code  Gb  spidrv.o [5]
+SPIDRV_MTransferB       0x0000c45d    0x20  Code  Gb  spidrv.o [5]
+SPIDRV_MTransmitB       0x0000c49b    0x1c  Code  Gb  spidrv.o [5]
+StartReceiveDma         0x000032fd    0x28  Code  Lc  uartdrv.o [5]
+StartTransfer           0x00003e05   0x172  Code  Lc  dmadrv.o [5]
+StartTransferDMA        0x0000c6a5    0x28  Code  Lc  spidrv.o [5]
+StartTransmitDMA        0x0000c6cd    0x28  Code  Lc  spidrv.o [5]
+StartTransmitDma        0x00003325    0x28  Code  Lc  uartdrv.o [5]
+SystemCoreClock         0x200076f4     0x4  Data  Gb  system_ezr32wg.o [6]
+SystemCoreClockGet      0x00002e11    0x24  Code  Gb  system_ezr32wg.o [6]
+SystemHFClockGet        0x00002e39    0x7c  Code  Gb  system_ezr32wg.o [6]
+SystemHFXOClock         0x20006f90     0x4  Data  Lc  system_ezr32wg.o [6]
+SystemHFXOClockGet      0x00002eb5     0x6  Code  Gb  system_ezr32wg.o [6]
+SystemInit              0x00002ebb     0xc  Code  Gb  system_ezr32wg.o [6]
+SystemLFRCOClockGet     0x00002ec7     0x2  Code  Gb  system_ezr32wg.o [6]
+SystemLFXOClock         0x20006f94     0x4  Data  Lc  system_ezr32wg.o [6]
+SystemLFXOClockGet      0x00002ed5     0x6  Code  Gb  system_ezr32wg.o [6]
+SystemMaxCoreClockGet   0x00002e35     0x4  Code  Gb  system_ezr32wg.o [6]
+SystemULFRCOClockGet    0x00002ecf     0x6  Code  Gb  system_ezr32wg.o [6]
+TIMER0_IRQHandler       0x00005d75    0x14  Code  Gb  ustimer.o [5]
+TIMER1_IRQHandler       0x0000d469          Code  Wk  isr-stubs.o [5]
+TIMER2_IRQHandler       0x0000d469          Code  Wk  isr-stubs.o [5]
+TIMER3_IRQHandler       0x0000b229    0x12  Code  Gb  symbol-timer.o [5]
+TIMER_Init              0x0000a791    0x90  Code  Gb  em_timer.o [5]
+TIMER_InitCC            0x0000a821    0x60  Code  Gb  em_timer.o [5]
+TOKEN_MFG_CCA_THRESHOLD
+                        0x0000df48     0x2  Data  Gb  mfg-token.o [5]
+TOKEN_MFG_EUI_64        0x0000df4a     0x2  Data  Gb  mfg-token.o [5]
+TOKEN_MFG_PHY_CONFIG    0x0000df46     0x2  Data  Gb  mfg-token.o [5]
+TOKEN_STACK_ANALYSIS_REBOOT_DEFAULTS
+                        0x0000d96a     0x2  Data  Gb  token-def.o [5]
+TOKEN_STACK_CHILD_TABLE_DEFAULTS
+                        0x0000d98c     0xc  Data  Gb  token-def.o [5]
+TOKEN_STACK_LAST_ASSIGNED_ID_DEFAULTS
+                        0x0000d988     0x2  Data  Gb  token-def.o [5]
+TOKEN_STACK_NODE_DATA_DEFAULTS
+                        0x0000d97c     0xc  Data  Gb  token-def.o [5]
+TOKEN_STACK_NONCE_COUNTER_DEFAULTS
+                        0x0000d998     0x4  Data  Gb  token-def.o [5]
+TOKEN_STACK_NVDATA_VERSION_DEFAULTS
+                        0x0000d968     0x2  Data  Gb  token-def.o [5]
+TOKEN_STACK_SECURITY_KEY_DEFAULTS
+                        0x0000d96c    0x10  Data  Gb  token-def.o [5]
+TransferApiBlockingPrologue
+                        0x0000c74f    0x26  Code  Lc  spidrv.o [5]
+TransmitDmaComplete     0x000033f9    0x48  Code  Lc  uartdrv.o [5]
+UART0_RX_IRQHandler     0x0000d469          Code  Wk  isr-stubs.o [5]
+UART0_TX_IRQHandler     0x0000d469          Code  Wk  isr-stubs.o [5]
+UART1_RX_IRQHandler     0x0000d469          Code  Wk  isr-stubs.o [5]
+UART1_TX_IRQHandler     0x0000d469          Code  Wk  isr-stubs.o [5]
+UARTDRV_ForceTransmit   0x000037c9    0x60  Code  Gb  uartdrv.o [5]
+UARTDRV_GetReceiveStatus
+                        0x00003777    0x2e  Code  Gb  uartdrv.o [5]
+UARTDRV_GetTransmitDepth
+                        0x000037a5     0x2  Code  Gb  uartdrv.o [5]
+UARTDRV_Init            0x000035a5   0x1d2  Code  Gb  uartdrv.o [5]
+UARTDRV_Receive         0x00003829    0x2e  Code  Gb  uartdrv.o [5]
+UARTDRV_Transmit        0x00003881    0x28  Code  Gb  uartdrv.o [5]
+USART0_RX_IRQHandler    0x0000d469          Code  Wk  isr-stubs.o [5]
+USART0_TX_IRQHandler    0x0000d469          Code  Wk  isr-stubs.o [5]
+USART1_RX_IRQHandler    0x0000d469          Code  Wk  isr-stubs.o [5]
+USART1_TX_IRQHandler    0x0000d469          Code  Wk  isr-stubs.o [5]
+USART2_RX_IRQHandler    0x0000d469          Code  Wk  isr-stubs.o [5]
+USART2_TX_IRQHandler    0x0000d469          Code  Wk  isr-stubs.o [5]
+USART_BaudrateAsyncSet  0x000040c1    0x58  Code  Gb  em_usart.o [5]
+USART_BaudrateSyncSet   0x00004119    0x36  Code  Gb  em_usart.o [5]
+USART_Enable            0x0000414f     0xe  Code  Gb  em_usart.o [5]
+USART_InitAsync         0x0000415d    0x40  Code  Gb  em_usart.o [5]
+USART_InitSync          0x0000419d    0x56  Code  Gb  em_usart.o [5]
+USART_Reset             0x000041f9    0x34  Code  Gb  em_usart.o [5]
+USB_IRQHandler          0x0000d469          Code  Wk  isr-stubs.o [5]
+USTIMER_DelayIntSafe    0x00005d21    0x30  Code  Gb  ustimer.o [5]
+USTIMER_Init            0x00005c73    0xae  Code  Gb  ustimer.o [5]
+VCMP_IRQHandler         0x0000d469          Code  Wk  isr-stubs.o [5]
+WDOG_Enable             0x0000264f    0x10  Code  Gb  em_wdog.o [5]
+WDOG_Feed               0x00002663    0x1a  Code  Gb  em_wdog.o [5]
+WDOG_Init               0x0000267d    0x60  Code  Gb  em_wdog.o [5]
+WDOG_Lock               0x000026dd     0xe  Code  Gb  em_wdog.o [5]
+WaitForTransferCompletion
+                        0x0000c793    0x2e  Code  Lc  spidrv.o [5]
+_Getdst                 0x00004a1b   0x132  Code  Gb  xgetdst.o [16]
+_Gettime                0x00003b6b    0x42  Code  Gb  xgettime.o [16]
+_IsdstStr               0x200071ec     0x4  Data  Gb  setlocale.o [16]
+_Isdst_olddst           0x200071f0     0x4  Data  Lc  xisdst.o [16]
+_Isdst_rules            0x200071f8     0x4  Data  Gb  xisdstData.o [16]
+_Localtime_oldzone      0x200071b4     0x4  Data  Lc  localtim.o [16]
+_Localtime_tzoff        0x200071b8     0x4  Data  Lc  localtim.o [16]
+_Ttotm_ts               0x200071bc    0x2c  Data  Lc  xttotm.o [16]
+_Tzoff                  0x00002fe9    0x94  Code  Gb  localtim.o [16]
+_TzoneStr               0x200071e8     0x4  Data  Gb  setlocale.o [16]
+__DLIB_PERTHREAD_init$$Base
+                        0x0000e190           --   Gb  - Linker created -
+__DLIB_PERTHREAD_init$$Length
+                        0x00000048           --   Gb  - Linker created -
+__DLIB_PERTHREAD_init$$Limit
+                        0x0000e1d8           --   Gb  - Linker created -
+__aeabi_errno_addr      0x00004629     0x6  Code  Gb  errno.o [16]
+__aeabi_ldiv0           0x00004c25          Code  Gb  I64DivZer.o [22]
+__aeabi_memclr          0x0000d5e5          Code  Gb  ABImemclr.o [22]
+__aeabi_memclr4         0x00001799          Code  Gb  ABImemclr4.o [22]
+__aeabi_memset          0x000011ed          Code  Gb  ABImemset.o [22]
+__aeabi_uldivmod        0x00004901          Code  Gb  I64DivMod.o [22]
+__data_Aldata           0x20007ee4     0x8  Data  Gb  xxmemxmalloc.o [16]
+__data_GetMemChunk      0x00004cd9    0x2c  Code  Gb  xgetmemchunk.o [16]
+__data_GetMemChunk::start
+                        0x20007eec     0x4  Data  Lc  xgetmemchunk.o [16]
+__getzone               0x00003b61     0x6  Code  Gb  getzone.o [16]
+__iar_Daysto32          0x000039a9    0x3a  Code  Gb  xttotm.o [16]
+__iar_Errno             0x200071f4     0x4  Data  Gb  errno.o [16]
+__iar_Isdst32           0x0000430d   0x134  Code  Gb  xisdst.o [16]
+__iar_Memchr            0x00004bcd          Code  Gb  memchr.o [22]
+__iar_Memset            0x000011ed          Code  Gb  ABImemset.o [22]
+__iar_Memset4_word      0x00002ddd          Code  Gb  ABImemset48.o [22]
+__iar_Memset8_word      0x00002ddd          Code  Gb  ABImemset48.o [22]
+__iar_Memset_word       0x000011f5          Code  Gb  ABImemset.o [22]
+__iar_Stolx             0x00003bad    0x86  Code  Gb  xstol.o [16]
+__iar_Stoulx            0x00004491   0x142  Code  Gb  xstoul.o [16]
+__iar_Strchr            0x00004441          Code  Gb  strchr.o [22]
+__iar_Ttotm32           0x000039e3   0x112  Code  Gb  xttotm.o [16]
+__iar_TzoneStr_init     0x00003b35    0x24  Code  Gb  setlocale.o [16]
+__iar_dlib_perthread_access
+                        0x00003b31     0x2  Code  Gb  xtls.o [16]
+__iar_unaligned___aeabi_memcpy
+                        0x00001af9          Code  Gb  ABImemcpy_unaligned.o [22]
+__iar_unaligned___aeabi_memcpy4
+                        0x00001b19          Code  Gb  ABImemcpy_unaligned.o [22]
+__iar_unaligned___aeabi_memcpy8
+                        0x00001b19          Code  Gb  ABImemcpy_unaligned.o [22]
+__iar_unaligned_strcmp  0x0000aa15          Code  Gb  strcmp_unaligned.o [22]
+__localtime32           0x00003085    0x1a  Code  Gb  localtim.o [16]
+__mktime32              0x00002f19    0xd0  Code  Gb  mktime.o [16]
+__time32                0x000023e5    0x20  Code  Gb  clock.o [1]
+__vector_table          0x00000100    0xdc  Data  Gb  cstartup-common.o [5]
+_basePriIsDisabled      0x000056e1          Code  Gb  spmr.o [18]
+_clearPriMask           0x0000a885          Code  Gb  spmr.o [18]
+_disableBasePri         0x00001585          Code  Gb  spmr.o [18]
+_enableBasePri          0x000056f1          Code  Gb  spmr.o [18]
+_executeBarrierInstructions
+                        0x00003999          Code  Gb  spmr.o [18]
+_setPriMask             0x0000a881          Code  Gb  spmr.o [18]
+_writeBasePri           0x00002dd5          Code  Gb  spmr.o [18]
+ageChildren             0x00009c19    0x4e  Code  Lc  child-table.o [20]
+allowIdling             0x20007f00     0x1  Data  Lc  event-control.o [24]
+amalgamateQueue         0x20007d28     0x4  Data  Lc  buffer-management.o [24]
+applicationBeaconPayload
+                        0x20007c0c    0x10  Data  Lc  association.o [17]
+applicationBeaconPayloadLength
+                        0x20007bf9     0x1  Data  Lc  association.o [17]
+arePageCountersOkay     0x00000627    0x3e  Code  Lc  sim-eeprom-internal.o [23]
+associationRequestHandler
+                        0x0000920b    0x34  Code  Lc  association.o [17]
+asynchronousHeapLimit   0x20007d2c     0x4  Data  Lc  buffer-management.o [24]
+auxClkGet               0x00001c4d    0x54  Code  Lc  em_cmu.o [5]
+backoffExponent         0x20007d32     0x1  Data  Lc  lower-mac-pro2.o [21]
+bitmasks                0x200071af     0x1  Data  Lc  debug-print.o [3]
+budSetup                0x00001263    0x7c  Code  Gb  connect-callbacks.o [1]
+bufferTracker           0x20007d14     0x2  Data  Lc  buffer-management.o [24]
+burtcOverflowCounter    0x20007a90     0x4  Data  Lc  clockApp_stk.o [1]
+burtcOverflowIntervalRem
+                        0x20007a94     0x4  Data  Lc  clockApp_stk.o [1]
+burtcSetup              0x000012df    0x52  Code  Gb  connect-callbacks.o [1]
+button0State            0x20007ef9     0x1  Data  Gb  button.o [5]
+button1State            0x20007efa     0x1  Data  Gb  button.o [5]
+buttonIrqCallback       0x0000c919    0x5e  Code  Gb  button.o [5]
+bytesToWrite            0x20007b36     0x2  Data  Lc  phy.o [21]
+calculateMic            0x0000bfed    0xb8  Code  Lc  security-aes.o [15]
+calendar                0x20007a98    0x2c  Data  Lc  clockApp_stk.o [1]
+callCommandAction       0x0000cbcd   0x17c  Code  Lc  command-interpreter.o [2]
+callEnergyScanCompleteHandler
+                        0x0000a619    0x86  Code  Lc  scan.o [17]
+callMessageSentHandler  0x00006c63    0x32  Code  Lc  indirect-queue.o [20]
+callbackEnd             0x00004fcb     0x8  Code  Gb  system-timer.o [18]
+cfsrBits                0x0000ba68    0x68  Data  Lc  diagnostic.o [4]
+chTable                 0x20007924    0x50  Data  Lc  dmadrv.o [5]
+charDowncase            0x0000cba3     0xe  Code  Lc  command-interpreter.o [2]
+checkAllTimers          0x00005add    0x94  Code  Lc  rtcdriver.o [5]
+checkAndUpdateFrameCounter
+                        0x00009ad3    0x8e  Code  Lc  security-common.o [24]
+checkAndUpdatePeerFrameCounter
+                        0x00009a21    0xb2  Code  Lc  security-common.o [24]
+checkForSimEe2DataExistence
+                        0x00000665    0x5a  Code  Gb  sim-eeprom-internal.o [23]
+childTable              0x200074c4   0x140  Data  Lc  ember-configuration.o [13]
+clockAppBackup          0x000024ef    0x12  Code  Gb  clockApp_stk.o [1]
+clockAppDisplay         0x0000244d    0x4a  Code  Gb  clockApp_stk.o [1]
+clockAppInit            0x000024c9    0x26  Code  Gb  clockApp_stk.o [1]
+clockAppRestore         0x00002501    0x44  Code  Gb  clockApp_stk.o [1]
+clockGetOverflowCounter
+                        0x0000243f     0x6  Code  Gb  clock.o [1]
+clockGetStartTime       0x00002417     0x6  Code  Gb  clock.o [1]
+clockInit               0x0000241d    0x12  Code  Gb  clock.o [1]
+clockOverflow           0x0000242f     0xa  Code  Gb  clock.o [1]
+clockSetCalendar        0x00002405     0xc  Code  Gb  clock.o [1]
+clockSetOverflowCounter
+                        0x00002439     0x6  Code  Gb  clock.o [1]
+clockSetStartTime       0x00002411     0x6  Code  Gb  clock.o [1]
+cmuStatus               0x20007974     0x4  Data  Lc  em_emu.o [5]
+com3RxBufferQueue       0x20006f98    0x80  Data  Lc  com.o [5]
+com3RxFifoQueue         0x200076f8    0x48  Data  Lc  com.o [5]
+com3TxBufferQueue       0x20007018    0x80  Data  Lc  com.o [5]
+com3TxFifoQueue         0x20007740    0x88  Data  Lc  com.o [5]
+comRxBufferQueues       0x200070c8    0x10  Data  Gb  com.o [5]
+comRxQueueSize          0x00002b74     0x8  Data  Gb  com.o [5]
+comRxQueues             0x200070b8    0x10  Data  Gb  com.o [5]
+comTxBufferQueues       0x200070d8    0x10  Data  Gb  com.o [5]
+comTxQueueSize          0x00002b6c     0x8  Data  Gb  com.o [5]
+comTxQueues             0x200070a8    0x10  Data  Gb  com.o [5]
+comhandle               0x20007098    0x10  Data  Gb  com.o [5]
+comhandledata           0x200078a0    0x40  Data  Lc  com.o [5]
+commandState            0x20007a04    0x78  Data  Lc  command-interpreter.o [2]
+compressPointer         0x00005fd5    0x12  Code  Lc  buffer-management.o [24]
+computeMic              0x0000bd97    0x8e  Code  Lc  security-xxtea.o [26]
+convertKey              0x0000d0f3    0x2a  Code  Lc  xxtea.o [26]
+copyTokensToOtherPage   0x00000a59   0x1d0  Code  Lc  sim-eeprom-internal.o [23]
+coreKey                 0x20007ed4    0x10  Data  Lc  aes.o [18]
+countIncremarks         0x00000e3b    0x3a  Code  Lc  sim-eeprom-internal.o [23]
+counters                0x20007cbc    0x48  Data  Lc  counters.o [25]
+csmaKickstart           0x00008cdf    0x16  Code  Lc  lower-mac-pro2.o [21]
+cstackMemory            0x20006448   0x960  Data  Gb  cstartup-common.o [5]
+currentIncomingFrame    0x20007d40     0x2  Data  Lc  lower-mac-pro2.o [21]
+currentOutgoingPacketTag
+                        0x20007b04     0x1  Data  Lc  upper-mac.o [24]
+currentTime             0x20007ac4     0x4  Data  Lc  clockApp_stk.o [1]
+currentUser             0x20007190     0x4  Data  Lc  buffer-management.o [24]
+digits                  0x000045d8    0x28  Data  Lc  xstoul.o [16]
+dmaCallBack             0x200078f4    0x30  Data  Lc  dmadrv.o [5]
+dmaControlBlock         0x20007200   0x200  Data  Gb  dmactrl.o [5]
+dma_IEN                 0x200078e0     0x4  Data  Gb  com.o [5]
+dutyCycleLimits         0x0000d78c     0x4  Data  Lc  phy-config-connect.o [9]
+edCcaThreshold          0x20007183     0x1  Data  Lc  phy.o [21]
+emActiveTaskCount       0x20007f01     0x1  Data  Lc  event-control.o [24]
+emAddAuxiliaryMacHeader
+                        0x00009977    0x22  Code  Gb  security-common.o [24]
+emAesEncrypt            0x0000d301    0x20  Code  Gb  aes.o [18]
+emAesSecurityLibraryStatus
+                        0x0000df53     0x1  Data  Gb  security-aes.o [15]
+emAppEvents             0x0000df34    0x10  Data  Gb  connect-events.o [1]
+emAppTask               0x20007ef8     0x1  Data  Gb  main.o [8]
+emAssociationEvent      0x20007c34     0x8  Data  Gb  association.o [17]
+emAssociationEventHandler
+                        0x00008dbf    0xae  Code  Gb  association.o [17]
+emAssociationInProgress
+                        0x000093bd     0xc  Code  Gb  association.o [17]
+emAssociationResponsePending
+                        0x000093a9    0x14  Code  Gb  association.o [17]
+emBeaconEvent           0x20007c04     0x8  Data  Gb  association.o [17]
+emBeaconEventHandler    0x00009109    0xb2  Code  Gb  association.o [17]
+emBufferBytesRemaining  0x00005f91    0x22  Code  Gb  buffer-management.o [24]
+emBufferSystemTick      0x000087ed     0x8  Code  Gb  buffers-bookkeeping.o [24]
+emChildTable            0x20006f80     0x4  Data  Gb  ember-configuration.o [13]
+emChildTableAddOrUpdateEntry
+                        0x00009cc1    0xb0  Code  Gb  child-table.o [20]
+emChildTableBuildShortIdList
+                        0x00009dd9    0x5c  Code  Gb  child-table.o [20]
+emChildTableCheckAndUpdateFrameCounter
+                        0x00009f3f    0x26  Code  Gb  child-table.o [20]
+emChildTableDataPending
+                        0x00009db7    0x22  Code  Gb  child-table.o [20]
+emChildTableEntryChangedHandler
+                        0x00006dcd    0x48  Code  Gb  coordinator-support.o [20]
+emChildTableGetUnusedEntryIndex
+                        0x00009c97    0x2a  Code  Gb  child-table.o [20]
+emChildTableInit        0x00009c67    0x30  Code  Gb  child-table.o [20]
+emChildTableLookUp      0x00009d71    0x46  Code  Gb  child-table.o [20]
+emChildTableNotifyActivity
+                        0x00009e9d    0x9c  Code  Gb  child-table.o [20]
+emChildTableSetSecurityTxOptions
+                        0x00009e35    0x60  Code  Gb  child-table.o [20]
+emCoordinatorCheckOrAllocateShortId
+                        0x00006d03    0x34  Code  Gb  coordinator-support.o [20]
+emCoordinatorGetNextHop
+                        0x00006d51    0x7c  Code  Gb  coordinator-support.o [20]
+emCoordinatorInit       0x00006cd1    0x1a  Code  Gb  coordinator-support.o [20]
+emCoordinatorResetLastAssignedId
+                        0x00006d37     0xa  Code  Gb  coordinator-support.o [20]
+emCounterHandler        0x000087b9    0x22  Code  Gb  counters.o [25]
+emCountersInit          0x000087b1     0x8  Code  Gb  counters.o [25]
+emCurrentRssi           0x20007d34     0x1  Data  Gb  lower-mac-pro2.o [21]
+emDecryptAndAuthenticatePacket
+                        0x000099bf    0x36  Code  Gb  security-common.o [24]
+emDecryptAndAuthenticatePacketAes
+                        0x0000be95    0x5a  Code  Gb  security-aes.o [15]
+emDecryptAndAuthenticatePacketXxtea
+                        0x0000bccf    0x82  Code  Gb  security-xxtea.o [26]
+emEncryptAndSignPacket  0x00009999    0x26  Code  Gb  security-common.o [24]
+emEncryptAndSignPacketAes
+                        0x0000be39    0x5c  Code  Gb  security-aes.o [15]
+emEncryptAndSignPacketXxtea
+                        0x0000bc43    0x8c  Code  Gb  security-xxtea.o [26]
+emEnergyScanInProgress  0x0000a6ad    0x10  Code  Gb  scan.o [17]
+emEventControlSetActive
+                        0x00004d99    0x16  Code  Gb  event-control.o [24]
+emEventControlSetDelayMS
+                        0x00004daf    0x1a  Code  Gb  event-control.o [24]
+emGenericQueueAdd       0x0000aa59    0x32  Code  Gb  buffer-queue.o [24]
+emGenericQueueRemove    0x0000aad1    0x64  Code  Gb  buffer-queue.o [24]
+emGenericQueueRemoveHead
+                        0x0000aa93    0x3e  Code  Gb  buffer-queue.o [24]
+emGetBufferLength       0x000064fb    0x2c  Code  Gb  buffer-management.o [24]
+emGetBufferLink         0x00006527    0x20  Code  Gb  buffer-management.o [24]
+emGetBufferPointer      0x000064cf    0x2c  Code  Gb  buffer-management.o [24]
+emGetNextOutgoingFrameCounter
+                        0x0000995d    0x1a  Code  Gb  security-common.o [24]
+emGetPhyRadioChannel    0x00007ae9     0xa  Code  Gb  phy.o [21]
+emGetPhyRadioPower      0x00007af3     0xa  Code  Gb  phy.o [21]
+emGetSecurityKey        0x0000994d    0x10  Code  Gb  security-common.o [24]
+emGetSecurityPaddingLength
+                        0x000099f5     0xc  Code  Gb  security-common.o [24]
+emGetSecurityPaddingLengthAes
+                        0x0000bf21     0x4  Code  Gb  security-aes.o [15]
+emGetSecurityPaddingLengthXxtea
+                        0x0000bc2d    0x16  Code  Gb  security-xxtea.o [26]
+emHeapBase              0x20007d18     0x4  Data  Lc  buffer-management.o [24]
+emHeapLimit             0x20007d1c     0x4  Data  Lc  buffer-management.o [24]
+emIncomingAssociationRequestHandler
+                        0x0000923f    0x2a  Code  Gb  association.o [17]
+emIncomingAssociationResponseHandler
+                        0x00009387    0x22  Code  Gb  association.o [17]
+emIncomingExtendedAssociationRequestHandler
+                        0x00009269    0x38  Code  Gb  association.o [17]
+emIncomingMacBeaconHandler
+                        0x00009017    0xea  Code  Gb  association.o [17]
+emIncomingMacBeaconRequestHandler
+                        0x000091c7    0x44  Code  Gb  association.o [17]
+emIncomingMacCommandHandler
+                        0x0000a315    0xba  Code  Gb  command.o [24]
+emIncomingMacLongSourceDataRequestHandler
+                        0x000092ab    0xae  Code  Gb  association.o [17]
+emIncomingMacShortSourceDataRequestHandler
+                        0x00006931    0x66  Code  Gb  indirect-queue.o [20]
+emIncomingNwkCommandHandler
+                        0x0000ab3d    0xca  Code  Gb  network-command.o [24]
+emIndirectPacketQueue   0x20006f88     0x4  Data  Gb  ember-configuration.o [13]
+emIndirectQueueAddPacket
+                        0x00006997    0x7e  Code  Gb  indirect-queue.o [20]
+emIndirectQueueEvent    0x20007d04     0x8  Data  Gb  indirect-queue.o [20]
+emIndirectQueueEventHandler
+                        0x000068b1    0x80  Code  Gb  indirect-queue.o [20]
+emIndirectQueueInit     0x0000688d    0x24  Code  Gb  indirect-queue.o [20]
+emIndirectQueueIsEmpty  0x00006a71    0x18  Code  Gb  indirect-queue.o [20]
+emIndirectQueueTimeouts
+                        0x20006f8c     0x4  Data  Gb  ember-configuration.o [13]
+emInitEui64             0x0000b165    0x18  Code  Gb  eui64.o [24]
+emInitializeBuffers     0x00005f61    0x30  Code  Gb  buffer-management.o [24]
+emLoadKeyIntoCore       0x0000d2f5     0xa  Code  Gb  aes.o [18]
+emLocalEui64            0x20007de8     0x8  Data  Gb  eui64.o [24]
+emLocalNodeId           0x200071a2     0x2  Data  Gb  stack.o [24]
+emLocalNodeSupportsSecurity
+                        0x0000992b    0x22  Code  Gb  security-common.o [24]
+emLocalPanId            0x200071a4     0x2  Data  Gb  stack.o [24]
+emLowerMacEvent         0x20007d38     0x8  Data  Gb  lower-mac-pro2.o [21]
+emLowerMacEventHandler  0x0000882d    0xe6  Code  Gb  lower-mac-pro2.o [21]
+emLowerMacTick          0x00008913   0x2e6  Code  Gb  lower-mac-pro2.o [21]
+emLowerMacTimerIsr      0x00008ca7     0x6  Code  Gb  lower-mac-pro2.o [21]
+emMacAssociationRequestSentHandler
+                        0x00009365    0x20  Code  Gb  association.o [17]
+emMacCommandSentHandler
+                        0x0000a3e7    0x2e  Code  Gb  command.o [24]
+emMacExtendedAssociationRequestSentHandler
+                        0x00009385     0x2  Code  Gb  association.o [17]
+emMacGet32bitField      0x0000a581    0x16  Code  Gb  packet-header.o [24]
+emMacGetRadioIdleMode   0x000055e1     0x6  Code  Gb  upper-mac.o [24]
+emMacIncomingPending    0x00008cad    0x1a  Code  Gb  lower-mac-pro2.o [21]
+emMacInit               0x00005295    0x16  Code  Gb  upper-mac.o [24]
+emMacKickstart          0x000054f3    0xce  Code  Gb  upper-mac.o [24]
+emMacMaxRetries         0x20007170     0x1  Data  Gb  upper-mac.o [24]
+emMacOutgoingBeaconSequenceNumber
+                        0x20007f05     0x1  Data  Gb  upper-mac.o [24]
+emMacOutgoingDequeue    0x000067f5    0x68  Code  Gb  mac-queue.o [19]
+emMacOutgoingQueue      0x20006f84     0x4  Data  Gb  ember-configuration.o [13]
+emMacOutgoingQueueIsEmpty
+                        0x0000685d    0x22  Code  Gb  mac-queue.o [19]
+emMacOutgoingQueueSubmit
+                        0x000066f9    0xd8  Code  Gb  mac-queue.o [19]
+emMacOutgoingSequenceNumber
+                        0x20007f04     0x1  Data  Gb  upper-mac.o [24]
+emMacPacketSendCompleteCallback
+                        0x0000534b    0xc0  Code  Gb  upper-mac.o [24]
+emMacPrepareTransmitBuffer
+                        0x00005489    0x62  Code  Gb  upper-mac.o [24]
+emMacPurgeIncoming      0x00008cc7    0x12  Code  Gb  lower-mac-pro2.o [21]
+emMacQueueInit          0x000066d9    0x20  Code  Gb  mac-queue.o [19]
+emMacQueueLibraryStatus
+                        0x0000df51     0x1  Data  Gb  mac-queue.o [19]
+emMacReceiveCallback    0x000052b5    0x96  Code  Gb  upper-mac.o [24]
+emMacSend               0x00008815    0x18  Code  Gb  lower-mac-pro2.o [21]
+emMacSetRadioIdleMode   0x000055c7    0x1a  Code  Gb  upper-mac.o [24]
+emMacState              0x20007d30     0x1  Data  Gb  lower-mac-pro2.o [21]
+emMacSubmit             0x00005427    0x62  Code  Gb  upper-mac.o [24]
+emMakeMacPacketHeader   0x0000a419    0xbe  Code  Gb  packet-header.o [24]
+emMakeNwkPacketHeader   0x0000a4d7    0x1a  Code  Gb  packet-header.o [24]
+emMakePhyPacketHeader   0x0000a415     0x4  Code  Gb  packet-header.o [24]
+emMallocFreeList        0x20007d10     0x2  Data  Gb  buffer-management.o [24]
+emMarkBuffer            0x000060b1    0x76  Code  Gb  buffer-management.o [24]
+emMarkCoordinatorBuffers
+                        0x00006ceb    0x18  Code  Gb  coordinator-support.o [20]
+emMarkIndirectQueueBuffers
+                        0x00006a89    0x24  Code  Gb  indirect-queue.o [20]
+emMarkLowerMacBuffers   0x00008cd9     0x6  Code  Gb  lower-mac-pro2.o [21]
+emMarkMacQueueBuffers   0x000067d1    0x24  Code  Gb  mac-queue.o [19]
+emMarkScanBuffers       0x0000a69f     0x6  Code  Gb  scan.o [17]
+emMarkSecurityBuffers   0x00009b69     0x6  Code  Gb  security-common.o [24]
+emMarkTaskActive        0x00004f5b     0xe  Code  Gb  event-control.o [24]
+emMfglibMode            0x20007b2c     0x1  Data  Gb  phy.o [21]
+emMfglibTransmitComplete
+                        0x20007b2d     0x1  Data  Gb  phy.o [21]
+emNetworkIncomingMessageHandler
+                        0x0000a0a9   0x1c8  Code  Gb  network.o [24]
+emNetworkMessageSentHandler
+                        0x00009f91   0x110  Code  Gb  network.o [24]
+emNetworkState          0x20007f02     0x1  Data  Gb  stack.o [24]
+emNetworkSubmit         0x0000a2af    0x58  Code  Gb  network.o [24]
+emNodeType              0x20007ef4     0x1  Data  Gb  stack.o [24]
+emNotifyMacIsIdle       0x000055c1     0x6  Code  Gb  upper-mac.o [24]
+emNwkCommandSentHandler
+                        0x0000ac0f     0x8  Code  Gb  network-command.o [24]
+emNwkIncomingRangeExtenderUpdateHandler
+                        0x00006e15    0x44  Code  Gb  coordinator-support.o [20]
+emNwkIncomingRangeExtenderUpdateRequestHandler
+                        0x00009603    0x2c  Code  Gb  parent-support.o [20]
+emNwkIncomingShortAddressRequestHandler
+                        0x00006e61    0x86  Code  Gb  coordinator-support.o [20]
+emNwkIncomingShortAddressResponseHandler
+                        0x0000967f    0x28  Code  Gb  parent-support.o [20]
+emNwkSendRangeExtenderUpdate
+                        0x0000acc3    0x1a  Code  Gb  network-command.o [24]
+emNwkSendShortAddressRequest
+                        0x0000ac79    0x30  Code  Gb  network-command.o [24]
+emNwkSendShortAddressResponse
+                        0x0000aca9    0x1a  Code  Gb  network-command.o [24]
+emPacketHeaderFieldOffset
+                        0x0000a4f1    0x8c  Code  Gb  packet-header.o [24]
+emPacketReceivedInternalIsrCallback
+                        0x00008c53    0x54  Code  Gb  lower-mac-pro2.o [21]
+emParentEvent           0x20007dc8     0x8  Data  Gb  parent-support.o [20]
+emParentEventHandler    0x000095cd    0x36  Code  Gb  parent-support.o [20]
+emParentGetNewChildId   0x00009639     0x6  Code  Gb  parent-support.o [20]
+emParentId              0x20007ef6     0x2  Data  Gb  stack.o [24]
+emParentInitiateShortAddressRequest
+                        0x0000963f    0x40  Code  Gb  parent-support.o [20]
+emParentSubmit          0x00009495   0x138  Code  Gb  parent-support.o [20]
+emParentSupportLibraryStatus
+                        0x0000df52     0x1  Data  Gb  parent-support.o [20]
+emPendingOutgoingPacket
+                        0x20007d48    0x80  Data  Gb  lower-mac-pro2.o [21]
+emPermitJoin            0x20007bf8     0x1  Data  Gb  association.o [17]
+emPermitJoiningEvent    0x20007bfc     0x8  Data  Gb  association.o [17]
+emPermitJoiningEventHandler
+                        0x00008e6d     0x4  Code  Gb  association.o [17]
+emPhyBandConfig         0x0000d7cc    0x28  Data  Gb  phy-config-connect.o [9]
+emPhyBands              0x0000d7f4     0x4  Data  Lc  phy-config-connect.o [9]
+emPhyCcaCsmaConfigArray
+                        0x0000df44     0x1  Data  Gb  phy.o [21]
+emPhyCfg                0x0000d7f8    0x10  Data  Lc  phy-config-connect.o [9]
+emPhyConfigMHz          0x0000d808     0x4  Data  Gb  phy-config-connect.o [9]
+emPhyCurrentBandConfig  0x20007b44     0x4  Data  Gb  phy.o [21]
+emPhySetCoordinator     0x00007b0b     0x2  Code  Gb  phy.o [21]
+emPhyTick               0x00007ab1    0x38  Code  Gb  phy.o [21]
+emPhyToMacQueueAdd      0x0000665f    0x1e  Code  Gb  buffer-management.o [24]
+emPhyToMacQueueIsEmpty  0x00006699     0x6  Code  Gb  buffer-management.o [24]
+emPhyToMacQueueRemoveHead
+                        0x0000667d    0x1c  Code  Gb  buffer-management.o [24]
+emPhyTxPAs              0x0000d7c0     0xc  Data  Lc  phy-config-connect.o [9]
+emPhyTxPaLevels         0x0000d790    0x30  Data  Lc  phy-config-connect.o [9]
+emPointsIntoHeap        0x00005fb3    0x16  Code  Gb  buffer-management.o [24]
+emPrintfInternal        0x00002ba7   0x172  Code  Gb  ember-printf.o [11]
+emPurgeIndirectQueue    0x00006a15    0x2a  Code  Gb  indirect-queue.o [20]
+emRadioCcaThreshold     0x200071a9     0x1  Data  Gb  ember-configuration.o [13]
+emRadioChannel          0x20007184     0x2  Data  Lc  phy.o [21]
+emRadioEnablePacketTrace
+                        0x00007c37    0xb4  Code  Gb  phy.o [21]
+emRadioEnableReceiveCrc
+                        0x00007ceb    0x32  Code  Gb  phy.o [21]
+emRadioEnergyDetection  0x00007d1d    0x48  Code  Gb  phy.o [21]
+emRadioGetCca           0x00007d6d    0xae  Code  Gb  phy.o [21]
+emRadioGetIdleMode      0x00007e29     0x8  Code  Gb  phy.o [21]
+emRadioGetPowerStatus   0x00007e31     0x8  Code  Gb  phy.o [21]
+emRadioInit             0x000080a3    0x60  Code  Gb  phy.o [21]
+emRadioOkToIdle         0x00007e39    0x10  Code  Gb  phy.o [21]
+emRadioPacketTraceEnabled
+                        0x00007e49    0x14  Code  Gb  phy.o [21]
+emRadioPower            0x20007175     0x1  Data  Lc  phy.o [21]
+emRadioRequestedPower   0x20007176     0x1  Data  Lc  phy.o [21]
+emRadioSetEdCcaThreshold
+                        0x00007e61    0x2a  Code  Gb  phy.o [21]
+emRadioSetIdleMode      0x00007e8b    0x2c  Code  Gb  phy.o [21]
+emRadioSetNodeId        0x00007eb7     0x2  Code  Gb  phy.o [21]
+emRadioSetPanId         0x00007eb9     0x2  Code  Gb  phy.o [21]
+emRadioSfdRecvIsrCallback
+                        0x00007ebb     0x2  Code  Wk  phy.o [21]
+emRadioSleep            0x00007ebd    0x5c  Code  Gb  phy.o [21]
+emRadioTransmit         0x00007f19   0x10a  Code  Gb  phy.o [21]
+emRadioTransmitCompleteCallback
+                        0x00008c3b    0x18  Code  Gb  lower-mac-pro2.o [21]
+emRadioTransmitInProgress
+                        0x20007b2a     0x1  Data  Lc  phy.o [21]
+emRadioTxPowerMode      0x20007b32     0x2  Data  Lc  phy.o [21]
+emReallyAllocateBuffer  0x00006591    0xa6  Code  Gb  buffer-management.o [24]
+emReallyFillBuffer      0x00006637    0x28  Code  Gb  buffer-management.o [24]
+emReclaimUnusedBuffers  0x00006127    0x16  Code  Gb  buffer-management.o [24]
+emReclaimUnusedBuffersAndAmalgamate
+                        0x00006199   0x326  Code  Gb  buffer-management.o [24]
+emScanCompleteHandler   0x00008e71   0x186  Code  Gb  association.o [17]
+emScanEvent             0x20007dd4     0x8  Data  Gb  scan.o [17]
+emScanEventHandler      0x0000a5bd    0x5c  Code  Gb  scan.o [17]
+emScanState             0x20007dd1     0x1  Data  Gb  scan.o [17]
+emScanTimerIsr          0x0000a6bd     0x6  Code  Gb  scan.o [17]
+emSecurityInit          0x000098d1    0x1a  Code  Gb  security-common.o [24]
+emSetBufferLink         0x00006547    0x34  Code  Gb  buffer-management.o [24]
+emSetNetworkState       0x0000519f    0x1c  Code  Gb  stack.o [24]
+emSetNodeId             0x00005181     0x8  Code  Gb  stack.o [24]
+emSetNodeType           0x00005191     0xe  Code  Gb  stack.o [24]
+emSetPanId              0x00005189     0x8  Code  Gb  stack.o [24]
+emSetPhyRadioChannel    0x00007b0d    0x6a  Code  Gb  phy.o [21]
+emSetPhyRadioPower      0x00007b85    0xb2  Code  Gb  phy.o [21]
+emSetSecuritySuiteTxOptions
+                        0x000098eb    0x40  Code  Gb  security-common.o [24]
+emStackEvents           0x0000521c    0x48  Data  Gb  stack.o [24]
+emStackTask             0x20007f03     0x1  Data  Gb  stack.o [24]
+emStandAloneEncryptBlock
+                        0x0000d2ff     0x2  Code  Gb  aes.o [18]
+emTaskCount             0x0000df50     0x1  Data  Gb  ember-configuration.o [13]
+emTaskDetermineNextEvent
+                        0x00004dc9    0x28  Code  Lc  event-control.o [24]
+emTaskEnableIdling      0x00004f69     0x6  Code  Gb  event-control.o [24]
+emTasks                 0x200074a0    0x24  Data  Gb  ember-configuration.o [13]
+emTrackNextEvent        0x00004d75    0x24  Code  Lc  event-control.o [24]
+emUpperMacEvent         0x20007b08     0x8  Data  Gb  upper-mac.o [24]
+emUpperMacEventHandler  0x000052ab     0xa  Code  Gb  upper-mac.o [24]
+emWriteHexInternal      0x00002b7d    0x2a  Code  Gb  ember-printf.o [11]
+emWriteNodeDataToken    0x000051bb    0x3c  Code  Gb  stack.o [24]
+emXxteaSecurityLibraryStatus
+                        0x0000df54     0x1  Data  Gb  security-xxtea.o [26]
+emberActiveScanCompleteHandler
+                        0x0000981d     0xe  Code  Gb  main.o [8]
+emberAfActiveScanComplete
+                        0x0000b29d     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfActiveScanCompleteCallback
+                        0x000013f5     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfChildJoin        0x0000b299     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfChildJoinCallback
+                        0x000013f3     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfEnergyScanComplete
+                        0x0000b29f     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfEnergyScanCompleteCallback
+                        0x000013f7     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfIncomingBeacon   0x0000b29b     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfIncomingBeaconCallback
+                        0x000013f9     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfIncomingMessage  0x0000b295     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfIncomingMessageCallback
+                        0x000013ef     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfInit             0x0000b27d     0x4  Code  Gb  connect-bookkeeping.o [1]
+emberAfMainInitCallback
+                        0x0000133b    0x8e  Code  Gb  connect-callbacks.o [1]
+emberAfMainTickCallback
+                        0x000013e9     0x4  Code  Gb  connect-callbacks.o [1]
+emberAfMarkApplicationBuffersCallback
+                        0x0000c981     0x2  Code  Gb  connect-callback-stubs.o [1]
+emberAfMessageSent      0x0000b297     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfMessageSentCallback
+                        0x000013f1     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfPluginCommandInterpreterTickCallback
+                        0x0000c985    0x1e  Code  Gb  command-interpreter.o [2]
+emberAfPluginIdleSleepActiveCallback
+                        0x00001339     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfPluginIdleSleepOkToIdleCallback
+                        0x00001337     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfPluginIdleSleepOkToSleepCallback
+                        0x00001333     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfPluginIdleSleepTickCallback
+                        0x0000d019    0xb4  Code  Gb  idle-sleep.o [7]
+emberAfPluginIdleSleepWakeUpCallback
+                        0x00001335     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfPluginPollEventControl
+                        0x200076e8     0x8  Data  Gb  poll.o [10]
+emberAfPluginPollEventHandler
+                        0x00004d1d    0x30  Code  Gb  poll.o [10]
+emberAfPluginPollStackStatusCallback
+                        0x00004d4d    0x1c  Code  Gb  poll.o [10]
+emberAfPrintActiveArea  0x200078ee     0x2  Data  Gb  debug-print.o [3]
+emberAfPrintEnabled     0x000030a1    0x20  Code  Gb  debug-print.o [3]
+emberAfPrintln          0x000030e7     0xa  Code  Gb  debug-print.o [3]
+emberAfStackIsr         0x0000b293     0x2  Code  Gb  connect-bookkeeping.o [1]
+emberAfStackStatus      0x0000b28f     0x4  Code  Gb  connect-bookkeeping.o [1]
+emberAfStackStatusCallback
+                        0x000013ed     0x2  Code  Gb  connect-callbacks.o [1]
+emberAfTick             0x0000b281     0xe  Code  Gb  connect-bookkeeping.o [1]
+emberChildJoinHandler   0x000097bf    0x16  Code  Gb  main.o [8]
+emberChildTableSize     0x200071aa     0x1  Data  Gb  ember-configuration.o [13]
+emberChildTimeoutSec    0x20006f7c     0x4  Data  Gb  ember-configuration.o [13]
+emberCommandErrorHandler
+                        0x0000cecf    0x72  Code  Gb  command-interpreter.o [2]
+emberCommandErrorNames  0x20007148    0x20  Data  Gb  command-interpreter.o [2]
+emberCommandInterpreter2Configuration
+                        0x20007eff     0x1  Data  Gb  command-interpreter.o [2]
+emberCommandReaderInit  0x0000c9a3    0x22  Code  Gb  command-interpreter.o [2]
+emberCommandTable       0x0000df24    0x10  Data  Gb  connect-cli.o [1]
+emberCurrentCommand     0x20007a7c     0x4  Data  Gb  command-interpreter.o [2]
+emberCurrentStackTasks  0x000050c9    0x52  Code  Gb  stack.o [24]
+emberEnergyScanCompleteHandler
+                        0x0000982b    0x20  Code  Gb  main.o [8]
+emberGetLibraryStatus   0x0000a599    0x14  Code  Gb  ember-library.o [24]
+emberIncomingBeaconHandler
+                        0x000097fd    0x20  Code  Gb  main.o [8]
+emberIncomingMessageHandler
+                        0x000097d5    0x12  Code  Gb  main.o [8]
+emberIndirectPacketQueueSize
+                        0x200071ac     0x1  Data  Gb  ember-configuration.o [13]
+emberInit               0x0000504d    0x44  Code  Gb  stack.o [24]
+emberMacAckTimeoutMS    0x200071a8     0x1  Data  Gb  ember-configuration.o [13]
+emberMacIndirectTimeoutMs
+                        0x20007198     0x2  Data  Gb  ember-configuration.o [13]
+emberMacOutgoingQueueSize
+                        0x200071ab     0x1  Data  Gb  ember-configuration.o [13]
+emberMarkApplicationBuffersHandler
+                        0x0000b2a1     0x4  Code  Gb  connect-bookkeeping.o [1]
+emberMarkTaskIdle       0x00004edd    0x7e  Code  Gb  event-control.o [24]
+emberMessageSentHandler
+                        0x000097e7    0x16  Code  Gb  main.o [8]
+emberMsToNextEvent      0x00004e3b     0x4  Code  Gb  event-control.o [24]
+emberMsToNextEventExtended
+                        0x00004df1    0x4a  Code  Gb  event-control.o [24]
+emberMsToNextStackEvent
+                        0x0000511b    0x1c  Code  Gb  stack.o [24]
+emberPermitJoining      0x00008d79    0x46  Code  Gb  association.o [17]
+emberPollForData        0x00005265    0x30  Code  Gb  upper-mac.o [24]
+emberPrintCommandTable  0x0000ceb3    0x1c  Code  Gb  command-interpreter.o [2]
+emberPrintCommandUsage  0x0000ce61    0x38  Code  Gb  command-interpreter.o [2]
+emberPrintCommandUsageNotes
+                        0x0000ce99     0xe  Code  Gb  command-interpreter.o [2]
+emberProcessCommandString
+                        0x0000ca01   0x186  Code  Gb  command-interpreter.o [2]
+emberRunEvents          0x00004e3f    0x30  Code  Gb  event-control.o [24]
+emberRunTask            0x00004e6f    0x28  Code  Gb  event-control.o [24]
+emberSerialGuaranteedPrintf
+                        0x00001619    0x1c  Code  Gb  serial.o [11]
+emberSerialInit         0x00001591    0x26  Code  Gb  serial.o [11]
+emberSerialPendingWrite
+                        0x000015c5     0x4  Code  Gb  serial.o [11]
+emberSerialPrintCarriageReturn
+                        0x000015d3     0x2  Code  Gb  serial.o [11]
+emberSerialPrintf       0x000015d5    0x12  Code  Gb  serial.o [11]
+emberSerialPrintfLine   0x000015e7    0x1e  Code  Gb  serial.o [11]
+emberSerialPrintfVarArg
+                        0x0000160f     0xa  Code  Gb  serial.o [11]
+emberSerialReadAvailable
+                        0x000015b7     0x4  Code  Gb  serial.o [11]
+emberSerialReadByte     0x000015bb     0xa  Code  Gb  serial.o [11]
+emberSerialUnused       0x0000163d     0xa  Code  Gb  serial.o [11]
+emberSerialWaitSend     0x00001605     0xa  Code  Gb  serial.o [11]
+emberSerialWriteByte    0x000015c9     0xa  Code  Gb  serial.o [11]
+emberSetTxPowerMode     0x00008109    0x22  Code  Gb  phy.o [21]
+emberStackIsUp          0x0000516d    0x14  Code  Gb  stack.o [24]
+emberStackIsrHandler    0x0000984b     0x4  Code  Gb  main.o [8]
+emberStackPowerDown     0x0000514d    0x20  Code  Gb  stack.o [24]
+emberStackPowerUp       0x00005137    0x16  Code  Gb  stack.o [24]
+emberStackStatusHandler
+                        0x000097ad    0x12  Code  Gb  main.o [8]
+emberTaskInit           0x00004e97    0x42  Code  Gb  event-control.o [24]
+emberTick               0x00005091    0x38  Code  Gb  stack.o [24]
+emuRestore              0x000017af    0x82  Code  Lc  em_emu.o [5]
+encryptBytes            0x0000bf49    0x46  Code  Lc  security-aes.o [15]
+encryptNonce            0x0000bf25    0x24  Code  Lc  security-aes.o [15]
+energyScanSamplesBuffer
+                        0x20007dde     0x2  Data  Lc  scan.o [17]
+entryToExpireIndex      0x200071b1     0x1  Data  Lc  indirect-queue.o [20]
+erased                  0x20007ef0     0x1  Data  Lc  sim-eeprom-internal.o [23]
+executeTimerCallbacks   0x00005b71    0x1c  Code  Lc  rtcdriver.o [5]
+expandPointerNoCheck    0x00005fe7    0x10  Code  Lc  buffer-management.o [24]
+fault                   0x0000d3f9          Code  Gb  faults.o [5]
+firstByteOfArg          0x0000cbb1    0x18  Code  Lc  command-interpreter.o [2]
+fixedOffset             0x20007194     0x4  Data  Lc  packet-header.o [24]
+flashWaitStateControl   0x00001ca1    0x6c  Code  Lc  em_cmu.o [5]
+free                    0x00004b4d    0x7a  Code  Gb  xxmemxfree.o [16]
+freePtr                 0x20007ef2     0x2  Data  Lc  sim-eeprom-internal.o [23]
+freq                    0x200079fc     0x4  Data  Lc  ustimer.o [5]
+generateCreatorInfo     0x000005e3    0x22  Code  Lc  sim-eeprom-internal.o [23]
+getErrataFixEmuE107En   0x00001831    0x26  Code  Lc  em_emu.o [5]
+getNestedCommand        0x0000cb87    0x1c  Code  Lc  command-interpreter.o [2]
+getOutputFifoSpace      0x00002793    0x1a  Code  Lc  com.o [5]
+getSizeInWords          0x00005ff7    0x14  Code  Lc  buffer-management.o [24]
+getint                  0x000049ef    0x2c  Code  Lc  xgetdst.o [16]
+gpioCallbacks           0x20007980    0x40  Data  Lc  gpiointerrupt.o [5]
+guardRegionPlaceHolder  0x20000fa0    0x20  Data  Gb  cstartup-common.o [5]
+halAppAddressTable      0x00000054    0xac  Data  Gb  cstartup-common.o [5]
+halBootloaderAddressTable
+                        0x00000000    0x54  Data  Gb  cstartup-common.o [5]
+halBusFaultIsr          0x0000d3e5          Code  Gb  faults.o [5]
+halButtonIsr            0x0000c977     0x2  Code  Wk  button.o [5]
+halButtonPinState       0x0000c8f5    0x22  Code  Gb  button.o [5]
+halButtonState          0x0000c89f    0x14  Code  Gb  button.o [5]
+halCommonDelayMicroseconds
+                        0x0000b037     0x4  Code  Gb  micro-common-internal.o [18]
+halCommonGetInt16uMillisecondTick
+                        0x00004f8d     0xe  Code  Gb  system-timer.o [18]
+halCommonGetInt32uMillisecondTick
+                        0x00004f9b     0xe  Code  Gb  system-timer.o [18]
+halCommonGetRandom      0x000098ad    0x1c  Code  Gb  random.o [5]
+halCommonIdleForMilliseconds
+                        0x00004fd3    0x18  Code  Gb  system-timer.o [18]
+halCommonMemCompare     0x000004d5    0x18  Code  Gb  mem-util.o [5]
+halCommonMemMove        0x00000441    0x86  Code  Gb  mem-util.o [5]
+halCommonMemSet         0x000004c7     0xe  Code  Gb  mem-util.o [5]
+halDebugMonitorIsr      0x0000d3f1          Code  Gb  faults.o [5]
+halEntryPoint           0x0000d46d    0x10  Code  Gb  cstartup-iar.o [18]
+halEntryPointMain       0x0000d47d    0xee  Code  Gb  cstartup-iar.o [18]
+halExtDeviceDeselect    0x0000c1fb     0x2  Code  Gb  ext-device.o [5]
+halExtDeviceInit        0x0000c111    0xd2  Code  Gb  ext-device.o [5]
+halExtDeviceIntCB       0x2000797c     0x4  Data  Lc  ext-device.o [5]
+halExtDeviceIntDisable  0x0000c20d    0x26  Code  Gb  ext-device.o [5]
+halExtDeviceIntEnable   0x0000c233    0x3e  Code  Gb  ext-device.o [5]
+halExtDeviceIntLevel    0x200071ad     0x1  Data  Lc  ext-device.o [5]
+halExtDeviceIntPending  0x0000c201     0xc  Code  Gb  ext-device.o [5]
+halExtDeviceIsReady     0x0000c1f1     0x4  Code  Gb  ext-device.o [5]
+halExtDevicePowerDown   0x0000c1e9     0x4  Code  Gb  ext-device.o [5]
+halExtDevicePowerUp     0x0000c1ed     0x4  Code  Gb  ext-device.o [5]
+halExtDeviceSelect      0x0000c1f5     0x2  Code  Gb  ext-device.o [5]
+halGetExtendedResetInfo
+                        0x0000b32f     0x6  Code  Gb  cstartup-common.o [5]
+halGetExtendedResetString
+                        0x0000b0e5    0x1c  Code  Gb  micro.o [5]
+halGetExtendedResetString::BOOTLOADERResetStringTable
+                        0x0000d878    0x20  Data  Lc  micro.o [5]
+halGetExtendedResetString::BROWNOUTResetStringTable
+                        0x0000d90c    0x34  Data  Lc  micro.o [5]
+halGetExtendedResetString::CRASHResetStringTable
+                        0x0000d8c8     0x8  Data  Lc  micro.o [5]
+halGetExtendedResetString::EXTERNALResetStringTable
+                        0x0000d898     0xc  Data  Lc  micro.o [5]
+halGetExtendedResetString::FATALResetStringTable
+                        0x0000d8dc    0x10  Data  Lc  micro.o [5]
+halGetExtendedResetString::FAULTResetStringTable
+                        0x0000d8ec    0x20  Data  Lc  micro.o [5]
+halGetExtendedResetString::FIBResetStringTable
+                        0x0000d820    0x58  Data  Lc  micro.o [5]
+halGetExtendedResetString::FLASHResetStringTable
+                        0x0000d8d0     0xc  Data  Lc  micro.o [5]
+halGetExtendedResetString::POWERONResetStringTable
+                        0x0000d8a4     0x8  Data  Lc  micro.o [5]
+halGetExtendedResetString::SOFTWAREResetStringTable
+                        0x0000d8b8    0x10  Data  Lc  micro.o [5]
+halGetExtendedResetString::UNKNOWNResetStringTable
+                        0x0000d81c     0x4  Data  Lc  micro.o [5]
+halGetExtendedResetString::WATCHDOGResetStringTable
+                        0x0000d8ac     0xc  Data  Lc  micro.o [5]
+halGetExtendedResetString::extendedResetStringTablePtrs
+                        0x0000b134    0x30  Data  Lc  micro.o [5]
+halGetResetInfo         0x0000b327     0x8  Code  Gb  cstartup-common.o [5]
+halGetResetString       0x0000b0d5    0x10  Code  Gb  micro.o [5]
+halGetResetString::resetStringTable
+                        0x0000b104    0x30  Data  Lc  micro.o [5]
+halHardFaultIsr         0x0000d3e1          Code  Gb  faults.o [5]
+halInit                 0x0000b03d    0x6c  Code  Gb  micro.o [5]
+halInternalAssertFailed
+                        0x0000100d    0x26  Code  Gb  assert-crash-handlers.o [4]
+halInternalAssertFault  0x00001009     0x4  Code  Lc  assert-crash-handlers.o [4]
+halInternalButtonStateSet
+                        0x0000c8b3    0x12  Code  Gb  button.o [5]
+halInternalButtonToggleState
+                        0x0000c8c5    0x22  Code  Gb  button.o [5]
+halInternalCStackBottom
+                        0x2000718c     0x4  Data  Lc  micro-internal.o [18]
+halInternalClassifyReset
+                        0x0000b2a5    0x82  Code  Gb  cstartup-common.o [5]
+halInternalClassifyReset::resetEventTable
+                        0x0000b340    0x20  Data  Lc  cstartup-common.o [5]
+halInternalCrashHandler
+                        0x00001033   0x186  Code  Gb  assert-crash-handlers.o [4]
+halInternalDisableMPU   0x00002d9f     0xe  Code  Gb  mpu.o [5]
+halInternalDisableWatchDog
+                        0x00001547    0x1a  Code  Gb  micro-common.o [5]
+halInternalEnableMPU    0x00002d59    0x24  Code  Gb  mpu.o [5]
+halInternalEnableWatchDog
+                        0x00001509    0x3a  Code  Gb  micro-common.o [5]
+halInternalFlashBlockRead
+                        0x000004f9    0x10  Code  Lc  sim-eeprom-internal.o [23]
+halInternalFlashBlockReadSimEe2
+                        0x00000509     0xe  Code  Gb  sim-eeprom-internal.o [23]
+halInternalFlashErase   0x0000143d    0x2c  Code  Gb  flash.o [18]
+halInternalFlashWrite   0x000014b7    0x48  Code  Gb  flash.o [18]
+halInternalGetCStackBottom
+                        0x00001751     0x6  Code  Gb  micro-internal.o [18]
+halInternalGetHeapBottom
+                        0x0000175f     0x4  Code  Gb  micro-internal.o [18]
+halInternalGetHeapTop   0x00001757     0x8  Code  Gb  micro-internal.o [18]
+halInternalGetMfgTokenData
+                        0x0000a889    0xba  Code  Gb  mfg-token.o [5]
+halInternalGetTokenData
+                        0x00005edb    0x20  Code  Gb  token.o [5]
+halInternalIncrementCounterToken
+                        0x00005f45     0xe  Code  Gb  token.o [5]
+halInternalInitButton   0x0000c841    0x5e  Code  Gb  button.o [5]
+halInternalInitCStackRegion
+                        0x0000169f    0x1a  Code  Gb  micro-internal.o [18]
+halInternalInitLed      0x0000c979     0x4  Code  Gb  led.o [5]
+halInternalLoadMPU      0x00002d85    0x1a  Code  Gb  mpu.o [5]
+halInternalResetWatchDog
+                        0x00001543     0x4  Code  Gb  micro-common.o [5]
+halInternalSetMPUGuardRegionStart
+                        0x00002dad    0x20  Code  Gb  mpu.o [5]
+halInternalSetMfgTokenData
+                        0x0000a943    0xa6  Code  Gb  mfg-token.o [5]
+halInternalSetTokenData
+                        0x00005efb    0x4a  Code  Gb  token.o [5]
+halInternalSimEeGetData
+                        0x000009e1    0x78  Code  Gb  sim-eeprom-internal.o [23]
+halInternalSimEeIncrementCounter
+                        0x00000ea9    0x78  Code  Gb  sim-eeprom-internal.o [23]
+halInternalSimEeSetData
+                        0x00000cb1   0x168  Code  Gb  sim-eeprom-internal.o [23]
+halInternalSimEeStartup
+                        0x000003b1    0x76  Code  Gb  sim-eeprom.o [12]
+halInternalSimEeStartupCore
+                        0x000006bf   0x322  Code  Gb  sim-eeprom-internal.o [23]
+halInternalSleep        0x00005df5    0x82  Code  Gb  sleep-efm32.o [5]
+halInternalStartSymbolTimer
+                        0x0000b17d    0x32  Code  Gb  symbol-timer.o [5]
+halInternalStartSystemTimer
+                        0x00004fa9    0x22  Code  Gb  system-timer.o [18]
+halInternalSysReset     0x00001669    0x36  Code  Gb  micro-internal.o [18]
+halInternalSysTickIsr   0x0000d469          Code  Wk  isr-stubs.o [5]
+halInternalWakeEvent    0x200079d4     0x4  Data  Lc  sleep-efm32.o [5]
+halInternalWatchDogEnabled
+                        0x00001561     0xe  Code  Gb  micro-common.o [5]
+halIrqxIsr              0x0000c0d7    0x3a  Code  Gb  ext-device.o [5]
+halMemoryFaultIsr       0x0000d3e9          Code  Gb  faults.o [5]
+halNmiIsr               0x0000d3dd          Code  Gb  faults.o [5]
+halPendSvIsr            0x0000d469          Code  Wk  isr-stubs.o [5]
+halPowerDown            0x0000b0a9     0x4  Code  Gb  micro.o [5]
+halPowerUp              0x0000b0bd     0x8  Code  Gb  micro.o [5]
+halPrintCrashData       0x0000b63b    0x5a  Code  Gb  diagnostic.o [4]
+halPrintCrashDetails    0x0000b4a7   0x184  Code  Gb  diagnostic.o [4]
+halPrintCrashSummary    0x0000b361   0x13e  Code  Gb  diagnostic.o [4]
+halRadioPowerDownHandler
+                        0x0000c97f     0x2  Code  Gb  connect-callback-stubs.o [1]
+halRadioPowerUpHandler  0x0000c97d     0x2  Code  Gb  connect-callback-stubs.o [1]
+halReserved07Isr        0x0000d469          Code  Wk  isr-stubs.o [5]
+halReserved08Isr        0x0000d469          Code  Wk  isr-stubs.o [5]
+halReserved09Isr        0x0000d469          Code  Wk  isr-stubs.o [5]
+halReserved10Isr        0x0000d469          Code  Wk  isr-stubs.o [5]
+halReserved13Isr        0x0000d469          Code  Wk  isr-stubs.o [5]
+halReserved37Isr        0x0000d469          Code  Wk  isr-stubs.o [5]
+halResetInfo            0x20000000    0x9c  Data  Gb  cstartup-common.o [5]
+halSimEepromCallback    0x00001331     0x2  Code  Gb  connect-callbacks.o [1]
+halSimEepromErasePage   0x00000f21    0x72  Code  Gb  sim-eeprom-internal.o [23]
+halSleep                0x00005e85     0x2  Code  Gb  sleep-efm32.o [5]
+halSleepForMilliseconds
+                        0x00005035     0x8  Code  Gb  system-timer.o [18]
+halStackInitTokens      0x00005e99    0x42  Code  Gb  token.o [5]
+halStackModifyCStackSize
+                        0x000016b9    0x98  Code  Gb  micro-internal.o [18]
+halStackOrderInt16uSymbolDelayA
+                        0x0000b1af    0x7a  Code  Gb  symbol-timer.o [5]
+halStackRadioPowerDownBoard
+                        0x0000b0cd     0x4  Code  Gb  micro.o [5]
+halStackRadioPowerUpBoard
+                        0x0000b0d1     0x4  Code  Gb  micro.o [5]
+halStackSymbolDelayAIsr
+                        0x000055e7    0x1a  Code  Gb  upper-mac.o [24]
+halSvCallIsr            0x0000d469          Code  Wk  isr-stubs.o [5]
+halSystemXtalHz         0x0000df4c     0x4  Data  Gb  micro-common-internal.o [18]
+halUsageFaultIsr        0x0000d3ed          Code  Gb  faults.o [5]
+headIndex               0x20007f0a     0x1  Data  Lc  mac-queue.o [19]
+heapMemory              0x20000000   0xfa0  Data  Gb  ember-configuration.o [13]
+heapPointer             0x20007d20     0x4  Data  Lc  buffer-management.o [24]
+hexToInt                0x0000c9c5    0x1e  Code  Lc  command-interpreter.o [2]
+inTimerIRQ              0x200079c0     0x1  Data  Lc  rtcdriver.o [5]
+indirectDequeue         0x00006aff    0x2c  Code  Lc  indirect-queue.o [20]
+indirectPacketQueue     0x20007654    0x50  Data  Lc  ember-configuration.o [13]
+indirectQueueLookUp     0x00006ac1    0x3e  Code  Lc  indirect-queue.o [20]
+indirectQueueSize       0x00006aad    0x14  Code  Lc  indirect-queue.o [20]
+indirectQueueTimeouts   0x200076a4    0x10  Data  Lc  ember-configuration.o [13]
+initAndRunMainLoop      0x000096d1    0x4c  Code  Gb  main.o [8]
+initRTC                 0x00005c5c     0x4  Data  Lc  rtcdriver.o [5]
+initialCalendar         0x20007ac8    0x2c  Data  Lc  connect-callbacks.o [1]
+initializeNonce         0x0000bf8f    0x5e  Code  Lc  security-aes.o [15]
+initialized             0x200078f0     0x1  Data  Lc  dmadrv.o [5]
+intActiveBits           0x0000bad0    0x9c  Data  Lc  diagnostic.o [4]
+internalSleepForMilliseconds
+                        0x00004feb    0x16  Code  Lc  system-timer.o [18]
+isHeapPointer           0x00005fc9     0xc  Code  Lc  buffer-management.o [24]
+isReadyProbeFunction    0x20007df4     0x4  Data  Lc  sipro2.o [21]
+joinData                0x20007c1c    0x14  Data  Lc  association.o [17]
+joinFailed              0x00009419    0x28  Code  Lc  association.o [17]
+joinNetworkQuietly      0x000093c9    0x50  Code  Lc  association.o [17]
+lastPollMs              0x200076f0     0x4  Data  Lc  poll.o [10]
+lastStart               0x200079c4     0x4  Data  Lc  rtcdriver.o [5]
+lastTxSfdTime           0x20007b40     0x4  Data  Gb  phy.o [21]
+lastTxStartedTimeMs     0x20007188     0x4  Data  Lc  phy.o [21]
+left                    0x20007ef1     0x1  Data  Lc  sim-eeprom-internal.o [23]
+lfClkGet                0x00001d0d    0x88  Code  Lc  em_cmu.o [5]
+libraryInfo             0x0000a5ac    0x10  Data  Lc  ember-library.o [24]
+lmos                    0x00003b00    0x18  Data  Lc  xttotm.o [16]
+longPollIntervalS       0x2000719c     0x2  Data  Lc  poll.o [10]
+macOutgoingQueue        0x20007604    0x50  Data  Lc  ember-configuration.o [13]
+macRetries              0x20007d33     0x1  Data  Lc  lower-mac-pro2.o [21]
+macSendFrame            0x00005601    0xa8  Code  Lc  upper-mac.o [24]
+main                    0x0000971d    0x82  Code  Gb  main.o [8]
+malloc                  0x00004c29    0xac  Code  Gb  xxmemxmalloc.o [16]
+mapChannelToBand        0x00007337    0x4a  Code  Lc  phy.o [21]
+mapMacPgChanToPhyChanBand
+                        0x00007afd     0xe  Code  Lc  phy.o [21]
+markers                 0x000087f4    0x20  Data  Lc  buffers-bookkeeping.o [24]
+memchr                  0x00004bcd          Code  Gb  memchr.o [22]
+minTicks                0x20007a00     0x4  Data  Lc  ustimer.o [5]
+mos                     0x00003b18    0x18  Data  Lc  xttotm.o [16]
+moveToNewLocation       0x0000613d    0x46  Code  Lc  buffer-management.o [24]
+mpuConfig               0x200070f8    0x50  Data  Lc  mpu.o [5]
+nameStrings             0x0000bb6c    0xc0  Data  Lc  diagnostic.o [4]
+ndigs                   0x00004600    0x28  Data  Lc  xstoul.o [16]
+newShortId              0x200071a6     0x2  Data  Lc  parent-support.o [20]
+nextBuffer              0x0000600b    0x26  Code  Lc  buffer-management.o [24]
+noteUse                 0x00006031    0x80  Code  Lc  buffer-management.o [24]
+nullEui                 0x0000aa0c     0x8  Data  Lc  mfg-token.o [5]
+numberBackoffs          0x20007d31     0x1  Data  Lc  lower-mac-pro2.o [21]
+originalChannel         0x20007dd0     0x1  Data  Lc  scan.o [17]
+originalPanId           0x20007ddc     0x2  Data  Lc  scan.o [17]
+outgoingFrameCounter    0x20007de4     0x4  Data  Lc  security-common.o [24]
+overflow_interval       0x20007a88     0x4  Data  Lc  clock.o [1]
+overflow_interval_r     0x20007a8c     0x4  Data  Lc  clock.o [1]
+peerFrameCountersList   0x20007de0     0x2  Data  Lc  security-common.o [24]
+pendingTasksBitmask     0x20007b05     0x1  Data  Lc  upper-mac.o [24]
+phy2ChEvents            0x20007180     0x1  Data  Lc  phy.o [21]
+phy2Channel             0x20007182     0x1  Data  Lc  phy.o [21]
+phy2L1Events            0x2000717c     0x1  Data  Lc  phy.o [21]
+phy2Listening           0x20007b28     0x1  Data  Lc  phy.o [21]
+phy2MoEvents            0x2000717f     0x1  Data  Lc  phy.o [21]
+phy2PhEvents            0x2000717e     0x1  Data  Lc  phy.o [21]
+phy2PtiGpio             0x200071ae     0x1  Data  Gb  micro.o [5]
+phy2PtiLog              0x20007186     0x2  Data  Lc  phy.o [21]
+phy2RxCrcEnabled        0x2000717a     0x1  Data  Lc  phy.o [21]
+phy2SfdRecvNotificationEnabled
+                        0x20007f06     0x1  Data  Lc  phy.o [21]
+phy2TxPA                0x20007b48     0x4  Data  Lc  phy.o [21]
+phyToMacQueue           0x20007d0e     0x2  Data  Lc  buffer-management.o [24]
+powers10                0x00002d20    0x24  Data  Lc  ember-printf.o [11]
+previousCharacter       0x20007efe     0x1  Data  Lc  command-interpreter.o [2]
+printCommandUsage       0x0000cdc3    0x9e  Code  Lc  command-interpreter.o [2]
+printVarArg             0x000030c1    0x26  Code  Lc  debug-print.o [3]
+pro2ChEvents            0x20007181     0x1  Data  Lc  phy.o [21]
+pro2CleanupTxState      0x0000761f    0x30  Code  Lc  phy.o [21]
+pro2DieInfo             0x20007bec     0xc  Data  Lc  phy.o [21]
+pro2ForceCalibration    0x20007b29     0x1  Data  Lc  phy.o [21]
+pro2FuncInfo            0x20007b1c     0xc  Data  Lc  phy.o [21]
+pro2GetAckEvents        0x0000709d    0x32  Code  Lc  phy.o [21]
+pro2GetFwRev            0x00007137    0x16  Code  Gb  phy.o [21]
+pro2GetInfo             0x000070d5    0x5a  Code  Lc  phy.o [21]
+pro2GetOtpId            0x00007157     0x6  Code  Gb  phy.o [21]
+pro2GetPartNum          0x0000714d     0xa  Code  Gb  phy.o [21]
+pro2GpioCfgPowerUp      0x0000d810     0xc  Data  Gb  micro.o [5]
+pro2GpioConfig          0x00007215    0x4c  Code  Gb  phy.o [21]
+pro2IdleRadio           0x0000731f    0x16  Code  Lc  phy.o [21]
+pro2Isr                 0x00007893    0xa8  Code  Lc  phy.o [21]
+pro2L1Events            0x2000717d     0x1  Data  Lc  phy.o [21]
+pro2MoEvents            0x20007b2f     0x1  Data  Lc  phy.o [21]
+pro2OverridePaSelection
+                        0x00007381   0x12c  Code  Lc  phy.o [21]
+pro2PartInfo            0x20007b10     0xc  Data  Lc  phy.o [21]
+pro2PhDisabled          0x20007f08     0x1  Data  Lc  phy.o [21]
+pro2PhEvents            0x20007b2e     0x1  Data  Lc  phy.o [21]
+pro2Poke                0x00006fcd    0x26  Code  Gb  phy.o [21]
+pro2PowerUp             0x00007945   0x15c  Code  Lc  phy.o [21]
+pro2PoweredUp           0x20007b2b     0x1  Data  Lc  phy.o [21]
+pro2PtiGpio             0x20007b30     0x1  Data  Lc  phy.o [21]
+pro2PtiLog              0x20007b38     0x2  Data  Lc  phy.o [21]
+pro2RadioBootMode       0x20007174     0x1  Data  Lc  phy.o [21]
+pro2ReadOneProperty     0x00006ff9    0x26  Code  Gb  phy.o [21]
+pro2ResetEvents         0x000072b3    0x28  Code  Lc  phy.o [21]
+pro2RestartRadio        0x0000764f    0x3e  Code  Lc  phy.o [21]
+pro2RxRssi              0x20007f07     0x1  Data  Lc  phy.o [21]
+pro2RxTxFifoInfo        0x00007269    0x48  Code  Lc  phy.o [21]
+pro2SetPhEnable         0x0000756f    0x38  Code  Lc  phy.o [21]
+pro2SetRadioProperties  0x000072db    0x1e  Code  Lc  phy.o [21]
+pro2SetRadioRamPatch    0x000072f9    0x1e  Code  Lc  phy.o [21]
+pro2SpiClockMHz         0x0000d80c     0x1  Data  Gb  micro.o [5]
+pro2SpiPort             0x200070f4     0x4  Data  Gb  micro.o [5]
+pro2StartEd             0x000075a7    0x26  Code  Lc  phy.o [21]
+pro2StartRx             0x000075d5    0x30  Code  Lc  phy.o [21]
+pro2TxCrcEnabled        0x2000717b     0x1  Data  Lc  phy.o [21]
+pro2TxPower             0x20007177     0x1  Data  Lc  phy.o [21]
+pro2UpdateEvents        0x00007163    0xa8  Code  Lc  phy.o [21]
+pro2WakeUp              0x0000802b    0x78  Code  Lc  phy.o [21]
+pro2WriteNProperties    0x00007025    0x3c  Code  Lc  phy.o [21]
+pro2WriteOneProperty    0x00007071    0x22  Code  Gb  phy.o [21]
+processPhEvents         0x000077dd    0xb6  Code  Lc  phy.o [21]
+processRxComplete       0x000076b1   0x12c  Code  Lc  phy.o [21]
+ptrCache                0x200076b4    0x30  Data  Gb  sim-eeprom.o [12]
+ptrCacheLoc             0x00000605    0x22  Code  Lc  sim-eeprom-internal.o [23]
+pumpRx                  0x000027ad    0x3c  Code  Gb  com.o [5]
+radioConfigArray        0x0000d62c   0x154  Data  Lc  phy-config-connect.o [9]
+radioCurrentPowerStatus
+                        0x20007178     0x1  Data  Gb  phy.o [21]
+radioIdleMode           0x200071b0     0x1  Data  Lc  upper-mac.o [24]
+radioIdlePowerState     0x20007179     0x1  Data  Lc  phy.o [21]
+radioInternalConfigArray
+                        0x00007520    0x48  Data  Lc  phy.o [21]
+radioRamPatchImage446xRom5Pro2
+                        0x00008174   0x204  Data  Lc  phy.o [21]
+radioRamPatchImage446xRom6Pro2
+                        0x00008378   0x40c  Data  Lc  phy.o [21]
+radioTransmitConfig     0x20007168     0x8  Data  Gb  upper-mac.o [24]
+readCounterValue        0x00000e75    0x34  Code  Lc  sim-eeprom-internal.o [23]
+readInt32u              0x0000d0cd    0x16  Code  Lc  xxtea.o [26]
+readTokenData           0x00000583    0x42  Code  Lc  sim-eeprom-internal.o [23]
+ready                   0x20007df0     0x1  Data  Lc  sipro2.o [21]
+regSync                 0x00001b7f    0x18  Code  Lc  em_burtc.o [5]
+reloadUartBuffer        0x0000281b    0x4a  Code  Lc  com.o [5]
+removeEntry             0x00009bd3    0x46  Code  Lc  child-table.o [20]
+removePacketFromIndirectQueue
+                        0x00006b2b    0xac  Code  Lc  indirect-queue.o [20]
+rescheduleRtc           0x00005b97    0x76  Code  Lc  rtcdriver.o [5]
+resetCauseMasks         0x00001a78    0x80  Data  Lc  em_rmu.o [5]
+resetForNextFrame       0x0000768d    0x24  Code  Lc  phy.o [21]
+resetcause              0x20007af4     0x4  Data  Lc  connect-callbacks.o [1]
+restoreParams           0x0000a6c3    0x28  Code  Lc  scan.o [17]
+routingTable            0x20007c3c    0x80  Data  Lc  coordinator-support.o [20]
+routingTableGetUnusedEntry
+                        0x00006f1d    0x18  Code  Lc  coordinator-support.o [20]
+routingTableLookUp      0x00006ee7    0x36  Code  Lc  coordinator-support.o [20]
+routingTableSetOrAugmentEndDeviceList
+                        0x00006f35    0x8e  Code  Lc  coordinator-support.o [20]
+rtcOverflowCounter      0x20007a84     0x4  Data  Lc  clock.o [1]
+rtcRunning              0x200079c1     0x1  Data  Lc  rtcdriver.o [5]
+rtcStartTime            0x20007a80     0x4  Data  Lc  clock.o [1]
+rtcdrvIsInitialized     0x200079c2     0x1  Data  Lc  rtcdriver.o [5]
+rtosIdleHandler         0x00004ed9     0x4  Code  Wk  event-control.o [24]
+rxBufLen                0x20007b34     0x2  Data  Lc  phy.o [21]
+rxBuffer                0x20007b4c    0xa0  Data  Lc  phy.o [21]
+savedAssertInfo         0x200078e4     0x8  Data  Lc  cstartup-common.o [5]
+savedResetCause         0x200078ec     0x2  Data  Lc  cstartup-common.o [5]
+scanFlags               0x20007c30     0x1  Data  Lc  association.o [17]
+scheduleNextPoll        0x00004d05    0x12  Code  Lc  poll.o [10]
+seed0                   0x2000719e     0x2  Data  Gb  random.o [5]
+seed1                   0x200071a0     0x2  Data  Gb  random.o [5]
+sendNwkCommand          0x0000ac17    0x5e  Code  Lc  network-command.o [24]
+setChannel              0x20007b06     0x1  Data  Lc  upper-mac.o [24]
+shift                   0x0000989d    0x10  Code  Lc  random.o [5]
+shortPollIntervalQS     0x2000719a     0x1  Data  Lc  poll.o [10]
+shortPolling            0x200076e4     0x1  Data  Lc  poll.o [10]
+shutdownCallback        0x20007d44     0x4  Data  Gb  lower-mac-pro2.o [21]
+siPro2CmdRead           0x0000ada3    0x1c  Code  Lc  sipro2.o [21]
+siPro2GetFRR            0x0000ae5d    0x3e  Code  Gb  sipro2.o [21]
+siPro2GetResponse       0x0000af59    0x68  Code  Gb  sipro2.o [21]
+siPro2Init              0x0000adc9    0x7a  Code  Gb  sipro2.o [21]
+siPro2IntClearPend      0x0000ae4d    0x10  Code  Gb  sipro2.o [21]
+siPro2IntDisable        0x0000ae43     0x4  Code  Gb  sipro2.o [21]
+siPro2IntEnable         0x0000ae47     0x6  Code  Gb  sipro2.o [21]
+siPro2IsReady           0x0000ad89    0x1a  Code  Lc  sipro2.o [21]
+siPro2PowerUp           0x0000adbf     0xa  Code  Gb  sipro2.o [21]
+siPro2ReadRxFifo        0x0000ae9b     0x8  Code  Gb  sipro2.o [21]
+siPro2SendCommand       0x0000af0f    0x44  Code  Gb  sipro2.o [21]
+siPro2SendCommandGetResponse
+                        0x0000afdd    0x2c  Code  Gb  sipro2.o [21]
+siPro2WaitForReady      0x0000aec9    0x3e  Code  Gb  sipro2.o [21]
+siPro2WriteTxFifo       0x0000aea3    0x12  Code  Gb  sipro2.o [21]
+simEe2offset            0x20007af8     0x4  Data  Gb  sim-eeprom-internal.o [23]
+simEeErasePage          0x000005cd    0x16  Code  Lc  sim-eeprom-internal.o [23]
+simEeSetDataActiveSemaphore
+                        0x20007efd     0x1  Data  Gb  token.o [5]
+simulatedEepromStorage  0x0003e000  0x2000  Data  Gb  sim-eeprom.o [12]
+sizeCache               0x0000d600     0x8  Data  Gb  sim-eeprom.o [12]
+skipOverNotLive         0x00006183    0x16  Code  Lc  buffer-management.o [24]
+sleepBlockCnt           0x200079d8     0x4  Data  Lc  sleep.o [5]
+sleepCallback           0x200079dc     0x4  Data  Lc  sleep.o [5]
+sleepTimerInterruptOccurred
+                        0x20007afc     0x1  Data  Gb  system-timer.o [18]
+spiHandleData           0x20007e7c    0x58  Data  Lc  sipro2.o [21]
+spiXfer                 0x0000acdd    0xac  Code  Lc  sipro2.o [21]
+spidrvIsInitialized     0x20007efb     0x1  Data  Lc  spidrv.o [5]
+splitTrxBuf             0x20007df8    0x84  Data  Lc  sipro2.o [21]
+stackBeaconPayload      0x00009484    0x10  Data  Lc  association.o [17]
+startTimerNestingLevel  0x200079c8     0x4  Data  Lc  rtcdriver.o [5]
+strchr                  0x00004441          Code  Gb  strchr.o [22]
+stringToUnsignedInt     0x0000cd4f    0x74  Code  Lc  command-interpreter.o [2]
+strlen                  0x00004459          Code  Gb  strlen.o [22]
+switchBand              0x000074b1    0x6e  Code  Lc  phy.o [21]
+syncReg                 0x00001d95    0x12  Code  Lc  em_cmu.o [5]
+systemTimerId           0x20007b00     0x4  Data  Gb  system-timer.o [18]
+tailIndex               0x20007f09     0x1  Data  Lc  indirect-queue.o [20]
+tailIndex               0x20007f0b     0x1  Data  Lc  mac-queue.o [19]
+timeElapsed             0x200079f8     0x1  Data  Lc  ustimer.o [5]
+timer                   0x20007400    0xa0  Data  Lc  rtcdriver.o [5]
+tokenArraySize          0x0000d960     0x8  Data  Gb  token-def.o [5]
+tokenCreators           0x0000d940    0x10  Data  Gb  token-def.o [5]
+tokenDefaults           0x0000d99c    0x1c  Data  Gb  token-def.o [5]
+tokenIsCnt              0x0000d950     0x8  Data  Gb  token-def.o [5]
+tokenLength             0x0000c9e3     0xe  Code  Lc  command-interpreter.o [2]
+tokenPointer            0x0000c9f1    0x10  Code  Lc  command-interpreter.o [2]
+tokenSize               0x0000d958     0x8  Data  Gb  token-def.o [5]
+tokensActive            0x20007efc     0x1  Data  Gb  token.o [5]
+tracePhase              0x20007d0c     0x1  Data  Lc  buffer-management.o [24]
+txBufPending            0x20007b3c     0x4  Data  Lc  phy.o [21]
+txCompleteStatusPending
+                        0x200071b2     0x1  Data  Lc  lower-mac-pro2.o [21]
+txCompleted             0x00008cf5    0x34  Code  Lc  lower-mac-pro2.o [21]
+txPowerLimits           0x0000d780     0xc  Data  Lc  phy-config-connect.o [9]
+uartdrvHandle           0x200079e8    0x10  Data  Lc  uartdrv.o [5]
+uartdrvHandleIsInitialized
+                        0x200079e4     0x1  Data  Lc  uartdrv.o [5]
+uarthandle              0x200070e8     0xc  Data  Gb  com.o [5]
+uarthandledata          0x200077c8    0xd8  Data  Lc  com.o [5]
+uninitializedIsr        0x0000d3f5          Code  Gb  faults.o [5]
+unloadTxBuffer          0x00002865    0x4c  Code  Lc  com.o [5]
+updateBuffer            0x000027e9    0x32  Code  Gb  com.o [5]
+updateIndirectQueueEvent
+                        0x00006bd7    0x8c  Code  Lc  indirect-queue.o [20]
+userData                0x20007d24     0x4  Data  Lc  buffer-management.o [24]
+userDataCount           0x20007d12     0x2  Data  Lc  buffer-management.o [24]
+wakeUpCallback          0x200079e0     0x4  Data  Lc  sleep.o [5]
+wallClockOverflowCnt    0x200079cc     0x4  Data  Lc  rtcdriver.o [5]
+wallClockTimeBase       0x200079d0     0x4  Data  Lc  rtcdriver.o [5]
+write16                 0x00001469    0x4e  Code  Gb  flash.o [18]
+writeChildEntryToToken  0x00009b91    0x42  Code  Lc  child-table.o [20]
+writeInt32u             0x0000d0e3    0x10  Code  Lc  xxtea.o [26]
+writePageCounters       0x00000c33    0x74  Code  Lc  sim-eeprom-internal.o [23]
+writePeerFrameCounterEntry
+                        0x00009a01    0x20  Code  Lc  security-common.o [24]
+writeTokenBlockData     0x00000531    0x52  Code  Lc  sim-eeprom-internal.o [23]
+xxteaDecrypt            0x0000d20d    0xd8  Code  Gb  xxtea.o [26]
+xxteaEncrypt            0x0000d11d    0xf0  Code  Gb  xxtea.o [26]
+
+
+[1] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug
+[2] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\command-interpreter
+[3] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\debug-print
+[4] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\diagnostic\EZR32
+[5] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\hal\hal-ezr32
+[6] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\hal\hal-ezr32\EZR32_WG330
+[7] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\idle-sleep
+[8] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\main
+[9] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\phy-ezradio
+[10] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\poll
+[11] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\serial
+[12] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\sim-eeprom1
+[13] = C:\Users\Alex\SimplicityStudio\v3_workspace\timeSync\IAR ARM - Debug\stack\stack-common
+[14] = command line
+[15] = aes-security-library.a
+[16] = dl7M_tln.a
+[17] = form-and-join-library.a
+[18] = hal-library.a
+[19] = packet-queue-library.a
+[20] = parent-support-library.a
+[21] = phy-pro2-brd4502c-library.a
+[22] = rt7M_tl.a
+[23] = sim-eeprom1-library.a
+[24] = stack-common-library.a
+[25] = stack-counters-library.a
+[26] = xxtea-security-library.a
+
+  53 818 bytes of readonly  code memory
+     468 bytes of readwrite code memory
+   3 995 bytes of readonly  data memory
+  18 603 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

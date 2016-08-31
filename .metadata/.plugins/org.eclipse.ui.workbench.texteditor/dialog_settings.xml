@@ -13,10 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="txOp" key="selection"/>
+		<item value="Tick" key="selection"/>
 		<list key="findhistory">
-			<item value="txop"/>
-			<item value="initsundial"/>
+			<item value="tick"/>
+			<item value="delay"/>
+			<item value="bsp"/>
+			<item value="crc"/>
+			<item value="cs"/>
+			<item value="autocs"/>
+			<item value="chip"/>
+			<item value="heart"/>
 		</list>
 		<list key="replacehistory">
 		</list>

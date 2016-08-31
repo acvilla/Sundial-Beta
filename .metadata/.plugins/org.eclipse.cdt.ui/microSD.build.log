@@ -1,0 +1,6 @@
+21:00:26 **** Incremental Build of configuration IAR ARM - Debug for project microSD ****
+make -j4 all 
+make: Nothing to be done for `all'.
+
+21:00:31 Build Finished (took 5s.386ms)
+

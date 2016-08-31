@@ -1,3 +1,5 @@
 com.silabs.ide.ui.ManageKitsPreferencePage/sortColumn=name
 com.silabs.ide.ui.ManageKitsPreferencePage/sortDirection=1
+com.silabs.ide.ui.ManageSDKsPreferencePage/sortColumn=name
+com.silabs.ide.ui.ManageSDKsPreferencePage/sortDirection=1
 eclipse.preferences.version=1

@@ -1,0 +1,75 @@
+#ISD afv6
+# ISD version: 1.0.0.201606231656-435
+
+# Application configuration
+stackId: srw
+stackRoot: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect
+appId: connect
+architecture: ezr32
+deviceName: connect
+generationDirectory: PATH(ISC_RELATIVE):.
+
+# Devices
+
+# Plugin configuration
+appPlugin: command-interpreter=false
+appPlugin: debug-print=false
+appPlugin: diagnostic=false
+appPlugin: diagnostic-stub=false
+appPlugin: hal-ezr32=false
+appPlugin: heartbeat=false
+appPlugin: idle-sleep=false
+appPlugin: mailbox-client=false
+appPlugin: mailbox-server=false
+appPlugin: main=false
+appPlugin: phy-ezradio=false
+appPlugin: poll=false
+appPlugin: serial=false
+appPlugin: sim-eeprom1=false
+appPlugin: stack-aes-security=false
+appPlugin: stack-aes-security-stub=false
+appPlugin: stack-common=false
+appPlugin: stack-counters=false
+appPlugin: stack-counters-stub=false
+appPlugin: stack-form-and-join=false
+appPlugin: stack-mac-queue=false
+appPlugin: stack-mac-queue-stub=false
+appPlugin: stack-parent-support=false
+appPlugin: stack-parent-support-stub=false
+appPlugin: stack-xxtea-security=false
+appPlugin: stack-xxtea-security-stub=false
+appPlugin: usb-cdc=false
+appPlugin: usb-common=false
+appPlugin: usb-hidkbd=false
+appPlugin: wstk-sensors=false
+
+# Setup configurations
+{setupId:additionalFiles
+}
+{setupId:boardHeader
+}
+{setupId:bookkeeping
+}
+{setupId:callbackConfiguration
+}
+{setupId:commandLineConfiguration
+on
+}
+{setupId:connectStackConfig
+Radio board: BRD4502
+}
+{setupId:debugConfiguration
+on
+area name off
+appSerial=1
+}
+{setupId:eventConfiguration
+}
+{setupId:macros
+}
+{setupId:phyOptions
+}
+{setupId:token
+}
+
+# Plugin options

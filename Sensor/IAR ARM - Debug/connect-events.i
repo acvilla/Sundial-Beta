@@ -17342,7 +17342,7 @@ void adcHandler(void);
 extern EmberEventControl adcEventControl;
 
 const EmberEventData emAppEvents[] = {
-  //{&emberAfPluginHeartbeatEventControl, emberAfPluginHeartbeatEventHandler},
+  {&emberAfPluginHeartbeatEventControl, emberAfPluginHeartbeatEventHandler},
   {&emberAfPluginPollEventControl, emberAfPluginPollEventHandler},
   {&adcEventControl, adcHandler},
   {0, 0}

@@ -31,6 +31,7 @@
 #define SENSOR_SINK_TX_POWER                 10
 #define SENSOR_SINK_CHANNEL                  1
 
+
 #define SENSOR_SINK_COMMAND_ID_OFFSET        0
 #define SENSOR_SINK_EUI64_OFFSET             1
 #define SENSOR_SINK_NODE_ID_OFFSET           9
@@ -44,8 +45,17 @@
                                      0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA,       \
                                      0xAA, 0xAA, 0xAA, 0xAA}
 
+#define GAIN                         20                         //20V/V gain for MAX4173T
+#define SHUNT_RESISTANCE             0.1                        //Shunt Resistance is 0.1 Ohms
+#define CURRENT_CALIBRATION          1/(GAIN*SHUNT_RESISTANCE)  //I = V/R where V = Vadc/Gain
+#define VOLTAGE_CALIBRATION          5.7                        //Voltage divider 1k/(1k + 4.7k) = 1/5.7
+#define ADC_REFERENCE_VOLTAGE        2500                       //Reference for ADC is 2.5V or 2500mV
+#define ADC_MEASUREMENT_PERIOD       30 * MILLISECOND_TICKS_PER_MINUTE
+
+
 /*
- * Below are all the pins used for current/voltage measurements and load switching
+ * Below are all the pins used for current/voltage measurements, SD card communication,
+ * network detect indication and load switching
  */
 #define CURRENT_DATA_PIN	0	 //Current measurement input pin
 #define VOLTAGE_DATA_PIN	1	 //Voltage measurement input pin
@@ -54,11 +64,16 @@
 #define A2_PIN 		   4	//Current control pin 2
 #define VCTRL1_PIN 		    5
 #define VCTRL2_PIN 		    6
-#define RELAY_PIN 		    7
+
+#define RELAY_PIN 		    7    //Load Switching
+
+#define NETWORK_DETECT_LED  7    //Network Detect
 
 static EmberKeyData securityKey = SENSOR_SINK_SECURITY_KEY;
-uint8_t application_channel =   1;
-EmberNetworkParameters parameters;
+
+uint8_t application_channel = 1;
+
+
 enum {
   SENSOR_SINK_COMMAND_ID_ADVERTISE_REQUEST = 0,
   SENSOR_SINK_COMMAND_ID_ADVERTISE         = 1,
@@ -69,12 +84,12 @@ typedef uint8_t SensorSinkCommandId;
  * Sundial_Port contains all the pins needed for the measurement and load switching in the application
  */
 GPIO_Port_TypeDef Sundial_Port = gpioPortD;
+GPIO_Port_TypeDef Led_Port = gpioPortF;
 
-ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
-ADC_InitSingle_TypeDef singleInit = ADC_INITSINGLE_DEFAULT;
 ADC_SingleInput_TypeDef currentChannel = adcSingleInpCh0;
 ADC_SingleInput_TypeDef voltageChannel = adcSingleInpCh1;
 EmberEventControl adcEventControl;
+
 
 void initSundialADC(void);
 void initSundialGPIO(void);
@@ -82,7 +97,7 @@ static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel);
 static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Value, unsigned int A2_Value);
 static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1);
 void takeMeasurementSet(uint16_t *power_meas);
-static uint16_t calculatePower(uint32_t current, uint32_t voltage);
+static inline uint16_t calculatePower(uint32_t current, uint32_t voltage);
 void adcHandler(void);
 static EmberStatus send(EmberNodeId nodeId,
                         SensorSinkCommandId commandId,
@@ -113,11 +128,15 @@ void adcHandler(void)
                         payload,
                         SENSOR_SINK_MAXIMUM_DATA_LENGTH);
     emberAfCorePrintln("Send Status: 0x%x", status);
-	emberEventControlSetDelayMS(adcEventControl, 15 * MILLISECOND_TICKS_PER_MINUTE); //15 minute delay
+	emberEventControlSetDelayMS(adcEventControl, ADC_MEASUREMENT_PERIOD); //One set of measurements every 30 minutes
 }
 
 void initSundialADC(void)
 {
+
+	  ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
+	  ADC_InitSingle_TypeDef singleInit = ADC_INITSINGLE_DEFAULT;
+
 	  /* Enable ADC clock */
 	  CMU_ClockEnable(cmuClock_ADC0, true);
 
@@ -149,7 +168,7 @@ void initSundialGPIO(void)
 	GPIO_PinModeSet(Sundial_Port, VCTRL1_PIN, gpioModePushPull, 0);		// PD5
 	GPIO_PinModeSet(Sundial_Port, VCTRL2_PIN, gpioModePushPull, 0);	    // PD6
 	GPIO_PinModeSet(Sundial_Port, RELAY_PIN, gpioModePushPull, 1);	    // PD7 - Relay Pin on by default
-
+	GPIO_PinModeSet(Led_Port, NETWORK_DETECT_LED, gpioModePushPull, 0);
 	// Disables LED0 to prevent interference with PF6
 	BSP_LedClear(0);
 
@@ -259,8 +278,6 @@ void takeMeasurementSet(uint16_t *power_meas)
 	emberAfCorePrintln("-------- Light2 --------");
 	current = takeCurrentMeasurement(0, 0, 1);  //RS2
 	power_meas[1] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[1]);
 
 	// usb 1 measurement
@@ -268,16 +285,12 @@ void takeMeasurementSet(uint16_t *power_meas)
 	current = takeCurrentMeasurement(0, 1, 0);  //RS3
 	voltage = takeVoltageMeasurement(1, 0);  // 1 0 = 5V
 	power_meas[2] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[2]);
 
 	// usb 2 measurement
 	emberAfCorePrintln("--------- USB2 ---------");
 	current = takeCurrentMeasurement(0, 1, 1);  //RS4
 	power_meas[3] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[3]);
 
 	// solar panel measurement
@@ -285,18 +298,19 @@ void takeMeasurementSet(uint16_t *power_meas)
 	current = takeCurrentMeasurement(1, 0, 0);  //RS5
 	voltage = takeVoltageMeasurement(1, 1);  // 1 1 = Solar
 	power_meas[4] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[4]);
 }
 
-static uint16_t calculatePower(uint32_t current, uint32_t voltage)
+static inline uint16_t calculatePower(uint32_t current, uint32_t voltage)
 {
 	/* Calculates the power consumed by the circuit in mW, given a current and voltage measurement.
 	 *
-	 * The voltage and current values are raw uint32_t directly from the ADC data register.
+	 * The voltage and current values are raw uint32_t directly from the ADC data register, they are normalized below.
 	 */
-    return (uint16_t) ((0.2 * ((voltage*current*2500) / 4096))/1000);
+	double normalized_voltage = (VOLTAGE_CALIBRATION * voltage * ADC_REFERENCE_VOLTAGE/4096)/1000;
+	double normalized_current = (CURRENT_CALIBRATION * current * ADC_REFERENCE_VOLTAGE/4096);
+
+	return (uint16_t) (normalized_voltage * normalized_current);               //Power in mW
 }
 
 // The Simulated EEPROM callback function, implemented by the
@@ -325,7 +339,7 @@ void halRadioPowerDownHandler(void) {
  * sleep.  Ver.: always
  */
 bool emberAfPluginIdleSleepOkToSleepCallback(uint32_t durationMs) {
- // your code here
+ return FALSE; // your code here
 }
 
 /** @brief Wake Up
@@ -347,7 +361,7 @@ void emberAfPluginIdleSleepWakeUpCallback(uint32_t durationMs) {
  *
  */
 bool emberAfPluginIdleSleepOkToIdleCallback(void) {
- return FALSE;// your code here
+	 return TRUE; // your code here
 }
 
 /** @brief Active
@@ -365,24 +379,30 @@ void emberAfPluginIdleSleepActiveCallback(void) {
  * perform any additional initialization required at system startup.
  */
 void emberAfMainInitCallback(void) {
-	    CMU_ClockEnable(cmuClock_HFPER, true);
-		USTIMER_Init();                                         //   Calibrate delay timer
-		initSundialADC();
-		initSundialGPIO();
-
-
-		MEMSET(&parameters, 0, sizeof(EmberNetworkParameters));
-		parameters.radioTxPower = SENSOR_SINK_TX_POWER;
-		parameters.radioChannel = SENSOR_SINK_CHANNEL; 			//   PANID will be set when beacon is received
 
 		EmberStatus status = emberNetworkInit();				//   Try to rejoin old network
+		EmberNetworkParameters parameters;
+		MEMSET(&parameters, 0, sizeof(EmberNetworkParameters));
+		parameters.radioTxPower = SENSOR_SINK_TX_POWER;
+		parameters.radioChannel = SENSOR_SINK_CHANNEL;
+		parameters.panId = 0x01ff;
+
+
+
 
 		if (status == EMBER_SUCCESS) {
 		// Successfully rejoined previous network, nothing needs to be done
-		} else {
+		}else {
+			status = emberJoinNetwork(EMBER_STAR_END_DEVICE, &parameters);
+			emberAfCorePrintln("Join Status: %d", status);
 			status = emberStartActiveScan(application_channel);
 			emberAfCorePrintln("Scan Result: %x", status);
 		}
+
+		CMU_ClockEnable(cmuClock_HFPER, true);
+		USTIMER_Init();                                         //   Calibrate delay timer
+		initSundialADC();
+		initSundialGPIO();
 
 }
 
@@ -395,7 +415,14 @@ void emberAfMainInitCallback(void) {
  * be called until execution resumes. Sleeping and idling will block.
  */
 void emberAfMainTickCallback(void) {
-	EmberStatus status = emberJoinNetwork(EMBER_STAR_END_DEVICE,&parameters);
+	 if (emberStackIsUp()){
+		 GPIO_PinOutSet(Led_Port, NETWORK_DETECT_LED);
+	 }
+     else {
+    	 GPIO_PinOutClear(Led_Port, NETWORK_DETECT_LED);
+
+     }
+
 }
 
 /** @brief Stack Status
@@ -441,7 +468,7 @@ static EmberStatus send(EmberNodeId nodeId,
 	 *
 	 */
 	uint8_t message[SENSOR_SINK_MAXIMUM_LENGTH];
-    EmberMessageLength messageLength;
+    EmberMessageLength messageLength = 0;
 	EmberMessageOptions txOptions = EMBER_OPTIONS_NONE;
   message[0] = commandId;										  //messageLength = 0 at beginning of commandId
   messageLength++;												  //messageLength = 1 at beginning of longId
@@ -523,9 +550,14 @@ void emberAfIncomingBeaconCallback(EmberPanId panId,
                                    EmberNodeId nodeId,
                                    uint8_t payloadLength,
                                    uint8_t *payload) {
- parameters.panId = panId;
- emberAfCorePrintln("Incoming Beacon Received: %d", panId);
- EmberStatus status = emberJoinNetwork(EMBER_STAR_END_DEVICE,&parameters);
+emberAfCorePrintln("Incoming Beacon Received: %d", panId);
+EmberNetworkParameters parameters;
+MEMSET(&parameters, 0, sizeof(EmberNetworkParameters));
+parameters.radioTxPower = SENSOR_SINK_TX_POWER;
+parameters.radioChannel = SENSOR_SINK_CHANNEL;
+parameters.panId = panId;
+EmberStatus status = emberJoinNetwork(EMBER_STAR_END_DEVICE, &parameters);
+emberAfCorePrintln("Join Status: %d", status);
 
 }
 

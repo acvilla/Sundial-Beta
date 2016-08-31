@@ -26,10 +26,15 @@
 #include "em_timer.h"
 #include "connect-bookkeeping.h"
 #include "connect-configuration.h"
+#include "connect-token.h"
 
-#define SENSOR_SINK_TX_POWER    10
-#define SENSOR_SINK_CHANNEL     1
-#define SENSOR_SINK_PAN_ID      0x01FF
+
+
+
+
+#define SENSOR_SINK_TX_POWER            10
+#define SENSOR_SINK_PAN_ID              0x01FF
+#define SENSOR_SINK_CHANNEL             1
 
 #define SENSOR_SINK_COMMAND_ID_OFFSET        0
 #define SENSOR_SINK_EUI64_OFFSET             1
@@ -46,18 +51,29 @@
                                      0xAA, 0xAA, 0xAA, 0xAA}
 #define MAXIMUM_ALLOWED_SENSORS              5
 
+#define GAIN                         20                         //20V/V gain for MAX4173T
+#define SHUNT_RESISTANCE             0.1                        //Shunt Resistance is 0.1 Ohms
+#define CURRENT_CALIBRATION          1/(GAIN*SHUNT_RESISTANCE)  //I = V/R where V = Vadc/Gain
+#define VOLTAGE_CALIBRATION          5.7                        //Voltage divider 10k/(10k + 47k) = 1/5.7
+#define ADC_REFERENCE_VOLTAGE        2500                       //Reference for ADC is 2.5V or 2500mV
+#define ADC_MEASUREMENT_PERIOD       30 * MILLISECOND_TICKS_PER_MINUTE
 
 /*
  * These are all the pins used for current/voltage measurements and load switching
  */
 #define CURRENT_DATA_PIN	0	 //Current measurement input pin
 #define VOLTAGE_DATA_PIN	1	 //Voltage measurement input pin
+
 #define A0_PIN 		2        //Current control pin 0
 #define A1_PIN 		3        //Current control pin 1
 #define A2_PIN 		4		 //Current control pin 2
-#define VCTRL1_PIN 		5
+
+#define VCTRL1_PIN 		5    //Voltage control pins
 #define VCTRL2_PIN 		6
-#define RELAY_PIN 		7
+
+#define RELAY_PIN 		7	//Pin used to turn on/off USB and Light Ports
+
+#define NETWORK_DETECT_LED  7    //Network Detect
 
 /*
  *************MESSAGING/DATA AGGREGATION GLOBAL VARIABLES******
@@ -84,21 +100,26 @@
 		uint16_t nodes_array_length = 0;
 		static Node_Power nodes_array[MAXIMUM_ALLOWED_SENSORS];
 
+		GPIO_Port_TypeDef Led_Port = gpioPortF;
+
 /*
  *************ADC-RELATED GLOBAL VARIABLES**********************
  */
 
 		GPIO_Port_TypeDef Sundial_Port = gpioPortD; //Measurements and load switching pins
-		ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
-		ADC_InitSingle_TypeDef singleInit = ADC_INITSINGLE_DEFAULT;
 		ADC_SingleInput_TypeDef currentChannel = adcSingleInpCh0;
 		ADC_SingleInput_TypeDef voltageChannel = adcSingleInpCh1;
 		uint16_t power_meas[5];
 		EmberEventControl adcEventControl;
 
-
-		uint8_t application_channel =  1;
 		static EmberKeyData securityKey = SENSOR_SINK_SECURITY_KEY;
+/*
+ ***************SYSTEM TIME GLOBAL VARIABLES************************
+ */
+
+		uint32_t timeAtPowerUp;
+		//tokTypeClock wallclock;
+
 
 /*
  ***************USER DEFINED PROTOTYPES************************
@@ -107,49 +128,65 @@
 void adcHandler(void);
 void initSundialADC(void);
 void initSundialGPIO(void);
+//void initSundialClock(void);
 static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel);
 static uint32_t takeCurrentMeasurement(unsigned int A0_Value, unsigned int A1_Value, unsigned int A2_Value);
 static uint32_t takeVoltageMeasurement(uint8_t vctrl2, uint8_t vctrl1);
 void takeMeasurementSet(uint16_t *power_meas);
-static uint16_t calculatePower(uint32_t current, uint32_t voltage);
+static inline uint16_t calculatePower(uint32_t current, uint32_t voltage);
 static void storeLowHighInt16u(uint8_t *contents, uint16_t value);
 uint16_t nodePush(Node_Power* array, uint16_t nodes_array_length);
 void updateNodesArray(EmberEUI64 *tempEUI64, uint16_t *tempData);
 void printCollectedData(void);
+
+//void saveSystemTime(void);
 /*
  **************USER DEFINED FUNCTIONS**************************
  */
 void printCollectedData(void){
-	int i = 0;
-  	emberAfCorePrintln("------------------------------NODE %d---------------------------------------", i);
-  	emberAfCorePrintln("longId: %d", nodes_array[i].longId);
-  	emberAfCorePrintln("");
-  	uint32_t SECONDS = ((nodes_array[i].Sample_Time[nodes_array[i].SampleIndex])/1000) % 86400;
-  	uint32_t DAYS = (((nodes_array[i].Sample_Time[nodes_array[i].SampleIndex])/1000)/86400);
-  	emberAfCorePrintln("TIME:\n %d - DD\n %d - SEC", DAYS, SECONDS);
+	/*
+	 * This prints out the most recent data collected from EVERY node in the network
+	 */
+	for(int i = 0; i < nodes_array_length; i++){
+		emberAfCorePrintln("------------------------------NODE %d---------------------------------------", i);
+		emberAfCorePrintln("longId: %d", nodes_array[i].longId);
+		emberAfCorePrintln("");
+		uint32_t SECONDS = ((nodes_array[i].Sample_Time[nodes_array[i].SampleIndex])/1000) % 86400;
+		uint32_t DAYS = (((nodes_array[i].Sample_Time[nodes_array[i].SampleIndex])/1000)/86400);
 
+		/*
+		 * Print Statements
+		 */
 
+		//Time - Days + Seconds
+		emberAfCorePrintln("TIME:\n %d - DD\n %d - SEC", DAYS, SECONDS);
 
-  	        //here it should check if power is low and should write nodes_array to the SD card
-  	        //the function that writes to the sd card using fatfs should add strings and formatting that specify what each value means
+		//Light Power
+		emberAfCorePrintln("Node %d Light_1_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].Light_1_Power[nodes_array[i].SampleIndex]);
+		emberAfCorePrintln("Node %d Light_2_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].Light_2_Power[nodes_array[i].SampleIndex]);
 
-  	  //Print Statements
-  	  emberAfCorePrintln("Node %d Light_1_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].Light_1_Power[nodes_array[i].SampleIndex]);
-      emberAfCorePrintln("Node %d Light_2_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].Light_2_Power[nodes_array[i].SampleIndex]);
+		//USB Power
+		emberAfCorePrintln("Node %d USB_1_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].USB_1_Power[nodes_array[i].SampleIndex]);
+		emberAfCorePrintln("Node %d USB_2_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].USB_2_Power[nodes_array[i].SampleIndex]);
 
-      emberAfCorePrintln("Node %d USB_1_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].USB_1_Power[nodes_array[i].SampleIndex]);
- 	  emberAfCorePrintln("Node %d USB_2_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].USB_2_Power[nodes_array[i].SampleIndex]);
-
- 	  emberAfCorePrintln("Node %d Solar_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].Solar_Power[nodes_array[i].SampleIndex]);
+		//Solar Power
+		emberAfCorePrintln("Node %d Solar_Power[%d]: %d mW", i, nodes_array[i].SampleIndex, nodes_array[i].Solar_Power[nodes_array[i].SampleIndex]);
+	}
 }
 void adcHandler(void)
 {
 	takeMeasurementSet(power_meas);
-	emberEventControlSetDelayMS(adcEventControl, 15 * MILLISECOND_TICKS_PER_MINUTE); //15 minute delay
+	EmberEUI64 longId;
+	MEMCOPY(longId, emberGetEui64(), EUI64_SIZE);
+	updateNodesArray(&longId, power_meas);				//Update nodes array with Sink's measurements
+	emberEventControlSetDelayMS(adcEventControl, ADC_MEASUREMENT_PERIOD); //One set of measurements every 30 minutes
 }
 
 void initSundialADC(void)
 {
+	  ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
+      ADC_InitSingle_TypeDef singleInit = ADC_INITSINGLE_DEFAULT;
+
 	  /* Enable ADC clock */
 	  CMU_ClockEnable(cmuClock_ADC0, true);
 
@@ -200,7 +237,19 @@ void initSundialGPIO(void)
 	GPIO_PinModeSet(Sundial_Port, CURRENT_DATA_PIN, gpioModeInput, 0);		// PD0 - Current Measurements
 	GPIO_PinModeSet(Sundial_Port, VOLTAGE_DATA_PIN, gpioModeInput, 0);		// PD1 - Voltage Measurements
 }
+/*
+void initSundialClock(void)
+{
+	  halCommonGetToken(&wallclock, TOKEN_CLOCK);
+	  timeAtPowerUp = wallclock;
+	  saveSystemTime();                              //saves the most recent absolute time to flash
+}
 
+void saveSystemTime(void){
+	wallclock = halCommonGetInt32uMillisecondTick() + timeAtPowerUp;   //update wallclock in flash
+	halCommonSetToken(TOKEN_CLOCK, &wallclock);
+}
+*/
 static uint32_t adc0TakeMeasurement(ADC_SingleInput_TypeDef channel)
 {
 
@@ -290,16 +339,12 @@ void takeMeasurementSet(uint16_t *power_meas)
 	current = takeCurrentMeasurement(0, 0, 0);  //RS1
 	voltage = takeVoltageMeasurement(0, 1);  // 0 1 = 12V
 	power_meas[0] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[0]);
 
 	// lights 2 measurement
 	emberAfCorePrintln("-------- Light2 --------");
 	current = takeCurrentMeasurement(0, 0, 1);  //RS2
 	power_meas[1] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[1]);
 
 	// usb 1 measurement
@@ -307,16 +352,12 @@ void takeMeasurementSet(uint16_t *power_meas)
 	current = takeCurrentMeasurement(0, 1, 0);  //RS3
 	voltage = takeVoltageMeasurement(1, 0);  // 1 0 = 5V
 	power_meas[2] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[2]);
 
 	// usb 2 measurement
 	emberAfCorePrintln("--------- USB2 ---------");
 	current = takeCurrentMeasurement(0, 1, 1);  //RS4
 	power_meas[3] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[3]);
 
 	// solar panel measurement
@@ -324,8 +365,6 @@ void takeMeasurementSet(uint16_t *power_meas)
 	current = takeCurrentMeasurement(1, 0, 0);  //RS5
 	voltage = takeVoltageMeasurement(1, 1);  // 1 1 = Solar
 	power_meas[4] = calculatePower(current, voltage);
-	emberAfCorePrintln("C:\t%d", current);
-	emberAfCorePrintln("V:\t%d", voltage);
 	emberAfCorePrintln("P:\t%d", power_meas[4]);
 }
 
@@ -335,7 +374,10 @@ static uint16_t calculatePower(uint32_t current, uint32_t voltage)
 	 *
 	 * The voltage and current values are raw uint32_t directly from the ADC data register.
 	 */
-    return (uint16_t) ((0.2 * ((voltage*current*2500) / 4096))/1000);
+	double norm_voltage = (VOLTAGE_CALIBRATION * voltage * ADC_REFERENCE_VOLTAGE/4096)/1000;
+	double norm_current = (CURRENT_CALIBRATION * current * ADC_REFERENCE_VOLTAGE/4096);
+
+	return (uint16_t) (norm_voltage * norm_current);               //Power in mW
 }
 
 // The Simulated EEPROM callback function, implemented by the
@@ -376,7 +418,7 @@ void emberAfPluginIdleSleepWakeUpCallback(uint32_t durationMs) {
  *
  */
 bool emberAfPluginIdleSleepOkToIdleCallback(void) {
- return FALSE;// your code here
+ return TRUE;
 }
 
 /** @brief Active
@@ -515,33 +557,36 @@ void emberAfPluginMailboxServerMessageDeliveredCallback(EmberAfMailboxStatus sta
 	// your code here
 }
 
+
+
 /** @brief Main Init
  *
  * This function is called when the application starts and can be used to
  * perform any additional initialization required at system startup.
  */
 
-
 void emberAfMainInitCallback(void) {
-	  emberAfCorePrintln("\n%p>", EMBER_AF_DEVICE_NAME);
+
 	  CMU_ClockEnable(cmuClock_HFPER, true);
 	  USTIMER_Init();  //calibrate delay timer
+      //halStackInitTokens();
+
+      //initSundialClock();
       initSundialGPIO();
       initSundialADC();
+
 	  EmberNetworkParameters parameters;
 	  EmberStatus form_status;
+      MEMSET(&parameters, 0, sizeof(EmberNetworkParameters));
+      parameters.radioTxPower = SENSOR_SINK_TX_POWER;//             (1) Set Parameters only before form or join
+      parameters.panId = SENSOR_SINK_PAN_ID;
+      parameters.radioChannel = SENSOR_SINK_CHANNEL;
 
-	  MEMSET(&parameters, 0, sizeof(EmberNetworkParameters));
-	  parameters.radioTxPower = SENSOR_SINK_TX_POWER;//             (1) Set Parameters only before form or join
-	  parameters.radioChannel = SENSOR_SINK_CHANNEL;
-	  parameters.panId = SENSOR_SINK_PAN_ID;
-
-
-	  EmberStatus status = emberNetworkInit();//                    (2) Try to rejoin pre-existing network if possible
+      EmberStatus status = emberNetworkInit();//                    (2) Try to rejoin pre-existing network if possible
 
 	  	  if (status == EMBER_NOT_JOINED){
-			   form_status = emberFormNetwork(&parameters);//       (3) If emberNetworkInit fails then form a network on channel 1 using above parameters
-			   emberAfCorePrintln("Form 0x%x", form_status);
+	  				form_status = emberFormNetwork(&parameters);//       (3) If emberNetworkInit fails then form a network on channel 1 using above parameters
+	  			    emberAfCorePrintln("Form 0x%x", form_status);
 		 	 }
 	         emberPermitJoining(PERMIT_JOINING_FOREVER);
 	         emberEventControlSetActive(adcEventControl); //Take ADC measurement as soon as possible
@@ -556,7 +601,17 @@ void emberAfMainInitCallback(void) {
  * be called until execution resumes. Sleeping and idling will block.
  */
 void emberAfMainTickCallback(void) {
-
+	//saveSystemTime();   //Save the system time in each iteration of the application loop
+						//So that if power is lost the time is still kept with minimal error
+	 if (emberStackIsUp()){
+		 GPIO_PinOutSet(Led_Port, NETWORK_DETECT_LED);
+	 }
+    else {
+   	 GPIO_PinOutSet(Led_Port, NETWORK_DETECT_LED);
+   	 USTIMER_DelayIntSafe(1000000);
+   	 GPIO_PinOutClear(Led_Port, NETWORK_DETECT_LED);
+   	 USTIMER_DelayIntSafe(1000000);
+    }
 }
 
 static void storeLowHighInt16u(uint8_t *contents, uint16_t value)
@@ -592,6 +647,7 @@ void emberAfIncomingMessageCallback(EmberIncomingMessage *message) {
    * |_0_|_1_|_2_|_3_|_4_|_5_|_6_|_7_|_8_|_9_|_10|_11|_12->
    *
    */
+
 	emberAfCorePrintln("Message Received");
 	switch (message->payload[SENSOR_SINK_COMMAND_ID_OFFSET]) {
 		case SENSOR_SINK_COMMAND_ID_DATA:
@@ -723,7 +779,7 @@ void emberAfEnergyScanCompleteCallback(int8_t mean,
                                        int8_t min,
                                        int8_t max,
                                        uint16_t variance) {
- // your code here
+
 }
 
 /** @brief Incoming Beacon

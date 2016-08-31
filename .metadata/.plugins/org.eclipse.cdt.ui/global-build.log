@@ -1,92 +1,88 @@
-13:21:08 **** Incremental Build of configuration IAR ARM - Debug for project Sink ****
+16:06:19 **** Incremental Build of configuration IAR ARM - Debug for project Sensor ****
 make -j4 all 
 Building file: ../connect-callbacks.c
 Invoking: IAR C/C++ Compiler for ARM
-iccarm "../connect-callbacks.c" -o "connect-callbacks.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/Users/Alex/SimplicityStudio/v3_workspace/Sink -I"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\main_inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/usb/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/usb" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "connect-callbacks.d"
+iccarm "../connect-callbacks.c" -o "connect-callbacks.o" --no_path_in_file_macros --separate_cluster_for_initialized_variables --no_wrap_diagnostics -IC:/Users/Alex/SimplicityStudio/v3_workspace/Sensor -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/usb/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack/include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/usb" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/usb/usb-cdc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/stack" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/board" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/phy" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/CMSIS/Include" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/common/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/dmadrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/gpiointerrupt/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/radio/test/src" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/rtcdrv/test" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/config" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/sleep/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/spidrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/uartdrv/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emdrv/ustimer/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/emlib/inc" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/bsp" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/common/drivers" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/Device/SiliconLabs" -I"C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/kits/SLWSTK6200A_EZR32LG/config" -e --use_c++_inline --cpu Cortex-M3 --fpu None --debug --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c\DLib_Config_Normal.h" --endian little --cpu_mode thumb -Ohz '-DEZR32WG330F256R60=1' '-DPHY_PRO2=1' '-DEZR32WG330F256=1' '-DCORTEXM3_EZR32WG330F256=1' '-DNULL_BTL=1' '-DCORTEXM3=1' '-DCORTEXM3_EFM32_MICRO=1' '-DENABLE_EXT_DEVICE=1' '-DHAL_MICRO=1' '-DBOARD_EZR32=1' '-DEMBER_STACK_CONNECT=1' '-DCONNECT_PHY_OPTION=0' '-DBOARD_HEADER="brd4502c.h"' '-DPRO2_RADIO_BOOT_MODE=1' '-DDEBUG_LEVEL=0' '-DPLATFORM_HEADER="micro/cortexm3/compiler/iar.h"' '-DEMBER_ASSERT_SERIAL_PORT=2' '-DMAP_MAC_PG0_CHANNELS=0' '-DNUM_EP_USED=3' '-DNUM_APP_TIMERS=0' '-DAPPLICATION_TOKEN_HEADER="connect-token.h"' '-DCONFIGURATION_HEADER="connect-configuration.h"' --preprocess=c . --diag_suppress Pa050 --dependencies=m "connect-callbacks.d"
 
    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
    Copyright 1999-2016 IAR Systems AB.
-   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+   Time-limited license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
 
-    	emberAfCorePrintln("------------------------------NODE %d---------------------------------------", i);
-    	^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",124  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+      emberAfCorePrintln("Send Status: 0x%x", status);
+      ^
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",130  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
   	emberAfCorePrintln("-------- Light1 --------");
   	^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",289  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",269  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
-  	  emberAfCorePrintln("\n%p>", EMBER_AF_DEVICE_NAME);
-  	  ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",526  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+  			emberAfCorePrintln("Join Status: %d", status);
+  			^
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",397  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
-  	emberAfCorePrintln("Message Received");
-  	^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",595  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+  			emberAfCorePrintln("Data Received");
+  			^
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",451  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
-  	emberAfCorePrintln("Node %d has joined the network", nodeId);
-  	^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",702  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+  emberAfCorePrintln("Incoming Beacon Received: %d", panId);
+  ^
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",553  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
-  		static EmberKeyData securityKey = SENSOR_SINK_SECURITY_KEY;
-  		                    ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",101  Warning[Pe177]: variable "securityKey" was declared but never referenced
-
-  static void storeLowHighInt16u(uint8_t *contents, uint16_t value)
-              ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sink\connect-callbacks.c",562  Warning[Pe177]: function "storeLowHighInt16u" was declared but never referenced
+  static EmberKeyData securityKey = SENSOR_SINK_SECURITY_KEY;
+                      ^
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",72  Warning[Pe177]: variable "securityKey" was declared but never referenced
  
- 2 210 bytes of CODE  memory
-     1 byte  of CONST memory
- 7 106 bytes of DATA  memory
+ 1 584 bytes of CODE  memory
+    12 bytes of CONST memory
+    13 bytes of DATA  memory
 
 Errors: none
-Warnings: 7
+Warnings: 6
 Finished building: ../connect-callbacks.c
  
-Building target: Sink.out
+Building target: Sensor.out
 Invoking: IAR Linker for ARM
-ilinkarm  ./stack/stack-common/ember-configuration.o  ./sim-eeprom1/sim-eeprom.o  ./serial/ember-printf.o ./serial/serial.o  ./poll/poll.o  ./phy-ezradio/phy-config-connect.o  ./main/main.o  ./mailbox-server/mailbox-server.o  ./mailbox-client/mailbox-client.o  ./idle-sleep/idle-sleep.o  ./hal/hal-ezr32/EZR32_WG330/system_ezr32wg.o  ./hal/hal-ezr32/bsp_stk_leds.o ./hal/hal-ezr32/button.o ./hal/hal-ezr32/buzzer.o ./hal/hal-ezr32/com.o ./hal/hal-ezr32/crc.o ./hal/hal-ezr32/cstartup-common.o ./hal/hal-ezr32/dmactrl.o ./hal/hal-ezr32/dmadrv.o ./hal/hal-ezr32/em_acmp.o ./hal/hal-ezr32/em_adc.o ./hal/hal-ezr32/em_aes.o ./hal/hal-ezr32/em_assert.o ./hal/hal-ezr32/em_burtc.o ./hal/hal-ezr32/em_cmu.o ./hal/hal-ezr32/em_dac.o ./hal/hal-ezr32/em_dbg.o ./hal/hal-ezr32/em_dma.o ./hal/hal-ezr32/em_ebi.o ./hal/hal-ezr32/em_emu.o ./hal/hal-ezr32/em_gpio.o ./hal/hal-ezr32/em_i2c.o ./hal/hal-ezr32/em_idac.o ./hal/hal-ezr32/em_int.o ./hal/hal-ezr32/em_lesense.o ./hal/hal-ezr32/em_letimer.o ./hal/hal-ezr32/em_leuart.o ./hal/hal-ezr32/em_mpu.o ./hal/hal-ezr32/em_msc.o ./hal/hal-ezr32/em_opamp.o ./hal/hal-ezr32/em_pcnt.o ./hal/hal-ezr32/em_prs.o ./hal/hal-ezr32/em_rmu.o ./hal/hal-ezr32/em_rtc.o ./hal/hal-ezr32/em_system.o ./hal/hal-ezr32/em_timer.o ./hal/hal-ezr32/em_usart.o ./hal/hal-ezr32/em_vcmp.o ./hal/hal-ezr32/em_wdog.o ./hal/hal-ezr32/endian.o ./hal/hal-ezr32/ext-device.o ./hal/hal-ezr32/faults.o ./hal/hal-ezr32/gpiointerrupt.o ./hal/hal-ezr32/i2cspm.o ./hal/hal-ezr32/isr-stubs.o ./hal/hal-ezr32/led.o ./hal/hal-ezr32/mem-util.o ./hal/hal-ezr32/mfg-token.o ./hal/hal-ezr32/micro-common.o ./hal/hal-ezr32/micro.o ./hal/hal-ezr32/mpu.o ./hal/hal-ezr32/random.o ./hal/hal-ezr32/rtcdriver.o ./hal/hal-ezr32/si7013.o ./hal/hal-ezr32/sleep-efm32.o ./hal/hal-ezr32/sleep.o ./hal/hal-ezr32/spidrv.o ./hal/hal-ezr32/symbol-timer.o ./hal/hal-ezr32/token-def.o ./hal/hal-ezr32/token.o ./hal/hal-ezr32/uartdrv.o ./hal/hal-ezr32/udelay.o ./hal/hal-ezr32/ustimer.o  ./diagnostic/EZR32/assert-crash-handlers.o ./diagnostic/EZR32/diagnostic.o  ./debug-print/debug-print.o  ./command-interpreter/command-interpreter.o  ./connect-bookkeeping.o ./connect-callback-stubs.o ./connect-callbacks.o ./connect-cli.o ./connect-events.o   -o "Sink.out" --config "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/ezr32lg330f256/iar-cfg.icf" --config_def BTL_SIZE=0K --config_def NULL_BTL=1 --no_wrap_diagnostics "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/hal-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/parent-support-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/form-and-join-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/packet-queue-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/sim-eeprom1-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/stack-common-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/stack-counters-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/aes-security-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/phy-pro2-brd4502c-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/xxtea-security-library.a" --entry halEntryPoint --map "C:/Users/Alex/SimplicityStudio/v3_workspace/Sink/IAR ARM - Debug/Sink.map" --log_file "C:/Users/Alex/SimplicityStudio/v3_workspace/Sink/IAR ARM - Debug/Sink.log" --log initialization,modules,sections,veneers --remarks --diag_suppress=Lp012 --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull  
+ilinkarm  ./wstk-sensors/wstk-sensors.o  ./usb-common/descriptors.o ./usb-common/em_usbd.o ./usb-common/em_usbdch9.o ./usb-common/em_usbdep.o ./usb-common/em_usbdint.o ./usb-common/em_usbhal.o ./usb-common/em_usbtimer.o ./usb-common/usb-common.o  ./usb-cdc/usb-cdc-cli.o ./usb-cdc/usb-cdc.o  ./stack/stack-common/ember-configuration.o  ./sim-eeprom1/sim-eeprom.o  ./serial/ember-printf.o ./serial/serial.o  ./poll/poll.o  ./phy-ezradio/phy-config-connect.o  ./main/main.o  ./idle-sleep/idle-sleep.o  ./heartbeat/heartbeat.o  ./hal/hal-ezr32/EZR32_WG330/system_ezr32wg.o  ./hal/hal-ezr32/bsp_stk_leds.o ./hal/hal-ezr32/button.o ./hal/hal-ezr32/buzzer.o ./hal/hal-ezr32/com.o ./hal/hal-ezr32/crc.o ./hal/hal-ezr32/cstartup-common.o ./hal/hal-ezr32/dmactrl.o ./hal/hal-ezr32/dmadrv.o ./hal/hal-ezr32/em_acmp.o ./hal/hal-ezr32/em_adc.o ./hal/hal-ezr32/em_aes.o ./hal/hal-ezr32/em_assert.o ./hal/hal-ezr32/em_burtc.o ./hal/hal-ezr32/em_cmu.o ./hal/hal-ezr32/em_dac.o ./hal/hal-ezr32/em_dbg.o ./hal/hal-ezr32/em_dma.o ./hal/hal-ezr32/em_ebi.o ./hal/hal-ezr32/em_emu.o ./hal/hal-ezr32/em_gpio.o ./hal/hal-ezr32/em_i2c.o ./hal/hal-ezr32/em_idac.o ./hal/hal-ezr32/em_int.o ./hal/hal-ezr32/em_lesense.o ./hal/hal-ezr32/em_letimer.o ./hal/hal-ezr32/em_leuart.o ./hal/hal-ezr32/em_mpu.o ./hal/hal-ezr32/em_msc.o ./hal/hal-ezr32/em_opamp.o ./hal/hal-ezr32/em_pcnt.o ./hal/hal-ezr32/em_prs.o ./hal/hal-ezr32/em_rmu.o ./hal/hal-ezr32/em_rtc.o ./hal/hal-ezr32/em_system.o ./hal/hal-ezr32/em_timer.o ./hal/hal-ezr32/em_usart.o ./hal/hal-ezr32/em_vcmp.o ./hal/hal-ezr32/em_wdog.o ./hal/hal-ezr32/endian.o ./hal/hal-ezr32/ext-device.o ./hal/hal-ezr32/faults.o ./hal/hal-ezr32/gpiointerrupt.o ./hal/hal-ezr32/i2cspm.o ./hal/hal-ezr32/isr-stubs.o ./hal/hal-ezr32/led.o ./hal/hal-ezr32/mem-util.o ./hal/hal-ezr32/mfg-token.o ./hal/hal-ezr32/micro-common.o ./hal/hal-ezr32/micro.o ./hal/hal-ezr32/mpu.o ./hal/hal-ezr32/random.o ./hal/hal-ezr32/rtcdriver.o ./hal/hal-ezr32/si7013.o ./hal/hal-ezr32/sleep-efm32.o ./hal/hal-ezr32/sleep.o ./hal/hal-ezr32/spidrv.o ./hal/hal-ezr32/symbol-timer.o ./hal/hal-ezr32/token-def.o ./hal/hal-ezr32/token.o ./hal/hal-ezr32/uartdrv.o ./hal/hal-ezr32/udelay.o ./hal/hal-ezr32/ustimer.o  ./diagnostic/EZR32/assert-crash-handlers.o ./diagnostic/EZR32/diagnostic.o  ./debug-print/debug-print.o  ./command-interpreter/command-interpreter.o  ./connect-bookkeeping.o ./connect-callback-stubs.o ./connect-callbacks.o ./connect-cli.o ./connect-events.o   -o "Sensor.out" --config "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//submodules/base/hal/micro/cortexm3/efm32/ezr32lg330f256/iar-cfg.icf" --config_def BTL_SIZE=0K --config_def NULL_BTL=1 --no_wrap_diagnostics "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/hal-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/parent-support-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/form-and-join-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/packet-queue-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/sim-eeprom1-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/stack-common-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/stack-counters-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/aes-security-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/phy-pro2-brd4502c-library.a" "C:/SiliconLabs/SiliconLabsConnect/SiliconLabsConnect//connect/plugins/libraries/xxtea-security-library.a" --entry halEntryPoint --map "C:/Users/Alex/SimplicityStudio/v3_workspace/Sensor/IAR ARM - Debug/Sensor.map" --log_file "C:/Users/Alex/SimplicityStudio/v3_workspace/Sensor/IAR ARM - Debug/Sensor.log" --log initialization,modules,sections,veneers --remarks --diag_suppress=Lp012 --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull  
 
    IAR ELF Linker V7.70.1.11437/W32 for ARM
    Copyright 2007-2016 IAR Systems AB.
 
-  55 810 bytes of readonly  code memory
+  63 990 bytes of readonly  code memory
      468 bytes of readwrite code memory
-   3 971 bytes of readonly  data memory
-  25 937 bytes of readwrite data memory
+   4 555 bytes of readonly  data memory
+  20 072 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
 
-Link time:   0.53 (CPU)   0.54 (elapsed)
-ielftool --ihex --verbose "Sink.out" "Sink.hex"  
+Link time:   0.59 (CPU)   0.61 (elapsed)
+ielftool --ihex --verbose "Sensor.out" "Sensor.hex"  
 
    IAR ELF Tool V9.20.13.159 [BUILT at IAR]
    Copyright 2007-2016 IAR Systems AB.
 
-Loading Sink.out
-Saving ihex file to Sink.hex
-ielftool --ihex "Sink.out" "Sink.hex" 
+Loading Sensor.out
+Saving ihex file to Sensor.hex
+ielftool --ihex "Sensor.out" "Sensor.hex" 
 
    IAR ELF Tool V9.20.13.159 [BUILT at IAR]
    Copyright 2007-2016 IAR Systems AB.
 
-Loading Sink.out
-Saving ihex file to Sink.hex
-ielftool --bin "Sink.out" "Sink.bin" 
+Loading Sensor.out
+Saving ihex file to Sensor.hex
+ielftool --bin "Sensor.out" "Sensor.bin" 
 
    IAR ELF Tool V9.20.13.159 [BUILT at IAR]
    Copyright 2007-2016 IAR Systems AB.
 
-Loading Sink.out
-Saving binary file to Sink.bin
-ielftool --srec "Sink.out" "Sink.s37"
+Loading Sensor.out
+Saving binary file to Sensor.bin
+ielftool --srec "Sensor.out" "Sensor.s37"
 
    IAR ELF Tool V9.20.13.159 [BUILT at IAR]
    Copyright 2007-2016 IAR Systems AB.
 
-Loading Sink.out
-Saving srec file to Sink.s37
-Finished building target: Sink.out
+Loading Sensor.out
+Saving srec file to Sensor.s37
+Finished building target: Sensor.out
  

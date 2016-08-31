@@ -1,4 +1,4 @@
-13:11:58 **** Incremental Build of configuration IAR ARM - Debug for project Sensor ****
+16:06:19 **** Incremental Build of configuration IAR ARM - Debug for project Sensor ****
 make -j4 all 
 Building file: ../connect-callbacks.c
 Invoking: IAR C/C++ Compiler for ARM
@@ -6,45 +6,38 @@ iccarm "../connect-callbacks.c" -o "connect-callbacks.o" --no_path_in_file_macro
 
    IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM
    Copyright 1999-2016 IAR Systems AB.
-   Startup license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
+   Time-limited license - IAR Embedded Workbench for ARM, Cortex-M edition 7.70
 
       emberAfCorePrintln("Send Status: 0x%x", status);
       ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",115  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",130  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
   	emberAfCorePrintln("-------- Light1 --------");
   	^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",250  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",269  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
-  }
-  ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",329  Warning[Pe940]: missing return statement at end of non-void function "emberAfPluginIdleSleepOkToSleepCallback"
-
-  			emberAfCorePrintln("Scan Result: %x", status);
+  			emberAfCorePrintln("Join Status: %d", status);
   			^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",384  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",397  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
   			emberAfCorePrintln("Data Received");
   			^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",424  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",451  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
-    messageLength++;												  //messageLength = 1 at beginning of longId
-    ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",447  Warning[Pe549]: variable "messageLength" is used before its value is set
-
-   emberAfCorePrintln("Incoming Beacon Received: %d", panId);
-   ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",527  Warning[Pe223]: function "emberAfPrintln" declared implicitly
+  emberAfCorePrintln("Incoming Beacon Received: %d", panId);
+  ^
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",553  Warning[Pe223]: function "emberAfPrintln" declared implicitly
 
   static EmberKeyData securityKey = SENSOR_SINK_SECURITY_KEY;
                       ^
-"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",59  Warning[Pe177]: variable "securityKey" was declared but never referenced
+"C:\Users\Alex\SimplicityStudio\v3_workspace\Sensor\connect-callbacks.c",72  Warning[Pe177]: variable "securityKey" was declared but never referenced
  
- 1 438 bytes of CODE memory
-    36 bytes of DATA memory
+ 1 584 bytes of CODE  memory
+    12 bytes of CONST memory
+    13 bytes of DATA  memory
 
 Errors: none
-Warnings: 8
+Warnings: 6
 Finished building: ../connect-callbacks.c
  
 Building target: Sensor.out
@@ -54,15 +47,15 @@ ilinkarm  ./wstk-sensors/wstk-sensors.o  ./usb-common/descriptors.o ./usb-common
    IAR ELF Linker V7.70.1.11437/W32 for ARM
    Copyright 2007-2016 IAR Systems AB.
 
-  63 770 bytes of readonly  code memory
+  63 990 bytes of readonly  code memory
      468 bytes of readwrite code memory
    4 555 bytes of readonly  data memory
-  20 095 bytes of readwrite data memory
+  20 072 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
 
-Link time:   0.58 (CPU)   0.60 (elapsed)
+Link time:   0.59 (CPU)   0.61 (elapsed)
 ielftool --ihex --verbose "Sensor.out" "Sensor.hex"  
 
    IAR ELF Tool V9.20.13.159 [BUILT at IAR]
@@ -94,5 +87,5 @@ Saving srec file to Sensor.s37
 Finished building target: Sensor.out
  
 
-13:12:06 Build Finished (took 8s.97ms)
+16:06:27 Build Finished (took 8s.839ms)
 

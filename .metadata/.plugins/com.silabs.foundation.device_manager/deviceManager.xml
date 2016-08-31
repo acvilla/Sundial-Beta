@@ -1,78 +1,115 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <deviceManager>
   <devices>
-    <device id="com.silabs.studio.tcf.adapters@usb.440046096.adapter">
+    <device id="com.silabs.studio.tcf.adapters@usb.440030513.adapter">
       <properties>
-        <property key="TCFDeviceTokens.KIT_ID" value="java.lang.String:usb.440046096.adapter.kit"/>
-        <property key="AdapterDeviceTokens.ADAPTER_TYPE" value="com.silabs.foundation.device.properties.types.CoreAdapterTypes:SEGGER_JLINK"/>
-        <property key="AdapterDeviceTokens.ADAPTER_NAME" value="java.lang.String:adapter"/>
-        <property key="UsbDeviceTokens.USB_SERIAL_NUMBER" value="java.lang.String:440046096"/>
+        <property key="HardwareDeviceTokens.KIT_LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit"/>
+        <property key="TCFDeviceTokens.ADAPTER_ID" value="java.lang.String:usb.440030513.adapter"/>
+        <property key="CoreDeviceTokens.LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit (440030513)"/>
         <property key="UsbDeviceTokens.IS_USB" value="java.lang.Boolean:true"/>
-        <property key="TCFDeviceTokens.MCU_ID" value="java.lang.String:usb.440046096.adapter.kit.mcu"/>
+        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:usb.440030513"/>
+        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
         <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:usb"/>
         <property key="HardwareDeviceTokens.KIT_ID" value="java.lang.String:BRD4001A Rev. A01"/>
-        <property key="TCFDeviceTokens.ADAPTER_ID" value="java.lang.String:usb.440046096.adapter"/>
-        <property key="HardwareDeviceTokens.MCU_LABEL" value="java.lang.String:EZR32WG330F256R60"/>
-        <property key="AdapterDeviceTokens.ADAPTER_SERIAL_NUMBER" value="java.lang.String:440046096"/>
-        <property key="HardwareDeviceTokens.MCU_ARCHITECTURE" value="com.silabs.foundation.device.properties.types.CoreArchitectureTypes:SILABS_Exx32"/>
         <property key="HardwareDeviceTokens.MCU_ID" value="java.lang.String:EZR32WG330F256R60"/>
-        <property key="HardwareDeviceTokens.KIT_LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit"/>
+        <property key="HardwareDeviceTokens.MCU_ARCHITECTURE" value="com.silabs.foundation.device.properties.types.CoreArchitectureTypes:SILABS_Exx32"/>
+        <property key="TCFDeviceTokens.KIT_ID" value="java.lang.String:usb.440030513.adapter.kit"/>
         <property key="UsbDeviceTokens.USB_PRODUCT_NAME" value="java.lang.String:J-Link Silicon Labs"/>
-        <property key="HardwareDeviceTokens.TARGET_INTERFACE" value="com.silabs.foundation.device.properties.types.CoreTargetInterfaces:SWD"/>
-        <property key="CoreDeviceTokens.LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit (440046096)"/>
+        <property key="TCFDeviceTokens.MCU_ID" value="java.lang.String:usb.440030513.adapter.kit.mcu"/>
+        <property key="AdapterDeviceTokens.ADAPTER_TYPE" value="com.silabs.foundation.device.properties.types.CoreAdapterTypes:SEGGER_JLINK"/>
+        <property key="AdapterDeviceTokens.ADAPTER_SERIAL_NUMBER" value="java.lang.String:440030513"/>
         <property key="CoreDeviceTokens.TYPE" value="com.silabs.foundation.device.properties.types.CoreDeviceTypes:DEBUG_ADAPTER"/>
-        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
+        <property key="HardwareDeviceTokens.MCU_LABEL" value="java.lang.String:EZR32WG330F256R60"/>
+        <property key="AdapterDeviceTokens.ADAPTER_NAME" value="java.lang.String:adapter"/>
+        <property key="UsbDeviceTokens.USB_SERIAL_NUMBER" value="java.lang.String:440030513"/>
+        <property key="HardwareDeviceTokens.TARGET_INTERFACE" value="com.silabs.foundation.device.properties.types.CoreTargetInterfaces:SWD"/>
+      </properties>
+    </device>
+    <device id="com.silabs.studio.tcf.adapters@usb.440046096.adapter">
+      <properties>
+        <property key="HardwareDeviceTokens.KIT_LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit"/>
+        <property key="TCFDeviceTokens.ADAPTER_ID" value="java.lang.String:usb.440046096.adapter"/>
+        <property key="CoreDeviceTokens.LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit (440046096)"/>
+        <property key="UsbDeviceTokens.IS_USB" value="java.lang.Boolean:true"/>
         <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:usb.440046096"/>
+        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
+        <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:usb"/>
+        <property key="HardwareDeviceTokens.MCU_ID" value="java.lang.String:EZR32WG330F256R60"/>
+        <property key="HardwareDeviceTokens.KIT_ID" value="java.lang.String:BRD4001A Rev. A01"/>
+        <property key="HardwareDeviceTokens.MCU_ARCHITECTURE" value="com.silabs.foundation.device.properties.types.CoreArchitectureTypes:SILABS_Exx32"/>
+        <property key="TCFDeviceTokens.KIT_ID" value="java.lang.String:usb.440046096.adapter.kit"/>
+        <property key="UsbDeviceTokens.USB_PRODUCT_NAME" value="java.lang.String:J-Link Silicon Labs"/>
+        <property key="TCFDeviceTokens.MCU_ID" value="java.lang.String:usb.440046096.adapter.kit.mcu"/>
+        <property key="AdapterDeviceTokens.ADAPTER_TYPE" value="com.silabs.foundation.device.properties.types.CoreAdapterTypes:SEGGER_JLINK"/>
+        <property key="AdapterDeviceTokens.ADAPTER_SERIAL_NUMBER" value="java.lang.String:440046096"/>
+        <property key="HardwareDeviceTokens.MCU_LABEL" value="java.lang.String:EZR32WG330F256R60"/>
+        <property key="CoreDeviceTokens.TYPE" value="com.silabs.foundation.device.properties.types.CoreDeviceTypes:DEBUG_ADAPTER"/>
+        <property key="AdapterDeviceTokens.ADAPTER_NAME" value="java.lang.String:adapter"/>
+        <property key="UsbDeviceTokens.USB_SERIAL_NUMBER" value="java.lang.String:440046096"/>
+        <property key="HardwareDeviceTokens.TARGET_INTERFACE" value="com.silabs.foundation.device.properties.types.CoreTargetInterfaces:SWD"/>
+      </properties>
+    </device>
+    <device id="com.silabs.studio.tcf.serialPorts@serial.serial.COM5">
+      <properties>
+        <property key="CoreDeviceTokens.LABEL" value="java.lang.String:Unnamed"/>
+        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:serial.serial"/>
+        <property key="SerialDeviceTokens.PORT_NAME" value="java.lang.String:COM5"/>
+        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
+        <property key="SerialDeviceTokens.PORT_DEVICES" value="java.lang.String:000440030513"/>
+        <property key="CoreDeviceTokens.TYPE" value="com.silabs.foundation.device.properties.types.CoreDeviceTypes:SERIAL_PORT"/>
+        <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:serial"/>
+        <property key="SerialDeviceTokens.PORT_PATH" value="java.lang.String:COM5"/>
+        <property key="TCFDeviceTokens.SERIAL_PORT_ID" value="java.lang.String:serial.serial.COM5"/>
       </properties>
     </device>
     <device id="com.silabs.studio.tcf.adapters@usb.440046148.adapter">
       <properties>
-        <property key="AdapterDeviceTokens.ADAPTER_TYPE" value="com.silabs.foundation.device.properties.types.CoreAdapterTypes:SEGGER_JLINK"/>
+        <property key="CoreDeviceTokens.LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit (440046148)"/>
+        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:usb.440046148"/>
+        <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:usb"/>
+        <property key="HardwareDeviceTokens.KIT_ID" value="java.lang.String:BRD4001A Rev. A01"/>
         <property key="TCFDeviceTokens.KIT_ID" value="java.lang.String:usb.440046148.adapter.kit"/>
         <property key="TCFDeviceTokens.MCU_ID" value="java.lang.String:usb.440046148.adapter.kit.mcu"/>
-        <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:usb"/>
-        <property key="UsbDeviceTokens.USB_PRODUCT_NAME" value="java.lang.String:J-Link Silicon Labs"/>
-        <property key="CoreDeviceTokens.LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit (440046148)"/>
         <property key="CoreDeviceTokens.TYPE" value="com.silabs.foundation.device.properties.types.CoreDeviceTypes:DEBUG_ADAPTER"/>
-        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
-        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:usb.440046148"/>
-        <property key="UsbDeviceTokens.IS_USB" value="java.lang.Boolean:true"/>
-        <property key="UsbDeviceTokens.USB_SERIAL_NUMBER" value="java.lang.String:440046148"/>
-        <property key="AdapterDeviceTokens.ADAPTER_NAME" value="java.lang.String:adapter"/>
-        <property key="TCFDeviceTokens.ADAPTER_ID" value="java.lang.String:usb.440046148.adapter"/>
-        <property key="HardwareDeviceTokens.KIT_ID" value="java.lang.String:BRD4001A Rev. A01"/>
-        <property key="AdapterDeviceTokens.ADAPTER_SERIAL_NUMBER" value="java.lang.String:440046148"/>
         <property key="HardwareDeviceTokens.MCU_LABEL" value="java.lang.String:EZR32WG330F256R60"/>
-        <property key="HardwareDeviceTokens.MCU_ARCHITECTURE" value="com.silabs.foundation.device.properties.types.CoreArchitectureTypes:SILABS_Exx32"/>
-        <property key="HardwareDeviceTokens.KIT_LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit"/>
-        <property key="HardwareDeviceTokens.MCU_ID" value="java.lang.String:EZR32WG330F256R60"/>
+        <property key="AdapterDeviceTokens.ADAPTER_NAME" value="java.lang.String:adapter"/>
         <property key="HardwareDeviceTokens.TARGET_INTERFACE" value="com.silabs.foundation.device.properties.types.CoreTargetInterfaces:SWD"/>
+        <property key="HardwareDeviceTokens.KIT_LABEL" value="java.lang.String:EZR32WG 868 MHz Wireless Starter Kit"/>
+        <property key="TCFDeviceTokens.ADAPTER_ID" value="java.lang.String:usb.440046148.adapter"/>
+        <property key="UsbDeviceTokens.IS_USB" value="java.lang.Boolean:true"/>
+        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
+        <property key="HardwareDeviceTokens.MCU_ID" value="java.lang.String:EZR32WG330F256R60"/>
+        <property key="HardwareDeviceTokens.MCU_ARCHITECTURE" value="com.silabs.foundation.device.properties.types.CoreArchitectureTypes:SILABS_Exx32"/>
+        <property key="UsbDeviceTokens.USB_PRODUCT_NAME" value="java.lang.String:J-Link Silicon Labs"/>
+        <property key="AdapterDeviceTokens.ADAPTER_TYPE" value="com.silabs.foundation.device.properties.types.CoreAdapterTypes:SEGGER_JLINK"/>
+        <property key="AdapterDeviceTokens.ADAPTER_SERIAL_NUMBER" value="java.lang.String:440046148"/>
+        <property key="UsbDeviceTokens.USB_SERIAL_NUMBER" value="java.lang.String:440046148"/>
       </properties>
     </device>
     <device id="com.silabs.studio.tcf.serialPorts@serial.serial.COM3">
       <properties>
         <property key="CoreDeviceTokens.LABEL" value="java.lang.String:Unnamed"/>
-        <property key="TCFDeviceTokens.SERIAL_PORT_ID" value="java.lang.String:serial.serial.COM3"/>
-        <property key="SerialDeviceTokens.PORT_PATH" value="java.lang.String:COM3"/>
+        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:serial.serial"/>
+        <property key="SerialDeviceTokens.PORT_NAME" value="java.lang.String:COM3"/>
+        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
+        <property key="SerialDeviceTokens.PORT_DEVICES" value="java.lang.String:000440046096"/>
         <property key="CoreDeviceTokens.TYPE" value="com.silabs.foundation.device.properties.types.CoreDeviceTypes:SERIAL_PORT"/>
         <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:serial"/>
-        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
-        <property key="SerialDeviceTokens.PORT_NAME" value="java.lang.String:COM3"/>
-        <property key="SerialDeviceTokens.PORT_DEVICES" value="java.lang.String:000440046096"/>
-        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:serial.serial"/>
+        <property key="SerialDeviceTokens.PORT_PATH" value="java.lang.String:COM3"/>
+        <property key="TCFDeviceTokens.SERIAL_PORT_ID" value="java.lang.String:serial.serial.COM3"/>
       </properties>
     </device>
     <device id="com.silabs.studio.tcf.serialPorts@serial.serial.COM4">
       <properties>
         <property key="CoreDeviceTokens.LABEL" value="java.lang.String:Unnamed"/>
-        <property key="TCFDeviceTokens.SERIAL_PORT_ID" value="java.lang.String:serial.serial.COM4"/>
-        <property key="SerialDeviceTokens.PORT_PATH" value="java.lang.String:COM4"/>
+        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:serial.serial"/>
+        <property key="SerialDeviceTokens.PORT_NAME" value="java.lang.String:COM4"/>
+        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
+        <property key="SerialDeviceTokens.PORT_DEVICES" value="java.lang.String:000440046148"/>
         <property key="CoreDeviceTokens.TYPE" value="com.silabs.foundation.device.properties.types.CoreDeviceTypes:SERIAL_PORT"/>
         <property key="TCFDeviceTokens.TRANSPORT_ID" value="java.lang.String:serial"/>
-        <property key="CoreDeviceTokens.IS_LOCAL" value="java.lang.Boolean:true"/>
-        <property key="SerialDeviceTokens.PORT_NAME" value="java.lang.String:COM4"/>
-        <property key="SerialDeviceTokens.PORT_DEVICES" value="java.lang.String:000440046148"/>
-        <property key="TCFDeviceTokens.CONNECTION_ID" value="java.lang.String:serial.serial"/>
+        <property key="SerialDeviceTokens.PORT_PATH" value="java.lang.String:COM4"/>
+        <property key="TCFDeviceTokens.SERIAL_PORT_ID" value="java.lang.String:serial.serial.COM4"/>
       </properties>
     </device>
   </devices>

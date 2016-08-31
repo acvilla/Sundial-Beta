@@ -1,0 +1,95 @@
+#ISD afv6
+# ISD version: 1.0.0.201606231656-435
+
+# Application configuration
+stackId: srw
+stackRoot: C:\SiliconLabs\SiliconLabsConnect\SiliconLabsConnect
+appId: connect
+architecture: ezr32~WG330~256K~SI4460-revC2A+BRD4502C
+deviceName: connect
+generationDirectory: PATH(ISC_RELATIVE):.
+
+# Devices
+device: Star Coordinator
+
+# Plugin configuration
+appPlugin: command-interpreter=true
+appPlugin: debug-print=true
+appPlugin: diagnostic=true
+appPlugin: diagnostic-stub=false
+appPlugin: hal-ezr32=true
+appPlugin: heartbeat=false
+appPlugin: idle-sleep=true
+appPlugin: mailbox-client=false
+appPlugin: mailbox-server=false
+appPlugin: main=true
+appPlugin: phy-ezradio=true
+appPlugin: poll=true
+appPlugin: serial=true
+appPlugin: sim-eeprom1=true
+appPlugin: stack-aes-security=true
+appPlugin: stack-aes-security-stub=false
+appPlugin: stack-common=true
+appPlugin: stack-counters=true
+appPlugin: stack-counters-stub=false
+appPlugin: stack-form-and-join=true
+appPlugin: stack-mac-queue=true
+appPlugin: stack-mac-queue-stub=false
+appPlugin: stack-parent-support=true
+appPlugin: stack-parent-support-stub=false
+appPlugin: stack-xxtea-security=true
+appPlugin: stack-xxtea-security-stub=false
+appPlugin: usb-cdc=false
+appPlugin: usb-common=false
+appPlugin: usb-hidkbd=false
+appPlugin: wstk-sensors=false
+
+# Setup configurations
+{setupId:additionalFiles
+}
+{setupId:boardHeader
+}
+{setupId:bookkeeping
+}
+{setupId:callbackConfiguration
+halSimEepromCallback:true
+emberAfPluginIdleSleepOkToSleepCallback:true
+emberAfPluginIdleSleepWakeUpCallback:true
+emberAfPluginIdleSleepOkToIdleCallback:true
+emberAfPluginIdleSleepActiveCallback:true
+emberAfMainInitCallback:true
+emberAfMainTickCallback:true
+emberAfStackStatusCallback:true
+emberAfIncomingMessageCallback:true
+emberAfMessageSentCallback:true
+emberAfChildJoinCallback:true
+emberAfActiveScanCompleteCallback:true
+emberAfEnergyScanCompleteCallback:true
+emberAfIncomingBeaconCallback:true
+}
+{setupId:commandLineConfiguration
+on
+}
+{setupId:connectStackConfig
+Radio board: BRD4502
+}
+{setupId:debugConfiguration
+on
+area name off
+appSerial=1
+}
+{setupId:eventConfiguration
+}
+{setupId:information
+}
+{setupId:macros
+}
+{setupId:phyOptions
+selectedOptionId=europe-868
+}
+{setupId:template
+}
+{setupId:token
+}
+
+# Plugin options

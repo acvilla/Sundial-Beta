@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=Sink,Sensor,Snapshots
+task-tag-projects-already-scanned=Sink,Sensor,timeSync,sensor_ezr32

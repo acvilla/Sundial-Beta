@@ -1,2 +1,3 @@
+AppFramework.CREATE_BACKUP_FILES=false
 com.ember.workbench.app_framework.application.ApplicationPreference.updatedStacks=true
 eclipse.preferences.version=1

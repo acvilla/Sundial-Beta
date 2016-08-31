@@ -96,6 +96,7 @@ selectedOptionId=europe-868
 {setupId:template
 }
 {setupId:token
+PATH(ABSOLUTE):C:\Users\Alex\Dropbox\Project Portfolio\Sundial-Beta\Project Files\Application_headers\APPLICATION_TOKEN_HEADER.h
 }
 
 # Plugin options
